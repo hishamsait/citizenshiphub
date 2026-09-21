@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { slugify } from '../lib/utils';
+import { scoreAcquisition } from '../lib/acquire';
+import rankingsData from '../data/rankings.json';
+import lawsData from '../data/citizenship-laws.json';
+import type { RankingsData, CitizenshipLawsData } from '../data/types';
+
+const { rankings } = rankingsData as unknown as RankingsData;
+const { countries } = lawsData as unknown as CitizenshipLawsData;
+const lawByCode = new Map(countries.map((c) => [c.iso2, c]));
+const maxMobility = Math.max(...rankings.map((r) => r.mobilityScore));
+
+const rows = rankings
+  .map((r) => {
+    const law = lawByCode.get(r.code);
+    const acq = law ? scoreAcquisition(law) : { score: 0, reasons: [] as string[] };
+    const mobilityNorm = Math.round((r.mobilityScore / maxMobility) * 100);
+    const overall = Math.round(0.5 * mobilityNorm + 0.5 * acq.score);
+    return {
+      code: r.code,
+      name: r.name,
+      region: r.region,
+      mobilityNorm,
+      acquisition: acq.score,
+      overall,
+      reasons: acq.reasons,
+    };
+  })
+  .sort((a, b) => b.overall - a.overall || b.mobilityNorm - a.mobilityNorm);
+---
+
+<BaseLayout
+  title="Best Passports to Obtain"
+  description="The best second passports, balancing how strong the passport is with how attainable the citizenship is."
+>
+  <section>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Best passports to obtain</h1>
+      <p class="mt-3 max-w-2xl text-slate-600">
+        A "second passport" score that balances how strong the passport is (travel freedom) with how attainable the
+        citizenship is (descent, naturalisation time, dual-citizenship rules, and fees).
+      </p>
+      <p class="mt-2 text-sm text-slate-400">
+        Methodology: 50% mobility (normalised) + 50% ease of acquisition. Indicative only — not legal advice.
+      </p>
+    </div>
+  </section>
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <div class="overflow-x-auto rounded-2xl bg-white shadow-lg shadow-black/5">
+      <table class="w-full min-w-[760px] text-left text-sm">
+        <thead class="bg-slate-100 text-xs uppercase tracking-wide text-slate-500">
+          <tr>
+            <th scope="col" class="px-4 py-3">#</th>
+            <th scope="col" class="px-4 py-3">Passport</th>
+            <th scope="col" class="px-4 py-3">Region</th>
+            <th scope="col" class="px-4 py-3 text-right">Mobility</th>
+            <th scope="col" class="px-4 py-3 text-right">Ease</th>
+            <th scope="col" class="px-4 py-3 text-right">Overall</th>
+            <th scope="col" class="px-4 py-3">Why it's attainable</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r, i) => (
+              <tr class="even:bg-slate-50 hover:bg-slate-100">
+                <td class="px-4 py-3">
+                  <span class="inline-flex h-6 min-w-6 items-center justify-center rounded-md bg-brand-50 px-1.5 text-xs font-bold text-brand-700">
+                    {i + 1}
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  <a href={`/countries/${slugify(r.name)}/`} class="font-medium text-slate-900 hover:text-brand-700">
+                    {r.name}
+                  </a>
+                  <span class="ml-1.5 font-mono text-xs text-slate-400">{r.code}</span>
+                </td>
+                <td class="px-4 py-3 text-slate-500">{r.region}</td>
+                <td class="px-4 py-3 text-right text-slate-600">{r.mobilityNorm}</td>
+                <td class="px-4 py-3 text-right text-slate-600">{r.acquisition}</td>
+                <td class="px-4 py-3 text-right font-semibold text-slate-900">{r.overall}</td>
+                <td class="px-4 py-3 text-xs text-slate-500">{r.reasons.join(' · ')}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

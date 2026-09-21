@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PassportCompare from '../components/PassportCompare';
+import matrixData from '../data/visa-matrix.json';
+import passportsData from '../data/passports.json';
+import rankingsData from '../data/rankings.json';
+import type { VisaMatrix, PassportsData, RankingsData } from '../data/types';
+
+const { matrix } = matrixData as unknown as VisaMatrix;
+const { passports } = passportsData as unknown as PassportsData;
+const { rankings } = rankingsData as unknown as RankingsData;
+
+const countries = passports.map((p) => ({ code: p.code, name: p.name, region: p.region }));
+const ranked = rankings.map((r) => ({
+  code: r.code,
+  name: r.name,
+  rank: r.rank,
+  mobilityScore: r.mobilityScore,
+  visaFree: r.visaFree,
+  visaOnArrival: r.visaOnArrival,
+  eta: r.eta,
+  eVisa: r.eVisa,
+  visaRequired: r.visaRequired,
+}));
+const initialCodes = ['a', 'b', 'c', 'd']
+  .map((k) => Astro.url.searchParams.get(k)?.toUpperCase())
+  .filter((code): code is string => Boolean(code));
+---
+
+<BaseLayout
+  title="Compare Passports"
+  description="Compare up to four passports side by side and see exactly where their visa access differs."
+>
+  <section>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Compare passports</h1>
+      <p class="mt-3 max-w-2xl text-slate-600">
+        Compare up to four passports and see exactly where their visa access differs — visa-free, visa on arrival, ETA,
+        or e-visa.
+      </p>
+    </div>
+  </section>
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <PassportCompare client:load matrix={matrix} countries={countries} rankings={ranked} initialCodes={initialCodes} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+name: "San Marino"
+iso2: "SM"
+capital: "City of San Marino"
+region: "Europe"
+citizenshipByDescent: true
+naturalizationYears: 30
+dualCitizenshipAllowed: false
+officialFeeEUR: null
+summary: "Citizenship by descent is available; naturalisation requires 30 years; dual citizenship is generally not permitted."
+---
+
+## Why San Marino?
+
+The San Marino passport offers visa-free, visa-on-arrival, ETA, or e-visa access to **176** destinations, ranking it **#47** globally.
+
+> Long residency (30 yrs, 15 for spouses); dual restricted.
+
+## Citizenship by descent
+
+San Marino applies jus sanguinis — citizenship can be acquired by descent from a citizen parent, and in some cases from grandparents or more distant ancestors.
+
+## Naturalisation
+
+Naturalisation typically requires **30 years** of residence, usually alongside language and integration requirements.
+
+## Dual citizenship
+
+San Marino generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+
+## Fees & timeline
+
+There is no standard published application fee — costs vary, so check with official sources.
+
+---
+_Compiled from the Citizenship Hub law dataset (approximate). Verify with official government sources before relying on this information._

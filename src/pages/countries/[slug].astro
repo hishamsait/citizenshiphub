@@ -1,0 +1,193 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CountryCard from '../../components/CountryCard.astro';
+import { formatEuro } from '../../lib/utils';
+import TravelMap from '../../components/TravelMap.astro';
+import { decodeCell, type AccessStatus } from '../../lib/visa';
+import passportsData from '../../data/passports.json';
+import matrixData from '../../data/visa-matrix.json';
+import type { PassportsData, VisaMatrix } from '../../data/types';
+
+export async function getStaticPaths() {
+  const countries = await getCollection('countries');
+  return countries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const {
+  name,
+  iso2,
+  capital,
+  region,
+  citizenshipByDescent,
+  naturalizationYears,
+  dualCitizenshipAllowed,
+  officialFeeEUR,
+  summary,
+} = entry.data;
+
+const { passports } = passportsData as unknown as PassportsData;
+const mobility = passports.find((p) => p.code === iso2.toUpperCase());
+
+const { matrix } = matrixData as unknown as VisaMatrix;
+const cells = matrix[iso2.toUpperCase()] ?? {};
+const statusByIso2: Record<string, AccessStatus> = {};
+for (const [code, cell] of Object.entries(cells)) {
+  statusByIso2[code] = decodeCell(cell).status;
+}
+
+const otherGuides = (await getCollection('countries'))
+  .filter((g) => g.id !== entry.id)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .slice(0, 3);
+
+const facts = [
+  { label: 'Capital', value: capital },
+  { label: 'Region', value: region },
+  { label: 'Citizenship by descent', value: citizenshipByDescent ? 'Yes' : 'No' },
+  {
+    label: 'Naturalisation period',
+    value: naturalizationYears === null ? 'Restricted / varies' : `${naturalizationYears} years`,
+  },
+  { label: 'Dual citizenship', value: dualCitizenshipAllowed ? 'Allowed' : 'Restricted' },
+  {
+    label: 'Official application fee',
+    value:
+      officialFeeEUR === null
+        ? 'Varies'
+        : officialFeeEUR === 0
+          ? 'No application fee'
+          : formatEuro(officialFeeEUR),
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `Citizenship guide: ${name}`,
+  description: summary,
+  about: { '@type': 'Country', name },
+  mainEntityOfPage: new URL(Astro.url.pathname, 'https://citizenshiphub.com').href,
+};
+---
+
+<BaseLayout
+  title={`${name} Citizenship Guide`}
+  description={summary}
+  canonical={Astro.url.pathname}
+  jsonLd={jsonLd}
+>
+  <article class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-[1fr_320px]">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-700">
+          {region} · {iso2.toUpperCase()}
+        </p>
+        <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+          {name} — Citizenship Guide
+        </h1>
+        <p class="mt-3 text-lg text-slate-600">{summary}</p>
+        <div class="prose mt-8 max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
+        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">At a glance</h2>
+          <dl class="mt-4">
+            {
+              facts.map((f) => (
+                <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                  <dt class="text-slate-500">{f.label}</dt>
+                  <dd class="text-right font-medium text-slate-900">{f.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        {
+          mobility && (
+            <div class="rounded-2xl bg-brand-50 p-6 shadow-sm">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-brand-700">Passport mobility</h2>
+              <p class="mt-3 text-3xl font-extrabold text-slate-900">
+                {mobility.mobilityScore}
+                <span class="text-base font-medium text-slate-500">
+                  {' '}
+                  / {mobility.visaRequired + mobility.mobilityScore + mobility.noAdmission}
+                </span>
+              </p>
+              <p class="mt-1 text-sm text-slate-500">destinations without a traditional visa</p>
+              <dl class="mt-4 grid grid-cols-2 gap-3 text-sm">
+                <div class="rounded-lg bg-white p-3">
+                  <dt class="text-xs text-slate-400">Visa-free</dt>
+                  <dd class="text-lg font-bold text-slate-900">{mobility.visaFree}</dd>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                  <dt class="text-xs text-slate-400">Visa on arrival</dt>
+                  <dd class="text-lg font-bold text-slate-900">{mobility.visaOnArrival}</dd>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                  <dt class="text-xs text-slate-400">ETA</dt>
+                  <dd class="text-lg font-bold text-slate-900">{mobility.eta}</dd>
+                </div>
+                <div class="rounded-lg bg-white p-3">
+                  <dt class="text-xs text-slate-400">e-Visa</dt>
+                  <dd class="text-lg font-bold text-slate-900">{mobility.eVisa}</dd>
+                </div>
+              </dl>
+              <a
+                href={`/explore/?passport=${iso2}`}
+                class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+              >
+                Explore destinations <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          )
+        }
+      </aside>
+    </div>
+
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-slate-900">Where the {name} passport can travel</h2>
+      <p class="mt-1 text-sm text-slate-500">
+        Visa-free, visa on arrival, ETA, and e-visa access by destination. Hover for details.
+      </p>
+      <div class="mt-4">
+        <TravelMap statusByIso2={statusByIso2} />
+      </div>
+    </section>
+
+    {
+      otherGuides.length > 0 && (
+        <section class="mt-16 pt-10">
+          <h2 class="text-2xl font-bold text-slate-900">More citizenship guides</h2>
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {
+              otherGuides.map((g) => (
+                <CountryCard
+                  slug={g.id}
+                  name={g.data.name}
+                  iso2={g.data.iso2}
+                  capital={g.data.capital}
+                  region={g.data.region}
+                  summary={g.data.summary}
+                  citizenshipByDescent={g.data.citizenshipByDescent}
+                  naturalizationYears={g.data.naturalizationYears}
+                  dualCitizenshipAllowed={g.data.dualCitizenshipAllowed}
+                  officialFeeEUR={g.data.officialFeeEUR}
+                />
+              ))
+            }
+          </div>
+        </section>
+      )
+    }
+  </article>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('countries');
+
+const byRegion = new Map<string, typeof guides>();
+for (const g of guides) {
+  const list = byRegion.get(g.data.region) ?? [];
+  list.push(g);
+  byRegion.set(g.data.region, list);
+}
+for (const list of byRegion.values()) list.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const regions = [...byRegion.keys()].sort();
+---
+
+<BaseLayout
+  title="Citizenship Guides"
+  description="Citizenship-by-descent and naturalisation guides for 199 countries — descent rules, naturalisation timelines, dual-citizenship rules, and fees."
+>
+  <section>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Citizenship guides</h1>
+      <p class="mt-3 max-w-2xl text-slate-600">
+        Descent rules, naturalisation timelines, dual-citizenship rules, and fees for {guides.length} countries.
+      </p>
+    </div>
+  </section>
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    {
+      regions.map((region) => (
+        <div class="mb-8">
+          <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500">{region}</h2>
+          <ul class="grid gap-1.5 sm:grid-cols-2 lg:grid-cols-3">
+            {
+              (byRegion.get(region) ?? []).map((g) => (
+                <li>
+                  <a
+                    href={`/countries/${g.id}/`}
+                    class="flex items-center justify-between rounded-lg bg-white px-3 py-2 text-sm text-slate-700 shadow-sm hover:bg-brand-50"
+                  >
+                    <span>{g.data.name}</span>
+                    <span class="font-mono text-xs text-slate-400">{g.data.iso2}</span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</BaseLayout>

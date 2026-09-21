@@ -1,0 +1,75 @@
+---
+import { Menu } from 'lucide-react';
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return pathname === '/';
+  const path = href.split('#')[0];
+  return path.length > 1 && pathname.startsWith(path);
+};
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/passports/', label: 'Rankings' },
+  { href: '/explore/', label: 'Explorer' },
+  { href: '/compare/', label: 'Compare' },
+  { href: '/best/', label: 'Best passports' },
+  { href: '/destinations/', label: 'Destinations' },
+  { href: '/countries/', label: 'Guides' },
+];
+
+const navClasses = (href: string) =>
+  isActive(href)
+    ? 'bg-brand-50 text-brand-700'
+    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900';
+---
+
+<header class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+    <a href="/" class="flex items-center gap-2.5 font-bold tracking-tight text-slate-900">
+      <span
+        class="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-700 text-sm font-extrabold text-slate-50"
+        aria-hidden="true"
+      >
+        CH
+      </span>
+      <span class="font-display text-[1.05rem]">Citizenship Hub</span>
+    </a>
+
+    <nav aria-label="Main navigation" class="hidden items-center gap-1 sm:flex">
+      {
+        nav.map((item) => (
+          <a
+            href={item.href}
+            class:list={['rounded-md px-3 py-2 text-sm font-medium transition-colors', navClasses(item.href)]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <details class="group relative sm:hidden">
+      <summary
+        class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-lg text-slate-700 transition hover:bg-slate-100 [&::-webkit-details-marker]:hidden"
+        aria-label="Menu"
+      >
+        <Menu className="h-5 w-5" aria-hidden="true" />
+      </summary>
+      <div class="absolute right-0 top-full z-50 mt-2 w-56 rounded-2xl bg-white p-2 shadow-lg shadow-black/5">
+        <nav aria-label="Mobile navigation" class="flex flex-col gap-1">
+          {
+            nav.map((item) => (
+              <a
+                href={item.href}
+                class:list={['rounded-lg px-3 py-2 text-sm font-medium transition-colors', navClasses(item.href)]}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </details>
+  </div>
+</header>

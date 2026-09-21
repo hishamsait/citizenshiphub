@@ -1,0 +1,1682 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-21T16:08:40.264Z",
+    "verifiedAt": "2026-09-21",
+    "source": "Compiled from Wikipedia nationality-law pages (approximate; verify against official sources before reliance).",
+    "disclaimer": "Informational only; not legal or immigration advice.",
+    "totalCountries": 199
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "name": "Afghanistan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "AL",
+      "name": "Albania",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "DZ",
+      "name": "Algeria",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "AD",
+      "name": "Andorra",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 20,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Long residency (20 yrs); dual citizenship generally not allowed."
+    },
+    {
+      "iso2": "AO",
+      "name": "Angola",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "AG",
+      "name": "Antigua and Barbuda",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "AR",
+      "name": "Argentina",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 2,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "2 yrs (shortest standard residence)."
+    },
+    {
+      "iso2": "AM",
+      "name": "Armenia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Ethnic-Armenian descent/repatriation path."
+    },
+    {
+      "iso2": "AU",
+      "name": "Australia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 4,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 330,
+      "note": "4 yrs lawful residence (1 yr PR); fee AUD $540."
+    },
+    {
+      "iso2": "AT",
+      "name": "Austria",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": 1115,
+      "note": "Dual citizenship restricted; fee ≈ €1,115."
+    },
+    {
+      "iso2": "AZ",
+      "name": "Azerbaijan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BS",
+      "name": "Bahamas",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BH",
+      "name": "Bahrain",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation rarely granted."
+    },
+    {
+      "iso2": "BD",
+      "name": "Bangladesh",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BB",
+      "name": "Barbados",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BY",
+      "name": "Belarus",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship not recognised."
+    },
+    {
+      "iso2": "BE",
+      "name": "Belgium",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 150
+    },
+    {
+      "iso2": "BZ",
+      "name": "Belize",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BJ",
+      "name": "Benin",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BT",
+      "name": "Bhutan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Long residence (15+ yrs) and conditions."
+    },
+    {
+      "iso2": "BO",
+      "name": "Bolivia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BA",
+      "name": "Bosnia and Herzegovina",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BW",
+      "name": "Botswana",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BR",
+      "name": "Brazil",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 4,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "4 yrs (1 with Brazilian family)."
+    },
+    {
+      "iso2": "BN",
+      "name": "Brunei",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 15,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Descent extends to third generation."
+    },
+    {
+      "iso2": "BF",
+      "name": "Burkina Faso",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "BI",
+      "name": "Burundi",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "KH",
+      "name": "Cambodia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CM",
+      "name": "Cameroon",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CA",
+      "name": "Canada",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 420,
+      "note": "Descent limited to first generation abroad; 3 yrs physical presence; fee CAD $630."
+    },
+    {
+      "iso2": "CV",
+      "name": "Cape Verde",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CF",
+      "name": "Central African Republic",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TD",
+      "name": "Chad",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 15,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CL",
+      "name": "Chile",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CN",
+      "name": "China",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Descent limited; naturalisation very restricted; dual not allowed."
+    },
+    {
+      "iso2": "CO",
+      "name": "Colombia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "2 yrs for Ibero-American nationals."
+    },
+    {
+      "iso2": "KM",
+      "name": "Comoros",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CG",
+      "name": "Congo",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CD",
+      "name": "DR Congo",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CR",
+      "name": "Costa Rica",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CI",
+      "name": "Ivory Coast",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "HR",
+      "name": "Croatia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CU",
+      "name": "Cuba",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CY",
+      "name": "Cyprus",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "CZ",
+      "name": "Czechia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "DK",
+      "name": "Denmark",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 9,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "DJ",
+      "name": "Djibouti",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "DM",
+      "name": "Dominica",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "DO",
+      "name": "Dominican Republic",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 2,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "EC",
+      "name": "Ecuador",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "EG",
+      "name": "Egypt",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Dual with approval."
+    },
+    {
+      "iso2": "SV",
+      "name": "El Salvador",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "1 yr for Ibero-American nationals."
+    },
+    {
+      "iso2": "GQ",
+      "name": "Equatorial Guinea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ER",
+      "name": "Eritrea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "EE",
+      "name": "Estonia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship restricted."
+    },
+    {
+      "iso2": "SZ",
+      "name": "Eswatini",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ET",
+      "name": "Ethiopia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 4,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "FJ",
+      "name": "Fiji",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "FI",
+      "name": "Finland",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "FR",
+      "name": "France",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 55
+    },
+    {
+      "iso2": "GA",
+      "name": "Gabon",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GM",
+      "name": "Gambia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GE",
+      "name": "Georgia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "DE",
+      "name": "Germany",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 255,
+      "note": "5 yrs (3 with exceptional integration); dual allowed since June 2024."
+    },
+    {
+      "iso2": "GH",
+      "name": "Ghana",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GR",
+      "name": "Greece",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GD",
+      "name": "Grenada",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "GT",
+      "name": "Guatemala",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GN",
+      "name": "Guinea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GW",
+      "name": "Guinea-Bissau",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "GY",
+      "name": "Guyana",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "HT",
+      "name": "Haiti",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "HN",
+      "name": "Honduras",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "HK",
+      "name": "Hong Kong",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "PRC nationality; naturalisation via PRC (restricted)."
+    },
+    {
+      "iso2": "HU",
+      "name": "Hungary",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Descent/simplified naturalisation for ethnic Hungarians."
+    },
+    {
+      "iso2": "IS",
+      "name": "Iceland",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "IN",
+      "name": "India",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 12,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "12 yrs; no dual (OCI card instead)."
+    },
+    {
+      "iso2": "ID",
+      "name": "Indonesia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual limited to children."
+    },
+    {
+      "iso2": "IR",
+      "name": "Iran",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Descent via father; dual not recognised."
+    },
+    {
+      "iso2": "IQ",
+      "name": "Iraq",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "IE",
+      "name": "Ireland",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 175,
+      "note": "Grandparent descent via Foreign Births Register; 5 yrs (3 if married to a citizen)."
+    },
+    {
+      "iso2": "IL",
+      "name": "Israel",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Law of Return (Jewish descent)."
+    },
+    {
+      "iso2": "IT",
+      "name": "Italy",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 250,
+      "note": "Descent via ancestry (jure sanguinis, no generational limit); 10 yrs residence."
+    },
+    {
+      "iso2": "JM",
+      "name": "Jamaica",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "JP",
+      "name": "Japan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": 0,
+      "note": "Dual not allowed (choose by ~age 20-22)."
+    },
+    {
+      "iso2": "JO",
+      "name": "Jordan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 15,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Descent via Jordanian father."
+    },
+    {
+      "iso2": "KZ",
+      "name": "Kazakhstan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "KE",
+      "name": "Kenya",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "KI",
+      "name": "Kiribati",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "XK",
+      "name": "Kosovo",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "KW",
+      "name": "Kuwait",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation very restricted."
+    },
+    {
+      "iso2": "KG",
+      "name": "Kyrgyzstan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "LA",
+      "name": "Laos",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "LV",
+      "name": "Latvia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "LB",
+      "name": "Lebanon",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Descent via father."
+    },
+    {
+      "iso2": "LS",
+      "name": "Lesotho",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "LR",
+      "name": "Liberia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation historically restricted by ancestry requirement."
+    },
+    {
+      "iso2": "LY",
+      "name": "Libya",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "LI",
+      "name": "Liechtenstein",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 30,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Very long residency; dual citizenship restricted."
+    },
+    {
+      "iso2": "LT",
+      "name": "Lithuania",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship restricted."
+    },
+    {
+      "iso2": "LU",
+      "name": "Luxembourg",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MO",
+      "name": "Macau",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "PRC nationality; restricted."
+    },
+    {
+      "iso2": "MG",
+      "name": "Madagascar",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MW",
+      "name": "Malawi",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MY",
+      "name": "Malaysia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "10-12 yrs; dual not allowed."
+    },
+    {
+      "iso2": "MV",
+      "name": "Maldives",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 12,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Muslim requirement."
+    },
+    {
+      "iso2": "ML",
+      "name": "Mali",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MT",
+      "name": "Malta",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "MH",
+      "name": "Marshall Islands",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MR",
+      "name": "Mauritania",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MU",
+      "name": "Mauritius",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MX",
+      "name": "Mexico",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "2 yrs for Ibero-American nationals."
+    },
+    {
+      "iso2": "FM",
+      "name": "Micronesia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MD",
+      "name": "Moldova",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MC",
+      "name": "Monaco",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship not allowed."
+    },
+    {
+      "iso2": "MN",
+      "name": "Mongolia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ME",
+      "name": "Montenegro",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MA",
+      "name": "Morocco",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual restricted for naturalised."
+    },
+    {
+      "iso2": "MZ",
+      "name": "Mozambique",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MM",
+      "name": "Myanmar",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Restricted (1982 citizenship law)."
+    },
+    {
+      "iso2": "NA",
+      "name": "Namibia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NR",
+      "name": "Nauru",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NP",
+      "name": "Nepal",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 15,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NL",
+      "name": "Netherlands",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": 1030,
+      "note": "Dual citizenship restricted (exceptions apply); fee ≈ €1,030."
+    },
+    {
+      "iso2": "NZ",
+      "name": "New Zealand",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 260,
+      "note": "5 yrs presence; fee NZD $470."
+    },
+    {
+      "iso2": "NI",
+      "name": "Nicaragua",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NE",
+      "name": "Niger",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NG",
+      "name": "Nigeria",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 15,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual only for Nigerian citizens by birth."
+    },
+    {
+      "iso2": "KP",
+      "name": "North Korea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "MK",
+      "name": "North Macedonia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "NO",
+      "name": "Norway",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "OM",
+      "name": "Oman",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 20,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Restricted."
+    },
+    {
+      "iso2": "PK",
+      "name": "Pakistan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Dual with select countries."
+    },
+    {
+      "iso2": "PW",
+      "name": "Palau",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "PS",
+      "name": "Palestine",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Descent via Palestinian father."
+    },
+    {
+      "iso2": "PA",
+      "name": "Panama",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "3 yrs for Ibero-American nationals."
+    },
+    {
+      "iso2": "PG",
+      "name": "Papua New Guinea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "PY",
+      "name": "Paraguay",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "PE",
+      "name": "Peru",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 2,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "PH",
+      "name": "Philippines",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Dual via reacquisition (RA 9225)."
+    },
+    {
+      "iso2": "PL",
+      "name": "Poland",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Descent to great-grandparents; 3 yrs for spouses/descent (Karta Polaka)."
+    },
+    {
+      "iso2": "PT",
+      "name": "Portugal",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 250,
+      "note": "Descent to grandparents (and Sephardic heritage); fee ≈ €250."
+    },
+    {
+      "iso2": "QA",
+      "name": "Qatar",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation restricted."
+    },
+    {
+      "iso2": "RO",
+      "name": "Romania",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "RU",
+      "name": "Russia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship tolerated but not recognised."
+    },
+    {
+      "iso2": "RW",
+      "name": "Rwanda",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "KN",
+      "name": "Saint Kitts and Nevis",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "LC",
+      "name": "Saint Lucia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "WS",
+      "name": "Samoa",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SM",
+      "name": "San Marino",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 30,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Long residency (30 yrs, 15 for spouses); dual restricted."
+    },
+    {
+      "iso2": "ST",
+      "name": "São Tomé and Príncipe",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SA",
+      "name": "Saudi Arabia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation by decree (restricted)."
+    },
+    {
+      "iso2": "SN",
+      "name": "Senegal",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "RS",
+      "name": "Serbia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SC",
+      "name": "Seychelles",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SL",
+      "name": "Sierra Leone",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SG",
+      "name": "Singapore",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 2,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "2 yrs as permanent resident (longer in practice); dual not allowed."
+    },
+    {
+      "iso2": "SK",
+      "name": "Slovakia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Descent to third generation; dual restricted."
+    },
+    {
+      "iso2": "SI",
+      "name": "Slovenia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship restricted."
+    },
+    {
+      "iso2": "SB",
+      "name": "Solomon Islands",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SO",
+      "name": "Somalia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ZA",
+      "name": "South Africa",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Dual with retention."
+    },
+    {
+      "iso2": "KR",
+      "name": "South Korea",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual restricted."
+    },
+    {
+      "iso2": "SS",
+      "name": "South Sudan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ES",
+      "name": "Spain",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": 100,
+      "note": "10 yrs; dual only for Ibero-American and select countries."
+    },
+    {
+      "iso2": "LK",
+      "name": "Sri Lanka",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual restricted (application-based)."
+    },
+    {
+      "iso2": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "SD",
+      "name": "Sudan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SR",
+      "name": "Suriname",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "SE",
+      "name": "Sweden",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 130,
+      "note": "No citizenship test; fee SEK 1,500 (≈ €130)."
+    },
+    {
+      "iso2": "CH",
+      "name": "Switzerland",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "Communal/cantonal approval required."
+    },
+    {
+      "iso2": "SY",
+      "name": "Syria",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TW",
+      "name": "Taiwan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalised citizens generally must renounce prior nationality."
+    },
+    {
+      "iso2": "TJ",
+      "name": "Tajikistan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TZ",
+      "name": "Tanzania",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TH",
+      "name": "Thailand",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual not allowed for naturalised."
+    },
+    {
+      "iso2": "TL",
+      "name": "Timor-Leste",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TG",
+      "name": "Togo",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TO",
+      "name": "Tonga",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TT",
+      "name": "Trinidad and Tobago",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 8,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TN",
+      "name": "Tunisia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TR",
+      "name": "Türkiye",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TM",
+      "name": "Turkmenistan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 7,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "TV",
+      "name": "Tuvalu",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "UG",
+      "name": "Uganda",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "UA",
+      "name": "Ukraine",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual citizenship not recognised."
+    },
+    {
+      "iso2": "AE",
+      "name": "United Arab Emirates",
+      "citizenshipByDescent": true,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Naturalisation restricted (30 yrs or nomination)."
+    },
+    {
+      "iso2": "GB",
+      "name": "United Kingdom",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 1760,
+      "note": "Descent limited to one generation abroad (exceptions); fee ≈ £1,500."
+    },
+    {
+      "iso2": "US",
+      "name": "United States",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": 810,
+      "note": "5 yrs (3 if married); fee $725 + $85 biometrics."
+    },
+    {
+      "iso2": "UY",
+      "name": "Uruguay",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 3,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null,
+      "note": "3-5 yrs."
+    },
+    {
+      "iso2": "UZ",
+      "name": "Uzbekistan",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "VU",
+      "name": "Vanuatu",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 10,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Also citizenship by investment."
+    },
+    {
+      "iso2": "VA",
+      "name": "Vatican City",
+      "citizenshipByDescent": false,
+      "naturalizationYears": null,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Citizenship tied to office/residence in Vatican City; no general naturalisation."
+    },
+    {
+      "iso2": "VE",
+      "name": "Venezuela",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": true,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "VN",
+      "name": "Vietnam",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null,
+      "note": "Dual for overseas Vietnamese (exceptions)."
+    },
+    {
+      "iso2": "YE",
+      "name": "Yemen",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ZM",
+      "name": "Zambia",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    },
+    {
+      "iso2": "ZW",
+      "name": "Zimbabwe",
+      "citizenshipByDescent": true,
+      "naturalizationYears": 5,
+      "dualCitizenshipAllowed": false,
+      "officialFeeEUR": null
+    }
+  ]
+}

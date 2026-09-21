@@ -1,0 +1,17 @@
+# build output
+dist/
+# generated types
+.astro/
+# dependencies
+node_modules/
+# ETL cache
+scripts/.cache/
+# logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# environment
+.env
+.env.production
+# OS
+.DS_Store

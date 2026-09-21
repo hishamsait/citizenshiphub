@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchBar from '../components/SearchBar.astro';
+import RankingsPreview from '../components/RankingsPreview.astro';
+import CountryCard from '../components/CountryCard.astro';
+import { BookOpen, Stamp, Trophy } from 'lucide-react';
+import { getCollection } from 'astro:content';
+import rankingsData from '../data/rankings.json';
+import type { RankingsData } from '../data/types';
+
+const { rankings } = rankingsData as unknown as RankingsData;
+
+const featuredSlugs = new Set(['ireland', 'germany', 'japan', 'portugal', 'italy', 'spain']);
+const guides = (await getCollection('countries'))
+  .filter((g) => featuredSlugs.has(g.id))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const featured = rankings.find((r) => r.rank === 1);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Citizenship Hub',
+  url: 'https://citizenshiphub.com/',
+  description:
+    'Global passport rankings, visa mobility data, and citizenship-by-descent and naturalisation guides.',
+};
+---
+
+<BaseLayout
+  title="Global Passport Rankings & Citizenship Guides"
+  description="Compare passport strength across 199 countries and browse practical guides to citizenship by descent and naturalisation."
+  jsonLd={jsonLd}
+>
+  <section class="relative overflow-hidden bg-gradient-to-b from-brand-50 to-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Citizenship Hub</p>
+        <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+          Know where a passport can take you
+        </h1>
+        <p class="mt-4 text-lg text-slate-600">
+          Compare the mobility of {rankings.length} passports, and find your fastest route to a second citizenship — by
+          descent, investment, or naturalisation.
+        </p>
+        <div class="mt-8">
+          <SearchBar />
+        </div>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
+          <span class="inline-flex items-center gap-1.5">
+            <Stamp className="h-4 w-4" aria-hidden="true" />
+            <strong class="text-slate-900">{rankings.length}</strong> passports ranked
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <BookOpen className="h-4 w-4" aria-hidden="true" />
+            <strong class="text-slate-900">{guides.length}</strong> in-depth guides
+          </span>
+          {
+            featured && (
+              <span class="inline-flex items-center gap-1.5">
+                <Trophy className="h-4 w-4 text-gold-500" aria-hidden="true" />
+                No. 1 — <strong class="text-slate-900">{featured.name}</strong> ({featured.mobilityScore})
+              </span>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-100 py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <a
+        href="/explore/"
+        class="group flex items-center justify-between rounded-2xl bg-white p-6 shadow-lg shadow-black/5 transition hover:shadow-xl"
+      >
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">Visa explorer</h2>
+          <p class="mt-1 text-sm text-slate-500">See every destination a passport can reach.</p>
+        </div>
+        <span class="text-brand-600 transition group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </a>
+      <a
+        href="/compare/"
+        class="group flex items-center justify-between rounded-2xl bg-white p-6 shadow-lg shadow-black/5 transition hover:shadow-xl"
+      >
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">Compare passports</h2>
+          <p class="mt-1 text-sm text-slate-500">See where up to four passports differ.</p>
+        </div>
+        <span class="text-brand-600 transition group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </a>
+      <a
+        href="/best/"
+        class="group flex items-center justify-between rounded-2xl bg-white p-6 shadow-lg shadow-black/5 transition hover:shadow-xl"
+      >
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">Best passports</h2>
+          <p class="mt-1 text-sm text-slate-500">The strongest passports you can actually obtain.</p>
+        </div>
+        <span class="text-brand-600 transition group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </a>
+      <a
+        href="/destinations/"
+        class="group flex items-center justify-between rounded-2xl bg-white p-6 shadow-lg shadow-black/5 transition hover:shadow-xl"
+      >
+        <div>
+          <h2 class="text-lg font-semibold text-slate-900">Destinations</h2>
+          <p class="mt-1 text-sm text-slate-500">Who can visit each country, and how.</p>
+        </div>
+        <span class="text-brand-600 transition group-hover:translate-x-0.5" aria-hidden="true">→</span>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-100 py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-6 flex items-end justify-between">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Top-ranked passports</h2>
+        <p class="mt-1 text-sm text-slate-500">Countries whose passports open the most visa-free doors.</p>
+      </div>
+      <a href="/passports/" class="text-sm font-semibold text-brand-700 hover:text-brand-800">
+        View all →
+      </a>
+      </div>
+      <RankingsPreview rankings={rankings} limit={10} />
+    </div>
+  </section>
+
+  <section id="guides" class="bg-slate-100 py-12">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-slate-900">Featured citizenship guides</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          Practical overviews of descent rules, naturalisation timelines, and dual-citizenship rules.
+        </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          guides.map((g) => (
+            <CountryCard
+              slug={g.id}
+              name={g.data.name}
+              iso2={g.data.iso2}
+              capital={g.data.capital}
+              region={g.data.region}
+              summary={g.data.summary}
+              citizenshipByDescent={g.data.citizenshipByDescent}
+              naturalizationYears={g.data.naturalizationYears}
+              dualCitizenshipAllowed={g.data.dualCitizenshipAllowed}
+              officialFeeEUR={g.data.officialFeeEUR}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
