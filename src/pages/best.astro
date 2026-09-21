@@ -6,6 +6,8 @@ import rankingsData from '../data/rankings.json';
 import lawsData from '../data/citizenship-laws.json';
 import type { RankingsData, CitizenshipLawsData } from '../data/types';
 
+export const prerender = true;
+
 const { rankings } = rankingsData as unknown as RankingsData;
 const { countries } = lawsData as unknown as CitizenshipLawsData;
 const lawByCode = new Map(countries.map((c) => [c.iso2, c]));

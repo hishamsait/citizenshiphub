@@ -6,6 +6,8 @@ import matrixData from '../../data/visa-matrix.json';
 import passportsData from '../../data/passports.json';
 import type { VisaMatrix, PassportsData } from '../../data/types';
 
+export const prerender = true;
+
 const GROUPS: AccessStatus[] = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa'];
 
 export async function getStaticPaths() {

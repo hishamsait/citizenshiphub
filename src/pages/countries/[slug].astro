@@ -9,6 +9,8 @@ import passportsData from '../../data/passports.json';
 import matrixData from '../../data/visa-matrix.json';
 import type { PassportsData, VisaMatrix } from '../../data/types';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const countries = await getCollection('countries');
   return countries.map((entry) => ({

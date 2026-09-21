@@ -6,6 +6,8 @@ import passportsData from '../data/passports.json';
 import { getWorldPaths } from '../lib/map';
 import type { VisaMatrix, PassportsData } from '../data/types';
 
+export const prerender = true;
+
 const { matrix } = matrixData as unknown as VisaMatrix;
 const { passports } = passportsData as unknown as PassportsData;
 const countries = passports.map((p) => ({ code: p.code, name: p.name, region: p.region }));

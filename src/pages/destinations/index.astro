@@ -4,6 +4,8 @@ import { slugify } from '../../lib/utils';
 import passportsData from '../../data/passports.json';
 import type { PassportsData } from '../../data/types';
 
+export const prerender = true;
+
 const { passports } = passportsData as unknown as PassportsData;
 
 const byRegion = new Map<string, typeof passports>();

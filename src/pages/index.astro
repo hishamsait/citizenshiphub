@@ -8,6 +8,8 @@ import { getCollection } from 'astro:content';
 import rankingsData from '../data/rankings.json';
 import type { RankingsData } from '../data/types';
 
+export const prerender = true;
+
 const { rankings } = rankingsData as unknown as RankingsData;
 
 const featuredSlugs = new Set(['ireland', 'germany', 'japan', 'portugal', 'italy', 'spain']);

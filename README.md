@@ -18,7 +18,7 @@ every country with a practical guide to acquiring its citizenship.
 
 ## Requirements
 
-- **Node** — `20.18.2` (see [`.nvmrc`](.nvmrc)); supported ranges are `18.20.8 || >=20.3.0 <21 || >=22`.
+- **Node** — `22` (see [`.nvmrc`](.nvmrc)).
 - **npm** (or pnpm — see the `pnpm.onlyBuiltDependencies` entry in `package.json`).
 
 ## Quick start
@@ -158,6 +158,61 @@ untouched.
 - `map.ts` — projects `world-countries.geo.json` into SVG path strings (server-side, cached).
 - `utils.ts` — `cn`, `formatNumber`, `formatEuro`, `slugify`.
 - `visa.ts` — decodes visa-matrix cells and exposes status labels, badges, ranks, and map fill colours.
+
+## Deployment (Cloudflare)
+
+The site deploys to **Cloudflare Pages** with hybrid rendering via the `@astrojs/cloudflare` adapter. Every content
+page is pre-rendered to pure HTML at build time (keeping the 100/100 PageSpeed / zero-JS advantage), while `/api/*`
+routes run on Cloudflare Workers and query **Cloudflare D1** at the edge. Search is provided by **Pagefind**, a static
+index generated post-build.
+
+| Layer        | Technology                                             |
+| ------------ | ------------------------------------------------------ |
+| Hosting/CDN  | Cloudflare Pages (unlimited static bandwidth)          |
+| Edge compute | Cloudflare Workers via `@astrojs/cloudflare`           |
+| Database     | Cloudflare D1 (SQLite) — binding `DB`                  |
+| Search       | Pagefind (static index in `dist/pagefind/`)            |
+
+### CI/CD
+
+A GitHub Actions workflow (`.github/workflows/deploy.yml`) type-checks, builds, indexes search, applies D1 migrations,
+seeds the database, and deploys to Cloudflare Pages on every push to `main`.
+
+Required GitHub secrets:
+
+| Secret                  | Description                                        |
+| ----------------------- | -------------------------------------------------- |
+| `CLOUDFLARE_API_TOKEN`  | Cloudflare API token (Workers + Pages + D1 edit)   |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare account ID                         |
+
+```bash
+gh secret set CLOUDFLARE_API_TOKEN
+gh secret set CLOUDFLARE_ACCOUNT_ID
+```
+
+### One-time setup
+
+```bash
+npx wrangler login                                        # authenticate with Cloudflare
+npx wrangler d1 create citizenshiphub-db                  # create the D1 database
+# copy the returned database_id into wrangler.jsonc
+npx wrangler d1 migrations apply citizenshiphub-db --remote
+npm run db:seed                                           # load countries, rankings, visa rules
+```
+
+### Local development
+
+```bash
+npm install
+npm run dev                       # http://localhost:4321 (platformProxy + local D1)
+npm run build                     # type-check + build + Pagefind index
+npx wrangler d1 migrations apply citizenshiphub-db --local
+```
+
+### API routes
+
+- `GET  /api/visa-lookup?from=DE&to=US` — visa requirement between two countries.
+- `POST /api/lead` — capture a lead: `{ "email": "...", "targetCountryIso": "PT", "serviceType": "Golden Visa" }`.
 
 ## Disclaimer
 

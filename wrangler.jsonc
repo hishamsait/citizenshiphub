@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "citizenshiphub",
+  "compatibility_date": "2026-05-03",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "citizenshiphub-db",
+      "database_id": "657b53a0-85ca-4504-a8aa-09e30a28a4ad",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

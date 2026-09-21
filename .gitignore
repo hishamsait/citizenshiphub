@@ -15,3 +15,9 @@ pnpm-debug.log*
 .env.production
 # OS
 .DS_Store
+
+# Cloudflare / Wrangler
+.wrangler/
+.dev.vars
+worker-configuration.d.ts
+scripts/.generated/
