@@ -1,0 +1,146 @@
+---
+import '../../styles/global.css';
+import { SESSION_COOKIE, verifySessionToken } from '../../lib/auth/session';
+
+const secret = Astro.locals.runtime?.env?.ADMIN_TOTP_SECRET;
+const configured = typeof secret === 'string' && secret.length > 0;
+
+const rawNext = Astro.url.searchParams.get('next') ?? '/console/';
+
+// If already authenticated, go straight to the console.
+if (configured) {
+  const token = Astro.cookies.get(SESSION_COOKIE)?.value ?? '';
+  if (token && (await verifySessionToken(secret, token))) {
+    return Astro.redirect(
+      rawNext.startsWith('/') && !rawNext.startsWith('//') ? rawNext : '/console/',
+      302,
+    );
+  }
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sign in · Console · Citizenship Hub</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#151310" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-slate-100 text-slate-900 antialiased">
+    <main class="flex min-h-screen items-center justify-center px-4 py-16">
+      <div class="w-full max-w-sm">
+        <div class="mb-6 text-center">
+          <span
+            class="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-700 text-lg font-extrabold text-slate-50"
+            aria-hidden="true"
+          >
+            CH
+          </span>
+          <h1 class="font-display mt-4 text-2xl font-bold tracking-tight text-slate-900">
+            Sign in to the Console
+          </h1>
+          <p class="mt-1 text-sm text-slate-500">Enter the 6-digit code from your authenticator app.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          {
+            configured ? (
+              <form id="login-form" class="space-y-4">
+                <div>
+                  <label for="code" class="mb-1 block text-sm font-medium text-slate-700">
+                    Verification code
+                  </label>
+                  <input
+                    id="code"
+                    name="code"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="one-time-code"
+                    maxlength="6"
+                    required
+                    placeholder="••••••"
+                    class="w-full rounded-lg border border-slate-300 bg-white px-3 py-3 text-center text-2xl font-semibold tracking-[0.4em] text-slate-900 placeholder:text-slate-300 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+                  />
+                </div>
+                <p id="login-error" class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700" role="alert"></p>
+                <button
+                  type="submit"
+                  class="w-full rounded-lg bg-brand-700 px-4 py-3 text-sm font-semibold text-slate-50 transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  Continue
+                </button>
+              </form>
+            ) : (
+              <p class="text-sm leading-relaxed text-slate-500">
+                The Console is not configured. Set
+                <code class="mx-1 rounded bg-slate-100 px-1 py-0.5 text-xs">ADMIN_TOTP_SECRET</code>
+                and run
+                <code class="mx-1 rounded bg-slate-100 px-1 py-0.5 text-xs">npm run console:totp</code>
+                to enroll.
+              </p>
+            )
+          }
+        </div>
+
+        <p class="mt-6 text-center text-xs text-slate-400">
+          <a href="/" class="hover:text-slate-600">← Back to site</a>
+        </p>
+      </div>
+    </main>
+    <script>
+      const form = document.getElementById('login-form') as HTMLFormElement | null;
+      const input = document.getElementById('code') as HTMLInputElement | null;
+      const errorEl = document.getElementById('login-error') as HTMLElement | null;
+
+      if (form && input && errorEl) {
+        const submit = async () => {
+          const code = input.value.trim();
+          if (!/^\d{6}$/.test(code)) return;
+          const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+          if (btn) btn.disabled = true;
+          errorEl.classList.add('hidden');
+          try {
+            const next = new URLSearchParams(window.location.search).get('next') || '/console/';
+            const res = await fetch('/api/console/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ code, next }),
+            });
+            const data = (await res.json().catch(() => ({}))) as { error?: string; redirect?: string };
+            if (!res.ok) throw new Error(data.error || 'Sign-in failed.');
+            window.location.href = data.redirect || '/console/';
+          } catch (err) {
+            errorEl.textContent = err instanceof Error ? err.message : 'Sign-in failed.';
+            errorEl.classList.remove('hidden');
+            input.value = '';
+            input.focus();
+          } finally {
+            const btn2 = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+            if (btn2) btn2.disabled = false;
+          }
+        };
+
+        input.addEventListener('input', () => {
+          input.value = input.value.replace(/\D/g, '').slice(0, 6);
+          errorEl.classList.add('hidden');
+          if (input.value.length === 6) submit();
+        });
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          submit();
+        });
+      }
+    </script>
+  </body>
+</html>

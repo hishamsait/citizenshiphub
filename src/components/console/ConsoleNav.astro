@@ -1,0 +1,106 @@
+---
+import {
+  LayoutDashboard,
+  ChartColumn,
+  FileText,
+  Files,
+  Gauge,
+  Search,
+  Sparkles,
+  Users,
+  Globe,
+} from 'lucide-react';
+
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/console/' ? pathname === '/console/' : pathname.startsWith(href);
+
+const link = (href: string) =>
+  isActive(href)
+    ? 'bg-brand-700 text-slate-50'
+    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900';
+
+const icon = (href: string) => (isActive(href) ? 'text-gold-300' : 'text-slate-400');
+---
+
+<nav class="space-y-6">
+  <div class="space-y-1">
+    <a
+      href="/console/"
+      class:list={['group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold transition-colors', link('/console/')]}
+    >
+      <LayoutDashboard className={`h-4 w-4 shrink-0 ${icon('/console/')}`} aria-hidden="true" />
+      Dashboard
+    </a>
+  </div>
+
+  <div>
+    <p class="px-3 pb-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+      Analytics
+    </p>
+    <div class="space-y-1">
+      <a
+        href="/console/analytics/overview"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/overview')]}
+      >
+        <ChartColumn className={`h-4 w-4 shrink-0 ${icon('/console/analytics/overview')}`} aria-hidden="true" />
+        Overview
+      </a>
+      <a
+        href="/console/analytics/content"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/content')]}
+      >
+        <FileText className={`h-4 w-4 shrink-0 ${icon('/console/analytics/content')}`} aria-hidden="true" />
+        Content
+      </a>
+      <a
+        href="/console/analytics/pages"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/pages')]}
+      >
+        <Files className={`h-4 w-4 shrink-0 ${icon('/console/analytics/pages')}`} aria-hidden="true" />
+        Pages
+      </a>
+      <a
+        href="/console/analytics/performance"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/performance')]}
+      >
+        <Gauge className={`h-4 w-4 shrink-0 ${icon('/console/analytics/performance')}`} aria-hidden="true" />
+        Performance
+      </a>
+      <a
+        href="/console/analytics/search-console"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/search-console')]}
+      >
+        <Search className={`h-4 w-4 shrink-0 ${icon('/console/analytics/search-console')}`} aria-hidden="true" />
+        Search Console
+      </a>
+      <a
+        href="/console/analytics/ai-insights"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/ai-insights')]}
+      >
+        <Sparkles className={`h-4 w-4 shrink-0 ${icon('/console/analytics/ai-insights')}`} aria-hidden="true" />
+        AI Insights
+      </a>
+    </div>
+  </div>
+
+  <div class="space-y-1">
+    <a
+      href="/console/countries"
+      class:list={['group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold transition-colors', link('/console/countries')]}
+    >
+      <Globe className={`h-4 w-4 shrink-0 ${icon('/console/countries')}`} aria-hidden="true" />
+      Countries
+    </a>
+  </div>
+
+  <div class="space-y-1">
+    <a
+      href="/console/leads"
+      class:list={['group flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-semibold transition-colors', link('/console/leads')]}
+    >
+      <Users className={`h-4 w-4 shrink-0 ${icon('/console/leads')}`} aria-hidden="true" />
+      Leads
+    </a>
+  </div>
+</nav>

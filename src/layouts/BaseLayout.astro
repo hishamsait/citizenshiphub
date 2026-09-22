@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AccessibilityMenu from '../components/AccessibilityMenu.astro';
+import LeadModal from '../components/LeadModal.astro';
 
 interface Props {
   title: string;
@@ -92,6 +93,74 @@ const pageTitle = title.includes('Citizenship Hub') ? title : `${title} · Citiz
     </script>
 
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    <script is:inline>
+      (function () {
+        try {
+          var metrics = {};
+          var reported = false;
+          function report() {
+            if (reported) return;
+            reported = true;
+            for (var m in metrics) {
+              try {
+                var payload = JSON.stringify({ type: 'web_vital', metric: m, value: metrics[m] });
+                navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+              } catch (e) {}
+            }
+            if (maxDepth > 0) {
+              try {
+                var d = JSON.stringify({ type: 'scroll_depth', value: maxDepth, path: window.location.pathname });
+                navigator.sendBeacon('/api/track', new Blob([d], { type: 'application/json' }));
+              } catch (e) {}
+            }
+          }
+          function observe(type, entryType) {
+            try {
+              new PerformanceObserver(function (list) {
+                var entries = list.getEntries();
+                for (var i = 0; i < entries.length; i++) {
+                  var e = entries[i];
+                  if (type === 'CLS' && e.hadRecentInput) continue;
+                  var v = type === 'INP' ? e.duration : type === 'LCP' ? e.startTime : e.value;
+                  if (type === 'INP') metrics[type] = Math.max(metrics[type] || 0, v);
+                  else metrics[type] = v;
+                }
+              }).observe({ type: entryType, buffered: true });
+            } catch (e) {}
+          }
+          observe('LCP', 'largest-contentful-paint');
+          observe('CLS', 'layout-shift');
+          try {
+            new PerformanceObserver(function (list) {
+              var entries = list.getEntries();
+              for (var i = 0; i < entries.length; i++) {
+                var e = entries[i];
+                metrics['INP'] = Math.max(metrics['INP'] || 0, e.duration);
+              }
+            }).observe({ type: 'event', buffered: true, durationThreshold: 0 });
+          } catch (e) {}
+          try {
+            var nav = performance.getEntriesByType('navigation')[0];
+            if (nav && nav.responseStart) metrics['TTFB'] = nav.responseStart;
+          } catch (e) {}
+          var maxDepth = 0;
+          function updateDepth() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            if (height <= 0) return;
+            var pct = Math.round((scrollTop / height) * 100);
+            if (pct > maxDepth) maxDepth = pct;
+          }
+          window.addEventListener('scroll', updateDepth, { passive: true });
+          updateDepth();
+          document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'hidden') report();
+          });
+          window.addEventListener('pagehide', report);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body class="flex min-h-screen flex-col">
     <a
@@ -106,5 +175,6 @@ const pageTitle = title.includes('Citizenship Hub') ? title : `${title} · Citiz
     </main>
     <Footer />
     <AccessibilityMenu />
+    <LeadModal />
   </body>
 </html>

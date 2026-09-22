@@ -1,0 +1,244 @@
+---
+// Reusable lead-generation modal. Mount it once — it lives in `BaseLayout`
+// so it is available on every page. Open it either by adding
+// `data-lead-modal-open` (optionally with `data-service-type` and
+// `data-target-iso`) to any element, or programmatically via
+// `window.openLeadModal({ serviceType, targetCountryIso })`.
+import { X } from 'lucide-react';
+import passports from '../data/passports.json';
+
+interface PassportOption {
+  code: string;
+  name: string;
+}
+
+const passportsData = passports as { passports: PassportOption[] };
+const countries = passportsData.passports
+  .map((p) => ({ code: p.code, name: p.name }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 'Translation', 'Updates'];
+---
+
+<dialog
+  id="lead-modal"
+  aria-labelledby="lead-modal-title"
+  class="lead-modal m-auto max-h-[90vh] w-[calc(100vw-2rem)] max-w-lg overflow-y-auto rounded-2xl bg-white p-0 text-slate-900 shadow-2xl"
+>
+  <div class="p-6 sm:p-8">
+    <button
+      id="lead-modal-close"
+      type="button"
+      aria-label="Close"
+      class="absolute right-4 top-4 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+    >
+      <X className="h-5 w-5" aria-hidden="true" />
+    </button>
+
+    <div class="pr-8">
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-700">Free eligibility check</p>
+      <h2 id="lead-modal-title" class="mt-1 font-display text-2xl font-bold text-slate-900">
+        Get matched with a specialist
+      </h2>
+      <p id="lead-modal-subtitle" class="mt-2 text-sm leading-relaxed text-slate-500">
+        Tell us where you're headed and a licensed advisor will reach out — free, with no obligation.
+      </p>
+    </div>
+
+    <form id="lead-modal-form" class="mt-6 space-y-4">
+      <div>
+        <label for="lead-modal-name" class="mb-1 block text-sm font-medium text-slate-700">
+          Full name <span class="font-normal text-slate-400">(optional)</span>
+        </label>
+        <input
+          id="lead-modal-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+          placeholder="Jane Smith"
+        />
+      </div>
+
+      <div>
+        <label for="lead-modal-email" class="mb-1 block text-sm font-medium text-slate-700">Email</label>
+        <input
+          id="lead-modal-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+          placeholder="you@example.com"
+        />
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="lead-modal-service" class="mb-1 block text-sm font-medium text-slate-700">
+            I'm interested in
+          </label>
+          <select
+            id="lead-modal-service"
+            name="service"
+            class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+          >
+            {serviceTypes.map((s) => (
+              <option value={s}>{s}</option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label for="lead-modal-country" class="mb-1 block text-sm font-medium text-slate-700">
+            Country of interest
+          </label>
+          <select
+            id="lead-modal-country"
+            name="country"
+            class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+          >
+            <option value="">Not sure / any</option>
+            {countries.map((c) => (
+              <option value={c.code}>{c.name}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-brand-700 px-4 py-3 text-sm font-semibold text-slate-50 transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        Get my free eligibility check →
+      </button>
+
+      <p id="lead-modal-error" class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"></p>
+      <p class="text-xs leading-relaxed text-slate-400">
+        By submitting you agree to be contacted by email about immigration services. No spam — unsubscribe anytime.
+      </p>
+    </form>
+
+    <div id="lead-modal-success" class="hidden py-8 text-center">
+      <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-xl text-emerald-600">
+        ✓
+      </div>
+      <h3 class="mt-4 font-display text-xl font-bold text-slate-900">You're all set</h3>
+      <p class="mt-2 text-sm text-slate-500">A specialist will be in touch within one business day.</p>
+    </div>
+  </div>
+</dialog>
+
+<style is:global>
+  #lead-modal[open] {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+  }
+  #lead-modal::backdrop {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(3px);
+  }
+</style>
+
+<script>
+  const dialog = document.getElementById('lead-modal') as HTMLDialogElement | null;
+  const form = document.getElementById('lead-modal-form') as HTMLFormElement | null;
+  const success = document.getElementById('lead-modal-success') as HTMLElement | null;
+  const errorEl = document.getElementById('lead-modal-error') as HTMLElement | null;
+
+  type OpenOptions = {
+    serviceType?: string;
+    targetCountryIso?: string;
+    title?: string;
+    subtitle?: string;
+  };
+
+  const DEFAULT_TITLE = 'Get matched with a specialist';
+  const DEFAULT_SUBTITLE =
+    "Tell us where you're headed and a licensed advisor will reach out — free, with no obligation.";
+  const titleEl = document.getElementById('lead-modal-title');
+  const subtitleEl = document.getElementById('lead-modal-subtitle');
+
+  function openLeadModal(opts: OpenOptions = {}) {
+    if (!dialog || !form) return;
+    form.classList.remove('hidden');
+    if (success) success.classList.add('hidden');
+    if (errorEl) errorEl.classList.add('hidden');
+    form.reset();
+
+    if (titleEl) titleEl.textContent = opts.title || DEFAULT_TITLE;
+    if (subtitleEl) subtitleEl.textContent = opts.subtitle || DEFAULT_SUBTITLE;
+
+    const service = form.querySelector<HTMLSelectElement>('select[name="service"]');
+    const country = form.querySelector<HTMLSelectElement>('select[name="country"]');
+    if (service && opts.serviceType) service.value = opts.serviceType;
+    if (country && opts.targetCountryIso) country.value = opts.targetCountryIso;
+
+    dialog.showModal();
+  }
+
+  (window as unknown as { openLeadModal: typeof openLeadModal }).openLeadModal = openLeadModal;
+
+  // Open from any element carrying [data-lead-modal-open]
+  document.querySelectorAll<HTMLElement>('[data-lead-modal-open]').forEach((el) => {
+    el.addEventListener('click', () => {
+      openLeadModal({
+        serviceType: el.dataset.serviceType,
+        targetCountryIso: el.dataset.targetIso,
+        title: el.dataset.title,
+        subtitle: el.dataset.subtitle,
+      });
+    });
+  });
+
+  document.getElementById('lead-modal-close')?.addEventListener('click', () => dialog?.close());
+
+  // Backdrop click closes
+  dialog?.addEventListener('click', (e) => {
+    if (!dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    const inside =
+      e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+    if (!inside) dialog.close();
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form || !dialog) return;
+
+    const name = (form.querySelector<HTMLInputElement>('input[name="name"]')?.value ?? '').trim();
+    const email = (form.querySelector<HTMLInputElement>('input[name="email"]')?.value ?? '').trim();
+    const serviceType = form.querySelector<HTMLSelectElement>('select[name="service"]')?.value ?? 'Golden Visa';
+    const targetCountryIso = form.querySelector<HTMLSelectElement>('select[name="country"]')?.value ?? '';
+
+    if (!email) return;
+
+    const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    if (errorEl) errorEl.classList.add('hidden');
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, targetCountryIso, serviceType }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error || 'Request failed');
+      }
+      form.classList.add('hidden');
+      if (success) success.classList.remove('hidden');
+      setTimeout(() => dialog.close(), 1600);
+    } catch (err) {
+      if (errorEl) {
+        errorEl.textContent =
+          err instanceof Error ? err.message : 'Something went wrong — please try again.';
+        errorEl.classList.remove('hidden');
+      }
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+</script>
+

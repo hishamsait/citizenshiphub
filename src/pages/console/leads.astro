@@ -1,0 +1,202 @@
+---
+import ConsoleLayout from '../../layouts/ConsoleLayout.astro';
+import { getDb } from '../../lib/db/client';
+import { listLeads, leadsByStatus, LEAD_STATUSES } from '../../lib/db/leads';
+import { formatNumber } from '../../lib/utils';
+import { Search, Trash2 } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const url = Astro.url;
+const q = (url.searchParams.get('q') ?? '').trim();
+const serviceType = url.searchParams.get('serviceType') ?? '';
+const status = url.searchParams.get('status') ?? '';
+const page = Math.max(1, parseInt(url.searchParams.get('page') ?? '1', 10) || 1);
+
+const data = await listLeads(db, { q, serviceType, status }, page, 25);
+const statusCounts = await leadsByStatus(db);
+
+const serviceTypes = ['Legal Help', 'Translation', 'Golden Visa', 'Citizenship by Investment', 'Updates'];
+
+const statusLabel = (s: string) =>
+  ({ new: 'New', contacted: 'Contacted', qualified: 'Qualified', closed: 'Closed' })[s] ?? s;
+
+function pageHref(p: number): string {
+  const params = new URLSearchParams();
+  if (q) params.set('q', q);
+  if (serviceType) params.set('serviceType', serviceType);
+  if (status) params.set('status', status);
+  params.set('page', String(p));
+  return `/console/leads?${params.toString()}`;
+}
+
+const fmt = (n: number) => formatNumber(n);
+---
+
+<ConsoleLayout
+  title="Leads"
+  description="Every enquiry captured by the lead modal, with a simple pipeline status."
+>
+  <form method="get" action="/console/leads" class="flex flex-wrap items-center gap-3">
+    <div class="relative">
+      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" aria-hidden="true" />
+      <input
+        name="q"
+        value={q}
+        placeholder="Search name, email or country…"
+        class="w-64 rounded-lg border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-700/30"
+      />
+    </div>
+    <select
+      name="serviceType"
+      class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-brand-700 focus:outline-none"
+    >
+      <option value="">All services</option>
+      {serviceTypes.map((s) => <option value={s} selected={serviceType === s}>{s}</option>)}
+    </select>
+    <select
+      name="status"
+      class="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 focus:border-brand-700 focus:outline-none"
+    >
+      <option value="">All statuses</option>
+      {LEAD_STATUSES.map((s) => <option value={s} selected={status === s}>{statusLabel(s)}</option>)}
+    </select>
+    <button
+      type="submit"
+      class="rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+    >
+      Filter
+    </button>
+    {
+      (q || serviceType || status) && (
+        <a href="/console/leads" class="text-sm font-medium text-slate-500 hover:text-slate-900">Reset</a>
+      )
+    }
+  </form>
+
+  <div class="mt-4 flex flex-wrap items-center gap-2 text-sm">
+    <span class="rounded-full bg-slate-200 px-3 py-1 font-semibold text-slate-700">
+      Total · {fmt(data.total)}
+    </span>
+    {
+      statusCounts.map((s) => (
+        <span class="rounded-full bg-white px-3 py-1 text-slate-500 ring-1 ring-slate-200">
+          {statusLabel(s.label)} · {fmt(s.count)}
+        </span>
+      ))
+    }
+  </div>
+  <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+    {
+      data.leads.length === 0 ? (
+        <p class="py-16 text-center text-sm text-slate-400">No leads match your filters.</p>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[720px] text-sm">
+            <thead>
+              <tr class="border-b border-slate-100 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400">
+                <th class="px-5 py-3 font-medium">Contact</th>
+                <th class="px-5 py-3 font-medium">Service</th>
+                <th class="px-5 py-3 font-medium">Country</th>
+                <th class="px-5 py-3 font-medium">Received</th>
+                <th class="px-5 py-3 font-medium">Status</th>
+                <th class="px-5 py-3 text-right font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {
+                data.leads.map((lead) => (
+                  <tr class="align-middle hover:bg-slate-50">
+                    <td class="px-5 py-3">
+                      <p class="font-medium text-slate-900">{lead.name || '—'}</p>
+                      <p class="text-xs text-slate-500">{lead.email}</p>
+                    </td>
+                    <td class="px-5 py-3 text-slate-700">{lead.serviceType}</td>
+                    <td class="px-5 py-3 text-slate-700">
+                      {lead.targetCountryName ?? (lead.targetCountryIso || '—')}
+                    </td>
+                    <td class="px-5 py-3 tabular-nums text-slate-500">{lead.createdAt.slice(0, 16)}</td>
+                    <td class="px-5 py-3">
+                      <select
+                        class="lead-status rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-sm text-slate-900 focus:border-brand-700 focus:outline-none"
+                        data-id={lead.id}
+                      >
+                        {LEAD_STATUSES.map((s) => <option value={s} selected={lead.status === s}>{statusLabel(s)}</option>)}
+                      </select>
+                    </td>
+                    <td class="px-5 py-3 text-right">
+                      <button
+                        type="button"
+                        class="lead-delete inline-flex h-8 w-8 items-center justify-center rounded-lg text-slate-400 transition hover:bg-red-50 hover:text-red-600"
+                        data-id={lead.id}
+                        aria-label="Delete lead"
+                      >
+                        <Trash2 className="h-4 w-4" aria-hidden="true" />
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+  </div>
+
+  {
+    data.totalPages > 1 && (
+      <nav class="mt-5 flex items-center justify-between" aria-label="Pagination">
+        <p class="text-sm text-slate-500">
+          Page {data.page} of {data.totalPages}
+        </p>
+        <div class="flex items-center gap-2">
+          {
+            data.page > 1 && (
+              <a
+                href={pageHref(data.page - 1)}
+                class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+              >
+                Previous
+              </a>
+            )
+          }
+          {
+            data.page < data.totalPages && (
+              <a
+                href={pageHref(data.page + 1)}
+                class="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 hover:bg-slate-50"
+              >
+                Next
+              </a>
+            )
+          }
+        </div>
+      </nav>
+    )
+  }
+</ConsoleLayout>
+
+<script>
+  document.querySelectorAll<HTMLSelectElement>('.lead-status').forEach((select) => {
+    select.addEventListener('change', async () => {
+      const id = select.dataset.id;
+      const res = await fetch('/api/console/leads', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: Number(id), status: select.value }),
+      });
+      if (!res.ok) alert('Could not update lead status.');
+      location.reload();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.lead-delete').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      if (!confirm('Delete this lead permanently?')) return;
+      const id = btn.dataset.id;
+      const res = await fetch(`/api/console/leads?id=${id}`, { method: 'DELETE' });
+      if (!res.ok) alert('Could not delete lead.');
+      location.reload();
+    });
+  });
+</script>

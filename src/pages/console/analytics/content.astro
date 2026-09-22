@@ -1,0 +1,98 @@
+---
+import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
+import StatCard from '../../../components/console/StatCard.astro';
+import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
+import { getDb } from '../../../lib/db/client';
+import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { resolveRange } from '../../../lib/analytics/types';
+import { formatNumber } from '../../../lib/utils';
+import { Globe, BookOpen, Percent, FileWarning, Clock } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const range = resolveRange(Astro.url.searchParams.get('range'));
+const data = await firstPartyProvider.content(db, range);
+
+const fmt = (n: number) => formatNumber(n);
+const maxViews = Math.max(1, ...data.topGuides.map((g) => g.views));
+---
+
+<ConsoleLayout
+  title="Analytics — Content"
+  description="Coverage and readership of the editorial guides."
+>
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500">Views in the last {range.days} days</p>
+    <TimeRangePicker />
+  </div>
+
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <StatCard label="Countries" value={fmt(data.totalCountries)} icon={Globe} hint="In the dataset" />
+    <StatCard label="Guides" value={fmt(data.totalGuides)} icon={BookOpen} hint="Published guides" />
+    <StatCard label="Coverage" value={`${data.coveragePct.toFixed(1)}%`} icon={Percent} hint="Countries with a guide" />
+    <StatCard label="Missing guides" value={fmt(data.withoutGuides)} icon={FileWarning} hint="Content gaps" />
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-3">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:col-span-2">
+      <h2 class="mb-3 text-sm font-semibold text-slate-900">Most viewed guides</h2>
+      {
+        data.topGuides.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No guide views recorded yet.</p>
+        ) : (
+          <ul class="space-y-3">
+            {
+              data.topGuides.map((g) => (
+                <li>
+                  <div class="flex items-center justify-between gap-3 text-sm">
+                    <a href={`/countries/${g.slug}`} class="truncate text-slate-700 hover:text-brand-700">
+                      {g.name}
+                    </a>
+                    <span class="shrink-0 tabular-nums text-slate-400">{fmt(g.views)} views</span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-brand-700"
+                      style={`width:${((g.views / maxViews) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+
+    <div class="space-y-6">
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="mb-3 flex items-center gap-2">
+          <Clock className="h-4 w-4 text-slate-400" aria-hidden="true" />
+          <h2 class="text-sm font-semibold text-slate-900">Data freshness</h2>
+        </div>
+        <p class="text-xs text-slate-400">Latest dataset refresh</p>
+        <p class="mt-1 text-sm font-medium text-slate-900">
+          {data.latestGeneratedAt ? String(data.latestGeneratedAt).slice(0, 16) : 'Unknown'}
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="mb-3 flex items-center gap-2">
+          <Percent className="h-4 w-4 text-slate-400" aria-hidden="true" />
+          <h2 class="text-sm font-semibold text-slate-900">Coverage</h2>
+        </div>
+        <div class="flex items-baseline justify-between">
+          <span class="text-2xl font-bold text-slate-900">{data.coveragePct.toFixed(1)}%</span>
+          <span class="text-xs text-slate-400">
+            {data.totalGuides} / {data.totalCountries}
+          </span>
+        </div>
+        <div class="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+          <div
+            class="h-2 rounded-full bg-gold-500"
+            style={`width:${Math.min(100, data.coveragePct).toFixed(1)}%`}
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ConsoleLayout>

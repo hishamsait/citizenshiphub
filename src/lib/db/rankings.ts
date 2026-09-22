@@ -12,6 +12,9 @@ export interface RankedCountry {
   population: number | null;
   areaKm2: number | null;
   incomeGroup: string | null;
+  gdpPerCapitaUsd: number | null;
+  hdi: number | null;
+  cpiScore: number | null;
   visaFree: number;
   visaOnArrival: number;
   eta: number;
@@ -34,10 +37,14 @@ export async function listRankings(db: Db): Promise<RankedCountry[]> {
         r.rank_position AS rank, r.mobility_score AS mobilityScore,
         r.visa_free_count AS visaFree, r.voa_count AS visaOnArrival, r.eta_count AS eta,
         r.evisa_count AS eVisa, r.visa_required_count AS visaRequired,
-        r.no_admission_count AS noAdmission, r.dense_rank AS denseRank, r.percentile
+        r.no_admission_count AS noAdmission, r.dense_rank AS denseRank, r.percentile,
+        e.gdp_per_capita_usd AS gdpPerCapitaUsd, e.hdi AS hdi,
+        f.cpi_score AS cpiScore
       FROM countries c
       JOIN passport_rankings r ON r.passport_iso = c.iso2
       LEFT JOIN country_profiles p ON p.iso2 = c.iso2
+      LEFT JOIN country_economics e ON e.iso2 = c.iso2
+      LEFT JOIN country_freedom f ON f.iso2 = c.iso2
       ORDER BY r.rank_position ASC`)
     .all<RankedCountry>();
   return results;

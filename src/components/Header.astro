@@ -14,8 +14,7 @@ const nav = [
   { href: '/explore/', label: 'Explorer' },
   { href: '/compare/', label: 'Compare' },
   { href: '/best/', label: 'Best passports' },
-  { href: '/destinations/', label: 'Destinations' },
-  { href: '/countries/', label: 'Guides' },
+  { href: '/countries/', label: 'Countries' },
 ];
 
 const navClasses = (href: string) =>
@@ -49,6 +48,15 @@ const navClasses = (href: string) =>
       }
     </nav>
 
+    <button
+      type="button"
+      data-lead-modal-open
+      data-service-type="Golden Visa"
+      class="hidden rounded-lg bg-brand-700 px-4 py-2 text-sm font-semibold text-slate-50 transition hover:bg-brand-800 sm:inline-flex"
+    >
+      Free eligibility check
+    </button>
+
     <details class="group relative sm:hidden">
       <summary
         class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-lg text-slate-700 transition hover:bg-slate-100 [&::-webkit-details-marker]:hidden"
@@ -69,7 +77,24 @@ const navClasses = (href: string) =>
             ))
           }
         </nav>
+        <button
+          type="button"
+          data-lead-modal-open
+          data-service-type="Golden Visa"
+          class="mt-2 w-full rounded-lg bg-brand-700 px-3 py-2 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+        >
+          Free eligibility check
+        </button>
       </div>
     </details>
   </div>
+
+  <script>
+    // Close the mobile menu when a lead-modal trigger inside it is clicked.
+    document.querySelectorAll<HTMLElement>('[data-lead-modal-open]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.closest('details')?.removeAttribute('open');
+      });
+    });
+  </script>
 </header>

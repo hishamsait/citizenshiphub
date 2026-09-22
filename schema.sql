@@ -48,8 +48,9 @@ CREATE TABLE IF NOT EXISTS passport_rankings (
 CREATE TABLE IF NOT EXISTS leads (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     email TEXT NOT NULL,
+    name TEXT,
     target_country_iso TEXT NOT NULL,
-    service_type TEXT NOT NULL, -- 'Legal Help', 'Translation', 'Golden Visa'
+    service_type TEXT NOT NULL, -- 'Legal Help', 'Translation', 'Golden Visa', 'Citizenship by Investment', 'Updates'
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 

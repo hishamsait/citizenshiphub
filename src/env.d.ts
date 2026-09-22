@@ -25,4 +25,6 @@ interface Env {
     batch<T = unknown>(statements: D1PreparedStatement[]): Promise<D1Result<T>[]>;
     exec(query: string): Promise<D1Result>;
   };
+  /** Base32 TOTP secret for the passwordless Console sign-in. */
+  ADMIN_TOTP_SECRET?: string;
 }

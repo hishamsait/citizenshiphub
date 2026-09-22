@@ -1,0 +1,22 @@
+---
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props;
+
+const map: Record<string, { label: string; cls: string }> = {
+  new: { label: 'New', cls: 'bg-blue-50 text-blue-700' },
+  contacted: { label: 'Contacted', cls: 'bg-amber-50 text-amber-700' },
+  qualified: { label: 'Qualified', cls: 'bg-emerald-50 text-emerald-700' },
+  closed: { label: 'Closed', cls: 'bg-slate-200 text-slate-500' },
+};
+
+const s = map[status] ?? { label: status, cls: 'bg-slate-100 text-slate-500' };
+---
+
+<span
+  class:list={['inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold', s.cls]}
+>
+  {s.label}
+</span>

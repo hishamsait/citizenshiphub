@@ -6,6 +6,7 @@ import { cn } from '../lib/utils';
 export interface TableRow {
   code: string;
   name: string;
+  rank: number;
   flag?: string | null;
   region: string;
   subregion: string;
@@ -187,7 +188,7 @@ export default function PassportRankTable({ rows, initialQuery = '', totalCountr
   const [sortKey, setSortKey] = useState<string>('mobilityScore');
   const [sortDir, setSortDir] = useState<SortDir>('desc');
   const [hidden, setHidden] = useState<Set<string>>(
-    () => new Set(COLUMNS.filter((c) => !['visaFree', 'visaOnArrival', 'eta', 'eVisa'].includes(c.id)).map((c) => c.id)),
+    () => new Set(COLUMNS.filter((c) => !['visaFree', 'visaOnArrival', 'eta', 'eVisa', 'gdpPerCapitaUsd', 'hdi', 'population', 'cpiScore'].includes(c.id)).map((c) => c.id)),
   );
   const [columnsOpen, setColumnsOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -281,9 +282,9 @@ export default function PassportRankTable({ rows, initialQuery = '', totalCountr
 
   function exportCsv() {
     const header = ['Rank', 'Code', 'Name', 'Region', modeMeta.label, ...visibleColumns.map((c) => c.label)];
-    const lines = filtered.map((r, i) => {
+    const lines = filtered.map((r) => {
       const cells = [
-        String(i + 1),
+        String(r.rank),
         r.code,
         r.name,
         r.region,
@@ -400,7 +401,7 @@ export default function PassportRankTable({ rows, initialQuery = '', totalCountr
         <table className="w-full min-w-[760px] text-left text-sm">
           <thead className="bg-slate-100 text-xs uppercase tracking-wide text-slate-500">
             <tr>
-              <th scope="col" className="w-10 px-3 py-3 text-right">#</th>
+              <th scope="col" className="w-10 px-3 py-3 text-right">Rank</th>
               <SortableTh label="Passport" active={sortKey === 'name'} direction={sortDir} onClick={() => toggleSort('name')} />
               <SortableTh label="Region" active={sortKey === 'region'} direction={sortDir} onClick={() => toggleSort('region')} />
               <SortableTh label={modeMeta.label} active={sortKey === mode} direction={sortDir} onClick={() => toggleSort(mode)} className="text-right" />
@@ -417,24 +418,25 @@ export default function PassportRankTable({ rows, initialQuery = '', totalCountr
                 </td>
               </tr>
             )}
-            {visible.map((r, i) => {
+            {visible.map((r) => {
               const scoreVal = (r as unknown as Record<string, number | null>)[mode] ?? null;
               return (
                 <tr key={r.code} className="even:bg-slate-50 hover:bg-slate-100">
                   <td className="px-3 py-3 text-right">
-                    <span className={cn('inline-flex h-6 min-w-6 items-center justify-center rounded-md px-1.5 text-xs font-bold', i < 10 ? 'bg-brand-50 text-brand-700' : 'bg-slate-100 text-slate-600')}>
-                      {i + 1}
+                    <span className={cn('inline-flex h-6 min-w-6 items-center justify-center rounded-md px-1.5 text-xs font-bold', r.rank <= 10 ? 'bg-brand-50 text-brand-700' : 'bg-slate-100 text-slate-600')}>
+                      {r.rank}
                     </span>
                   </td>
                   <td className="px-3 py-3">
                     <div className="flex items-center gap-2">
                       {r.flag && <span className="text-lg" aria-hidden="true">{r.flag}</span>}
                       <span className="font-mono text-xs text-slate-400">{r.code}</span>
-                      <span className="font-medium text-slate-900">{r.name}</span>
-                      {r.guideSlug && (
-                        <a href={`/countries/${r.guideSlug}/`} className="rounded-md bg-brand-50 px-1.5 py-0.5 text-xs font-semibold text-brand-700 hover:bg-brand-100">
-                          Guide
+                      {r.guideSlug ? (
+                        <a href={`/countries/${r.guideSlug}/`} className="font-medium text-slate-900 underline-offset-2 hover:text-brand-700 hover:underline">
+                          {r.name}
                         </a>
+                      ) : (
+                        <span className="font-medium text-slate-900">{r.name}</span>
                       )}
                     </div>
                     <p className="mt-0.5 text-xs text-slate-400">

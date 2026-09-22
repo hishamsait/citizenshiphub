@@ -17,14 +17,19 @@ const regions = [...byRegion.keys()].sort();
 ---
 
 <BaseLayout
-  title="Citizenship Guides"
-  description="Citizenship-by-descent and naturalisation guides for 199 countries — descent rules, naturalisation timelines, dual-citizenship rules, and fees."
+  title="Countries"
+  description="Browse 199 countries — see who can visit each one and how to get citizenship by descent or naturalisation."
 >
   <section>
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Citizenship guides</h1>
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-slate-900">Home</a>
+        <span aria-hidden="true" class="mx-1.5 text-slate-300">·</span>
+        <span class="text-slate-700">Countries</span>
+      </nav>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Countries</h1>
       <p class="mt-3 max-w-2xl text-slate-600">
-        Descent rules, naturalisation timelines, dual-citizenship rules, and fees for {guides.length} countries.
+        Who can visit each country — and how to get its passport by descent, naturalisation, or investment.
       </p>
     </div>
   </section>

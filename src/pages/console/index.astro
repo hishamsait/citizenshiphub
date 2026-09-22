@@ -1,0 +1,92 @@
+---
+import ConsoleLayout from '../../layouts/ConsoleLayout.astro';
+import StatCard from '../../components/console/StatCard.astro';
+import Sparkline from '../../components/console/Sparkline.astro';
+import TimeRangePicker from '../../components/console/TimeRangePicker.astro';
+import Badge from '../../components/console/Badge.astro';
+import { getDb } from '../../lib/db/client';
+import { firstPartyProvider } from '../../lib/analytics/first-party';
+import { resolveRange } from '../../lib/analytics/types';
+import { listLeads } from '../../lib/db/leads';
+import { formatNumber } from '../../lib/utils';
+import { Users, Eye, MousePointerClick, TrendingUp, ArrowRight } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const range = resolveRange(Astro.url.searchParams.get('range'));
+const overview = await firstPartyProvider.overview(db, range);
+const recent = await listLeads(db, {}, 1, 6);
+
+const fmt = (n: number) => formatNumber(n);
+---
+
+<ConsoleLayout
+  title="Dashboard"
+  description="A quick snapshot of traffic, conversion and the latest leads."
+>
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500">Showing the last {range.days} days</p>
+    <TimeRangePicker />
+  </div>
+
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    <StatCard label="Visitors" value={fmt(overview.visitors)} icon={Users} hint="Unique sessions" />
+    <StatCard label="Pageviews" value={fmt(overview.pageviews)} icon={Eye} hint="All page loads" />
+    <StatCard
+      label="Leads"
+      value={fmt(overview.leads)}
+      icon={MousePointerClick}
+      hint="Captured enquiries"
+    />
+    <StatCard
+      label="Conversion"
+      value={overview.conversionRate == null ? '—' : `${overview.conversionRate.toFixed(1)}%`}
+      icon={TrendingUp}
+      hint="Leads per visitor"
+    />
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-3">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:col-span-2">
+      <div class="mb-4 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-900">Pageviews over time</h2>
+        <span class="text-xs text-slate-400">{range.label}</span>
+      </div>
+      <Sparkline points={overview.series.map((s) => s.views)} />
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-sm font-semibold text-slate-900">Recent leads</h2>
+        <a href="/console/leads" class="text-xs font-semibold text-brand-700 hover:text-brand-800">
+          View all
+        </a>
+      </div>
+      {
+        recent.leads.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No leads captured yet.</p>
+        ) : (
+          <ul class="divide-y divide-slate-100">
+            {
+              recent.leads.map((lead) => (
+                <li class="flex items-center justify-between gap-3 py-2.5">
+                  <div class="min-w-0">
+                    <p class="truncate text-sm font-medium text-slate-900">{lead.name || lead.email}</p>
+                    <p class="truncate text-xs text-slate-500">{lead.serviceType}</p>
+                  </div>
+                  <Badge status={lead.status} />
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+      <a
+        href="/console/leads"
+        class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 transition hover:text-brand-800"
+      >
+        Open leads
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</ConsoleLayout>

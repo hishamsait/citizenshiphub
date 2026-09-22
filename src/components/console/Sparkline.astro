@@ -1,0 +1,81 @@
+---
+interface Props {
+  points: number[];
+  height?: number;
+  width?: number;
+}
+
+const { points, height = 96, width = 320 } = Astro.props;
+const n = points.length;
+const max = Math.max(1, ...points);
+const min = 0;
+const span = Math.max(1, max - min);
+const px = (i: number) => (n > 1 ? (i / (n - 1)) * width : width / 2);
+const py = (v: number) => height - 4 - ((v - min) / span) * (height - 8);
+const line = points.map((v, i) => `${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+const area = `0,${height} ${line} ${px(n - 1).toFixed(1)},${height}`;
+---
+
+{
+  n === 0 ? (
+    <div class="flex h-24 flex-col items-center justify-center rounded-xl bg-slate-50 text-sm text-slate-400">
+      <p class="font-medium text-slate-500">No pageviews yet</p>
+      <p class="mt-1 text-xs">Traffic will appear here once visitors reach your site.</p>
+    </div>
+  ) : (
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      preserveAspectRatio="none"
+      class="h-24 w-full"
+      role="img"
+      aria-label="Pageviews over time"
+    >
+      <line
+        x1="0"
+        y1={height - 1}
+        x2={width}
+        y2={height - 1}
+        stroke="currentColor"
+        stroke-width="1"
+        vector-effect="non-scaling-stroke"
+        class="text-slate-200"
+      />
+      {
+        n === 1 ? (
+          <circle
+            cx={px(0).toFixed(1)}
+            cy={py(points[0]).toFixed(1)}
+            r="4"
+            fill="currentColor"
+            class="text-brand-700"
+          />
+        ) : (
+          <>
+            <polygon points={area} fill="currentColor" class="text-brand-700/10" />
+            <polyline
+              points={line}
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              vector-effect="non-scaling-stroke"
+              class="text-brand-700"
+            />
+            {
+              points.map((v, i) => (
+                <circle
+                  cx={px(i).toFixed(1)}
+                  cy={py(v).toFixed(1)}
+                  r="3"
+                  fill="currentColor"
+                  class="text-brand-700"
+                />
+              ))
+            }
+          </>
+        )
+      }
+    </svg>
+  )
+}

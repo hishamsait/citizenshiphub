@@ -1,0 +1,25 @@
+---
+import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
+import CountriesTable from '../../../components/console/CountriesTable';
+import { getDb } from '../../../lib/db/client';
+import { listCountriesWithCoverage } from '../../../lib/db/countries-console';
+import { listCountriesAnalytics } from '../../../lib/db/country-analytics';
+
+const db = getDb(Astro.locals);
+const [countries, analytics] = await Promise.all([
+  listCountriesWithCoverage(db),
+  listCountriesAnalytics(db),
+]);
+const rows = countries.map((c) => ({
+  ...c,
+  analytics: analytics[c.iso2] ?? { views: 0, leads: 0, scrollAvg: null },
+}));
+---
+
+<ConsoleLayout
+  title="Countries"
+  description="Data coverage, freshness and analytics for every country. Click a row to open its detail."
+>
+  <CountriesTable client:load countries={rows} />
+</ConsoleLayout>
+

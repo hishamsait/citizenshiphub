@@ -1,23 +1,83 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PassportCompare from '../components/PassportCompare';
+import PassportCompare, { type CompareRecord } from '../components/PassportCompare';
 import { getDb } from '../lib/db/client';
 import { listCountries } from '../lib/db/countries';
 import { listRankings } from '../lib/db/rankings';
+import { listEconomics } from '../lib/db/economics';
+import { listFreedom } from '../lib/db/freedom';
+import { listTax } from '../lib/db/tax';
+import { listCitizenshipLaws } from '../lib/db/citizenship';
+import { scoreAcquisition } from '../lib/acquire';
+import { scoreEconomy, scoreFreedom, scoreTax } from '../lib/scores';
 
 const db = getDb(Astro.locals);
 const countries = (await listCountries(db)).map((c) => ({ code: c.code, name: c.name, region: c.region }));
-const ranked = (await listRankings(db)).map((r) => ({
-  code: r.code,
-  name: r.name,
-  rank: r.rank,
-  mobilityScore: r.mobilityScore,
-  visaFree: r.visaFree,
-  visaOnArrival: r.visaOnArrival,
-  eta: r.eta,
-  eVisa: r.eVisa,
-  visaRequired: r.visaRequired,
-}));
+const [rankings, economics, freedom, tax, laws] = await Promise.all([
+  listRankings(db),
+  listEconomics(db),
+  listFreedom(db),
+  listTax(db),
+  listCitizenshipLaws(db),
+]);
+
+const lawByCode = new Map(laws.map((l) => [l.iso2, l]));
+
+const ranked: CompareRecord[] = rankings.map((r) => {
+  const code = r.code;
+  const econ = economics[code];
+  const free = freedom[code];
+  const law = lawByCode.get(code);
+  const t = tax[code];
+  return {
+    code,
+    name: r.name,
+    flag: r.flag ?? null,
+    rank: r.rank,
+    percentile: r.percentile,
+    mobilityScore: r.mobilityScore,
+    visaFree: r.visaFree,
+    visaOnArrival: r.visaOnArrival,
+    eta: r.eta,
+    eVisa: r.eVisa,
+    visaRequired: r.visaRequired,
+    noAdmission: r.noAdmission,
+    region: r.region,
+    subregion: r.subregion ?? null,
+    capital: r.capital ?? null,
+    continent: r.continent ?? null,
+    population: r.population ?? null,
+    areaKm2: r.areaKm2 ?? null,
+    incomeGroup: r.incomeGroup ?? null,
+    gdpPerCapitaUsd: econ?.gdpPerCapitaUsd ?? null,
+    hdi: econ?.hdi ?? null,
+    lifeExpectancy: econ?.lifeExpectancy ?? null,
+    inflationPct: econ?.inflationPct ?? null,
+    gdpGrowthPct: econ?.gdpGrowthPct ?? null,
+    cpiScore: free?.cpi?.score ?? null,
+    fiwScore: free?.fiw?.score ?? null,
+    humanRightsScore: free?.humanRights?.score ?? null,
+    democracyScore: free?.democracy?.score ?? null,
+    happinessScore: free?.happiness?.score ?? null,
+    personalIncomeTax: t?.personalIncomeTax ?? null,
+    corporateTax: t?.corporateTax ?? null,
+    vat: t?.vat ?? null,
+    territorial: t?.territorial ?? null,
+    wealth: t?.wealth ?? null,
+    nonDom: t?.nonDom ?? null,
+    citizenshipByDescent: law?.citizenshipByDescent ?? false,
+    naturalizationYears: law?.naturalizationYears ?? null,
+    dualCitizenshipAllowed: law?.dualCitizenshipAllowed ?? false,
+    cbi: law?.cbi ?? false,
+    goldenVisa: law?.goldenVisa ?? false,
+    birthright: law?.birthright ?? false,
+    digitalNomadVisa: law?.digitalNomadVisa ?? false,
+    economyScore: econ ? scoreEconomy(econ) : null,
+    freedomScore: free ? scoreFreedom(free) : null,
+    taxScore: t ? scoreTax(t) : null,
+    easeScore: law ? scoreAcquisition(law).score : null,
+  };
+});
 const initialCodes = ['a', 'b', 'c', 'd']
   .map((k) => Astro.url.searchParams.get(k)?.toUpperCase())
   .filter((code): code is string => Boolean(code));
@@ -28,8 +88,13 @@ const initialCodes = ['a', 'b', 'c', 'd']
   description="Compare up to four passports side by side and see exactly where their visa access differs."
 >
   <section>
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Compare passports</h1>
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-slate-900">Home</a>
+        <span aria-hidden="true" class="mx-1.5 text-slate-300">·</span>
+        <span class="text-slate-700">Compare</span>
+      </nav>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Compare passports</h1>
       <p class="mt-3 max-w-2xl text-slate-600">
         Compare up to four passports and see exactly where their visa access differs — visa-free, visa on arrival, ETA,
         or e-visa.

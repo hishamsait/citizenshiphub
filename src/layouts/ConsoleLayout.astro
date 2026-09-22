@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+import ConsoleSidebar from '../components/console/ConsoleSidebar.astro';
+import ConsoleTopbar from '../components/console/ConsoleTopbar.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = `${title} · Console · Citizenship Hub`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{pageTitle}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#151310" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="bg-slate-100 text-slate-900 antialiased">
+    <ConsoleSidebar />
+    <div class="flex min-h-screen flex-col lg:pl-64">
+      <ConsoleTopbar title={title} />
+      <main class="w-full flex-1 px-4 py-8 sm:px-6 lg:px-8">
+        {
+          description && (
+            <p class="mb-6 max-w-2xl text-sm leading-relaxed text-slate-500">{description}</p>
+          )
+        }
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

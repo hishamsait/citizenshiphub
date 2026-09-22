@@ -1,0 +1,23 @@
+---
+import { TIME_RANGES, resolveRange } from '../../lib/analytics/types';
+
+const pathname = Astro.url.pathname;
+const active = resolveRange(Astro.url.searchParams.get('range'));
+---
+
+<div class="inline-flex rounded-lg border border-slate-200 bg-white p-0.5 shadow-sm" aria-label="Time range">
+  {
+    TIME_RANGES.map((r) => (
+      <a
+        href={`${pathname}?range=${r.key}`}
+        aria-current={r.key === active.key ? 'page' : undefined}
+        class:list={[
+          'rounded-md px-3 py-1.5 text-sm font-semibold transition-colors',
+          r.key === active.key ? 'bg-brand-700 text-slate-50' : 'text-slate-500 hover:text-slate-900',
+        ]}
+      >
+        {r.key}
+      </a>
+    ))
+  }
+</div>

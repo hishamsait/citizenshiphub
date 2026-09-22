@@ -5,11 +5,16 @@ import { scoreAcquisition } from '../lib/acquire';
 import { getDb } from '../lib/db/client';
 import { listRankings } from '../lib/db/rankings';
 import { listCitizenshipLaws } from '../lib/db/citizenship';
+import { listGuides } from '../lib/db/guides';
 
 const db = getDb(Astro.locals);
-const rankings = await listRankings(db);
-const laws = await listCitizenshipLaws(db);
+const [rankings, laws, guides] = await Promise.all([
+  listRankings(db),
+  listCitizenshipLaws(db),
+  listGuides(db),
+]);
 const lawByCode = new Map(laws.map((c) => [c.iso2, c]));
+const slugByCode = new Map(guides.map((g) => [g.iso2.toUpperCase(), g.slug]));
 const maxMobility = Math.max(...rankings.map((r) => r.mobilityScore));
 
 const rows = rankings
@@ -21,6 +26,8 @@ const rows = rankings
     return {
       code: r.code,
       name: r.name,
+      flag: r.flag ?? null,
+      slug: slugByCode.get(r.code) ?? slugify(r.name),
       region: r.region,
       mobilityNorm,
       acquisition: acq.score,
@@ -36,8 +43,13 @@ const rows = rankings
   description="The best second passports, balancing how strong the passport is with how attainable the citizenship is."
 >
   <section>
-    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Best passports to obtain</h1>
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+      <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+        <a href="/" class="transition hover:text-slate-900">Home</a>
+        <span aria-hidden="true" class="mx-1.5 text-slate-300">·</span>
+        <span class="text-slate-700">Best passports</span>
+      </nav>
+      <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Best passports to obtain</h1>
       <p class="mt-3 max-w-2xl text-slate-600">
         A "second passport" score that balances how strong the passport is (travel freedom) with how attainable the
         citizenship is (descent, naturalisation time, dual-citizenship rules, and fees).
@@ -71,10 +83,13 @@ const rows = rankings
                   </span>
                 </td>
                 <td class="px-4 py-3">
-                  <a href={`/countries/${slugify(r.name)}/`} class="font-medium text-slate-900 hover:text-brand-700">
-                    {r.name}
-                  </a>
-                  <span class="ml-1.5 font-mono text-xs text-slate-400">{r.code}</span>
+                  <div class="flex items-center gap-2">
+                    {r.flag && <span class="text-lg" aria-hidden="true">{r.flag}</span>}
+                    <span class="font-mono text-xs text-slate-400">{r.code}</span>
+                    <a href={`/countries/${r.slug}/`} class="font-medium text-slate-900 underline-offset-2 hover:text-brand-700 hover:underline">
+                      {r.name}
+                    </a>
+                  </div>
                 </td>
                 <td class="px-4 py-3 text-slate-500">{r.region}</td>
                 <td class="px-4 py-3 text-right text-slate-600">{r.mobilityNorm}</td>

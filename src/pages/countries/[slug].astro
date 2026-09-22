@@ -2,17 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CountryCard from '../../components/CountryCard.astro';
 import TravelMap from '../../components/TravelMap.astro';
-import { formatEuro, formatNumber, formatArea, formatUsd, formatPercent, formatGdpUsdM } from '../../lib/utils';
-import { decodeCell, type AccessStatus } from '../../lib/visa';
+import { formatEuro, formatNumber, formatArea, formatUsd, formatPercent, formatGdpUsdM, slugify } from '../../lib/utils';
+import { decodeCell, STATUS_LABEL, type AccessStatus } from '../../lib/visa';
 import { getDb } from '../../lib/db/client';
 import { getGuideBySlug, listGuides } from '../../lib/db/guides';
+import { listCountries } from '../../lib/db/countries';
 import { getProfile } from '../../lib/db/profiles';
 import { getEconomics } from '../../lib/db/economics';
 import { getFreedom } from '../../lib/db/freedom';
 import { getTax } from '../../lib/db/tax';
 import { getCitizenshipLaw, listCitizenshipLaws } from '../../lib/db/citizenship';
 import { listRankings } from '../../lib/db/rankings';
-import { getMatrixForPassport } from '../../lib/db/visa';
+import { getMatrixForPassport, getReverseMatrix } from '../../lib/db/visa';
 import { listSources } from '../../lib/db/sources';
 
 const db = getDb(Astro.locals);
@@ -23,18 +24,21 @@ if (!guide) return Astro.redirect('/countries/');
 const iso2 = guide.iso2.toUpperCase();
 const { name, capital, region, subregion, summary, citizenshipByDescent, naturalizationYears, dualCitizenshipAllowed, officialFeeEUR, flag } = guide;
 
-const [profile, economics, freedom, tax, law, rankings, allGuides, allLaws, sources, matrix] = await Promise.all([
-  getProfile(db, iso2),
-  getEconomics(db, iso2),
-  getFreedom(db, iso2),
-  getTax(db, iso2),
-  getCitizenshipLaw(db, iso2),
-  listRankings(db),
-  listGuides(db),
-  listCitizenshipLaws(db),
-  listSources(db),
-  getMatrixForPassport(db, iso2),
-]);
+const [profile, economics, freedom, tax, law, rankings, allGuides, allLaws, sources, matrix, allCountries, reverse] =
+  await Promise.all([
+    getProfile(db, iso2),
+    getEconomics(db, iso2),
+    getFreedom(db, iso2),
+    getTax(db, iso2),
+    getCitizenshipLaw(db, iso2),
+    listRankings(db),
+    listGuides(db),
+    listCitizenshipLaws(db),
+    listSources(db),
+    getMatrixForPassport(db, iso2),
+    listCountries(db),
+    getReverseMatrix(db, iso2),
+  ]);
 
 const mobility = rankings.find((r) => r.code === iso2) ?? null;
 const countryProfile = profile;
@@ -290,6 +294,24 @@ for (const [code, cell] of Object.entries(matrix)) {
   statusByIso2[code] = decodeCell(cell).status;
 }
 
+// Reverse look-up: which passports can visit this country (grouped by access status).
+const ACCESS_GROUPS: AccessStatus[] = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa'];
+const visitorGroups: Record<string, { code: string; name: string; flag: string | null }[]> = {
+  'visa-free': [],
+  'visa-on-arrival': [],
+  eta: [],
+  'e-visa': [],
+  'visa-required': [],
+};
+for (const p of allCountries) {
+  const status = decodeCell(reverse[p.code] ?? '?').status;
+  const bucket = visitorGroups[status];
+  if (bucket) bucket.push({ code: p.code, name: p.name, flag: p.flag ?? null });
+}
+const visitorsAccessible = ACCESS_GROUPS.reduce((n, s) => n + (visitorGroups[s] ?? []).length, 0);
+const visitorsRequired = (visitorGroups['visa-required'] ?? []).length;
+const visitorsTotal = allCountries.length;
+
 // Hero quick-fields strip
 const quickFields = [
   { label: 'Capital', value: capital },
@@ -317,6 +339,7 @@ interface RouteCard {
   title: string;
   body: string;
   cta: string;
+  serviceType: string;
 }
 
 const routeCards: RouteCard[] = [];
@@ -328,6 +351,7 @@ if (goldenVisa) {
         ? `A residency-by-investment route is available from ${formatEuro(goldenVisaMinInvestmentEUR)}. It can be faster than naturalisation and often lets you keep your current nationality.`
         : 'A residency-by-investment route is available and can be faster than naturalisation.',
     cta: 'Check golden-visa eligibility →',
+    serviceType: 'Golden Visa',
   });
 }
 if (cbi) {
@@ -338,6 +362,7 @@ if (cbi) {
         ? `A direct citizenship-by-investment route is available from ${formatEuro(cbiMinInvestmentEUR)}.`
         : 'A direct citizenship-by-investment route is available.',
     cta: 'Check investment route →',
+    serviceType: 'Citizenship by Investment',
   });
 }
 if (digitalNomadVisa) {
@@ -345,6 +370,7 @@ if (digitalNomadVisa) {
     title: 'Digital nomad visa',
     body: 'A digital-nomad visa offers a flexible, lower-barrier way to establish a presence before committing to a full naturalisation path.',
     cta: 'Check nomad visa →',
+    serviceType: 'Legal Help',
   });
 }
 if (routeCards.length === 0) {
@@ -355,6 +381,7 @@ if (routeCards.length === 0) {
         ? 'Naturalisation is discretionary here, so most applicants work through a residency or marriage route first. An advisor can map the fastest option for your situation.'
         : `Most applicants naturalise through ${naturalizationYears} years of lawful residence${marriageYears != null ? ` (reduced to ${marriageYears} years by marriage)` : ''}. An advisor can confirm your fastest route.`,
     cta: 'Get a route map, free →',
+    serviceType: 'Legal Help',
   });
 }
 
@@ -514,8 +541,8 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`${name} Citizenship Guide`}
-  description={summary ?? ''}
+  title={`${name} Citizenship & Visa Access`}
+  description={summary ?? `Citizenship guide and visa access for ${name}.`}
   canonical={Astro.url.pathname}
   jsonLd={jsonLd}
 >
@@ -524,7 +551,7 @@ const jsonLd = {
   <article class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
     <header class="pt-4">
       <nav aria-label="Breadcrumb" class="text-sm text-slate-500">
-        <a href="/countries/" class="transition-colors hover:text-brand-700">Guides</a>
+        <a href="/countries/" class="transition-colors hover:text-brand-700">Countries</a>
         <span aria-hidden="true" class="mx-1">·</span>
         <span>{region}</span>
         <span aria-hidden="true" class="mx-1">·</span>
@@ -565,12 +592,57 @@ const jsonLd = {
       }
     </section>
 
+    <section
+      aria-label={`Who can visit ${name}?`}
+      class="mt-10 rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200"
+    >
+      <h2 class="font-display text-xl font-bold text-slate-900">Who can visit {name}?</h2>
+      <p class="mt-1 text-sm text-slate-500">
+        {visitorsAccessible} of {visitorsTotal} passports can enter {name} visa-free, visa on arrival, by ETA, or with an
+        e-visa.
+      </p>
+      <div class="mt-5 space-y-6">
+        {
+          ACCESS_GROUPS.map((s) => {
+            const items = visitorGroups[s] ?? [];
+            if (items.length === 0) return null;
+            return (
+              <div>
+                <h3 class="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  {STATUS_LABEL[s]}
+                  <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+                    {items.length}
+                  </span>
+                </h3>
+                <ul class="flex flex-wrap gap-1.5">
+                  {
+                    items.map((p) => (
+                      <li>
+                        <a
+                          href={`/countries/${slugify(p.name)}/`}
+                          class="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-sm text-slate-700 ring-1 ring-slate-200 hover:bg-brand-50 hover:text-brand-700"
+                        >
+                          {p.flag && <span class="text-base leading-none" aria-hidden="true">{p.flag}</span>}
+                          {p.name}
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            );
+          })
+        }
+        <p class="text-sm text-slate-500">{visitorsRequired} passports require a visa to visit {name}.</p>
+      </div>
+    </section>
+
     <div class="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
       <div class="min-w-0">
         <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
           <h2 class="font-display text-xl font-bold text-slate-900">Am I eligible for {name} citizenship?</h2>
           <p class="mt-1 text-sm text-slate-500">Tap the option closest to your situation for an instant steer.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
+          <div class="mt-4 flex flex-wrap gap-2" data-lead-context data-target-iso={iso2} data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}>
             <button
               type="button"
               class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
@@ -619,12 +691,17 @@ const jsonLd = {
                   ? `While citizenship is discretionary, the ${name} Golden Visa grants up to 10-year renewable residency through investment — from about ${formatEuro(goldenVisaMinInvestmentEUR)}, with a published fee schedule and processing timeline.`
                   : `While citizenship is discretionary, the ${name} Golden Visa grants long-term renewable residency through investment — with a clear fee schedule and timeline instead of an unpredictable nomination process.`}
               </p>
-              <a
-                href="#advisor"
-                class="mt-4 inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+              <button
+                type="button"
+                data-lead-modal-open
+                data-service-type="Golden Visa"
+                data-target-iso={iso2}
+                data-title={`Speak to a specialist about the ${name} Golden Visa`}
+                data-subtitle={`Full citizenship is discretionary, but the ${name} Golden Visa is far more attainable — get a free eligibility check with a licensed specialist.`}
+                class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
               >
                 Speak to a specialist about the {name} Golden Visa →
-              </a>
+              </button>
             </div>
           )
         }
@@ -698,7 +775,7 @@ const jsonLd = {
           </dl>
         </div>
 
-        <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg" data-lead>
+        <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg">
           <p class="text-xs font-semibold uppercase tracking-widest text-gold-300">Advisor match</p>
           <h2 class="mt-2 font-display text-xl font-bold">
             {goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Not sure where to start with ${name}?`}
@@ -708,26 +785,19 @@ const jsonLd = {
               ? `Full citizenship is hard to get — but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get matched with a licensed immigration specialist for a free, no-obligation eligibility check.`
               : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
           </p>
-          <form class="lead-form" data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'} data-target-iso={iso2}>
-            <div class="lead-fields mt-4 space-y-3">
-              <input
-                type="email"
-                required
-                placeholder="you@example.com"
-                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
-              />
-              <button
-                type="submit"
-                class="w-full rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
-              >
-                {goldenVisa ? 'Check Golden Visa eligibility →' : 'Get matched, free →'}
-              </button>
-            </div>
-            <p class="lead-error mt-3 hidden text-sm text-red-200"></p>
-          </form>
-          <p class="lead-done mt-3 hidden text-sm font-medium text-gold-200">
-            ✓ Thanks — a specialist will be in touch shortly.
-          </p>
+          <button
+            type="button"
+            data-lead-modal-open
+            data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}
+            data-target-iso={iso2}
+            data-title={goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Get matched on your fastest route to ${name}`}
+            data-subtitle={goldenVisa
+              ? `Full citizenship is hard to get — but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get a free, no-obligation eligibility check.`
+              : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
+            class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
+          >
+            {goldenVisa ? 'Check Golden Visa eligibility →' : 'Get matched, free →'}
+          </button>
           <p class="mt-3 text-xs text-slate-300">Partner referral — we may earn a fee if you engage.</p>
         </div>
 
@@ -790,7 +860,7 @@ const jsonLd = {
       <h2 class="text-2xl font-bold text-slate-900">Where the {name} passport can travel</h2>
       <p class="mt-1 text-sm text-slate-500">Each dot is a destination — colours show what you need to enter.</p>
 
-      <div class="mt-6 grid gap-8 lg:grid-cols-[1fr_400px]">
+      <div class="mt-6 grid gap-8 lg:grid-cols-2">
         <div>
           <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
             <li class="flex items-center gap-1.5">
@@ -867,12 +937,17 @@ const jsonLd = {
             <div class="flex flex-col rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
               <h3 class="font-display text-lg font-bold text-slate-900">{route.title}</h3>
               <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{route.body}</p>
-              <a
-                href="#advisor"
-                class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+              <button
+                type="button"
+                data-lead-modal-open
+                data-service-type={route.serviceType}
+                data-target-iso={iso2}
+                data-title={`${route.title} — ${name}`}
+                data-subtitle={route.body}
+                class="mt-4 inline-flex w-fit cursor-pointer items-center gap-1 bg-transparent p-0 text-left text-sm font-semibold text-brand-700 hover:text-brand-800"
               >
                 {route.cta}
-              </a>
+              </button>
             </div>
           ))
         }
@@ -964,14 +1039,29 @@ const jsonLd = {
     }
 
     // Quick eligibility check — instant positive feedback
+    const leadContext = document.querySelector<HTMLElement>('[data-lead-context]');
+    const leadTargetIso = leadContext?.dataset.targetIso ?? '';
+    const leadServiceType = leadContext?.dataset.serviceType ?? 'Golden Visa';
     document.querySelectorAll<HTMLElement>('.qc-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         const result = document.getElementById('qcResult');
         const text = document.getElementById('qcText');
         if (!result || !text) return;
-        text.innerHTML =
-          (btn.dataset.msg || '') +
-          ' <a href="#advisor" class="font-semibold underline">Get matched, free →</a>';
+        text.textContent = btn.dataset.msg || '';
+
+        const cta = document.createElement('button');
+        cta.type = 'button';
+        cta.className = 'cursor-pointer font-semibold text-emerald-800 underline';
+        cta.textContent = 'Get matched, free →';
+        cta.addEventListener('click', () => {
+          const w = window as unknown as {
+            openLeadModal?: (o: { serviceType?: string; targetCountryIso?: string }) => void;
+          };
+          w.openLeadModal?.({ serviceType: leadServiceType, targetCountryIso: leadTargetIso });
+        });
+        text.appendChild(document.createTextNode(' '));
+        text.appendChild(cta);
+
         result.classList.remove('hidden');
       });
     });

@@ -1,0 +1,77 @@
+---
+import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
+import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
+import { getDb } from '../../../lib/db/client';
+import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { resolveRange } from '../../../lib/analytics/types';
+import { Gauge } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const range = resolveRange(Astro.url.searchParams.get('range'));
+const data = await firstPartyProvider.performance(db, range);
+
+function band(metric: string, value: number | null) {
+  if (value == null) return { label: 'No data', cls: 'bg-slate-100 text-slate-500' };
+  const bounds: Record<string, [number, number]> = {
+    LCP: [2500, 4000],
+    CLS: [0.1, 0.25],
+    INP: [200, 500],
+    TTFB: [800, 1800],
+  };
+  const [good, needs] = bounds[metric] ?? [0, 0];
+  if (value <= good) return { label: 'Good', cls: 'bg-emerald-50 text-emerald-700' };
+  if (value <= needs) return { label: 'Needs improvement', cls: 'bg-amber-50 text-amber-700' };
+  return { label: 'Poor', cls: 'bg-red-50 text-red-700' };
+}
+
+function display(metric: string, value: number | null): string {
+  if (value == null) return '—';
+  return metric === 'CLS' ? value.toFixed(3) : `${Math.round(value)} ms`;
+}
+
+const labels: Record<string, string> = {
+  LCP: 'Largest Contentful Paint',
+  CLS: 'Cumulative Layout Shift',
+  INP: 'Interaction to Next Paint',
+  TTFB: 'Time to First Byte',
+};
+---
+
+<ConsoleLayout
+  title="Analytics — Performance"
+  description="Real-user Core Web Vitals (75th percentile) collected on-device."
+>
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500">Samples from the last {range.days} days</p>
+    <TimeRangePicker />
+  </div>
+
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    {
+      data.metrics.map((m) => {
+        const b = band(m.metric, m.p75);
+        return (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <Gauge className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                <span class="text-sm font-semibold text-slate-900">{m.metric}</span>
+              </div>
+              <span class:list={['rounded-full px-2 py-0.5 text-xs font-semibold', b.cls]}>{b.label}</span>
+            </div>
+            <p class="mt-3 text-2xl font-bold tabular-nums text-slate-900">{display(m.metric, m.p75)}</p>
+            <p class="mt-1 text-xs text-slate-400">{labels[m.metric] ?? m.metric}</p>
+            <p class="mt-2 text-xs text-slate-400">{m.samples} sample{m.samples === 1 ? '' : 's'}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-500 shadow-sm">
+    <p>
+      These figures are captured from real visitors via a lightweight on-page reporter. They represent the
+      <strong class="text-slate-700"> 75th percentile</strong> across all sessions in the selected window.
+    </p>
+  </div>
+</ConsoleLayout>

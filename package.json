@@ -20,7 +20,8 @@
     "db:migrate": "wrangler d1 migrations apply citizenshiphub-db --remote",
     "db:seed:generate": "node scripts/seed-d1.mjs",
     "db:seed": "node scripts/seed-d1.mjs && wrangler d1 execute citizenshiphub-db --remote --file=scripts/.generated/seed.sql",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "console:totp": "node scripts/console-totp.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -42,6 +43,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "marked": "^18.0.13",
+    "qrcode": "^1.5.4",
     "typescript": "^5.9.3",
     "wrangler": "4.86.0",
     "xlsx": "^0.18.5"
