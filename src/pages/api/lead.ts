@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const SERVICE_TYPES = new Set(['Legal Help', 'Translation', 'Golden Visa']);
+const SERVICE_TYPES = new Set(['Legal Help', 'Translation', 'Golden Visa', 'Updates']);
 
 export const POST: APIRoute = async ({ request, locals }) => {
   let body: Record<string, unknown>;
@@ -22,7 +22,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return json({ error: 'targetCountryIso must be a two-letter ISO code.' }, 400);
   }
   if (!SERVICE_TYPES.has(serviceType)) {
-    return json({ error: 'serviceType must be one of: Legal Help, Translation, Golden Visa.' }, 400);
+    return json({ error: 'serviceType must be one of: Legal Help, Translation, Golden Visa, Updates.' }, 400);
   }
 
   const db = locals.runtime.env.DB;

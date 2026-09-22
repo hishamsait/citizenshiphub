@@ -10,7 +10,7 @@ import { getProfile } from '../../lib/db/profiles';
 import { getEconomics } from '../../lib/db/economics';
 import { getFreedom } from '../../lib/db/freedom';
 import { getTax } from '../../lib/db/tax';
-import { getCitizenshipLaw } from '../../lib/db/citizenship';
+import { getCitizenshipLaw, listCitizenshipLaws } from '../../lib/db/citizenship';
 import { listRankings } from '../../lib/db/rankings';
 import { getMatrixForPassport } from '../../lib/db/visa';
 import { listSources } from '../../lib/db/sources';
@@ -21,9 +21,9 @@ const guide = await getGuideBySlug(db, slug);
 if (!guide) return Astro.redirect('/countries/');
 
 const iso2 = guide.iso2.toUpperCase();
-const { name, capital, region, summary, citizenshipByDescent, naturalizationYears, dualCitizenshipAllowed, officialFeeEUR, flag } = guide;
+const { name, capital, region, subregion, summary, citizenshipByDescent, naturalizationYears, dualCitizenshipAllowed, officialFeeEUR, flag } = guide;
 
-const [profile, economics, freedom, tax, law, rankings, allGuides, sources, matrix] = await Promise.all([
+const [profile, economics, freedom, tax, law, rankings, allGuides, allLaws, sources, matrix] = await Promise.all([
   getProfile(db, iso2),
   getEconomics(db, iso2),
   getFreedom(db, iso2),
@@ -31,6 +31,7 @@ const [profile, economics, freedom, tax, law, rankings, allGuides, sources, matr
   getCitizenshipLaw(db, iso2),
   listRankings(db),
   listGuides(db),
+  listCitizenshipLaws(db),
   listSources(db),
   getMatrixForPassport(db, iso2),
 ]);
@@ -177,13 +178,38 @@ if (tax?.nonDom === true) {
   taxFacts.push({ label: 'Non-dom regime', value: 'Available', note: null });
 }
 
+const lawsByIso2 = new Map(allLaws.map((l) => [l.iso2.toUpperCase(), l]));
+const rankByIso2 = new Map(rankings.map((r) => [r.code, r]));
+
 const relatedGuides = allGuides
   .filter((g) => g.slug !== slug)
-  .sort((a, b) => {
-    const aSame = a.region === region ? 0 : 1;
-    const bSame = b.region === region ? 0 : 1;
-    return aSame - bSame || a.name.localeCompare(b.name);
+  .map((g) => {
+    const gIso = g.iso2.toUpperCase();
+    const gLaw = lawsByIso2.get(gIso);
+    const gRank = rankByIso2.get(gIso);
+    return {
+      guide: g,
+      score: {
+        sameSubregion: subregion && g.subregion === subregion ? 0 : 1,
+        sameRegion: g.region === region ? 0 : 1,
+        investmentAffinity: gLaw && (gLaw.goldenVisa || gLaw.cbi) ? 0 : 1,
+        rankDistance:
+          mobility && gRank && mobility.rank != null ? Math.abs(gRank.rank - mobility.rank) : Number.MAX_SAFE_INTEGER,
+      },
+    };
   })
+  .sort((a, b) => {
+    const s = a.score;
+    const t = b.score;
+    return (
+      s.sameSubregion - t.sameSubregion ||
+      s.sameRegion - t.sameRegion ||
+      s.investmentAffinity - t.investmentAffinity ||
+      s.rankDistance - t.rankDistance ||
+      a.guide.name.localeCompare(b.guide.name)
+    );
+  })
+  .map((x) => x.guide)
   .slice(0, 4);
 
 // Passport mobility rank + donut data
@@ -332,6 +358,22 @@ if (routeCards.length === 0) {
   });
 }
 
+// Route-aware quick-check messages
+const qcDescent = citizenshipByDescent
+  ? `If you have ${demonym ?? name} parentage, you may already be a citizen — an advisor can confirm the paperwork in one call.`
+  : `Descent is not the main route into ${name}, but an advisor can check whether any ancestry path applies to you.`;
+const qcInvest = goldenVisa
+  ? `The ${name} Golden Visa (residency by investment) is the most attainable route for investors${goldenVisaMinInvestmentEUR != null ? ` — up to 10-year renewable residency from about ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}. Worth a free eligibility check.`
+  : cbi
+    ? `A direct citizenship-by-investment route is available in ${name}${cbiMinInvestmentEUR != null ? ` from about ${formatEuro(cbiMinInvestmentEUR)}` : ''}. Worth a free eligibility check.`
+    : `Investment and residency routes are often faster than full naturalisation. Worth a free eligibility check.`;
+const qcSpecialist = goldenVisa
+  ? `${name} actively nominates specialists and skilled professionals — and the Golden Visa covers professional talent too. Worth a free eligibility check.`
+  : `Many countries actively seek specialists and skilled professionals. Worth a free eligibility check.`;
+const qcNone = goldenVisa
+  ? `No problem — the ${name} Golden Visa has broader entry criteria than citizenship, and many people qualify without realising it. A free check takes under a minute.`
+  : `You may still qualify through residency, marriage, or other routes. A free check takes under a minute.`;
+
 const overviewFacts = [
   { label: 'Capital', value: capital },
   { label: 'Region', value: region },
@@ -412,13 +454,62 @@ const factSections: { title: string; facts: Fact[] }[] = [
   { title: 'Tax considerations', facts: taxFacts },
 ].filter((s) => s.facts.length > 0);
 
+const pageUrl = new URL(Astro.url.pathname, 'https://citizenshiphub.com').href;
+
+const faqEntries = [
+  {
+    q: `Can I get ${name} citizenship by descent?`,
+    a: citizenshipByDescent
+      ? `Yes — ${name} recognises citizenship by descent${maxGenerations != null ? `, generally limited to ${maxGenerations === 1 ? 'parents' : maxGenerations === 2 ? 'grandparents' : `${maxGenerations} generations`}` : ' with no stated generational limit'}. Verify your eligibility against official sources or speak to an advisor.`
+      : `Generally no — ${name} does not offer a broad citizenship-by-descent route; most applicants pursue naturalisation or a residency/investment route instead.`,
+  },
+  {
+    q: `How long does naturalisation take in ${name}?`,
+    a:
+      naturalizationYears === null
+        ? `Naturalisation in ${name} is discretionary or restricted rather than a fixed timeline, so there is no standard processing period.`
+        : `Naturalisation in ${name} typically requires ${naturalizationYears} years of lawful residence${marriageYears != null ? ` (reduced to ${marriageYears} years via marriage)` : ''}.`,
+  },
+  {
+    q: `Does ${name} allow dual citizenship?`,
+    a: dualCitizenshipAllowed
+      ? `Yes — ${name} generally permits dual citizenship.`
+      : `${name} generally does not permit dual citizenship, so naturalising may require renouncing your existing nationality.`,
+  },
+];
+
+if (goldenVisa) {
+  faqEntries.push({
+    q: `Does ${name} have a Golden Visa or residency-by-investment route?`,
+    a: `Yes — ${name} offers a residency-by-investment (golden visa) route${goldenVisaMinInvestmentEUR != null ? ` from approximately ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}, which can be faster and more attainable than full naturalisation.`,
+  });
+}
+if (cbi) {
+  faqEntries.push({
+    q: `Does ${name} offer citizenship by investment?`,
+    a: `Yes — ${name} offers a direct citizenship-by-investment route${cbiMinInvestmentEUR != null ? ` from approximately ${formatEuro(cbiMinInvestmentEUR)}` : ''}.`,
+  });
+}
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: `Citizenship guide: ${name}`,
-  description: summary ?? '',
-  about: { '@type': 'Country', name },
-  mainEntityOfPage: new URL(Astro.url.pathname, 'https://citizenshiphub.com').href,
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: `Citizenship guide: ${name}`,
+      description: summary ?? '',
+      about: { '@type': 'Country', name },
+      mainEntityOfPage: pageUrl,
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqEntries.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
 };
 ---
 
@@ -483,28 +574,28 @@ const jsonLd = {
             <button
               type="button"
               class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg={`If you have ${demonym ?? name} parentage, you may already be a citizen — an advisor can confirm the paperwork in one call.`}
+              data-msg={qcDescent}
             >
               I have {demonym ?? name} parentage
             </button>
             <button
               type="button"
               class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg="Investment and residency routes are often faster than full naturalisation. Worth a free eligibility check."
+              data-msg={qcInvest}
             >
               I can invest or start a business
             </button>
             <button
               type="button"
               class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg="Many countries actively seek specialists and skilled professionals. Worth a free eligibility check."
+              data-msg={qcSpecialist}
             >
               I'm a specialist or skilled professional
             </button>
             <button
               type="button"
               class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg="You may still qualify through residency, marriage, or other routes. A free check takes under a minute."
+              data-msg={qcNone}
             >
               None of these apply to me
             </button>
@@ -515,6 +606,28 @@ const jsonLd = {
         </div>
 
         <div class="country-prose prose prose-slate mt-8 max-w-none" set:html={guide.bodyHtml} />
+
+        {
+          goldenVisa && !cbi && (
+            <div class="mt-8 rounded-2xl border border-gold-200 bg-gold-50 p-6">
+              <p class="text-xs font-semibold uppercase tracking-widest text-gold-700">Residency by investment</p>
+              <h3 class="mt-2 font-display text-xl font-bold text-slate-900">
+                The good news: the {name} Golden Visa doesn't need any of that
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-700">
+                {goldenVisaMinInvestmentEUR != null
+                  ? `While citizenship is discretionary, the ${name} Golden Visa grants up to 10-year renewable residency through investment — from about ${formatEuro(goldenVisaMinInvestmentEUR)}, with a published fee schedule and processing timeline.`
+                  : `While citizenship is discretionary, the ${name} Golden Visa grants long-term renewable residency through investment — with a clear fee schedule and timeline instead of an unpredictable nomination process.`}
+              </p>
+              <a
+                href="#advisor"
+                class="mt-4 inline-flex items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+              >
+                Speak to a specialist about the {name} Golden Visa →
+              </a>
+            </div>
+          )
+        }
       </div>
       <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
         {
@@ -585,40 +698,61 @@ const jsonLd = {
           </dl>
         </div>
 
-        <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg">
+        <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg" data-lead>
           <p class="text-xs font-semibold uppercase tracking-widest text-gold-300">Advisor match</p>
-          <h2 class="mt-2 font-display text-xl font-bold">Not sure where to start?</h2>
+          <h2 class="mt-2 font-display text-xl font-bold">
+            {goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Not sure where to start with ${name}?`}
+          </h2>
           <p class="mt-2 text-sm leading-relaxed text-slate-200">
-            Get matched with a vetted immigration advisor for a free, no-obligation eligibility check.
+            {goldenVisa
+              ? `Full citizenship is hard to get — but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get matched with a licensed immigration specialist for a free, no-obligation eligibility check.`
+              : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
           </p>
-          <a
-            href="#alert"
-            class="mt-4 inline-flex items-center gap-2 rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
-          >
-            Get matched, free →
-          </a>
+          <form class="lead-form" data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'} data-target-iso={iso2}>
+            <div class="lead-fields mt-4 space-y-3">
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
+              />
+              <button
+                type="submit"
+                class="w-full rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
+              >
+                {goldenVisa ? 'Check Golden Visa eligibility →' : 'Get matched, free →'}
+              </button>
+            </div>
+            <p class="lead-error mt-3 hidden text-sm text-red-200"></p>
+          </form>
+          <p class="lead-done mt-3 hidden text-sm font-medium text-gold-200">
+            ✓ Thanks — a specialist will be in touch shortly.
+          </p>
           <p class="mt-3 text-xs text-slate-300">Partner referral — we may earn a fee if you engage.</p>
         </div>
 
-        <div id="alert" class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+        <div id="alert" class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200" data-lead>
           <h2 class="font-display text-lg font-bold text-slate-900">Get {name} citizenship updates</h2>
           <p class="mt-1 text-sm text-slate-500">Law changes and route openings, straight to your inbox.</p>
-          <form id="alertForm" class="mt-4 space-y-3">
-            <input
-              type="email"
-              required
-              placeholder="you@example.com"
-              class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
-            />
-            <button
-              type="submit"
-              class="w-full rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
-            >
-              Notify me
-            </button>
+          <form class="lead-form" data-service-type="Updates" data-target-iso={iso2}>
+            <div class="lead-fields mt-4 space-y-3">
+              <input
+                type="email"
+                required
+                placeholder="you@example.com"
+                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
+              />
+              <button
+                type="submit"
+                class="w-full rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+              >
+                Notify me
+              </button>
+            </div>
+            <p class="lead-error mt-3 hidden text-sm text-red-600"></p>
           </form>
-          <p id="alertDone" class="mt-3 hidden text-sm font-medium text-emerald-700">
-            ✓ You're on the list — we'll be in touch.
+          <p class="lead-done mt-3 hidden text-sm font-medium text-emerald-700">
+            ✓ You're on the list — we'll email you when anything changes.
           </p>
         </div>
 
@@ -842,16 +976,44 @@ const jsonLd = {
       });
     });
 
-    // Email alert form — cosmetic only, no backend
-    const alertForm = document.getElementById('alertForm');
-    const alertDone = document.getElementById('alertDone');
-    if (alertForm && alertDone) {
-      alertForm.addEventListener('submit', (e) => {
+    // Lead capture — POST to /api/lead so every submission persists to the DB
+    document.querySelectorAll<HTMLFormElement>('.lead-form').forEach((form) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alertForm.classList.add('hidden');
-        alertDone.classList.remove('hidden');
+        const emailInput = form.querySelector<HTMLInputElement>('input[type="email"]');
+        const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const email = emailInput?.value.trim() ?? '';
+        if (!email) return;
+
+        const root = form.closest<HTMLElement>('[data-lead]');
+        const fields = root?.querySelector<HTMLElement>('.lead-fields');
+        const done = root?.querySelector<HTMLElement>('.lead-done');
+        const errorEl = root?.querySelector<HTMLElement>('.lead-error');
+        const serviceType = form.dataset.serviceType || 'Golden Visa';
+        const targetCountryIso = form.dataset.targetIso || '';
+
+        if (submitBtn) submitBtn.disabled = true;
+        errorEl?.classList.add('hidden');
+
+        try {
+          const res = await fetch('/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, targetCountryIso, serviceType }),
+          });
+          if (!res.ok) throw new Error('Request failed');
+          fields?.classList.add('hidden');
+          done?.classList.remove('hidden');
+        } catch {
+          if (errorEl) {
+            errorEl.textContent = 'Something went wrong — please try again.';
+            errorEl.classList.remove('hidden');
+          }
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
       });
-    }
+    });
   </script>
 
   <style>

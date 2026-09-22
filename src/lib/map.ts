@@ -8,7 +8,11 @@ export interface MapCountry {
 }
 
 type WorldFeature = {
-  properties?: { ISO_A2?: string | number | null; NAME?: string | null };
+  properties?: {
+    ISO_A2?: string | number | null;
+    ISO_A2_EH?: string | number | null;
+    NAME?: string | null;
+  };
 };
 
 let cache: MapCountry[] | null = null;
@@ -20,13 +24,19 @@ export function getWorldPaths(): MapCountry[] {
   const path = geoPath(projection);
   const features = (worldGeo as unknown as { features: WorldFeature[] }).features;
   cache = features
-    .map((f) => ({
-      iso2: String(f.properties?.ISO_A2 ?? '')
+    .map((f) => {
+      // Natural Earth stores multi-part / disputed countries with ISO_A2 = "-99"
+      // (France, Norway, Kosovo) and puts the real two-letter code in ISO_A2_EH.
+      // Prefer ISO_A2_EH so those countries still resolve to their canonical code.
+      const iso2 = String(f.properties?.ISO_A2_EH ?? f.properties?.ISO_A2 ?? '')
         .trim()
-        .toUpperCase(),
-      name: f.properties?.NAME ?? '',
-      d: path(f as never) ?? '',
-    }))
+        .toUpperCase();
+      return {
+        iso2,
+        name: f.properties?.NAME ?? '',
+        d: path(f as never) ?? '',
+      };
+    })
     .filter((c) => c.iso2 && c.iso2 !== '-99' && c.d);
   return cache;
 }

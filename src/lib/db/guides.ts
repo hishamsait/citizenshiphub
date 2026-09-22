@@ -7,6 +7,7 @@ export interface GuideSummary {
   name: string;
   capital: string | null;
   region: string;
+  subregion: string | null;
   summary: string | null;
   citizenshipByDescent: boolean;
   naturalizationYears: number | null;
@@ -25,6 +26,7 @@ interface GuideRow {
   name: string;
   capital: string | null;
   region: string;
+  subregion: string | null;
   citizenshipByDescent: number;
   naturalizationYears: number | null;
   dualCitizenshipAllowed: number | null;
@@ -36,7 +38,7 @@ interface GuideRow {
 
 const SELECT = `
   SELECT
-    g.slug, c.iso2, c.name, c.capital, c.region,
+    g.slug, c.iso2, c.name, c.capital, c.region, c.subregion,
     c.citizenship_by_descent AS citizenshipByDescent,
     c.naturalization_years AS naturalizationYears,
     c.dual_citizenship_allowed AS dualCitizenshipAllowed,
@@ -53,6 +55,7 @@ function mapRow(r: GuideRow): Guide {
     name: r.name,
     capital: r.capital,
     region: r.region,
+    subregion: r.subregion,
     citizenshipByDescent: toBool(r.citizenshipByDescent) ?? false,
     naturalizationYears: r.naturalizationYears,
     dualCitizenshipAllowed: toBool(r.dualCitizenshipAllowed) ?? false,
