@@ -4,18 +4,22 @@ import SearchBar from '../components/SearchBar.astro';
 import RankingsPreview from '../components/RankingsPreview.astro';
 import CountryCard from '../components/CountryCard.astro';
 import { BookOpen, Stamp, Trophy } from 'lucide-react';
-import { getCollection } from 'astro:content';
-import rankingsData from '../data/rankings.json';
-import type { RankingsData } from '../data/types';
+import { getDb } from '../lib/db/client';
+import { listRankings } from '../lib/db/rankings';
+import { listGuides } from '../lib/db/guides';
 
-export const prerender = true;
+const db = getDb(Astro.locals);
+const rankings = await listRankings(db);
+const allGuides = await listGuides(db);
 
-const { rankings } = rankingsData as unknown as RankingsData;
+const slugByCode: Record<string, string> = Object.fromEntries(
+  allGuides.map((g) => [g.iso2.toUpperCase(), g.slug]),
+);
 
 const featuredSlugs = new Set(['ireland', 'germany', 'japan', 'portugal', 'italy', 'spain']);
-const guides = (await getCollection('countries'))
-  .filter((g) => featuredSlugs.has(g.id))
-  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+const guides = allGuides
+  .filter((g) => featuredSlugs.has(g.slug))
+  .sort((a, b) => a.name.localeCompare(b.name));
 const featured = rankings.find((r) => r.rank === 1);
 
 const jsonLd = {
@@ -54,7 +58,7 @@ const jsonLd = {
           </span>
           <span class="inline-flex items-center gap-1.5">
             <BookOpen className="h-4 w-4" aria-hidden="true" />
-            <strong class="text-slate-900">{guides.length}</strong> in-depth guides
+            <strong class="text-slate-900">{allGuides.length}</strong> in-depth guides
           </span>
           {
             featured && (
@@ -127,7 +131,7 @@ const jsonLd = {
         View all →
       </a>
       </div>
-      <RankingsPreview rankings={rankings} limit={10} />
+      <RankingsPreview rankings={rankings} limit={10} slugByCode={slugByCode} />
     </div>
   </section>
 
@@ -143,16 +147,17 @@ const jsonLd = {
         {
           guides.map((g) => (
             <CountryCard
-              slug={g.id}
-              name={g.data.name}
-              iso2={g.data.iso2}
-              capital={g.data.capital}
-              region={g.data.region}
-              summary={g.data.summary}
-              citizenshipByDescent={g.data.citizenshipByDescent}
-              naturalizationYears={g.data.naturalizationYears}
-              dualCitizenshipAllowed={g.data.dualCitizenshipAllowed}
-              officialFeeEUR={g.data.officialFeeEUR}
+              slug={g.slug}
+              name={g.name}
+              iso2={g.iso2}
+              capital={g.capital ?? ''}
+              region={g.region}
+              summary={g.summary ?? ''}
+              citizenshipByDescent={g.citizenshipByDescent}
+              naturalizationYears={g.naturalizationYears}
+              dualCitizenshipAllowed={g.dualCitizenshipAllowed}
+              officialFeeEUR={g.officialFeeEUR}
+              flag={g.flag}
             />
           ))
         }
@@ -160,3 +165,4 @@ const jsonLd = {
     </div>
   </section>
 </BaseLayout>
+

@@ -15,7 +15,7 @@ export const LAWS = {
   CD: { d: true, y: 10, c: false },
   CI: { d: true, y: 5, c: true },
   DJ: { d: true, y: 10, c: false },
-  EG: { d: true, y: 10, c: true, n: 'Dual with approval.' },
+  EG: { d: true, y: 10, c: true, cbi: true, n: 'Dual with approval; citizenship by investment.' },
   GQ: { d: true, y: 10, c: false },
   ER: { d: true, y: 5, c: false },
   SZ: { d: true, y: 5, c: false },

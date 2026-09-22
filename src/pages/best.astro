@@ -2,15 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { slugify } from '../lib/utils';
 import { scoreAcquisition } from '../lib/acquire';
-import rankingsData from '../data/rankings.json';
-import lawsData from '../data/citizenship-laws.json';
-import type { RankingsData, CitizenshipLawsData } from '../data/types';
+import { getDb } from '../lib/db/client';
+import { listRankings } from '../lib/db/rankings';
+import { listCitizenshipLaws } from '../lib/db/citizenship';
 
-export const prerender = true;
-
-const { rankings } = rankingsData as unknown as RankingsData;
-const { countries } = lawsData as unknown as CitizenshipLawsData;
-const lawByCode = new Map(countries.map((c) => [c.iso2, c]));
+const db = getDb(Astro.locals);
+const rankings = await listRankings(db);
+const laws = await listCitizenshipLaws(db);
+const lawByCode = new Map(laws.map((c) => [c.iso2, c]));
 const maxMobility = Math.max(...rankings.map((r) => r.mobilityScore));
 
 const rows = rankings

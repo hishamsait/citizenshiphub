@@ -1,38 +1,37 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { decodeCell, STATUS_LABEL, type AccessStatus } from '../../lib/visa';
 import { slugify } from '../../lib/utils';
-import matrixData from '../../data/visa-matrix.json';
-import passportsData from '../../data/passports.json';
-import type { VisaMatrix, PassportsData } from '../../data/types';
-
-export const prerender = true;
+import { decodeCell, STATUS_LABEL, type AccessStatus } from '../../lib/visa';
+import { getDb } from '../../lib/db/client';
+import { getCountryBySlug, listCountries } from '../../lib/db/countries';
+import { getReverseMatrix } from '../../lib/db/visa';
 
 const GROUPS: AccessStatus[] = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa'];
 
-export async function getStaticPaths() {
-  const { matrix } = matrixData as unknown as VisaMatrix;
-  const { passports } = passportsData as unknown as PassportsData;
-  return passports.map((dest) => {
-    const groups: Record<string, { code: string; name: string }[]> = {
-      'visa-free': [],
-      'visa-on-arrival': [],
-      eta: [],
-      'e-visa': [],
-      'visa-required': [],
-    };
-    for (const p of passports) {
-      const status = decodeCell(matrix[p.code]?.[dest.code] ?? '?').status;
-      const bucket = groups[status];
-      if (bucket) bucket.push({ code: p.code, name: p.name });
-    }
-    return { params: { slug: slugify(dest.name) }, props: { dest, groups, total: passports.length } };
-  });
+const db = getDb(Astro.locals);
+const slug = Astro.params.slug ?? '';
+const dest = await getCountryBySlug(db, slug);
+if (!dest) return Astro.redirect('/destinations/');
+
+const passports = await listCountries(db);
+const reverse = await getReverseMatrix(db, dest.code);
+
+const groups: Record<string, { code: string; name: string }[]> = {
+  'visa-free': [],
+  'visa-on-arrival': [],
+  eta: [],
+  'e-visa': [],
+  'visa-required': [],
+};
+for (const p of passports) {
+  const status = decodeCell(reverse[p.code] ?? '?').status;
+  const bucket = groups[status];
+  if (bucket) bucket.push({ code: p.code, name: p.name });
 }
 
-const { dest, groups, total } = Astro.props;
 const accessible = GROUPS.reduce((n, s) => n + (groups[s] ?? []).length, 0);
 const required = (groups['visa-required'] ?? []).length;
+const total = passports.length;
 ---
 
 <BaseLayout

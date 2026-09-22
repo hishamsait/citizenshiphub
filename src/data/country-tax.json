@@ -1,0 +1,1818 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-22T00:13:55.706Z",
+    "sources": [
+      {
+        "name": "Tax Foundation",
+        "url": "https://taxfoundation.org/",
+        "updatedAt": null
+      },
+      {
+        "name": "OECD Tax Database",
+        "url": "https://www.oecd.org/tax/tax-policy/tax-database/",
+        "updatedAt": null
+      },
+      {
+        "name": "KPMG Tax Rates Online",
+        "url": "https://kpmg.com/xx/en/services/tax/tax-tools-and-resources/tax-rates-online.html",
+        "updatedAt": null
+      }
+    ],
+    "license": "Compiled from public sources (approximate); not tax advice.",
+    "disclaimer": "Informational only — tax rates change frequently; verify with a qualified tax adviser.",
+    "totalCountries": 199
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "personalIncomeTax": null,
+      "corporateTax": null,
+      "vat": null,
+      "territorial": null,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AL",
+      "personalIncomeTax": 23,
+      "corporateTax": 15,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DZ",
+      "personalIncomeTax": 35,
+      "corporateTax": 26,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AD",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 4.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AO",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 14,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AG",
+      "personalIncomeTax": 0,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AR",
+      "personalIncomeTax": 35,
+      "corporateTax": 35,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AM",
+      "personalIncomeTax": 20,
+      "corporateTax": 18,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AU",
+      "personalIncomeTax": 45,
+      "corporateTax": 30,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AT",
+      "personalIncomeTax": 55,
+      "corporateTax": 23,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AZ",
+      "personalIncomeTax": 25,
+      "corporateTax": 20,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BS",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 10,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BH",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 10,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BD",
+      "personalIncomeTax": 25,
+      "corporateTax": 27.5,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BB",
+      "personalIncomeTax": 28.5,
+      "corporateTax": 9,
+      "vat": 17.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BY",
+      "personalIncomeTax": 13,
+      "corporateTax": 20,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BE",
+      "personalIncomeTax": 50,
+      "corporateTax": 25,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BZ",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 12.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BJ",
+      "personalIncomeTax": 45,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BT",
+      "personalIncomeTax": null,
+      "corporateTax": null,
+      "vat": null,
+      "territorial": null,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BO",
+      "personalIncomeTax": 13,
+      "corporateTax": 25,
+      "vat": 13,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BA",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 17,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BW",
+      "personalIncomeTax": 25,
+      "corporateTax": 22,
+      "vat": 14,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BR",
+      "personalIncomeTax": 27.5,
+      "corporateTax": 34,
+      "vat": 17,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BN",
+      "personalIncomeTax": 0,
+      "corporateTax": 18.5,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BG",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BF",
+      "personalIncomeTax": 27.5,
+      "corporateTax": 27.5,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "BI",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KH",
+      "personalIncomeTax": 20,
+      "corporateTax": 20,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CM",
+      "personalIncomeTax": 38.5,
+      "corporateTax": 33,
+      "vat": 19.25,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CA",
+      "personalIncomeTax": 53.5,
+      "corporateTax": 26.5,
+      "vat": 5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CV",
+      "personalIncomeTax": 27.5,
+      "corporateTax": 22,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CF",
+      "personalIncomeTax": 50,
+      "corporateTax": 30,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TD",
+      "personalIncomeTax": 30,
+      "corporateTax": 35,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CL",
+      "personalIncomeTax": 40,
+      "corporateTax": 27,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CN",
+      "personalIncomeTax": 45,
+      "corporateTax": 25,
+      "vat": 13,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CO",
+      "personalIncomeTax": 39,
+      "corporateTax": 35,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KM",
+      "personalIncomeTax": 30,
+      "corporateTax": 50,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CG",
+      "personalIncomeTax": 30,
+      "corporateTax": 28,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CD",
+      "personalIncomeTax": 40,
+      "corporateTax": 30,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CR",
+      "personalIncomeTax": 25,
+      "corporateTax": 30,
+      "vat": 13,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CI",
+      "personalIncomeTax": 60,
+      "corporateTax": 25,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "HR",
+      "personalIncomeTax": 36,
+      "corporateTax": 18,
+      "vat": 25,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CU",
+      "personalIncomeTax": null,
+      "corporateTax": null,
+      "vat": null,
+      "territorial": null,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CY",
+      "personalIncomeTax": 35,
+      "corporateTax": 12.5,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": true
+    },
+    {
+      "iso2": "CZ",
+      "personalIncomeTax": 23,
+      "corporateTax": 21,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DK",
+      "personalIncomeTax": 55.9,
+      "corporateTax": 22,
+      "vat": 25,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DJ",
+      "personalIncomeTax": 30,
+      "corporateTax": 25,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DM",
+      "personalIncomeTax": 0,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DO",
+      "personalIncomeTax": 25,
+      "corporateTax": 27,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "EC",
+      "personalIncomeTax": 37,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "EG",
+      "personalIncomeTax": 25,
+      "corporateTax": 22.5,
+      "vat": 14,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SV",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 13,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GQ",
+      "personalIncomeTax": 35,
+      "corporateTax": 35,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ER",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "EE",
+      "personalIncomeTax": 20,
+      "corporateTax": 20,
+      "vat": 22,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SZ",
+      "personalIncomeTax": 33,
+      "corporateTax": 27.5,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ET",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "FJ",
+      "personalIncomeTax": 20,
+      "corporateTax": 20,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "FI",
+      "personalIncomeTax": 51.25,
+      "corporateTax": 20,
+      "vat": 25.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "FR",
+      "personalIncomeTax": 45,
+      "corporateTax": 25,
+      "vat": 20,
+      "territorial": false,
+      "wealth": true,
+      "nonDom": null
+    },
+    {
+      "iso2": "GA",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GM",
+      "personalIncomeTax": 30,
+      "corporateTax": 27,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GE",
+      "personalIncomeTax": 20,
+      "corporateTax": 15,
+      "vat": 18,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "DE",
+      "personalIncomeTax": 45,
+      "corporateTax": 30,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GH",
+      "personalIncomeTax": 30,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GR",
+      "personalIncomeTax": 44,
+      "corporateTax": 22,
+      "vat": 24,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GD",
+      "personalIncomeTax": 0,
+      "corporateTax": 28,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GT",
+      "personalIncomeTax": 7,
+      "corporateTax": 25,
+      "vat": 12,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GN",
+      "personalIncomeTax": 40,
+      "corporateTax": 35,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GW",
+      "personalIncomeTax": 20,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GY",
+      "personalIncomeTax": 33.3,
+      "corporateTax": 25,
+      "vat": 14,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "HT",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "HN",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "HK",
+      "personalIncomeTax": 17,
+      "corporateTax": 16.5,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "HU",
+      "personalIncomeTax": 15,
+      "corporateTax": 9,
+      "vat": 27,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IS",
+      "personalIncomeTax": 46.25,
+      "corporateTax": 21,
+      "vat": 24,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IN",
+      "personalIncomeTax": 42.7,
+      "corporateTax": 25,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ID",
+      "personalIncomeTax": 35,
+      "corporateTax": 22,
+      "vat": 11,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IR",
+      "personalIncomeTax": 35,
+      "corporateTax": 25,
+      "vat": 9,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IQ",
+      "personalIncomeTax": 15,
+      "corporateTax": 15,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IE",
+      "personalIncomeTax": 40,
+      "corporateTax": 12.5,
+      "vat": 23,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": true
+    },
+    {
+      "iso2": "IL",
+      "personalIncomeTax": 50,
+      "corporateTax": 23,
+      "vat": 17,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "IT",
+      "personalIncomeTax": 43,
+      "corporateTax": 24,
+      "vat": 22,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": true
+    },
+    {
+      "iso2": "JM",
+      "personalIncomeTax": 30,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "JP",
+      "personalIncomeTax": 55,
+      "corporateTax": 29.74,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "JO",
+      "personalIncomeTax": 30,
+      "corporateTax": 20,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KZ",
+      "personalIncomeTax": 10,
+      "corporateTax": 20,
+      "vat": 12,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KE",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KI",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 12.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "XK",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KW",
+      "personalIncomeTax": 0,
+      "corporateTax": 15,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KG",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 12,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LA",
+      "personalIncomeTax": 25,
+      "corporateTax": 20,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LV",
+      "personalIncomeTax": 31,
+      "corporateTax": 20,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LB",
+      "personalIncomeTax": 25,
+      "corporateTax": 17,
+      "vat": 11,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LS",
+      "personalIncomeTax": 30,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LR",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LY",
+      "personalIncomeTax": 10,
+      "corporateTax": 20,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LI",
+      "personalIncomeTax": 22.4,
+      "corporateTax": 12.5,
+      "vat": 8.1,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LT",
+      "personalIncomeTax": 20,
+      "corporateTax": 15,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LU",
+      "personalIncomeTax": 42,
+      "corporateTax": 24.94,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MO",
+      "personalIncomeTax": 12,
+      "corporateTax": 12,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MG",
+      "personalIncomeTax": 20,
+      "corporateTax": 20,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MW",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 16.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MY",
+      "personalIncomeTax": 30,
+      "corporateTax": 24,
+      "vat": 8,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MV",
+      "personalIncomeTax": 15,
+      "corporateTax": 15,
+      "vat": 8,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ML",
+      "personalIncomeTax": 40,
+      "corporateTax": 35,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MT",
+      "personalIncomeTax": 35,
+      "corporateTax": 35,
+      "vat": 18,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": true
+    },
+    {
+      "iso2": "MH",
+      "personalIncomeTax": 12,
+      "corporateTax": 3,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MR",
+      "personalIncomeTax": 40,
+      "corporateTax": 25,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MU",
+      "personalIncomeTax": 20,
+      "corporateTax": 15,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MX",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "FM",
+      "personalIncomeTax": 10,
+      "corporateTax": 21,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MD",
+      "personalIncomeTax": 12,
+      "corporateTax": 12,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MC",
+      "personalIncomeTax": 0,
+      "corporateTax": 33.33,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MN",
+      "personalIncomeTax": 10,
+      "corporateTax": 25,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ME",
+      "personalIncomeTax": 9,
+      "corporateTax": 15,
+      "vat": 21,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MA",
+      "personalIncomeTax": 38,
+      "corporateTax": 31,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MZ",
+      "personalIncomeTax": 32,
+      "corporateTax": 32,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MM",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NA",
+      "personalIncomeTax": 37,
+      "corporateTax": 32,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NR",
+      "personalIncomeTax": 0,
+      "corporateTax": 25,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NP",
+      "personalIncomeTax": 36,
+      "corporateTax": 25,
+      "vat": 13,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NL",
+      "personalIncomeTax": 49.5,
+      "corporateTax": 25.8,
+      "vat": 21,
+      "territorial": false,
+      "wealth": true,
+      "nonDom": null
+    },
+    {
+      "iso2": "NZ",
+      "personalIncomeTax": 39,
+      "corporateTax": 28,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NI",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NE",
+      "personalIncomeTax": 35,
+      "corporateTax": 30,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NG",
+      "personalIncomeTax": 24,
+      "corporateTax": 30,
+      "vat": 7.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KP",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "MK",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "NO",
+      "personalIncomeTax": 38.2,
+      "corporateTax": 22,
+      "vat": 25,
+      "territorial": false,
+      "wealth": true,
+      "nonDom": null
+    },
+    {
+      "iso2": "OM",
+      "personalIncomeTax": 0,
+      "corporateTax": 15,
+      "vat": 5,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PK",
+      "personalIncomeTax": 35,
+      "corporateTax": 29,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PW",
+      "personalIncomeTax": 9.3,
+      "corporateTax": 0,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PS",
+      "personalIncomeTax": 15,
+      "corporateTax": 15,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PA",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 7,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PG",
+      "personalIncomeTax": 42,
+      "corporateTax": 30,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PY",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 10,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PE",
+      "personalIncomeTax": 30,
+      "corporateTax": 29.5,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PH",
+      "personalIncomeTax": 35,
+      "corporateTax": 25,
+      "vat": 12,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PL",
+      "personalIncomeTax": 32,
+      "corporateTax": 19,
+      "vat": 23,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "PT",
+      "personalIncomeTax": 48,
+      "corporateTax": 21,
+      "vat": 23,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "QA",
+      "personalIncomeTax": 0,
+      "corporateTax": 10,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "RO",
+      "personalIncomeTax": 10,
+      "corporateTax": 16,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "RU",
+      "personalIncomeTax": 15,
+      "corporateTax": 25,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "RW",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KN",
+      "personalIncomeTax": 0,
+      "corporateTax": 33,
+      "vat": 17,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "LC",
+      "personalIncomeTax": 0,
+      "corporateTax": 30,
+      "vat": 12.5,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "WS",
+      "personalIncomeTax": 27,
+      "corporateTax": 27,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SM",
+      "personalIncomeTax": 15,
+      "corporateTax": 17,
+      "vat": 22,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ST",
+      "personalIncomeTax": 25,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SA",
+      "personalIncomeTax": 0,
+      "corporateTax": 20,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SN",
+      "personalIncomeTax": 40,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "RS",
+      "personalIncomeTax": 15,
+      "corporateTax": 15,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SC",
+      "personalIncomeTax": 15,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SL",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SG",
+      "personalIncomeTax": 24,
+      "corporateTax": 17,
+      "vat": 9,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SK",
+      "personalIncomeTax": 25,
+      "corporateTax": 21,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SI",
+      "personalIncomeTax": 50,
+      "corporateTax": 22,
+      "vat": 22,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SB",
+      "personalIncomeTax": 40,
+      "corporateTax": 30,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SO",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ZA",
+      "personalIncomeTax": 45,
+      "corporateTax": 27,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "KR",
+      "personalIncomeTax": 45,
+      "corporateTax": 24,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SS",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ES",
+      "personalIncomeTax": 47,
+      "corporateTax": 25,
+      "vat": 21,
+      "territorial": false,
+      "wealth": true,
+      "nonDom": null
+    },
+    {
+      "iso2": "LK",
+      "personalIncomeTax": 36,
+      "corporateTax": 24,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "VC",
+      "personalIncomeTax": 0,
+      "corporateTax": 30,
+      "vat": 16,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SD",
+      "personalIncomeTax": 15,
+      "corporateTax": 35,
+      "vat": 17,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SR",
+      "personalIncomeTax": 38,
+      "corporateTax": 36,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "SE",
+      "personalIncomeTax": 52,
+      "corporateTax": 20.6,
+      "vat": 25,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "CH",
+      "personalIncomeTax": 40,
+      "corporateTax": 14.6,
+      "vat": 8.1,
+      "territorial": false,
+      "wealth": true,
+      "nonDom": null
+    },
+    {
+      "iso2": "SY",
+      "personalIncomeTax": 22,
+      "corporateTax": 28,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TW",
+      "personalIncomeTax": 40,
+      "corporateTax": 20,
+      "vat": 5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TJ",
+      "personalIncomeTax": 13,
+      "corporateTax": 25,
+      "vat": 14,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TZ",
+      "personalIncomeTax": 30,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TH",
+      "personalIncomeTax": 35,
+      "corporateTax": 20,
+      "vat": 7,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TL",
+      "personalIncomeTax": 10,
+      "corporateTax": 10,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TG",
+      "personalIncomeTax": 35,
+      "corporateTax": 27,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TO",
+      "personalIncomeTax": 20,
+      "corporateTax": 25,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TT",
+      "personalIncomeTax": 25,
+      "corporateTax": 30,
+      "vat": 12.5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TN",
+      "personalIncomeTax": 35,
+      "corporateTax": 25,
+      "vat": 19,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TR",
+      "personalIncomeTax": 40,
+      "corporateTax": 25,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TM",
+      "personalIncomeTax": 10,
+      "corporateTax": 20,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "TV",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "UG",
+      "personalIncomeTax": 40,
+      "corporateTax": 30,
+      "vat": 18,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "UA",
+      "personalIncomeTax": 18,
+      "corporateTax": 18,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "AE",
+      "personalIncomeTax": 0,
+      "corporateTax": 9,
+      "vat": 5,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "GB",
+      "personalIncomeTax": 45,
+      "corporateTax": 25,
+      "vat": 20,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": true
+    },
+    {
+      "iso2": "US",
+      "personalIncomeTax": 37,
+      "corporateTax": 21,
+      "vat": 0,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "UY",
+      "personalIncomeTax": 36,
+      "corporateTax": 25,
+      "vat": 22,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "UZ",
+      "personalIncomeTax": 12,
+      "corporateTax": 15,
+      "vat": 12,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "VU",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 15,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "VA",
+      "personalIncomeTax": 0,
+      "corporateTax": 0,
+      "vat": 0,
+      "territorial": true,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "VE",
+      "personalIncomeTax": 34,
+      "corporateTax": 34,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "VN",
+      "personalIncomeTax": 35,
+      "corporateTax": 20,
+      "vat": 10,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "YE",
+      "personalIncomeTax": 20,
+      "corporateTax": 20,
+      "vat": 5,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ZM",
+      "personalIncomeTax": 37.5,
+      "corporateTax": 30,
+      "vat": 16,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    },
+    {
+      "iso2": "ZW",
+      "personalIncomeTax": 36,
+      "corporateTax": 24.72,
+      "vat": 15,
+      "territorial": false,
+      "wealth": null,
+      "nonDom": null
+    }
+  ]
+}

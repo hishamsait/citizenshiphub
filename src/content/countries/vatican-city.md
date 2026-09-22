@@ -7,7 +7,23 @@ citizenshipByDescent: false
 naturalizationYears: null
 dualCitizenshipAllowed: false
 officialFeeEUR: null
+cbi: false
+goldenVisa: false
+marriageYears: null
+languageRequired: null
+maxGenerations: 1
+birthright: false
+cbiMinInvestmentEUR: null
+goldenVisaMinInvestmentEUR: null
+digitalNomadVisa: false
+languageLevel: null
 summary: "Citizenship by descent is generally not available; naturalisation is restricted; dual citizenship is generally not permitted."
+flag: "🇻🇦"
+areaKm2: 0.44
+languages:
+  - "Italian"
+  - "Latin"
+demonym: "Vatican"
 ---
 
 ## Why Vatican City?
@@ -31,6 +47,13 @@ Vatican City generally does not permit dual citizenship — naturalising usually
 ## Fees & timeline
 
 There is no standard published application fee — costs vary, so check with official sources.
+
+## Tax considerations
+
+- Top personal income tax rate: **0%**
+- Corporate income tax rate: **0%**
+- Standard VAT/GST rate: **0%**
+- Taxation basis: **territorial** (residents are generally taxed only on domestic-source income)
 
 ---
 _Compiled from the Citizenship Hub law dataset (approximate). Verify with official government sources before relying on this information._

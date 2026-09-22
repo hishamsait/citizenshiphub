@@ -1,14 +1,24 @@
 {
   "meta": {
-    "generatedAt": "2026-09-21T17:48:07.977Z",
+    "generatedAt": "2026-09-21T22:35:46.313Z",
     "sources": [
       {
         "name": "passport-index-data (imorte)",
         "url": "https://raw.githubusercontent.com/imorte/passport-index-data/main/passport-index-matrix-iso2.csv",
         "updatedAt": "2026-02-17"
+      },
+      {
+        "name": "countries (mledoze)",
+        "url": "https://raw.githubusercontent.com/mledoze/countries/master/countries.json",
+        "updatedAt": null
+      },
+      {
+        "name": "Natural Earth (world countries)",
+        "url": "https://www.naturalearthdata.com/",
+        "updatedAt": null
       }
     ],
-    "license": "MIT (derived from passportindex.org via imorte/passport-index-data)",
+    "license": "MIT (passport matrix via imorte/passport-index-data); mledoze/countries (MIT, some ODbL-derived fields); Natural Earth (public domain)",
     "disclaimer": "Informational only — not legal, immigration, or travel advice. Verify with official sources.",
     "scoreDefinition": "mobilityScore = visaFree + visaOnArrival + eta + eVisa",
     "totalCountries": 199,

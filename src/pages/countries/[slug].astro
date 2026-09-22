@@ -1,62 +1,247 @@
 ---
-import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CountryCard from '../../components/CountryCard.astro';
-import { formatEuro } from '../../lib/utils';
+import { formatEuro, formatNumber, formatArea, formatUsd, formatPercent, formatGdpUsdM } from '../../lib/utils';
 import TravelMap from '../../components/TravelMap.astro';
 import { decodeCell, type AccessStatus } from '../../lib/visa';
-import passportsData from '../../data/passports.json';
-import matrixData from '../../data/visa-matrix.json';
-import type { PassportsData, VisaMatrix } from '../../data/types';
+import { getDb } from '../../lib/db/client';
+import { getGuideBySlug, listGuides } from '../../lib/db/guides';
+import { getProfile } from '../../lib/db/profiles';
+import { getEconomics } from '../../lib/db/economics';
+import { getFreedom } from '../../lib/db/freedom';
+import { getTax } from '../../lib/db/tax';
+import { getCitizenshipLaw } from '../../lib/db/citizenship';
+import { listRankings } from '../../lib/db/rankings';
+import { getMatrixForPassport } from '../../lib/db/visa';
+import { listSources } from '../../lib/db/sources';
 
-export const prerender = true;
+const db = getDb(Astro.locals);
+const slug = Astro.params.slug ?? '';
+const guide = await getGuideBySlug(db, slug);
+if (!guide) return Astro.redirect('/countries/');
 
-export async function getStaticPaths() {
-  const countries = await getCollection('countries');
-  return countries.map((entry) => ({
-    params: { slug: entry.id },
-    props: { entry },
-  }));
+const iso2 = guide.iso2.toUpperCase();
+const { name, capital, region, summary, citizenshipByDescent, naturalizationYears, dualCitizenshipAllowed, officialFeeEUR, flag } = guide;
+
+const [profile, economics, freedom, tax, law, rankings, allGuides, sources, matrix] = await Promise.all([
+  getProfile(db, iso2),
+  getEconomics(db, iso2),
+  getFreedom(db, iso2),
+  getTax(db, iso2),
+  getCitizenshipLaw(db, iso2),
+  listRankings(db),
+  listGuides(db),
+  listSources(db),
+  getMatrixForPassport(db, iso2),
+]);
+
+const mobility = rankings.find((r) => r.code === iso2) ?? null;
+const countryProfile = profile;
+const areaKm2 = profile?.areaKm2 ?? null;
+const population = profile?.population ?? null;
+const demonym = profile?.demonym ?? null;
+const languages = profile?.languages ?? [];
+const cbi = law?.cbi ?? null;
+const goldenVisa = law?.goldenVisa ?? null;
+const marriageYears = law?.marriageYears ?? null;
+const languageRequired = law?.languageRequired ?? null;
+const maxGenerations = law?.maxGenerations ?? null;
+const birthright = law?.birthright ?? null;
+const cbiMinInvestmentEUR = law?.cbiMinInvestmentEUR ?? null;
+const goldenVisaMinInvestmentEUR = law?.goldenVisaMinInvestmentEUR ?? null;
+const digitalNomadVisa = law?.digitalNomadVisa ?? null;
+const languageLevel = law?.languageLevel ?? null;
+
+const currencyLabel = (countryProfile?.currencies ?? [])
+  .map((c) => {
+    const label = c.name ?? c.code;
+    return c.symbol ? `${label} (${c.symbol})` : label;
+  })
+  .join(', ');
+
+const economicsFacts: { label: string; value: string; note: string | null }[] = [];
+if (economics && economics.gdpPerCapitaUsd !== null) {
+  economicsFacts.push({
+    label: 'GDP per capita',
+    value: formatUsd(economics.gdpPerCapitaUsd),
+    note: economics.gdpPerCapitaYear !== null ? String(economics.gdpPerCapitaYear) : null,
+  });
+}
+if (countryProfile?.gdpUsdM != null) {
+  economicsFacts.push({
+    label: 'Total GDP',
+    value: formatGdpUsdM(countryProfile.gdpUsdM),
+    note: countryProfile.gdpYear != null ? String(countryProfile.gdpYear) : null,
+  });
+}
+if (economics && economics.inflationPct !== null) {
+  economicsFacts.push({
+    label: 'Inflation',
+    value: formatPercent(economics.inflationPct),
+    note: economics.inflationYear !== null ? String(economics.inflationYear) : null,
+  });
+}
+if (economics && economics.lifeExpectancy !== null) {
+  economicsFacts.push({
+    label: 'Life expectancy',
+    value: `${economics.lifeExpectancy.toFixed(1)} years`,
+    note: economics.lifeExpectancyYear !== null ? String(economics.lifeExpectancyYear) : null,
+  });
+}
+if (economics && economics.gdpGrowthPct !== null) {
+  economicsFacts.push({
+    label: 'GDP growth',
+    value: formatPercent(economics.gdpGrowthPct),
+    note: economics.gdpGrowthYear !== null ? String(economics.gdpGrowthYear) : null,
+  });
+}
+if (economics && economics.hdi !== null) {
+  economicsFacts.push({
+    label: 'Human Development Index',
+    value: economics.hdi.toFixed(3),
+    note: economics.hdiRank !== null ? `#${economics.hdiRank}` : null,
+  });
+}
+if (countryProfile?.incomeGroup) {
+  economicsFacts.push({
+    label: 'Income group',
+    value: countryProfile.incomeGroup.replace(/^\d+\.\s*/, ''),
+    note: null,
+  });
+}
+if (countryProfile?.economy) {
+  economicsFacts.push({
+    label: 'Development status',
+    value: countryProfile.economy.replace(/^\d+\.\s*/, ''),
+    note: null,
+  });
+}
+const freedomFacts: { label: string; value: string; note: string | null }[] = [];
+const yearRankNote = (year: number | null, rank: number | null): string | null =>
+  [year !== null ? String(year) : null, rank !== null ? `#${rank}` : null].filter(Boolean).join(' · ') || null;
+
+if (freedom?.cpi && freedom.cpi.score !== null) {
+  freedomFacts.push({
+    label: 'Corruption Perceptions Index',
+    value: `${freedom.cpi.score} / 100`,
+    note: yearRankNote(freedom.cpi.year, freedom.cpi.rank),
+  });
+}
+if (freedom?.fiw && freedom.fiw.score !== null) {
+  const fiwNote = [freedom.fiw.note, freedom.fiw.year !== null ? String(freedom.fiw.year) : null]
+    .filter(Boolean)
+    .join(' · ');
+  freedomFacts.push({ label: 'Freedom in the World', value: `${freedom.fiw.score} / 100`, note: fiwNote || null });
+}
+if (freedom?.humanRights && freedom.humanRights.score !== null) {
+  freedomFacts.push({
+    label: 'Human Rights Index',
+    value: `${freedom.humanRights.score.toFixed(2)} / 1`,
+    note: yearRankNote(freedom.humanRights.year, freedom.humanRights.rank),
+  });
+}
+if (freedom?.democracy && freedom.democracy.score !== null) {
+  freedomFacts.push({
+    label: 'Liberal Democracy Index',
+    value: `${freedom.democracy.score.toFixed(2)} / 1`,
+    note: yearRankNote(freedom.democracy.year, freedom.democracy.rank),
+  });
+}
+if (freedom?.happiness && freedom.happiness.score !== null) {
+  freedomFacts.push({
+    label: 'Life satisfaction',
+    value: `${freedom.happiness.score.toFixed(2)} / 10`,
+    note: yearRankNote(freedom.happiness.year, freedom.happiness.rank),
+  });
 }
 
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-const {
-  name,
-  iso2,
-  capital,
-  region,
-  citizenshipByDescent,
-  naturalizationYears,
-  dualCitizenshipAllowed,
-  officialFeeEUR,
-  summary,
-} = entry.data;
+const taxFacts: { label: string; value: string; note: string | null }[] = [];
+if (tax?.personalIncomeTax != null) {
+  taxFacts.push({ label: 'Personal income tax', value: `${tax.personalIncomeTax}%`, note: 'top rate' });
+}
+if (tax?.corporateTax != null) {
+  taxFacts.push({ label: 'Corporate tax', value: `${tax.corporateTax}%`, note: null });
+}
+if (tax?.vat != null) {
+  taxFacts.push({ label: 'VAT / GST', value: `${tax.vat}%`, note: null });
+}
+if (tax?.territorial === true) {
+  taxFacts.push({ label: 'Tax basis', value: 'Territorial', note: null });
+} else if (tax?.territorial === false) {
+  taxFacts.push({ label: 'Tax basis', value: 'Worldwide', note: null });
+}
+if (tax?.wealth === true) {
+  taxFacts.push({ label: 'Wealth tax', value: 'Applies', note: null });
+}
+if (tax?.nonDom === true) {
+  taxFacts.push({ label: 'Non-dom regime', value: 'Available', note: null });
+}
 
-const { passports } = passportsData as unknown as PassportsData;
-const mobility = passports.find((p) => p.code === iso2.toUpperCase());
-
-const { matrix } = matrixData as unknown as VisaMatrix;
-const cells = matrix[iso2.toUpperCase()] ?? {};
 const statusByIso2: Record<string, AccessStatus> = {};
-for (const [code, cell] of Object.entries(cells)) {
+for (const [code, cell] of Object.entries(matrix)) {
   statusByIso2[code] = decodeCell(cell).status;
 }
 
-const otherGuides = (await getCollection('countries'))
-  .filter((g) => g.id !== entry.id)
-  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+const otherGuides = allGuides
+  .filter((g) => g.slug !== slug)
+  .sort((a, b) => a.name.localeCompare(b.name))
   .slice(0, 3);
 
-const facts = [
+const overviewFacts = [
   { label: 'Capital', value: capital },
   { label: 'Region', value: region },
+  ...(areaKm2 ? [{ label: 'Area', value: formatArea(areaKm2) }] : []),
+  ...(population ? [{ label: 'Population', value: formatNumber(population) }] : []),
+  ...(demonym ? [{ label: 'Demonym', value: demonym }] : []),
+  ...(languages && languages.length > 0 ? [{ label: 'Languages', value: languages.join(', ') }] : []),
+  ...(currencyLabel ? [{ label: 'Currency', value: currencyLabel }] : []),
+];
+
+const descentDepthLabel =
+  maxGenerations === null
+    ? 'No generational limit'
+    : maxGenerations === 1
+      ? 'Parents only'
+      : maxGenerations === 2
+        ? 'Grandparents'
+        : `${maxGenerations} generations`;
+
+const citizenshipFacts = [
   { label: 'Citizenship by descent', value: citizenshipByDescent ? 'Yes' : 'No' },
+  ...(citizenshipByDescent && maxGenerations !== null
+    ? [{ label: 'Descent depth', value: descentDepthLabel }]
+    : []),
+  ...(birthright ? [{ label: 'Citizenship by birth', value: 'Yes (jus soli)' }] : []),
   {
     label: 'Naturalisation period',
     value: naturalizationYears === null ? 'Restricted / varies' : `${naturalizationYears} years`,
   },
+  ...(marriageYears !== null && marriageYears !== undefined
+    ? [{ label: 'Marriage route', value: `${marriageYears} years` }]
+    : []),
+  ...(languageLevel
+    ? [{ label: 'Language level', value: languageLevel }]
+    : languageRequired !== null && languageRequired !== undefined
+      ? [{ label: 'Language test', value: languageRequired ? 'Required' : 'Not required' }]
+      : []),
   { label: 'Dual citizenship', value: dualCitizenshipAllowed ? 'Allowed' : 'Restricted' },
+  ...(cbi
+    ? [
+        {
+          label: 'Citizenship by investment',
+          value: cbiMinInvestmentEUR != null ? `From ${formatEuro(cbiMinInvestmentEUR)}` : 'Available',
+        },
+      ]
+    : []),
+  ...(goldenVisa
+    ? [
+        {
+          label: 'Golden visa',
+          value: goldenVisaMinInvestmentEUR != null ? `From ${formatEuro(goldenVisaMinInvestmentEUR)}` : 'Available',
+        },
+      ]
+    : []),
+  ...(digitalNomadVisa ? [{ label: 'Digital nomad visa', value: 'Available' }] : []),
   {
     label: 'Official application fee',
     value:
@@ -72,7 +257,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline: `Citizenship guide: ${name}`,
-  description: summary,
+  description: summary ?? '',
   about: { '@type': 'Country', name },
   mainEntityOfPage: new URL(Astro.url.pathname, 'https://citizenshiphub.com').href,
 };
@@ -80,7 +265,7 @@ const jsonLd = {
 
 <BaseLayout
   title={`${name} Citizenship Guide`}
-  description={summary}
+  description={summary ?? ''}
   canonical={Astro.url.pathname}
   jsonLd={jsonLd}
 >
@@ -90,30 +275,16 @@ const jsonLd = {
         <p class="text-sm font-semibold uppercase tracking-widest text-brand-700">
           {region} · {iso2.toUpperCase()}
         </p>
-        <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-          {name} — Citizenship Guide
-        </h1>
+        <div class="mt-2 flex items-baseline gap-3">
+          {flag && <span class="text-4xl" aria-hidden="true">{flag}</span>}
+          <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            {name} — Citizenship Guide
+          </h1>
+        </div>
         <p class="mt-3 text-lg text-slate-600">{summary}</p>
-        <div class="prose mt-8 max-w-none">
-          <Content />
-        </div>
+        <div class="prose mt-8 max-w-none" set:html={guide.bodyHtml} />
       </div>
-
       <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
-        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">At a glance</h2>
-          <dl class="mt-4">
-            {
-              facts.map((f) => (
-                <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
-                  <dt class="text-slate-500">{f.label}</dt>
-                  <dd class="text-right font-medium text-slate-900">{f.value}</dd>
-                </div>
-              ))
-            }
-          </dl>
-        </div>
-
         {
           mobility && (
             <div class="rounded-2xl bg-brand-50 p-6 shadow-sm">
@@ -153,6 +324,97 @@ const jsonLd = {
             </div>
           )
         }
+
+        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Country overview</h2>
+          <dl class="mt-4">
+            {
+              overviewFacts.map((f) => (
+                <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                  <dt class="text-slate-500">{f.label}</dt>
+                  <dd class="text-right font-medium text-slate-900">{f.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Citizenship</h2>
+          <dl class="mt-4">
+            {
+              citizenshipFacts.map((f) => (
+                <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                  <dt class="text-slate-500">{f.label}</dt>
+                  <dd class="text-right font-medium text-slate-900">{f.value}</dd>
+                </div>
+              ))
+            }
+          </dl>
+        </div>
+
+                {
+          economicsFacts.length > 0 && (
+            <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Economics & development</h2>
+              <dl class="mt-4">
+                {
+                  economicsFacts.map((f) => (
+                    <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                      <dt class="text-slate-500">{f.label}</dt>
+                      <dd class="text-right font-medium text-slate-900">
+                        {f.value}
+                        {f.note && <span class="ml-1 text-xs font-normal text-slate-400">{f.note}</span>}
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+            </div>
+          )
+        }
+
+        {
+          freedomFacts.length > 0 && (
+            <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Freedom & quality of life</h2>
+              <dl class="mt-4">
+                {
+                  freedomFacts.map((f) => (
+                    <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                      <dt class="text-slate-500">{f.label}</dt>
+                      <dd class="text-right font-medium text-slate-900">
+                        {f.value}
+                        {f.note && <span class="ml-1 text-xs font-normal text-slate-400">{f.note}</span>}
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+            </div>
+          )
+        }
+
+        {
+          taxFacts.length > 0 && (
+            <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Tax considerations</h2>
+              <dl class="mt-4">
+                {
+                  taxFacts.map((f) => (
+                    <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                      <dt class="text-slate-500">{f.label}</dt>
+                      <dd class="text-right font-medium text-slate-900">
+                        {f.value}
+                        {f.note && <span class="ml-1 text-xs font-normal text-slate-400">{f.note}</span>}
+                      </dd>
+                    </div>
+                  ))
+                }
+              </dl>
+            </div>
+          )
+        }
       </aside>
     </div>
 
@@ -174,16 +436,17 @@ const jsonLd = {
             {
               otherGuides.map((g) => (
                 <CountryCard
-                  slug={g.id}
-                  name={g.data.name}
-                  iso2={g.data.iso2}
-                  capital={g.data.capital}
-                  region={g.data.region}
-                  summary={g.data.summary}
-                  citizenshipByDescent={g.data.citizenshipByDescent}
-                  naturalizationYears={g.data.naturalizationYears}
-                  dualCitizenshipAllowed={g.data.dualCitizenshipAllowed}
-                  officialFeeEUR={g.data.officialFeeEUR}
+                  slug={g.slug}
+                  name={g.name}
+                  iso2={g.iso2}
+                  capital={g.capital ?? ''}
+                  region={g.region}
+                  summary={g.summary ?? ''}
+                  citizenshipByDescent={g.citizenshipByDescent}
+                  naturalizationYears={g.naturalizationYears}
+                  dualCitizenshipAllowed={g.dualCitizenshipAllowed}
+                  officialFeeEUR={g.officialFeeEUR}
+                  flag={g.flag}
                 />
               ))
             }
@@ -191,5 +454,50 @@ const jsonLd = {
         </section>
       )
     }
+    <section class="mt-16 border-t border-slate-200 pt-10">
+      <h2 class="text-xl font-bold text-slate-900">Data sources &amp; licenses</h2>
+      <p class="mt-2 text-sm text-slate-500">
+        This page draws on the following public sources. Each is listed with its license and the required attribution.
+      </p>
+
+      <ul class="mt-6 grid gap-6 sm:grid-cols-2">
+        {
+          sources.map((s) => (
+            <li class="rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+              <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener nofollow"
+                  class="font-semibold text-slate-900 hover:text-brand-700"
+                >
+                  {s.name} ↗
+                </a>
+                <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+                  {s.license.name}
+                </span>
+              </div>
+              <p class="mt-1">{s.provides}</p>
+              <p class="mt-1 text-xs text-slate-400">{s.attribution}</p>
+              {s.license.restrictions && (
+                <p class="mt-1 inline-block rounded bg-amber-50 px-2 py-1 text-xs text-amber-800">
+                  Restrictions: {s.license.restrictions}
+                </p>
+              )}
+              {s.note && <p class="mt-1 text-xs text-amber-700">{s.note}</p>}
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-6 rounded-lg bg-slate-100 p-4 text-xs leading-relaxed text-slate-500">
+        Citizenship Hub is an independent resource and is not affiliated with, endorsed by, or sponsored by any of the
+        organisations above. Informational only — not legal, immigration, tax, investment, or travel advice.
+        Requirements, scores, fees, and tax rates change frequently; always verify with the relevant official government
+        source before acting.
+      </p>
+    </section>
   </article>
 </BaseLayout>
+
+

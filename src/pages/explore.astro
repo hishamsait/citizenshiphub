@@ -1,16 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import VisaExplorer from '../components/VisaExplorer';
-import matrixData from '../data/visa-matrix.json';
-import passportsData from '../data/passports.json';
 import { getWorldPaths } from '../lib/map';
-import type { VisaMatrix, PassportsData } from '../data/types';
+import { getDb } from '../lib/db/client';
+import { listCountries } from '../lib/db/countries';
 
-export const prerender = true;
-
-const { matrix } = matrixData as unknown as VisaMatrix;
-const { passports } = passportsData as unknown as PassportsData;
-const countries = passports.map((p) => ({ code: p.code, name: p.name, region: p.region }));
+const db = getDb(Astro.locals);
+const countries = (await listCountries(db)).map((c) => ({ code: c.code, name: c.name, region: c.region }));
 const initialPassport = Astro.url.searchParams.get('passport') ?? '';
 const paths = getWorldPaths();
 ---
@@ -29,6 +25,6 @@ const paths = getWorldPaths();
     </div>
   </section>
   <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-    <VisaExplorer client:load matrix={matrix} countries={countries} paths={paths} initialPassport={initialPassport} />
+    <VisaExplorer client:load countries={countries} paths={paths} initialPassport={initialPassport} />
   </section>
 </BaseLayout>

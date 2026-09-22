@@ -163,3 +163,106 @@
     }
   }
 }
+
+/* ---- Accessibility settings (unlayered so they override Tailwind theme vars) ---- */
+
+/* Text size — scales the font (root font-size) without zooming the layout */
+/* 1 = 100% (default, no rule needed). 0 is smaller-than-default. */
+html[data-text-scale="0"] { font-size: 87.5%; }
+html[data-text-scale="2"] { font-size: 112.5%; }
+html[data-text-scale="3"] { font-size: 125%; }
+html[data-text-scale="4"] { font-size: 137.5%; }
+
+/* Pin the spacing scale + container widths to px so the text-size setting
+   scales type only (not padding, gaps, dimensions, or columns).
+   Density still works by overriding --spacing below. */
+html {
+  --spacing: 4px;
+  --container-xs: 320px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-7xl: 1280px;
+}
+
+/* Display density — scales the spacing scale (Gmail-style) */
+html[data-density="compact"]     { --spacing: 3.2px; }
+html[data-density="comfortable"] { --spacing: 5px; }
+
+/* High contrast — forced high-contrast palette + stronger affordances */
+html.high-contrast {
+  color-scheme: light;
+
+  --color-slate-50: #ffffff;
+  --color-slate-100: #f2f2f2;
+  --color-slate-200: #d9d9d9;
+  --color-slate-300: #bfbfbf;
+  --color-slate-400: #595959;
+  --color-slate-500: #404040;
+  --color-slate-600: #262626;
+  --color-slate-700: #1a1a1a;
+  --color-slate-800: #0d0d0d;
+  --color-slate-900: #000000;
+  --color-slate-950: #000000;
+
+  --color-brand-50: #ffffff;
+  --color-brand-100: #f0f0f0;
+  --color-brand-200: #d9d9d9;
+  --color-brand-300: #a6a6a6;
+  --color-brand-400: #737373;
+  --color-brand-500: #404040;
+  --color-brand-600: #262626;
+  --color-brand-700: #000000;
+  --color-brand-800: #000000;
+  --color-brand-900: #000000;
+  --color-brand-950: #000000;
+
+  --color-gold-50: #ffffff;
+  --color-gold-100: #fff7e6;
+  --color-gold-200: #ffe0a3;
+  --color-gold-300: #ffc966;
+  --color-gold-400: #9a6b00;
+  --color-gold-500: #7a5500;
+  --color-gold-600: #5c4000;
+  --color-gold-700: #3d2a00;
+  --color-gold-800: #241900;
+  --color-gold-900: #120c00;
+
+  --color-white: #ffffff;
+}
+
+html.high-contrast :focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
+}
+
+html.high-contrast a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Reduce motion — explicit override of the OS-level preference */
+html.reduce-motion {
+  scroll-behavior: auto;
+}
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Keep the accessibility widget itself at a fixed size regardless of the
+   text-size and density settings (theme/colors still apply to it). */
+.a11y-root {
+  --spacing: 4px;
+  font-size: 16px;
+}
+.a11y-root .text-sm {
+  font-size: 14px;
+}
+.a11y-root .text-xs {
+  font-size: 12px;
+}

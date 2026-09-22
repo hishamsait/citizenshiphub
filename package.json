@@ -10,13 +10,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
-    "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "check": "astro check",
     "astro": "astro",
-    "index:search": "pagefind --site dist",
     "fetch:data": "node scripts/fetch-passport-data.js",
     "fetch:data:fresh": "node scripts/fetch-passport-data.js --fresh",
+    "fetch:profiles": "node scripts/fetch-country-profiles.js",
+    "fetch:freedom": "node scripts/fetch-country-freedom.js",
     "db:migrate": "wrangler d1 migrations apply citizenshiphub-db --remote",
     "db:seed:generate": "node scripts/seed-d1.mjs",
     "db:seed": "node scripts/seed-d1.mjs && wrangler d1 execute citizenshiphub-db --remote --file=scripts/.generated/seed.sql",
@@ -41,9 +41,10 @@
     "@types/d3-geo": "^3.1.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "pagefind": "^1.5.2",
+    "marked": "^18.0.13",
     "typescript": "^5.9.3",
-    "wrangler": "4.86.0"
+    "wrangler": "4.86.0",
+    "xlsx": "^0.18.5"
   },
   "overrides": {
     "@astrojs/language-server": "2.16.16"

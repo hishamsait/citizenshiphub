@@ -28,12 +28,13 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-The generated datasets in `src/data/*.json` are **committed**, so the site builds out of the box with no network access.
-To refresh the data from source, run the ETL first:
+The application reads from **Cloudflare D1** at runtime — the database is the single source of truth. To (re)load the
+data, run the ETL and then seed D1:
 
 ```bash
 node scripts/fetch-passport-data.js      # refresh passport datasets (30-day cache)
 node scripts/generate-country-guides.js  # regenerate citizenship-laws.json + guides
+npm run db:seed                          # persist all datasets + guides + meta + sources to D1
 ```
 
 ## Pages
@@ -56,17 +57,24 @@ node scripts/generate-country-guides.js  # regenerate citizenship-laws.json + gu
 | Command                     | Description                                                       |
 | --------------------------- | ----------------------------------------------------------------- |
 | `npm run dev`               | Start the dev server                                              |
-| `npm run build`             | Type-check (`astro check`) and build the static site to `dist/`   |
+| `npm run build`             | Type-check (`astro check`) and build the server-rendered site       |
 | `npm run preview`           | Preview the production build                                      |
 | `npm run check`             | Run `astro check` only                                            |
 | `npm run astro`             | Run the Astro CLI directly (e.g. `npm run astro -- sync`)         |
 | `npm run fetch:data`        | Regenerate passport datasets (uses a 30-day cache)                |
 | `npm run fetch:data:fresh`  | Regenerate, ignoring the cache                                    |
+| `npm run fetch:profiles`    | Regenerate economic/development profiles (World Bank + UNDP)      |
+| `npm run fetch:freedom`     | Regenerate freedom/governance indices (CPI, V-Dem, Freedom House) |
+| `npm run db:migrate`        | Apply D1 migrations to the remote database                        |
+| `npm run db:seed:generate`  | Generate `scripts/.generated/seed.sql` from the datasets          |
+| `npm run db:seed`           | Generate + apply the D1 seed to the remote database               |
 
 Direct script invocations:
 
 ```bash
 node scripts/fetch-passport-data.js [--fresh] [--offline] [--out=<dir>]
+node scripts/fetch-country-profiles.js [--fresh] [--offline] [--out=<dir>]
+node scripts/fetch-country-freedom.js [--fresh] [--offline] [--out=<dir>]
 node scripts/generate-country-guides.js
 ```
 
@@ -85,6 +93,21 @@ Country metadata (names, regions, capitals) comes from
 [mledoze/countries](https://github.com/mledoze/countries). Citizenship-law facts are compiled from Wikipedia
 nationality-law pages (approximate; verified 21 September 2026) in `scripts/laws-*.js`.
 
+Economic and development indicators (GDP per capita, inflation, HDI) come from the
+[World Bank](https://data.worldbank.org/) (CC BY 4.0) and the
+[UNDP Human Development Report](https://hdr.undp.org/) (CC BY 3.0 IGO).
+
+Freedom & governance indicators come from
+[Transparency International](https://www.transparency.org/en/cpi/2024) (Corruption Perceptions Index), the
+[V-Dem Institute](https://v-dem.net/) (Human Rights Index and Liberal Democracy Index, via
+[Our World in Data](https://ourworldindata.org/), CC BY), and
+[Freedom House](https://freedomhouse.org/report/freedom-world) (Freedom in the World).
+
+Tax & financial data (personal income tax, corporate tax, VAT/GST, taxation basis) is compiled from public
+sources ([Tax Foundation](https://taxfoundation.org/), [OECD Tax Database](https://www.oecd.org/tax/tax-policy/tax-database/),
+[KPMG](https://kpmg.com/xx/en/services/tax/tax-tools-and-resources/tax-rates-online.html)) and is approximate —
+verify with a qualified tax adviser.
+
 Generated/committed files in `src/data/`:
 
 | File                       | Contents                                                              |
@@ -93,8 +116,12 @@ Generated/committed files in `src/data/`:
 | `rankings.json`            | Global rankings (competition rank + dense rank + percentile)          |
 | `visa-matrix.json`         | Compact passport × destination matrix (199 × 199)                     |
 | `citizenship-laws.json`    | Normalised citizenship-law dataset (descent, years, dual, fee, note)  |
+| `country-profiles.json`    | GDP/capita, inflation, and HDI per country (World Bank + UNDP)        |
+| `country-freedom.json`     | CPI, Human Rights, Liberal Democracy, and Freedom in the World       |
+| `country-tax.json`         | Personal/corporate/VAT tax rates and taxation basis per country      |
 | `types.ts`                 | Shared TypeScript interfaces for the datasets                         |
 | `world-countries.geo.json` | Natural Earth country polygons, projected to SVG paths for the maps   |
+| `sources.json`             | Data-source attribution registry (seeded into `data_sources`)         |
 
 **Mobility score** is defined as `visaFree + visaOnArrival + eta + eVisa` — the number of destinations reachable
 without a traditional visa.
@@ -120,11 +147,16 @@ A bundled offline fallback for **38** major countries is included so the site st
 ```
 scripts/fetch-passport-data.js        → src/data/passports.json, rankings.json, visa-matrix.json
 scripts/generate-country-guides.js    → src/data/citizenship-laws.json + src/content/countries/*.md
+scripts/seed-d1.mjs                   → scripts/.generated/seed.sql (persists everything to D1)
 ```
 
 `generate-country-guides.js` merges the curated `laws-*.js` facts with passport/ranking data and writes one editorial
 guide per country. Hand-written guides (`ireland`, `germany`, `japan`, `united-arab-emirates`, `spain`) are left
 untouched.
+
+`seed-d1.mjs` (via `npm run db:seed`) then persists every dataset — countries, rankings, the full visa matrix,
+profiles, economics, freedom, tax, citizenship routes, guide bodies, dataset metadata, and the source registry — into
+Cloudflare D1.
 
 ## Project structure
 
@@ -135,14 +167,15 @@ untouched.
 ├── scripts/
 │   ├── fetch-passport-data.js     # passport ETL (fetch → classify → rank → write JSON)
 │   ├── generate-country-guides.js # citizenship laws + country guide generator
-│   └── laws-*.js                  # curated citizenship-law facts by region
+│   ├── laws-*.js                  # curated citizenship-law facts by region
+│   └── seed-d1.mjs                # D1 seeder (all datasets + guides + meta + sources)
 └── src/
     ├── content.config.ts          # typed `countries` content collection
     ├── content/countries/         # 199 Markdown citizenship guides
     ├── data/                      # generated JSON datasets + shared types + GeoJSON
     ├── layouts/BaseLayout.astro   # SEO, header, footer, dark mode
     ├── components/                # Astro + React components (see below)
-    ├── lib/                       # acquire.ts, map.ts, utils.ts, visa.ts
+    ├── lib/                       # domain logic + db/ repository layer (D1 data access)
     ├── pages/                     # routes (see the Pages table above)
     └── styles/global.css          # Tailwind theme + map colour tokens
 ```
@@ -161,21 +194,21 @@ untouched.
 
 ## Deployment (Cloudflare)
 
-The site deploys to **Cloudflare Pages** with hybrid rendering via the `@astrojs/cloudflare` adapter. Every content
-page is pre-rendered to pure HTML at build time (keeping the 100/100 PageSpeed / zero-JS advantage), while `/api/*`
-routes run on Cloudflare Workers and query **Cloudflare D1** at the edge. Search is provided by **Pagefind**, a static
-index generated post-build.
+The site deploys to **Cloudflare Pages** with on-demand server rendering via the `@astrojs/cloudflare` adapter. Every
+page runs on Cloudflare Workers and reads from **Cloudflare D1** (SQLite, binding `DB`) through a typed repository
+layer in `src/lib/db/`. D1 is the single source of truth — the ETL persists all datasets, guide bodies, dataset
+metadata, and the data-source registry to it at seed time.
 
-| Layer        | Technology                                             |
-| ------------ | ------------------------------------------------------ |
-| Hosting/CDN  | Cloudflare Pages (unlimited static bandwidth)          |
-| Edge compute | Cloudflare Workers via `@astrojs/cloudflare`           |
-| Database     | Cloudflare D1 (SQLite) — binding `DB`                  |
-| Search       | Pagefind (static index in `dist/pagefind/`)            |
+| Layer        | Technology                                            |
+| ------------ | ----------------------------------------------------- |
+| Hosting/CDN  | Cloudflare Pages                                      |
+| Edge compute | Cloudflare Workers via `@astrojs/cloudflare`          |
+| Database     | Cloudflare D1 (SQLite) — binding `DB`                 |
+| Search       | DB-backed `GET /api/search`                           |
 
 ### CI/CD
 
-A GitHub Actions workflow (`.github/workflows/deploy.yml`) type-checks, builds, indexes search, applies D1 migrations,
+A GitHub Actions workflow (`.github/workflows/deploy.yml`) type-checks, builds, applies D1 migrations,
 seeds the database, and deploys to Cloudflare Pages on every push to `main`.
 
 Required GitHub secrets:
@@ -205,13 +238,15 @@ npm run db:seed                                           # load countries, rank
 ```bash
 npm install
 npm run dev                       # http://localhost:4321 (platformProxy + local D1)
-npm run build                     # type-check + build + Pagefind index
+npm run build                     # type-check + build
 npx wrangler d1 migrations apply citizenshiphub-db --local
 ```
 
 ### API routes
 
 - `GET  /api/visa-lookup?from=DE&to=US` — visa requirement between two countries.
+- `GET  /api/visa-matrix?passport=IE` — visa-matrix row for a single passport.
+- `GET  /api/search?q=ireland` — search countries and guide summaries.
 - `POST /api/lead` — capture a lead: `{ "email": "...", "targetCountryIso": "PT", "serviceType": "Golden Visa" }`.
 
 ## Disclaimer

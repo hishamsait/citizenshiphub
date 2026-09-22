@@ -1,12 +1,11 @@
 ---
-import type { RankedPassport } from '../data/types';
-
 interface Props {
-  rankings: RankedPassport[];
+  rankings: { rank: number; code: string; name: string; region: string; mobilityScore: number }[];
   limit?: number;
+  slugByCode?: Record<string, string>;
 }
 
-const { rankings, limit = 10 } = Astro.props;
+const { rankings, limit = 10, slugByCode } = Astro.props;
 const rows = rankings.slice(0, limit);
 ---
 
@@ -32,7 +31,18 @@ const rows = rankings.slice(0, limit);
             </td>
             <td class="px-4 py-3 font-medium text-slate-900">
               <span class="mr-2 font-mono text-xs text-slate-400">{r.code}</span>
-              {r.name}
+              {
+                slugByCode?.[r.code] ? (
+                  <a
+                    href={`/countries/${slugByCode[r.code]}/`}
+                    class="text-slate-900 underline-offset-2 hover:text-brand-700 hover:underline"
+                  >
+                    {r.name}
+                  </a>
+                ) : (
+                  r.name
+                )
+              }
             </td>
             <td class="px-4 py-3 text-slate-500">{r.region}</td>
             <td class="px-4 py-3 text-right font-semibold text-slate-900">{r.mobilityScore}</td>

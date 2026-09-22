@@ -1,0 +1,5854 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-22T00:13:55.666Z",
+    "sources": [
+      {
+        "name": "Transparency International — Corruption Perceptions Index (via Our World in Data)",
+        "url": "https://www.transparency.org/en/cpi/2024",
+        "updatedAt": null
+      },
+      {
+        "name": "V-Dem — Human Rights Index (via Our World in Data)",
+        "url": "https://v-dem.net/",
+        "updatedAt": null
+      },
+      {
+        "name": "V-Dem — Liberal Democracy Index (via Our World in Data)",
+        "url": "https://v-dem.net/",
+        "updatedAt": null
+      },
+      {
+        "name": "World Happiness Report — Life satisfaction (Cantril ladder, via Our World in Data)",
+        "url": "https://worldhappiness.report/",
+        "updatedAt": null
+      },
+      {
+        "name": "Freedom House — Freedom in the World 2024",
+        "url": "https://freedomhouse.org/report/freedom-world",
+        "updatedAt": null
+      }
+    ],
+    "license": "Transparency International CPI (CC BY-ND 4.0, via Our World in Data CC BY); V-Dem (CC BY); Freedom House Freedom in the World 2024 (© Freedom House, informational use)",
+    "disclaimer": "Informational only — indices reflect the methodologies of the external organisations. Verify with the original sources.",
+    "totalCountries": 199
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "cpi": {
+        "score": 17,
+        "rank": 150,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.041,
+        "rank": 163,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.018,
+        "rank": 161,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 1.446,
+        "rank": 156,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 6,
+        "rank": 187,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "AL",
+      "cpi": {
+        "score": 42,
+        "rank": 67,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.872,
+        "rank": 46,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.382,
+        "rank": 73,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.662,
+        "rank": 85,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 68,
+        "rank": 84,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "DZ",
+      "cpi": {
+        "score": 34,
+        "rank": 93,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.424,
+        "rank": 123,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.126,
+        "rank": 118,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.714,
+        "rank": 82,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 32,
+        "rank": 144,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "AD",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 93,
+        "rank": 24,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "AO",
+      "cpi": {
+        "score": 32,
+        "rank": 107,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.624,
+        "rank": 102,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.163,
+        "rank": 109,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.795,
+        "rank": 142,
+        "year": 2017,
+        "note": null
+      },
+      "fiw": {
+        "score": 28,
+        "rank": 148,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "AG",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 85,
+        "rank": 51,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "AR",
+      "cpi": {
+        "score": 37,
+        "rank": 85,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.821,
+        "rank": 61,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.524,
+        "rank": 51,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.43,
+        "rank": 41,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 85,
+        "rank": 52,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "AM",
+      "cpi": {
+        "score": 47,
+        "rank": 53,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.8,
+        "rank": 70,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.371,
+        "rank": 78,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.584,
+        "rank": 88,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 54,
+        "rank": 111,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "AU",
+      "cpi": {
+        "score": 77,
+        "rank": 9,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.906,
+        "rank": 29,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.793,
+        "rank": 12,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.916,
+        "rank": 15,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 95,
+        "rank": 17,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "AT",
+      "cpi": {
+        "score": 67,
+        "rank": 21,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.907,
+        "rank": 28,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.757,
+        "rank": 19,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.845,
+        "rank": 18,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 93,
+        "rank": 25,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "AZ",
+      "cpi": {
+        "score": 22,
+        "rank": 140,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.291,
+        "rank": 141,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.053,
+        "rank": 149,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.993,
+        "rank": 103,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 7,
+        "rank": 186,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "BS",
+      "cpi": {
+        "score": 65,
+        "rank": 24,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 91,
+        "rank": 35,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BH",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 12,
+        "rank": 175,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "BD",
+      "cpi": {
+        "score": 23,
+        "rank": 137,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.628,
+        "rank": 100,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.116,
+        "rank": 120,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.319,
+        "rank": 129,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 40,
+        "rank": 133,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "BB",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 94,
+        "rank": 19,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BY",
+      "cpi": {
+        "score": 33,
+        "rank": 100,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.221,
+        "rank": 149,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.038,
+        "rank": 157,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.821,
+        "rank": 78,
+        "year": 2021,
+        "note": null
+      },
+      "fiw": {
+        "score": 8,
+        "rank": 182,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "BE",
+      "cpi": {
+        "score": 69,
+        "rank": 19,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.955,
+        "rank": 5,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.794,
+        "rank": 10,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.926,
+        "rank": 14,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 11,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BZ",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": {
+        "score": 6.711,
+        "rank": 26,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 87,
+        "rank": 49,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BJ",
+      "cpi": {
+        "score": 45,
+        "rank": 58,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.836,
+        "rank": 57,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.323,
+        "rank": 84,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.393,
+        "rank": 125,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 61,
+        "rank": 100,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "BT",
+      "cpi": {
+        "score": 72,
+        "rank": 16,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.701,
+        "rank": 87,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.457,
+        "rank": 65,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.082,
+        "rank": 101,
+        "year": 2018,
+        "note": null
+      },
+      "fiw": {
+        "score": 63,
+        "rank": 97,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "BO",
+      "cpi": {
+        "score": 28,
+        "rank": 119,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.741,
+        "rank": 83,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.352,
+        "rank": 80,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.835,
+        "rank": 76,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 66,
+        "rank": 89,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "BA",
+      "cpi": {
+        "score": 33,
+        "rank": 101,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.814,
+        "rank": 64,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.339,
+        "rank": 82,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.381,
+        "rank": 44,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 51,
+        "rank": 117,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "BW",
+      "cpi": {
+        "score": 57,
+        "rank": 36,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.845,
+        "rank": 53,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.52,
+        "rank": 54,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.464,
+        "rank": 149,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 72,
+        "rank": 79,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BR",
+      "cpi": {
+        "score": 34,
+        "rank": 94,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.871,
+        "rank": 47,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.704,
+        "rank": 28,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.634,
+        "rank": 31,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 72,
+        "rank": 80,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BN",
+      "cpi": {
+        "score": 60,
+        "rank": 30,
+        "year": 2020,
+        "note": null
+      },
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 28,
+        "rank": 149,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "BG",
+      "cpi": {
+        "score": 43,
+        "rank": 63,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.849,
+        "rank": 51,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.499,
+        "rank": 61,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.703,
+        "rank": 83,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 78,
+        "rank": 73,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "BF",
+      "cpi": {
+        "score": 41,
+        "rank": 69,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.455,
+        "rank": 119,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.103,
+        "rank": 127,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.455,
+        "rank": 124,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 27,
+        "rank": 150,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "BI",
+      "cpi": {
+        "score": 17,
+        "rank": 151,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.271,
+        "rank": 143,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.06,
+        "rank": 145,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.775,
+        "rank": 143,
+        "year": 2020,
+        "note": null
+      },
+      "fiw": {
+        "score": 14,
+        "rank": 172,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "KH",
+      "cpi": {
+        "score": 21,
+        "rank": 144,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.26,
+        "rank": 145,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.051,
+        "rank": 150,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.462,
+        "rank": 122,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 23,
+        "rank": 157,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CM",
+      "cpi": {
+        "score": 26,
+        "rank": 126,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.509,
+        "rank": 113,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.114,
+        "rank": 124,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.083,
+        "rank": 100,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 15,
+        "rank": 169,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CA",
+      "cpi": {
+        "score": 75,
+        "rank": 14,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.897,
+        "rank": 31,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.736,
+        "rank": 23,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.741,
+        "rank": 24,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 97,
+        "rank": 5,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CV",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 92,
+        "rank": 30,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CF",
+      "cpi": {
+        "score": 24,
+        "rank": 135,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.438,
+        "rank": 122,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.102,
+        "rank": 129,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.4759,
+        "rank": 148,
+        "year": 2019,
+        "note": null
+      },
+      "fiw": {
+        "score": 5,
+        "rank": 189,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "TD",
+      "cpi": {
+        "score": 21,
+        "rank": 145,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.284,
+        "rank": 142,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.062,
+        "rank": 144,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.385,
+        "rank": 126,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 15,
+        "rank": 170,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CL",
+      "cpi": {
+        "score": 63,
+        "rank": 28,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.93,
+        "rank": 18,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.781,
+        "rank": 16,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.302,
+        "rank": 48,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 94,
+        "rank": 20,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CN",
+      "cpi": {
+        "score": 43,
+        "rank": 64,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.179,
+        "rank": 153,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.039,
+        "rank": 156,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.074,
+        "rank": 63,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 9,
+        "rank": 180,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CO",
+      "cpi": {
+        "score": 39,
+        "rank": 79,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.765,
+        "rank": 80,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.555,
+        "rank": 48,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.04,
+        "rank": 65,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 70,
+        "rank": 82,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "KM",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 42,
+        "rank": 129,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "CG",
+      "cpi": {
+        "score": 23,
+        "rank": 138,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.326,
+        "rank": 134,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.115,
+        "rank": 121,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.456,
+        "rank": 123,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 17,
+        "rank": 166,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CD",
+      "cpi": {
+        "score": 20,
+        "rank": 148,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.42,
+        "rank": 124,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.115,
+        "rank": 122,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.761,
+        "rank": 144,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 19,
+        "rank": 162,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CR",
+      "cpi": {
+        "score": 58,
+        "rank": 35,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.931,
+        "rank": 17,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.809,
+        "rank": 7,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.439,
+        "rank": 4,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 91,
+        "rank": 36,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CI",
+      "cpi": {
+        "score": 45,
+        "rank": 59,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.7,
+        "rank": 88,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.228,
+        "rank": 98,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.148,
+        "rank": 98,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 49,
+        "rank": 120,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "HR",
+      "cpi": {
+        "score": 47,
+        "rank": 54,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.886,
+        "rank": 34,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.593,
+        "rank": 41,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.009,
+        "rank": 68,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 83,
+        "rank": 58,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CU",
+      "cpi": {
+        "score": 41,
+        "rank": 70,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.302,
+        "rank": 140,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.057,
+        "rank": 146,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.418,
+        "rank": 92,
+        "year": 2011,
+        "note": null
+      },
+      "fiw": {
+        "score": 12,
+        "rank": 176,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "CY",
+      "cpi": {
+        "score": 56,
+        "rank": 39,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.895,
+        "rank": 32,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.664,
+        "rank": 33,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.126,
+        "rank": 60,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 92,
+        "rank": 31,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CZ",
+      "cpi": {
+        "score": 56,
+        "rank": 40,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.948,
+        "rank": 8,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.794,
+        "rank": 11,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.821,
+        "rank": 19,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 94,
+        "rank": 21,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "DK",
+      "cpi": {
+        "score": 90,
+        "rank": 1,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.959,
+        "rank": 3,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.884,
+        "rank": 1,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.539,
+        "rank": 3,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 97,
+        "rank": 6,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "DJ",
+      "cpi": {
+        "score": 31,
+        "rank": 113,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.404,
+        "rank": 125,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.118,
+        "rank": 119,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.369,
+        "rank": 128,
+        "year": 2014,
+        "note": null
+      },
+      "fiw": {
+        "score": 24,
+        "rank": 155,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "DM",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 93,
+        "rank": 26,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "DO",
+      "cpi": {
+        "score": 36,
+        "rank": 90,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.874,
+        "rank": 43,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.505,
+        "rank": 58,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.093,
+        "rank": 62,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 68,
+        "rank": 85,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "EC",
+      "cpi": {
+        "score": 32,
+        "rank": 108,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.692,
+        "rank": 90,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.386,
+        "rank": 71,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.144,
+        "rank": 57,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 67,
+        "rank": 86,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "EG",
+      "cpi": {
+        "score": 30,
+        "rank": 116,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.232,
+        "rank": 147,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.115,
+        "rank": 123,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.862,
+        "rank": 141,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 18,
+        "rank": 164,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "SV",
+      "cpi": {
+        "score": 30,
+        "rank": 117,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.511,
+        "rank": 112,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.09,
+        "rank": 139,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.578,
+        "rank": 35,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 53,
+        "rank": 114,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "GQ",
+      "cpi": {
+        "score": 13,
+        "rank": 158,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.169,
+        "rank": 156,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.047,
+        "rank": 151,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 5,
+        "rank": 190,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "ER",
+      "cpi": {
+        "score": 13,
+        "rank": 159,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.047,
+        "rank": 162,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.009,
+        "rank": 164,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 3,
+        "rank": 192,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "EE",
+      "cpi": {
+        "score": 76,
+        "rank": 12,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.963,
+        "rank": 1,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.837,
+        "rank": 5,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.41,
+        "rank": 43,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 95,
+        "rank": 18,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SZ",
+      "cpi": {
+        "score": 27,
+        "rank": 121,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.206,
+        "rank": 150,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.097,
+        "rank": 135,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.909,
+        "rank": 139,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 17,
+        "rank": 167,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "ET",
+      "cpi": {
+        "score": 37,
+        "rank": 86,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.304,
+        "rank": 139,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.1,
+        "rank": 131,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.985,
+        "rank": 138,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 20,
+        "rank": 160,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "FJ",
+      "cpi": {
+        "score": 55,
+        "rank": 42,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.774,
+        "rank": 77,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.398,
+        "rank": 70,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 66,
+        "rank": 90,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "FI",
+      "cpi": {
+        "score": 88,
+        "rank": 2,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.947,
+        "rank": 10,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.808,
+        "rank": 8,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.764,
+        "rank": 1,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 100,
+        "rank": 1,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "FR",
+      "cpi": {
+        "score": 67,
+        "rank": 22,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.917,
+        "rank": 22,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.8,
+        "rank": 9,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.586,
+        "rank": 34,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 89,
+        "rank": 44,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "GA",
+      "cpi": {
+        "score": 27,
+        "rank": 122,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.788,
+        "rank": 75,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.178,
+        "rank": 103,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.167,
+        "rank": 96,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 20,
+        "rank": 161,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "GM",
+      "cpi": {
+        "score": 38,
+        "rank": 83,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.88,
+        "rank": 39,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.522,
+        "rank": 53,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.306,
+        "rank": 130,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 50,
+        "rank": 119,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "GE",
+      "cpi": {
+        "score": 53,
+        "rank": 45,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.7,
+        "rank": 89,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.275,
+        "rank": 91,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.517,
+        "rank": 89,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 58,
+        "rank": 106,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "DE",
+      "cpi": {
+        "score": 75,
+        "rank": 15,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.94,
+        "rank": 14,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.782,
+        "rank": 15,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.882,
+        "rank": 16,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 93,
+        "rank": 27,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "GH",
+      "cpi": {
+        "score": 42,
+        "rank": 68,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.912,
+        "rank": 25,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.606,
+        "rank": 40,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.554,
+        "rank": 116,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 80,
+        "rank": 67,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "GR",
+      "cpi": {
+        "score": 49,
+        "rank": 49,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.878,
+        "rank": 40,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.568,
+        "rank": 47,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.697,
+        "rank": 84,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 85,
+        "rank": 53,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "GD",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 89,
+        "rank": 45,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "GT",
+      "cpi": {
+        "score": 25,
+        "rank": 132,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.766,
+        "rank": 79,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.523,
+        "rank": 52,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.533,
+        "rank": 40,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 46,
+        "rank": 124,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "GN",
+      "cpi": {
+        "score": 28,
+        "rank": 120,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.353,
+        "rank": 132,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.095,
+        "rank": 136,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.609,
+        "rank": 114,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 30,
+        "rank": 145,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "GW",
+      "cpi": {
+        "score": 21,
+        "rank": 146,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.557,
+        "rank": 107,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.095,
+        "rank": 137,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 43,
+        "rank": 128,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "GY",
+      "cpi": {
+        "score": 39,
+        "rank": 80,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.847,
+        "rank": 52,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.328,
+        "rank": 83,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.993,
+        "rank": 70,
+        "year": 2011,
+        "note": null
+      },
+      "fiw": {
+        "score": 73,
+        "rank": 78,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "HT",
+      "cpi": {
+        "score": 16,
+        "rank": 153,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.743,
+        "rank": 81,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.098,
+        "rank": 133,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.615,
+        "rank": 146,
+        "year": 2020,
+        "note": null
+      },
+      "fiw": {
+        "score": 30,
+        "rank": 146,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "HN",
+      "cpi": {
+        "score": 22,
+        "rank": 141,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.819,
+        "rank": 62,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.38,
+        "rank": 74,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.096,
+        "rank": 61,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 48,
+        "rank": 122,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "HK",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 41,
+        "rank": 132,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "HU",
+      "cpi": {
+        "score": 41,
+        "rank": 71,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.793,
+        "rank": 72,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.315,
+        "rank": 85,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.937,
+        "rank": 72,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 65,
+        "rank": 95,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "IS",
+      "cpi": {
+        "score": 77,
+        "rank": 10,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.95,
+        "rank": 6,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.72,
+        "rank": 25,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.54,
+        "rank": 2,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 94,
+        "rank": 22,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "IN",
+      "cpi": {
+        "score": 38,
+        "rank": 84,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.534,
+        "rank": 108,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.26,
+        "rank": 95,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.536,
+        "rank": 117,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 66,
+        "rank": 91,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "ID",
+      "cpi": {
+        "score": 37,
+        "rank": 87,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.63,
+        "rank": 99,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.296,
+        "rank": 89,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.617,
+        "rank": 86,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 57,
+        "rank": 109,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "IR",
+      "cpi": {
+        "score": 23,
+        "rank": 139,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.248,
+        "rank": 146,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.103,
+        "rank": 128,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.151,
+        "rank": 97,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 11,
+        "rank": 178,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "IQ",
+      "cpi": {
+        "score": 26,
+        "rank": 127,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.521,
+        "rank": 109,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.22,
+        "rank": 100,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.212,
+        "rank": 95,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 30,
+        "rank": 147,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "IE",
+      "cpi": {
+        "score": 77,
+        "rank": 11,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.956,
+        "rank": 4,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.822,
+        "rank": 6,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.928,
+        "rank": 13,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 97,
+        "rank": 7,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "IL",
+      "cpi": {
+        "score": 64,
+        "rank": 26,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.787,
+        "rank": 76,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.588,
+        "rank": 43,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.187,
+        "rank": 8,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 74,
+        "rank": 77,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "IT",
+      "cpi": {
+        "score": 54,
+        "rank": 44,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.9,
+        "rank": 30,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.642,
+        "rank": 35,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.574,
+        "rank": 36,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 90,
+        "rank": 38,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "JM",
+      "cpi": {
+        "score": 44,
+        "rank": 62,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.876,
+        "rank": 42,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.679,
+        "rank": 31,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.305,
+        "rank": 47,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 80,
+        "rank": 68,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "JP",
+      "cpi": {
+        "score": 71,
+        "rank": 17,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.925,
+        "rank": 20,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.734,
+        "rank": 24,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.13,
+        "rank": 59,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 12,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "JO",
+      "cpi": {
+        "score": 49,
+        "rank": 50,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.672,
+        "rank": 95,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.274,
+        "rank": 92,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.478,
+        "rank": 120,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 33,
+        "rank": 141,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "KZ",
+      "cpi": {
+        "score": 40,
+        "rank": 75,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.513,
+        "rank": 110,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.131,
+        "rank": 114,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.633,
+        "rank": 32,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 23,
+        "rank": 158,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "KE",
+      "cpi": {
+        "score": 32,
+        "rank": 109,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.74,
+        "rank": 84,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.446,
+        "rank": 67,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.674,
+        "rank": 111,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 52,
+        "rank": 116,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "KI",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 90,
+        "rank": 39,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "XK",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 60,
+        "rank": 103,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "KW",
+      "cpi": {
+        "score": 46,
+        "rank": 55,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.488,
+        "rank": 114,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.127,
+        "rank": 116,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.543,
+        "rank": 38,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 38,
+        "rank": 135,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "KG",
+      "cpi": {
+        "score": 25,
+        "rank": 133,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.478,
+        "rank": 116,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.178,
+        "rank": 104,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.049,
+        "rank": 64,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 27,
+        "rank": 151,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "LA",
+      "cpi": {
+        "score": 33,
+        "rank": 102,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.144,
+        "rank": 158,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.11,
+        "rank": 125,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.515,
+        "rank": 90,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 13,
+        "rank": 173,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "LV",
+      "cpi": {
+        "score": 59,
+        "rank": 32,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.94,
+        "rank": 15,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.751,
+        "rank": 20,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.365,
+        "rank": 46,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 88,
+        "rank": 48,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LB",
+      "cpi": {
+        "score": 22,
+        "rank": 142,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.689,
+        "rank": 91,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.267,
+        "rank": 93,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.723,
+        "rank": 145,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 42,
+        "rank": 130,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "LS",
+      "cpi": {
+        "score": 37,
+        "rank": 88,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.835,
+        "rank": 59,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.512,
+        "rank": 56,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.375,
+        "rank": 127,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 66,
+        "rank": 92,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LR",
+      "cpi": {
+        "score": 27,
+        "rank": 123,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.838,
+        "rank": 56,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.417,
+        "rank": 69,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.28,
+        "rank": 132,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 64,
+        "rank": 96,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "LY",
+      "cpi": {
+        "score": 13,
+        "rank": 160,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.323,
+        "rank": 135,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.098,
+        "rank": 134,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.731,
+        "rank": 80,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 9,
+        "rank": 181,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "LI",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 90,
+        "rank": 40,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LT",
+      "cpi": {
+        "score": 63,
+        "rank": 29,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.913,
+        "rank": 23,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.712,
+        "rank": 27,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.704,
+        "rank": 27,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 89,
+        "rank": 46,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LU",
+      "cpi": {
+        "score": 81,
+        "rank": 4,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.946,
+        "rank": 12,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.777,
+        "rank": 17,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.063,
+        "rank": 9,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 97,
+        "rank": 8,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MO",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": null
+    },
+    {
+      "iso2": "MG",
+      "cpi": {
+        "score": 26,
+        "rank": 128,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.652,
+        "rank": 96,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.187,
+        "rank": 102,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.174,
+        "rank": 134,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 58,
+        "rank": 107,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MW",
+      "cpi": {
+        "score": 34,
+        "rank": 95,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.806,
+        "rank": 66,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.462,
+        "rank": 64,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.284,
+        "rank": 152,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 66,
+        "rank": 93,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MY",
+      "cpi": {
+        "score": 50,
+        "rank": 47,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.739,
+        "rank": 85,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.355,
+        "rank": 79,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.005,
+        "rank": 69,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 53,
+        "rank": 115,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MV",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 44,
+        "rank": 125,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "ML",
+      "cpi": {
+        "score": 27,
+        "rank": 124,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.609,
+        "rank": 103,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.15,
+        "rank": 111,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.588,
+        "rank": 115,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 26,
+        "rank": 153,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "MT",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 87,
+        "rank": 50,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MH",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 93,
+        "rank": 28,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MR",
+      "cpi": {
+        "score": 30,
+        "rank": 118,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.513,
+        "rank": 111,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.127,
+        "rank": 117,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.473,
+        "rank": 121,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 39,
+        "rank": 134,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MU",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 85,
+        "rank": 54,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MX",
+      "cpi": {
+        "score": 26,
+        "rank": 129,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.626,
+        "rank": 101,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.221,
+        "rank": 99,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.972,
+        "rank": 12,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 60,
+        "rank": 104,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "FM",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 92,
+        "rank": 32,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MD",
+      "cpi": {
+        "score": 43,
+        "rank": 65,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.842,
+        "rank": 55,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.449,
+        "rank": 66,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.851,
+        "rank": 75,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 61,
+        "rank": 101,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MC",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 82,
+        "rank": 63,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "MN",
+      "cpi": {
+        "score": 33,
+        "rank": 103,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.801,
+        "rank": 69,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.424,
+        "rank": 68,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.936,
+        "rank": 73,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 84,
+        "rank": 55,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "ME",
+      "cpi": {
+        "score": 46,
+        "rank": 56,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.881,
+        "rank": 37,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.5,
+        "rank": 60,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.139,
+        "rank": 58,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 69,
+        "rank": 83,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MA",
+      "cpi": {
+        "score": 37,
+        "rank": 89,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.645,
+        "rank": 98,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.251,
+        "rank": 96,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.646,
+        "rank": 113,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 37,
+        "rank": 136,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MZ",
+      "cpi": {
+        "score": 25,
+        "rank": 134,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.483,
+        "rank": 115,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.175,
+        "rank": 107,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.336,
+        "rank": 93,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 44,
+        "rank": 126,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "MM",
+      "cpi": {
+        "score": 16,
+        "rank": 154,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.102,
+        "rank": 160,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.015,
+        "rank": 162,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.287,
+        "rank": 131,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 8,
+        "rank": 183,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "NA",
+      "cpi": {
+        "score": 49,
+        "rank": 51,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.883,
+        "rank": 35,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.519,
+        "rank": 55,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.781,
+        "rank": 109,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 77,
+        "rank": 74,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "NR",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 77,
+        "rank": 75,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "NP",
+      "cpi": {
+        "score": 34,
+        "rank": 96,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.742,
+        "rank": 82,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.505,
+        "rank": 59,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.147,
+        "rank": 99,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 62,
+        "rank": 99,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "NL",
+      "cpi": {
+        "score": 78,
+        "rank": 8,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.912,
+        "rank": 26,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.774,
+        "rank": 18,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.223,
+        "rank": 7,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 97,
+        "rank": 9,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "NZ",
+      "cpi": {
+        "score": 83,
+        "rank": 3,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.948,
+        "rank": 9,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.787,
+        "rank": 14,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.995,
+        "rank": 11,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 99,
+        "rank": 2,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "NI",
+      "cpi": {
+        "score": 14,
+        "rank": 157,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.077,
+        "rank": 161,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.019,
+        "rank": 160,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.301,
+        "rank": 49,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 16,
+        "rank": 168,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "NE",
+      "cpi": {
+        "score": 34,
+        "rank": 97,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.65,
+        "rank": 97,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.177,
+        "rank": 105,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.94,
+        "rank": 104,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 33,
+        "rank": 142,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "NG",
+      "cpi": {
+        "score": 26,
+        "rank": 130,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.674,
+        "rank": 93,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.311,
+        "rank": 87,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.788,
+        "rank": 107,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 44,
+        "rank": 127,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "KP",
+      "cpi": {
+        "score": 15,
+        "rank": 155,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.024,
+        "rank": 164,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.014,
+        "rank": 163,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 3,
+        "rank": 193,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "MK",
+      "cpi": {
+        "score": 40,
+        "rank": 76,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.789,
+        "rank": 74,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.374,
+        "rank": 77,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.719,
+        "rank": 81,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 67,
+        "rank": 87,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "NO",
+      "cpi": {
+        "score": 81,
+        "rank": 5,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.947,
+        "rank": 11,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.847,
+        "rank": 3,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.242,
+        "rank": 6,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 98,
+        "rank": 4,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "OM",
+      "cpi": {
+        "score": 55,
+        "rank": 43,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.446,
+        "rank": 121,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.14,
+        "rank": 113,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.197,
+        "rank": 56,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 24,
+        "rank": 156,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "PK",
+      "cpi": {
+        "score": 27,
+        "rank": 125,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.466,
+        "rank": 118,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.176,
+        "rank": 106,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.868,
+        "rank": 105,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 35,
+        "rank": 139,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "PW",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 92,
+        "rank": 33,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "PS",
+      "cpi": null,
+      "humanRights": {
+        "score": 0.356,
+        "rank": 131,
+        "year": 1948,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.099,
+        "rank": 132,
+        "year": 1948,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.694,
+        "rank": 110,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": null
+    },
+    {
+      "iso2": "PA",
+      "cpi": {
+        "score": 33,
+        "rank": 104,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.874,
+        "rank": 44,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.575,
+        "rank": 44,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.547,
+        "rank": 37,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 83,
+        "rank": 59,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "PG",
+      "cpi": {
+        "score": 31,
+        "rank": 114,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.805,
+        "rank": 67,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.384,
+        "rank": 72,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 61,
+        "rank": 102,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "PY",
+      "cpi": {
+        "score": 24,
+        "rank": 136,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.805,
+        "rank": 68,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.376,
+        "rank": 75,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.198,
+        "rank": 55,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 63,
+        "rank": 98,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "PE",
+      "cpi": {
+        "score": 31,
+        "rank": 115,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.8,
+        "rank": 71,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.506,
+        "rank": 57,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.974,
+        "rank": 71,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 66,
+        "rank": 94,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "PH",
+      "cpi": {
+        "score": 33,
+        "rank": 105,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.561,
+        "rank": 106,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.291,
+        "rank": 90,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.206,
+        "rank": 54,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 58,
+        "rank": 108,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "PL",
+      "cpi": {
+        "score": 53,
+        "rank": 46,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.918,
+        "rank": 21,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.645,
+        "rank": 34,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.768,
+        "rank": 23,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 80,
+        "rank": 69,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "PT",
+      "cpi": {
+        "score": 57,
+        "rank": 37,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.836,
+        "rank": 58,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.717,
+        "rank": 26,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.029,
+        "rank": 67,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 13,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "QA",
+      "cpi": {
+        "score": 59,
+        "rank": 33,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.357,
+        "rank": 130,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.091,
+        "rank": 138,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.374,
+        "rank": 45,
+        "year": 2018,
+        "note": null
+      },
+      "fiw": {
+        "score": 25,
+        "rank": 154,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "RO",
+      "cpi": {
+        "score": 46,
+        "rank": 57,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.877,
+        "rank": 41,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.464,
+        "rank": 63,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.629,
+        "rank": 33,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 83,
+        "rank": 60,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "RU",
+      "cpi": {
+        "score": 22,
+        "rank": 143,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.265,
+        "rank": 144,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.056,
+        "rank": 147,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.834,
+        "rank": 77,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 13,
+        "rank": 174,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "RW",
+      "cpi": {
+        "score": 57,
+        "rank": 38,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.194,
+        "rank": 151,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.09,
+        "rank": 140,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.268,
+        "rank": 153,
+        "year": 2021,
+        "note": null
+      },
+      "fiw": {
+        "score": 23,
+        "rank": 159,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "KN",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 89,
+        "rank": 47,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LC",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 92,
+        "rank": 34,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "WS",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 84,
+        "rank": 56,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SM",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 97,
+        "rank": 10,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "ST",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 84,
+        "rank": 57,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SA",
+      "cpi": {
+        "score": 59,
+        "rank": 34,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.178,
+        "rank": 154,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.047,
+        "rank": 152,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.817,
+        "rank": 21,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 8,
+        "rank": 184,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "SN",
+      "cpi": {
+        "score": 45,
+        "rank": 60,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.812,
+        "rank": 65,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.484,
+        "rank": 62,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.787,
+        "rank": 108,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 67,
+        "rank": 88,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "RS",
+      "cpi": {
+        "score": 35,
+        "rank": 91,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.73,
+        "rank": 86,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.208,
+        "rank": 101,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.691,
+        "rank": 29,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 57,
+        "rank": 110,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "SC",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 79,
+        "rank": 70,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SL",
+      "cpi": {
+        "score": 33,
+        "rank": 106,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.792,
+        "rank": 73,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.348,
+        "rank": 81,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.251,
+        "rank": 154,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 60,
+        "rank": 105,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "SG",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 48,
+        "rank": 123,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "SK",
+      "cpi": {
+        "score": 49,
+        "rank": 52,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.857,
+        "rank": 48,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.573,
+        "rank": 45,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.255,
+        "rank": 53,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 90,
+        "rank": 41,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SI",
+      "cpi": {
+        "score": 60,
+        "rank": 31,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.883,
+        "rank": 36,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.589,
+        "rank": 42,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.868,
+        "rank": 17,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 14,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SB",
+      "cpi": {
+        "score": 43,
+        "rank": 66,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.857,
+        "rank": 49,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.539,
+        "rank": 50,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 75,
+        "rank": 76,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SO",
+      "cpi": {
+        "score": 9,
+        "rank": 164,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.454,
+        "rank": 120,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.128,
+        "rank": 115,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.508,
+        "rank": 118,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 8,
+        "rank": 185,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "ZA",
+      "cpi": {
+        "score": 41,
+        "rank": 72,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.857,
+        "rank": 50,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.633,
+        "rank": 36,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.009,
+        "rank": 102,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 79,
+        "rank": 71,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "KR",
+      "cpi": {
+        "score": 64,
+        "rank": 27,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.912,
+        "rank": 27,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.739,
+        "rank": 22,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.04,
+        "rank": 66,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 83,
+        "rank": 61,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SS",
+      "cpi": {
+        "score": 8,
+        "rank": 165,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.228,
+        "rank": 148,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.064,
+        "rank": 143,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 2.8166,
+        "rank": 155,
+        "year": 2019,
+        "note": null
+      },
+      "fiw": {
+        "score": 1,
+        "rank": 195,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "ES",
+      "cpi": {
+        "score": 56,
+        "rank": 41,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.942,
+        "rank": 13,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.741,
+        "rank": 21,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.54,
+        "rank": 39,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 90,
+        "rank": 42,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "LK",
+      "cpi": {
+        "score": 32,
+        "rank": 110,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.816,
+        "rank": 63,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.613,
+        "rank": 39,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.013,
+        "rank": 137,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 54,
+        "rank": 112,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "VC",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 90,
+        "rank": 43,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SD",
+      "cpi": {
+        "score": 15,
+        "rank": 156,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.171,
+        "rank": 155,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.034,
+        "rank": 158,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.139,
+        "rank": 135,
+        "year": 2017,
+        "note": null
+      },
+      "fiw": {
+        "score": 6,
+        "rank": 188,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "SR",
+      "cpi": {
+        "score": 40,
+        "rank": 77,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.913,
+        "rank": 24,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.626,
+        "rank": 37,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.269,
+        "rank": 52,
+        "year": 2015,
+        "note": null
+      },
+      "fiw": {
+        "score": 79,
+        "rank": 72,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SE",
+      "cpi": {
+        "score": 80,
+        "rank": 7,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.96,
+        "rank": 2,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.853,
+        "rank": 2,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.255,
+        "rank": 5,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 99,
+        "rank": 3,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "CH",
+      "cpi": {
+        "score": 81,
+        "rank": 6,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.95,
+        "rank": 7,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.843,
+        "rank": 4,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 7.018,
+        "rank": 10,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 15,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "SY",
+      "cpi": {
+        "score": 12,
+        "rank": 162,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.321,
+        "rank": 136,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.054,
+        "rank": 148,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.462,
+        "rank": 150,
+        "year": 2018,
+        "note": null
+      },
+      "fiw": {
+        "score": 1,
+        "rank": 196,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "TW",
+      "cpi": {
+        "score": 67,
+        "rank": 23,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.93,
+        "rank": 19,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.704,
+        "rank": 29,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.714,
+        "rank": 25,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 94,
+        "rank": 23,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "TJ",
+      "cpi": {
+        "score": 19,
+        "rank": 149,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.169,
+        "rank": 157,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.043,
+        "rank": 153,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.591,
+        "rank": 87,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 5,
+        "rank": 191,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "TZ",
+      "cpi": {
+        "score": 41,
+        "rank": 73,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.673,
+        "rank": 94,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.297,
+        "rank": 88,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.902,
+        "rank": 140,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 36,
+        "rank": 137,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "TH",
+      "cpi": {
+        "score": 34,
+        "rank": 98,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.478,
+        "rank": 117,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.314,
+        "rank": 86,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.296,
+        "rank": 50,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 36,
+        "rank": 138,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "TL",
+      "cpi": {
+        "score": 44,
+        "rank": 61,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.873,
+        "rank": 45,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.549,
+        "rank": 49,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 72,
+        "rank": 81,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "TG",
+      "cpi": {
+        "score": 32,
+        "rank": 111,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.6,
+        "rank": 104,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.157,
+        "rank": 110,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.277,
+        "rank": 133,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 42,
+        "rank": 131,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "TO",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 81,
+        "rank": 66,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "TT",
+      "cpi": {
+        "score": 41,
+        "rank": 74,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.888,
+        "rank": 33,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.668,
+        "rank": 32,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.905,
+        "rank": 74,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 82,
+        "rank": 64,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "TN",
+      "cpi": {
+        "score": 39,
+        "rank": 81,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.685,
+        "rank": 92,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.265,
+        "rank": 94,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.798,
+        "rank": 106,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 51,
+        "rank": 118,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "TR",
+      "cpi": {
+        "score": 34,
+        "rank": 99,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.402,
+        "rank": 126,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.11,
+        "rank": 126,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.3,
+        "rank": 94,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 33,
+        "rank": 143,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "TM",
+      "cpi": {
+        "score": 17,
+        "rank": 152,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.112,
+        "rank": 159,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.034,
+        "rank": 159,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.474,
+        "rank": 91,
+        "year": 2021,
+        "note": null
+      },
+      "fiw": {
+        "score": 2,
+        "rank": 194,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "TV",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": {
+        "score": 93,
+        "rank": 29,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "UG",
+      "cpi": {
+        "score": 26,
+        "rank": 131,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.315,
+        "rank": 137,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.165,
+        "rank": 108,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.491,
+        "rank": 119,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 34,
+        "rank": 140,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "UA",
+      "cpi": {
+        "score": 35,
+        "rank": 92,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.578,
+        "rank": 105,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.24,
+        "rank": 97,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.658,
+        "rank": 112,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 49,
+        "rank": 121,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "AE",
+      "cpi": {
+        "score": 68,
+        "rank": 20,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.339,
+        "rank": 133,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.077,
+        "rank": 142,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.821,
+        "rank": 20,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 18,
+        "rank": 165,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "GB",
+      "cpi": {
+        "score": 71,
+        "rank": 18,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.844,
+        "rank": 54,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.689,
+        "rank": 30,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.694,
+        "rank": 28,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 91,
+        "rank": 37,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "US",
+      "cpi": {
+        "score": 65,
+        "rank": 25,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.826,
+        "rank": 60,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.571,
+        "rank": 46,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.816,
+        "rank": 22,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 83,
+        "rank": 62,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "UY",
+      "cpi": {
+        "score": 76,
+        "rank": 13,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.932,
+        "rank": 16,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.79,
+        "rank": 13,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.635,
+        "rank": 30,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 96,
+        "rank": 16,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "UZ",
+      "cpi": {
+        "score": 32,
+        "rank": 112,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.369,
+        "rank": 129,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.079,
+        "rank": 141,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.283,
+        "rank": 51,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 12,
+        "rank": 177,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "VU",
+      "cpi": {
+        "score": 50,
+        "rank": 48,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.881,
+        "rank": 38,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.623,
+        "rank": 38,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": null,
+      "fiw": {
+        "score": 82,
+        "rank": 65,
+        "year": 2024,
+        "note": "Free"
+      }
+    },
+    {
+      "iso2": "VA",
+      "cpi": null,
+      "humanRights": null,
+      "democracy": null,
+      "happiness": null,
+      "fiw": null
+    },
+    {
+      "iso2": "VE",
+      "cpi": {
+        "score": 10,
+        "rank": 163,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.307,
+        "rank": 138,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.042,
+        "rank": 155,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 5.756,
+        "rank": 79,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 15,
+        "rank": 171,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "VN",
+      "cpi": {
+        "score": 40,
+        "rank": 78,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.384,
+        "rank": 127,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.102,
+        "rank": 130,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 6.428,
+        "rank": 42,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 19,
+        "rank": 163,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "YE",
+      "cpi": {
+        "score": 13,
+        "rank": 161,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.192,
+        "rank": 152,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.043,
+        "rank": 154,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.532,
+        "rank": 147,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 10,
+        "rank": 179,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    },
+    {
+      "iso2": "ZM",
+      "cpi": {
+        "score": 39,
+        "rank": 82,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.773,
+        "rank": 78,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.375,
+        "rank": 76,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 4.106,
+        "rank": 136,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 54,
+        "rank": 113,
+        "year": 2024,
+        "note": "Partly Free"
+      }
+    },
+    {
+      "iso2": "ZW",
+      "cpi": {
+        "score": 21,
+        "rank": 147,
+        "year": 2024,
+        "note": null
+      },
+      "humanRights": {
+        "score": 0.381,
+        "rank": 128,
+        "year": 2025,
+        "note": null
+      },
+      "democracy": {
+        "score": 0.147,
+        "rank": 112,
+        "year": 2025,
+        "note": null
+      },
+      "happiness": {
+        "score": 3.346,
+        "rank": 151,
+        "year": 2025,
+        "note": null
+      },
+      "fiw": {
+        "score": 27,
+        "rank": 152,
+        "year": 2024,
+        "note": "Not Free"
+      }
+    }
+  ]
+}

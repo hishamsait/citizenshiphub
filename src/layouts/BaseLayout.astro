@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { Moon, Sun } from 'lucide-react';
+import AccessibilityMenu from '../components/AccessibilityMenu.astro';
 
 interface Props {
   title: string;
@@ -62,10 +62,31 @@ const pageTitle = title.includes('Citizenship Hub') ? title : `${title} · Citiz
     <script is:inline>
       (function () {
         try {
-          const t = localStorage.getItem('theme');
-          if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-          }
+          const root = document.documentElement;
+          const get = (k, d) => {
+            try {
+              return localStorage.getItem(k) ?? d;
+            } catch {
+              return d;
+            }
+          };
+          const theme = get('theme', 'system');
+          const density = get('density', 'default');
+          const textScale = get('text-scale', '1');
+          const contrast = get('high-contrast', 'off');
+          const motion = get('reduce-motion', 'off');
+
+          root.dataset.theme = theme;
+          root.dataset.density = density;
+          root.dataset.textScale = textScale;
+          root.classList.toggle('high-contrast', contrast === 'on');
+          root.classList.toggle('reduce-motion', motion === 'on');
+
+          const dark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          root.classList.toggle('dark', dark);
+
+          const meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', dark ? '#121110' : '#fbfaf7');
         } catch (e) {}
       })();
     </script>
@@ -84,32 +105,6 @@ const pageTitle = title.includes('Citizenship Hub') ? title : `${title} · Citiz
       <slot />
     </main>
     <Footer />
-    <button
-      type="button"
-      id="theme-toggle"
-      aria-label="Toggle dark mode"
-      class="fixed bottom-5 left-5 z-50 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/85 text-slate-700 shadow-lg shadow-black/10 backdrop-blur-xl transition hover:text-gold-600"
-    >
-      <Sun className="h-5 w-5 dark:hidden" aria-hidden="true" />
-      <Moon className="hidden h-5 w-5 dark:inline-block" aria-hidden="true" />
-    </button>
-    <script>
-      (function () {
-        const btn = document.getElementById('theme-toggle');
-        const root = document.documentElement;
-        const meta = document.querySelector('meta[name="theme-color"]');
-        const sync = () => {
-          const dark = root.classList.contains('dark');
-          if (btn) btn.setAttribute('aria-pressed', String(dark));
-          if (meta) meta.setAttribute('content', dark ? '#121110' : '#fbfaf7');
-        };
-        btn?.addEventListener('click', () => {
-          root.classList.toggle('dark');
-          localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-          sync();
-        });
-        sync();
-      })();
-    </script>
+    <AccessibilityMenu />
   </body>
 </html>

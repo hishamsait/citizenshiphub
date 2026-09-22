@@ -1,18 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import { getDb } from '../../lib/db/client';
+import { listGuides } from '../../lib/db/guides';
 
-export const prerender = true;
-
-const guides = await getCollection('countries');
+const db = getDb(Astro.locals);
+const guides = await listGuides(db);
 
 const byRegion = new Map<string, typeof guides>();
 for (const g of guides) {
-  const list = byRegion.get(g.data.region) ?? [];
+  const list = byRegion.get(g.region) ?? [];
   list.push(g);
-  byRegion.set(g.data.region, list);
+  byRegion.set(g.region, list);
 }
-for (const list of byRegion.values()) list.sort((a, b) => a.data.name.localeCompare(b.data.name));
+for (const list of byRegion.values()) list.sort((a, b) => a.name.localeCompare(b.name));
 const regions = [...byRegion.keys()].sort();
 ---
 
@@ -38,11 +38,11 @@ const regions = [...byRegion.keys()].sort();
               (byRegion.get(region) ?? []).map((g) => (
                 <li>
                   <a
-                    href={`/countries/${g.id}/`}
+                    href={`/countries/${g.slug}/`}
                     class="flex items-center justify-between rounded-lg bg-white px-3 py-2 text-sm text-slate-700 shadow-sm hover:bg-brand-50"
                   >
-                    <span>{g.data.name}</span>
-                    <span class="font-mono text-xs text-slate-400">{g.data.iso2}</span>
+                    <span>{g.name}</span>
+                    <span class="font-mono text-xs text-slate-400">{g.iso2}</span>
                   </a>
                 </li>
               ))

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { decodeCell, STATUS_BADGE, STATUS_LABEL, STATUS_RANK, type AccessStatus } from '../lib/visa';
 import { cn } from '../lib/utils';
@@ -17,21 +17,44 @@ export interface RankedRef {
 }
 
 interface Props {
-  matrix: Record<string, Record<string, string>>;
   countries: CountryRef[];
   rankings: RankedRef[];
   initialCodes?: string[];
 }
 
-export default function PassportCompare({ matrix, countries, rankings, initialCodes }: Props) {
+export default function PassportCompare({ countries, rankings, initialCodes }: Props) {
   const nameByCode = useMemo(() => new Map(countries.map((c) => [c.code, c])), [countries]);
   const rankByCode = useMemo(() => new Map(rankings.map((r) => [r.code, r])), [rankings]);
 
   const [selected, setSelected] = useState<string[]>(() => {
     const init = initialCodes && initialCodes.length ? initialCodes.slice(0, 4) : ['IE', 'DE'];
-    return init.filter((c) => matrix[c]);
+    return init.filter((c) => countries.some((cc) => cc.code === c));
   });
+  const [matrices, setMatrices] = useState<Record<string, Record<string, string>>>({});
   const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    for (const code of selected) {
+      if (matrices[code]) continue;
+      fetch(`/api/visa-matrix?passport=${encodeURIComponent(code)}`)
+        .then((r) => r.json())
+        .then((data) => {
+          if (!active) return;
+          setMatrices((m) => ({ ...m, [code]: data.cells ?? {} }));
+        })
+        .catch(() => {});
+    }
+    return () => {
+      active = false;
+    };
+  }, [selected, matrices]);
+
+  const matrix = useMemo(() => {
+    const m: Record<string, Record<string, string>> = {};
+    for (const code of selected) m[code] = matrices[code] ?? {};
+    return m;
+  }, [selected, matrices]);
 
   const options = useMemo(
     () => [...countries].sort((a, b) => a.name.localeCompare(b.name)).filter((c) => !selected.includes(c.code)),

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-09-21T16:08:40.264Z",
+    "generatedAt": "2026-09-22T00:13:55.702Z",
     "verifiedAt": "2026-09-21",
     "source": "Compiled from Wikipedia nationality-law pages (approximate; verify against official sources before reliance).",
     "disclaimer": "Informational only; not legal or immigration advice.",
@@ -13,7 +13,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AL",
@@ -21,7 +31,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "DZ",
@@ -29,7 +49,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AD",
@@ -38,7 +68,17 @@
       "naturalizationYears": 20,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Long residency (20 yrs); dual citizenship generally not allowed."
+      "note": "Long residency (20 yrs); dual citizenship generally not allowed.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 600000,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AO",
@@ -46,7 +86,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AG",
@@ -55,7 +105,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 92000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "AR",
@@ -64,7 +124,17 @@
       "naturalizationYears": 2,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "2 yrs (shortest standard residence)."
+      "note": "2 yrs (shortest standard residence).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "AM",
@@ -73,7 +143,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Ethnic-Armenian descent/repatriation path."
+      "note": "Ethnic-Armenian descent/repatriation path.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AU",
@@ -82,7 +162,17 @@
       "naturalizationYears": 4,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 330,
-      "note": "4 yrs lawful residence (1 yr PR); fee AUD $540."
+      "note": "4 yrs lawful residence (1 yr PR); fee AUD $540.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AT",
@@ -91,7 +181,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": 1115,
-      "note": "Dual citizenship restricted; fee ≈ €1,115."
+      "note": "Dual citizenship restricted; investment route available; fee ≈ €1,115.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 3000000,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "AZ",
@@ -99,7 +199,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BS",
@@ -107,7 +217,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "BH",
@@ -116,7 +236,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation rarely granted."
+      "note": "Naturalisation rarely granted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BD",
@@ -124,7 +254,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BB",
@@ -132,7 +272,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "BY",
@@ -141,7 +291,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship not recognised."
+      "note": "Dual citizenship not recognised.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BE",
@@ -149,7 +309,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": 150
+      "officialFeeEUR": 150,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BZ",
@@ -157,7 +327,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "BJ",
@@ -165,7 +345,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BT",
@@ -174,7 +364,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Long residence (15+ yrs) and conditions."
+      "note": "Long residence (15+ yrs) and conditions.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BO",
@@ -182,7 +382,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BA",
@@ -190,7 +400,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BW",
@@ -198,7 +418,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BR",
@@ -207,7 +437,17 @@
       "naturalizationYears": 4,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "4 yrs (1 with Brazilian family)."
+      "note": "4 yrs (1 with Brazilian family).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "BN",
@@ -215,7 +455,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 15,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BG",
@@ -224,7 +474,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Descent extends to third generation."
+      "note": "Descent extends to third generation.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 3,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 250000,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BF",
@@ -232,7 +492,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "BI",
@@ -240,7 +510,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KH",
@@ -248,7 +528,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 225000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CM",
@@ -256,7 +546,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CA",
@@ -265,7 +565,17 @@
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 420,
-      "note": "Descent limited to first generation abroad; 3 yrs physical presence; fee CAD $630."
+      "note": "Descent limited to first generation abroad; 3 yrs physical presence; fee CAD $630.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CV",
@@ -273,7 +583,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "CF",
@@ -281,7 +601,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TD",
@@ -289,7 +619,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 15,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CL",
@@ -297,7 +637,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CN",
@@ -306,7 +656,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Descent limited; naturalisation very restricted; dual not allowed."
+      "note": "Descent limited; naturalisation very restricted; dual not allowed.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CO",
@@ -315,7 +675,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "2 yrs for Ibero-American nationals."
+      "note": "2 yrs for Ibero-American nationals.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "KM",
@@ -323,7 +693,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CG",
@@ -331,7 +711,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CD",
@@ -339,7 +729,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CR",
@@ -347,7 +747,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "CI",
@@ -355,7 +765,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "HR",
@@ -363,7 +783,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": "B1"
     },
     {
       "iso2": "CU",
@@ -371,7 +801,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "CY",
@@ -379,7 +819,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 300000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "CZ",
@@ -387,7 +837,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "DK",
@@ -395,7 +855,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 9,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "DJ",
@@ -403,7 +873,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "DM",
@@ -412,7 +892,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 92000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "DO",
@@ -420,7 +910,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 2,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "EC",
@@ -428,7 +928,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "EG",
@@ -437,7 +947,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Dual with approval."
+      "note": "Dual with approval; citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 230000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SV",
@@ -446,7 +966,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "1 yr for Ibero-American nationals."
+      "note": "1 yr for Ibero-American nationals.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GQ",
@@ -454,7 +984,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ER",
@@ -462,7 +1002,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "EE",
@@ -471,7 +1021,17 @@
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship restricted."
+      "note": "Dual citizenship restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "SZ",
@@ -479,7 +1039,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ET",
@@ -487,7 +1057,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 4,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "FJ",
@@ -495,7 +1075,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "FI",
@@ -503,7 +1093,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "FR",
@@ -511,7 +1111,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": 55
+      "officialFeeEUR": 55,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": 4,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "GA",
@@ -519,7 +1129,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GM",
@@ -527,7 +1147,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GE",
@@ -535,7 +1165,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "DE",
@@ -544,7 +1184,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 255,
-      "note": "5 yrs (3 with exceptional integration); dual allowed since June 2024."
+      "note": "5 yrs (3 with exceptional integration); dual allowed since June 2024.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": 3,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": "B1"
     },
     {
       "iso2": "GH",
@@ -552,7 +1202,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GR",
@@ -560,7 +1220,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 250000,
+      "digitalNomadVisa": true,
+      "languageLevel": "B1"
     },
     {
       "iso2": "GD",
@@ -569,7 +1239,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 138000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "GT",
@@ -577,7 +1257,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GN",
@@ -585,7 +1275,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GW",
@@ -593,7 +1293,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "GY",
@@ -601,7 +1311,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "HT",
@@ -609,7 +1329,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "HN",
@@ -617,7 +1347,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "HK",
@@ -626,7 +1366,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "PRC nationality; naturalisation via PRC (restricted)."
+      "note": "PRC nationality; naturalisation via PRC (restricted).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "HU",
@@ -635,7 +1385,17 @@
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Descent/simplified naturalisation for ethnic Hungarians."
+      "note": "Descent/simplified naturalisation for ethnic Hungarians.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 250000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "IS",
@@ -643,7 +1403,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "IN",
@@ -652,7 +1422,17 @@
       "naturalizationYears": 12,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "12 yrs; no dual (OCI card instead)."
+      "note": "12 yrs; no dual (OCI card instead).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ID",
@@ -661,7 +1441,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual limited to children."
+      "note": "Dual limited to children.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "IR",
@@ -670,7 +1460,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Descent via father; dual not recognised."
+      "note": "Descent via father; dual not recognised.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "IQ",
@@ -678,7 +1478,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "IE",
@@ -687,7 +1497,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 175,
-      "note": "Grandparent descent via Foreign Births Register; 5 yrs (3 if married to a citizen)."
+      "note": "Grandparent descent via Foreign Births Register; 5 yrs (3 if married to a citizen).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": 3,
+      "languageRequired": false,
+      "maxGenerations": 2,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "None"
     },
     {
       "iso2": "IL",
@@ -696,7 +1516,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Law of Return (Jewish descent)."
+      "note": "Law of Return (Jewish descent).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "IT",
@@ -705,7 +1535,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 250,
-      "note": "Descent via ancestry (jure sanguinis, no generational limit); 10 yrs residence."
+      "note": "Descent via ancestry (jure sanguinis, no generational limit); 10 yrs residence.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": 2,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 250000,
+      "digitalNomadVisa": true,
+      "languageLevel": "B1"
     },
     {
       "iso2": "JM",
@@ -713,7 +1553,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "JP",
@@ -722,7 +1572,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": 0,
-      "note": "Dual not allowed (choose by ~age 20-22)."
+      "note": "Dual not allowed (choose by ~age 20-22).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "JO",
@@ -731,7 +1591,17 @@
       "naturalizationYears": 15,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Descent via Jordanian father."
+      "note": "Descent via Jordanian father; citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 690000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KZ",
@@ -739,7 +1609,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KE",
@@ -747,7 +1627,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KI",
@@ -755,7 +1645,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "XK",
@@ -763,7 +1663,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KW",
@@ -772,7 +1682,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation very restricted."
+      "note": "Naturalisation very restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KG",
@@ -780,7 +1700,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LA",
@@ -788,7 +1718,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LV",
@@ -796,7 +1736,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 250000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "LB",
@@ -805,7 +1755,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Descent via father."
+      "note": "Descent via father.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LS",
@@ -813,7 +1773,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LR",
@@ -822,7 +1792,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation historically restricted by ancestry requirement."
+      "note": "Naturalisation historically restricted by ancestry requirement.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LY",
@@ -830,7 +1810,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LI",
@@ -839,7 +1829,17 @@
       "naturalizationYears": 30,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Very long residency; dual citizenship restricted."
+      "note": "Very long residency; dual citizenship restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LT",
@@ -848,7 +1848,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship restricted."
+      "note": "Dual citizenship restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "LU",
@@ -856,7 +1866,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 500000,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MO",
@@ -865,7 +1885,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "PRC nationality; restricted."
+      "note": "PRC nationality; restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MG",
@@ -873,7 +1903,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MW",
@@ -881,7 +1921,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MY",
@@ -890,7 +1940,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "10-12 yrs; dual not allowed."
+      "note": "10-12 yrs; dual not allowed.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 100000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "MV",
@@ -899,7 +1959,17 @@
       "naturalizationYears": 12,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Muslim requirement."
+      "note": "Muslim requirement.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ML",
@@ -907,7 +1977,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MT",
@@ -916,7 +1996,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Citizenship and residency by investment.",
+      "cbi": true,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 690000,
+      "goldenVisaMinInvestmentEUR": 300000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "MH",
@@ -924,7 +2014,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MR",
@@ -932,7 +2032,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MU",
@@ -940,7 +2050,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "MX",
@@ -949,7 +2069,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "2 yrs for Ibero-American nationals."
+      "note": "2 yrs for Ibero-American nationals.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "FM",
@@ -957,7 +2087,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MD",
@@ -965,7 +2105,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MC",
@@ -974,7 +2124,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship not allowed."
+      "note": "Dual citizenship not allowed.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 1000000,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MN",
@@ -982,7 +2142,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ME",
@@ -990,7 +2160,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "MA",
@@ -999,7 +2179,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual restricted for naturalised."
+      "note": "Dual restricted for naturalised.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MZ",
@@ -1007,7 +2197,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MM",
@@ -1016,7 +2216,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Restricted (1982 citizenship law)."
+      "note": "Restricted (1982 citizenship law).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NA",
@@ -1024,7 +2234,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "NR",
@@ -1032,7 +2252,18 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "note": "Citizenship by investment introduced 2024.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 97000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NP",
@@ -1040,7 +2271,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 15,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NL",
@@ -1049,7 +2290,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": 1030,
-      "note": "Dual citizenship restricted (exceptions apply); fee ≈ €1,030."
+      "note": "Dual citizenship restricted (exceptions apply); fee ≈ €1,030.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 1250000,
+      "digitalNomadVisa": false,
+      "languageLevel": "A2"
     },
     {
       "iso2": "NZ",
@@ -1058,7 +2309,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 260,
-      "note": "5 yrs presence; fee NZD $470."
+      "note": "5 yrs presence; no citizenship test; fee NZD $470.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": false,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NI",
@@ -1066,7 +2327,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NE",
@@ -1074,7 +2345,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NG",
@@ -1083,7 +2364,17 @@
       "naturalizationYears": 15,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual only for Nigerian citizens by birth."
+      "note": "Dual only for Nigerian citizens by birth.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KP",
@@ -1091,7 +2382,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "MK",
@@ -1099,7 +2400,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "NO",
@@ -1107,7 +2418,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "OM",
@@ -1116,7 +2437,17 @@
       "naturalizationYears": 20,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Restricted."
+      "note": "Restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PK",
@@ -1125,7 +2456,17 @@
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Dual with select countries."
+      "note": "Dual with select countries.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PW",
@@ -1133,7 +2474,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PS",
@@ -1142,7 +2493,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Descent via Palestinian father."
+      "note": "Descent via Palestinian father.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PA",
@@ -1151,7 +2512,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "3 yrs for Ibero-American nationals."
+      "note": "3 yrs for Ibero-American nationals.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "PG",
@@ -1159,7 +2530,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PY",
@@ -1167,7 +2548,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PE",
@@ -1175,7 +2566,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 2,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PH",
@@ -1184,7 +2585,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Dual via reacquisition (RA 9225)."
+      "note": "Dual via reacquisition (RA 9225).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PL",
@@ -1193,7 +2604,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Descent to great-grandparents; 3 yrs for spouses/descent (Karta Polaka)."
+      "note": "Descent to great-grandparents; 3 yrs for spouses/descent (Karta Polaka).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": 3,
+      "languageRequired": null,
+      "maxGenerations": null,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "PT",
@@ -1202,7 +2623,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 250,
-      "note": "Descent to grandparents (and Sephardic heritage); fee ≈ €250."
+      "note": "Descent to grandparents (and Sephardic heritage); fee ≈ €250.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": 3,
+      "languageRequired": null,
+      "maxGenerations": 2,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 500000,
+      "digitalNomadVisa": true,
+      "languageLevel": "A2"
     },
     {
       "iso2": "QA",
@@ -1211,7 +2642,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation restricted."
+      "note": "Naturalisation restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "RO",
@@ -1219,7 +2660,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "RU",
@@ -1228,7 +2679,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Dual citizenship tolerated but not recognised."
+      "note": "Dual citizenship tolerated but not recognised.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "RW",
@@ -1236,7 +2697,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "KN",
@@ -1245,7 +2716,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 230000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "LC",
@@ -1254,7 +2735,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 92000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "WS",
@@ -1262,7 +2753,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SM",
@@ -1271,7 +2772,17 @@
       "naturalizationYears": 30,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Long residency (30 yrs, 15 for spouses); dual restricted."
+      "note": "Long residency (30 yrs, 15 for spouses); dual restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ST",
@@ -1279,7 +2790,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SA",
@@ -1288,7 +2809,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation by decree (restricted)."
+      "note": "Naturalisation by decree (restricted).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SN",
@@ -1296,7 +2827,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "RS",
@@ -1304,7 +2845,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SC",
@@ -1312,7 +2863,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "SL",
@@ -1320,7 +2881,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SG",
@@ -1329,7 +2900,17 @@
       "naturalizationYears": 2,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "2 yrs as permanent resident (longer in practice); dual not allowed."
+      "note": "Global Investor Programme; 2 yrs as PR (longer in practice); dual not allowed.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 1700000,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SK",
@@ -1338,7 +2919,17 @@
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Descent to third generation; dual restricted."
+      "note": "Descent to third generation; dual restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 3,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SI",
@@ -1347,7 +2938,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship restricted."
+      "note": "Dual citizenship restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SB",
@@ -1355,7 +2956,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SO",
@@ -1363,7 +2974,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ZA",
@@ -1372,7 +2993,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Dual with retention."
+      "note": "Dual with retention.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "KR",
@@ -1381,7 +3012,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual restricted."
+      "note": "Dual restricted.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "SS",
@@ -1389,7 +3030,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ES",
@@ -1398,7 +3049,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": 100,
-      "note": "10 yrs; dual only for Ibero-American and select countries."
+      "note": "10 yrs (1 if married to a citizen); dual only for Ibero-American and select countries.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": 1,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 500000,
+      "digitalNomadVisa": true,
+      "languageLevel": "A2"
     },
     {
       "iso2": "LK",
@@ -1407,7 +3068,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual restricted (application-based)."
+      "note": "Dual restricted (application-based).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "VC",
@@ -1416,7 +3087,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": 92000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "SD",
@@ -1424,7 +3105,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SR",
@@ -1432,7 +3123,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "SE",
@@ -1441,7 +3142,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 130,
-      "note": "No citizenship test; fee SEK 1,500 (≈ €130)."
+      "note": "No citizenship test; fee SEK 1,500 (≈ €130).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": false,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "None"
     },
     {
       "iso2": "CH",
@@ -1450,7 +3161,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "Communal/cantonal approval required."
+      "note": "Communal/cantonal approval required.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "SY",
@@ -1458,7 +3179,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TW",
@@ -1467,7 +3198,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalised citizens generally must renounce prior nationality."
+      "note": "Naturalised citizens generally must renounce prior nationality.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "TJ",
@@ -1475,7 +3216,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TZ",
@@ -1483,7 +3234,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TH",
@@ -1492,7 +3253,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual not allowed for naturalised."
+      "note": "Dual not allowed for naturalised.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "TL",
@@ -1500,7 +3271,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TG",
@@ -1508,7 +3289,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TO",
@@ -1516,7 +3307,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TT",
@@ -1524,7 +3325,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 8,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TN",
@@ -1532,7 +3343,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TR",
@@ -1540,7 +3361,18 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "note": "Citizenship by investment via real estate or deposit.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 370000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TM",
@@ -1548,7 +3380,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 7,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "TV",
@@ -1556,7 +3398,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "UG",
@@ -1564,7 +3416,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "UA",
@@ -1573,7 +3435,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual citizenship not recognised."
+      "note": "Dual citizenship not recognised.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "AE",
@@ -1582,7 +3454,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Naturalisation restricted (30 yrs or nomination)."
+      "note": "Golden visa available; naturalisation restricted (30 yrs or nomination).",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": 500000,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "GB",
@@ -1591,7 +3473,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 1760,
-      "note": "Descent limited to one generation abroad (exceptions); fee ≈ £1,500."
+      "note": "Descent limited to one generation abroad (exceptions); fee ≈ £1,500.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": "B1"
     },
     {
       "iso2": "US",
@@ -1600,7 +3492,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": 810,
-      "note": "5 yrs (3 if married); fee $725 + $85 biometrics."
+      "note": "5 yrs (3 if married); EB-5 investor visa; fee $725 + $85 biometrics.",
+      "cbi": false,
+      "goldenVisa": true,
+      "marriageYears": 3,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "UY",
@@ -1609,7 +3511,17 @@
       "naturalizationYears": 3,
       "dualCitizenshipAllowed": true,
       "officialFeeEUR": null,
-      "note": "3-5 yrs."
+      "note": "3-5 yrs.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": true,
+      "languageLevel": null
     },
     {
       "iso2": "UZ",
@@ -1617,7 +3529,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "VU",
@@ -1626,7 +3548,17 @@
       "naturalizationYears": 10,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Also citizenship by investment."
+      "note": "Also citizenship by investment.",
+      "cbi": true,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": 120000,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "VA",
@@ -1635,7 +3567,17 @@
       "naturalizationYears": null,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Citizenship tied to office/residence in Vatican City; no general naturalisation."
+      "note": "Citizenship tied to office/residence in Vatican City; no general naturalisation.",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "VE",
@@ -1643,7 +3585,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": true,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": true,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "VN",
@@ -1652,7 +3604,17 @@
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
       "officialFeeEUR": null,
-      "note": "Dual for overseas Vietnamese (exceptions)."
+      "note": "Dual for overseas Vietnamese (exceptions).",
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "YE",
@@ -1660,7 +3622,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ZM",
@@ -1668,7 +3640,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     },
     {
       "iso2": "ZW",
@@ -1676,7 +3658,17 @@
       "citizenshipByDescent": true,
       "naturalizationYears": 5,
       "dualCitizenshipAllowed": false,
-      "officialFeeEUR": null
+      "officialFeeEUR": null,
+      "cbi": false,
+      "goldenVisa": false,
+      "marriageYears": null,
+      "languageRequired": null,
+      "maxGenerations": 1,
+      "birthright": false,
+      "cbiMinInvestmentEUR": null,
+      "goldenVisaMinInvestmentEUR": null,
+      "digitalNomadVisa": false,
+      "languageLevel": null
     }
   ]
 }

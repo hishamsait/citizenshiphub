@@ -1,0 +1,111 @@
+[
+  {
+    "id": "passport-index",
+    "name": "passportindex.org via imorte/passport-index-data",
+    "url": "https://github.com/imorte/passport-index-data",
+    "provides": "Visa-requirement matrix and passport mobility scores.",
+    "license": { "name": "MIT License", "url": "https://github.com/imorte/passport-index-data" },
+    "attribution": "Visa data derived from passportindex.org, via imorte/passport-index-data (MIT License)."
+  },
+  {
+    "id": "mledoze",
+    "name": "mledoze/countries",
+    "url": "https://github.com/mledoze/countries",
+    "provides": "Country metadata: names, capitals, regions, flags, currencies, languages, calling codes, borders, tld, lat/lng, UN/independence status.",
+    "license": { "name": "MIT License", "url": "https://github.com/mledoze/countries/blob/master/LICENSE" },
+    "attribution": "Country metadata from mledoze/countries (MIT License)."
+  },
+  {
+    "id": "natural-earth",
+    "name": "Natural Earth",
+    "url": "https://www.naturalearthdata.com/",
+    "provides": "Map geometry plus population, GDP (total), income group, economy, and continent classifications.",
+    "license": { "name": "Public domain", "url": "https://www.naturalearthdata.com/about/terms-of-use/" },
+    "attribution": "Made with Natural Earth (public domain) — naturalearthdata.com."
+  },
+  {
+    "id": "world-bank",
+    "name": "World Bank",
+    "url": "https://data.worldbank.org/",
+    "provides": "GDP per capita (current US$) and inflation (CPI annual %).",
+    "license": { "name": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/" },
+    "attribution": "GDP per capita and inflation from the World Bank (CC BY 4.0) — data.worldbank.org."
+  },
+  {
+    "id": "undp",
+    "name": "UNDP Human Development Report",
+    "url": "https://hdr.undp.org/",
+    "provides": "Human Development Index (HDI) values and ranks.",
+    "license": { "name": "CC BY 3.0 IGO", "url": "https://creativecommons.org/licenses/by/3.0/igo/" },
+    "attribution": "Human Development Index from the UNDP Human Development Report (CC BY 3.0 IGO)."
+  },
+  {
+    "id": "owid",
+    "name": "Our World in Data",
+    "url": "https://ourworldindata.org/",
+    "provides": "Intermediate distribution of the Corruption Perceptions Index, V-Dem Human Rights Index, and V-Dem Liberal Democracy Index.",
+    "license": { "name": "CC BY 4.0 (third-party data subject to third-party licenses)", "url": "https://ourworldindata.org/faqs#how-is-our-work-copyrighted" },
+    "attribution": "Indices sourced via Our World in Data (CC BY 4.0).",
+    "note": "Our World in Data states that third-party datasets remain subject to the original publisher’s license — see the individual sources below."
+  },
+  {
+    "id": "transparency-international",
+    "name": "Transparency International",
+    "url": "https://www.transparency.org/en/cpi/2024",
+    "provides": "Corruption Perceptions Index (CPI) scores.",
+    "license": { "name": "CC BY-ND 4.0", "url": "https://creativecommons.org/licenses/by-nd/4.0/", "restrictions": "No derivatives" },
+    "attribution": "Corruption Perceptions Index 2024, Transparency International (CC BY-ND 4.0).",
+    "note": "CPI scores are reproduced as factual data points, unmodified."
+  },
+  {
+    "id": "v-dem",
+    "name": "V-Dem (Varieties of Democracy)",
+    "url": "https://v-dem.net/",
+    "provides": "Human Rights Index and Liberal Democracy Index.",
+    "license": { "name": "CC BY-NC-SA 4.0", "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/", "restrictions": "Non-commercial · Share-alike" },
+    "attribution": "Human Rights Index and Liberal Democracy Index from V-Dem (CC BY-NC-SA 4.0).",
+    "note": "⚠ Non-commercial license: confirm commercial use is permitted before monetising the site."
+  },
+  {
+    "id": "freedom-house",
+    "name": "Freedom House",
+    "url": "https://freedomhouse.org/report/freedom-world",
+    "provides": "Freedom in the World scores and status.",
+    "license": { "name": "© Freedom House — all rights reserved", "url": "https://freedomhouse.org/" },
+    "attribution": "Freedom in the World 2024, © Freedom House (used with attribution for informational purposes).",
+    "note": "Review Freedom House republication terms before commercial use."
+  },
+  {
+    "id": "tax-foundation",
+    "name": "Tax Foundation",
+    "url": "https://taxfoundation.org/",
+    "provides": "Reference for personal income and corporate tax rates.",
+    "license": { "name": "© Tax Foundation — attribution requested", "url": "https://taxfoundation.org/" },
+    "attribution": "Tax rates cross-checked against the Tax Foundation."
+  },
+  {
+    "id": "oecd",
+    "name": "OECD Tax Database",
+    "url": "https://www.oecd.org/tax/tax-policy/tax-database/",
+    "provides": "Reference for personal income tax, corporate tax, and VAT/GST rates.",
+    "license": { "name": "OECD — see oecd.org terms", "url": "https://www.oecd.org/termsandconditions/" },
+    "attribution": "Tax rates cross-checked against the OECD Tax Database."
+  },
+  {
+    "id": "kpmg",
+    "name": "KPMG Tax Rates Online",
+    "url": "https://kpmg.com/xx/en/services/tax/tax-tools-and-resources/tax-rates-online.html",
+    "provides": "Reference for personal income tax, corporate tax, and indirect tax rates.",
+    "license": { "name": "© KPMG — attribution requested", "url": "https://kpmg.com/" },
+    "attribution": "Tax rates cross-checked against KPMG Tax Rates Online."
+  },
+  {
+    "id": "wikipedia",
+    "name": "Wikipedia",
+    "url": "https://en.wikipedia.org/",
+    "provides": "Reference for citizenship-law rules (descent, naturalisation, dual citizenship, fees).",
+    "license": { "name": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/" },
+    "attribution": "Citizenship-law facts compiled from Wikipedia (CC BY-SA 4.0).",
+    "note": "Law facts are human-curated approximations; always verify with official government sources."
+  }
+]

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Search } from 'lucide-react';
 import { decodeCell, STATUS_BADGE, STATUS_LABEL, type AccessStatus } from '../lib/visa';
 import { cn } from '../lib/utils';
@@ -11,7 +11,6 @@ export interface CountryRef {
 }
 
 interface Props {
-  matrix: Record<string, Record<string, string>>;
   countries: CountryRef[];
   paths: MapCountryRef[];
   initialPassport?: string;
@@ -19,7 +18,7 @@ interface Props {
 
 const STATUSES: AccessStatus[] = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa', 'visa-required', 'no-admission'];
 
-export default function VisaExplorer({ matrix, countries, paths, initialPassport }: Props) {
+export default function VisaExplorer({ countries, paths, initialPassport }: Props) {
   const nameByCode = useMemo(() => {
     const m = new Map<string, CountryRef>();
     for (const c of countries) m.set(c.code, c);
@@ -29,12 +28,34 @@ export default function VisaExplorer({ matrix, countries, paths, initialPassport
   const options = useMemo(() => [...countries].sort((a, b) => a.name.localeCompare(b.name)), [countries]);
 
   const [passport, setPassport] = useState<string>(() =>
-    initialPassport && matrix[initialPassport.toUpperCase()] ? initialPassport.toUpperCase() : 'IE',
+    initialPassport && countries.some((c) => c.code === initialPassport.toUpperCase())
+      ? initialPassport.toUpperCase()
+      : 'IE',
   );
+  const [cells, setCells] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<AccessStatus | 'all'>('all');
 
-  const cells = matrix[passport] ?? {};
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    fetch(`/api/visa-matrix?passport=${encodeURIComponent(passport)}`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (!active) return;
+        setCells(data.cells ?? {});
+        setLoading(false);
+      })
+      .catch(() => {
+        if (!active) return;
+        setCells({});
+        setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
+  }, [passport]);
 
   const statusByIso2 = useMemo(() => {
     const m: Record<string, AccessStatus> = {};
@@ -122,6 +143,7 @@ export default function VisaExplorer({ matrix, countries, paths, initialPassport
         </div>
       </div>
 
+      {loading && <p className="text-sm text-slate-400" role="status">Loading visa data…</p>}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
         {(['visa-free', 'visa-on-arrival', 'eta', 'e-visa', 'visa-required'] as AccessStatus[]).map((s) => (
           <div key={s} className="rounded-xl bg-white p-4 text-center shadow-md shadow-black/5">

@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { slugify } from '../../lib/utils';
-import passportsData from '../../data/passports.json';
-import type { PassportsData } from '../../data/types';
+import { getDb } from '../../lib/db/client';
+import { listCountries } from '../../lib/db/countries';
 
-export const prerender = true;
-
-const { passports } = passportsData as unknown as PassportsData;
+const db = getDb(Astro.locals);
+const passports = await listCountries(db);
 
 const byRegion = new Map<string, typeof passports>();
 for (const p of passports) {

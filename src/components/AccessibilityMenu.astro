@@ -1,0 +1,377 @@
+---
+import {
+  Accessibility,
+  Contrast,
+  Gauge,
+  Minus,
+  Monitor,
+  Moon,
+  Plus,
+  RotateCcw,
+  Sun,
+  Type,
+  X,
+} from 'lucide-react';
+---
+
+<div class="a11y-root fixed bottom-5 left-5 z-50 flex flex-col items-start">
+  <div
+    id="a11y-menu"
+    hidden
+    role="region"
+    aria-label="Accessibility settings"
+    class="mb-3 max-h-[80vh] w-72 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-black/10 sm:w-80"
+  >
+    <div class="flex items-center justify-between">
+      <p class="text-sm font-semibold text-slate-900">Accessibility settings</p>
+      <button
+        id="a11y-close"
+        type="button"
+        aria-label="Close accessibility settings"
+        class="flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+      >
+        <X className="h-4 w-4" aria-hidden="true" />
+      </button>
+    </div>
+
+    <fieldset class="mt-4">
+      <legend class="mb-1.5 text-xs font-medium uppercase tracking-wide text-slate-500">Theme</legend>
+      <div class="grid grid-cols-3 gap-1 rounded-lg bg-slate-100 p-1">
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-theme" value="light" class="sr-only peer" />
+          <span class="flex items-center justify-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            <Sun className="h-4 w-4" aria-hidden="true" /> Light
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-theme" value="dark" class="sr-only peer" />
+          <span class="flex items-center justify-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            <Moon className="h-4 w-4" aria-hidden="true" /> Dark
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-theme" value="system" class="sr-only peer" />
+          <span class="flex items-center justify-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            <Monitor className="h-4 w-4" aria-hidden="true" /> System
+          </span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="mt-4">
+      <div class="mb-1.5 flex items-center justify-between">
+        <span class="text-xs font-medium uppercase tracking-wide text-slate-500">Text size</span>
+        <output id="a11y-text-size-value" class="text-xs font-semibold tabular-nums text-slate-700">100%</output>
+      </div>
+      <div class="flex items-center justify-between rounded-lg bg-slate-100 p-1">
+        <button
+          id="a11y-text-decrease"
+          type="button"
+          aria-label="Decrease text size"
+          class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <Minus className="h-4 w-4" aria-hidden="true" />
+        </button>
+        <span class="flex items-center gap-1 text-sm font-medium text-slate-500" aria-hidden="true">
+          <Type className="h-4 w-4" /> Aa
+        </span>
+        <button
+          id="a11y-text-increase"
+          type="button"
+          aria-label="Increase text size"
+          class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-md text-slate-600 transition hover:bg-white hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
+        >
+          <Plus className="h-4 w-4" aria-hidden="true" />
+        </button>
+      </div>
+    </div>
+
+    <fieldset class="mt-4">
+      <legend class="mb-1.5 text-xs font-medium uppercase tracking-wide text-slate-500">Display density</legend>
+      <div class="grid grid-cols-3 gap-1 rounded-lg bg-slate-100 p-1">
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-density" value="compact" class="sr-only peer" />
+          <span class="block rounded-md px-2 py-1.5 text-center text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            Compact
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-density" value="default" class="sr-only peer" />
+          <span class="block rounded-md px-2 py-1.5 text-center text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            Default
+          </span>
+        </label>
+        <label class="cursor-pointer">
+          <input type="radio" name="a11y-density" value="comfortable" class="sr-only peer" />
+          <span class="block rounded-md px-2 py-1.5 text-center text-sm font-medium text-slate-600 transition peer-checked:bg-white peer-checked:text-slate-900 peer-checked:shadow-sm peer-focus-visible:ring-2 peer-focus-visible:ring-gold-500">
+            Comfortable
+          </span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="mt-3 space-y-1">
+      <button
+        id="a11y-contrast"
+        type="button"
+        aria-pressed="false"
+        class="flex w-full cursor-pointer items-center justify-between rounded-lg px-2 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+      >
+        <span class="flex items-center gap-2">
+          <Contrast className="h-4 w-4 text-slate-500" aria-hidden="true" /> High contrast
+        </span>
+        <span data-state aria-hidden="true" class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">Off</span>
+      </button>
+      <button
+        id="a11y-reduce-motion"
+        type="button"
+        aria-pressed="false"
+        class="flex w-full cursor-pointer items-center justify-between rounded-lg px-2 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+      >
+        <span class="flex items-center gap-2">
+          <Gauge className="h-4 w-4 text-slate-500" aria-hidden="true" /> Reduce motion
+        </span>
+        <span data-state aria-hidden="true" class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">Off</span>
+      </button>
+    </div>
+
+    <button
+      id="a11y-reset"
+      type="button"
+      class="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100"
+    >
+      <RotateCcw className="h-4 w-4" aria-hidden="true" /> Reset
+    </button>
+
+    <div id="a11y-announcer" role="status" aria-live="polite" class="sr-only"></div>
+  </div>
+
+  <button
+    id="a11y-trigger"
+    type="button"
+    aria-expanded="false"
+    aria-controls="a11y-menu"
+    aria-label="Accessibility settings"
+    class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-white/85 text-slate-700 shadow-lg shadow-black/10 backdrop-blur-xl transition hover:text-gold-600 focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2"
+  >
+    <Accessibility className="h-5 w-5" aria-hidden="true" />
+  </button>
+</div>
+
+<script is:inline>
+  (function () {
+    const root = document.documentElement;
+    const trigger = document.getElementById('a11y-trigger');
+    const menu = document.getElementById('a11y-menu');
+    const announcer = document.getElementById('a11y-announcer');
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const TEXT_SCALES = [87.5, 100, 112.5, 125, 137.5];
+    const DEFAULT_TEXT_SCALE = 1;
+
+    const store = {
+      get(key, fallback) {
+        try {
+          return localStorage.getItem(key) ?? fallback;
+        } catch {
+          return fallback;
+        }
+      },
+      set(key, value) {
+        try {
+          localStorage.setItem(key, String(value));
+        } catch {}
+      },
+      remove(key) {
+        try {
+          localStorage.removeItem(key);
+        } catch {}
+      },
+    };
+
+    const state = {
+      theme: store.get('theme', 'system'),
+      textScale: (() => {
+        const n = parseInt(store.get('text-scale', '1'), 10);
+        return Number.isInteger(n) && n >= 0 && n < TEXT_SCALES.length ? n : DEFAULT_TEXT_SCALE;
+      })(),
+      density: store.get('density', 'default'),
+      contrast: store.get('high-contrast', 'off') === 'on',
+      motion: store.get('reduce-motion', 'off') === 'on',
+    };
+
+    const announce = (msg) => {
+      if (announcer) announcer.textContent = msg;
+    };
+
+    const applyTheme = () => {
+      const dark = state.theme === 'dark' || (state.theme === 'system' && mq.matches);
+      root.classList.toggle('dark', dark);
+      root.dataset.theme = state.theme;
+      if (meta) meta.setAttribute('content', dark ? '#121110' : '#fbfaf7');
+    };
+
+    const applyTextScale = () => {
+      root.dataset.textScale = String(state.textScale);
+      const out = document.getElementById('a11y-text-size-value');
+      const dec = document.getElementById('a11y-text-decrease');
+      const inc = document.getElementById('a11y-text-increase');
+      if (out) out.textContent = `${TEXT_SCALES[state.textScale]}%`;
+      if (dec) dec.disabled = state.textScale === 0;
+      if (inc) inc.disabled = state.textScale === TEXT_SCALES.length - 1;
+    };
+
+    const applyDensity = () => {
+      root.dataset.density = state.density;
+      document.querySelectorAll('input[name="a11y-density"]').forEach((el) => {
+        el.checked = el.value === state.density;
+      });
+    };
+
+    const applyContrast = () => {
+      root.classList.toggle('high-contrast', state.contrast);
+      const btn = document.getElementById('a11y-contrast');
+      if (btn) {
+        btn.setAttribute('aria-pressed', String(state.contrast));
+        const pill = btn.querySelector('[data-state]');
+        if (pill) pill.textContent = state.contrast ? 'On' : 'Off';
+      }
+    };
+
+    const applyMotion = () => {
+      root.classList.toggle('reduce-motion', state.motion);
+      const btn = document.getElementById('a11y-reduce-motion');
+      if (btn) {
+        btn.setAttribute('aria-pressed', String(state.motion));
+        const pill = btn.querySelector('[data-state]');
+        if (pill) pill.textContent = state.motion ? 'On' : 'Off';
+      }
+    };
+
+    const syncThemeRadios = () => {
+      document.querySelectorAll('input[name="a11y-theme"]').forEach((el) => {
+        el.checked = el.value === state.theme;
+      });
+    };
+
+    const syncAll = () => {
+      applyTheme();
+      applyTextScale();
+      applyDensity();
+      applyContrast();
+      applyMotion();
+      syncThemeRadios();
+    };
+
+    const firstFocusable = () => menu.querySelector('button, input');
+
+    const openMenu = () => {
+      menu.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      firstFocusable()?.focus();
+    };
+
+    const closeMenu = () => {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    };
+
+    trigger?.addEventListener('click', () => {
+      if (menu.hidden) openMenu();
+      else closeMenu();
+    });
+
+    document.getElementById('a11y-close')?.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !menu.hidden) closeMenu();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!menu.hidden && !menu.contains(e.target) && !trigger.contains(e.target)) closeMenu();
+    });
+
+    menu.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusables = Array.from(menu.querySelectorAll('button, input')).filter((el) => !el.disabled);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    document.querySelectorAll('input[name="a11y-theme"]').forEach((el) => {
+      el.addEventListener('change', () => {
+        state.theme = el.value;
+        store.set('theme', state.theme);
+        applyTheme();
+        announce(`Theme: ${state.theme}`);
+      });
+    });
+
+    document.querySelectorAll('input[name="a11y-density"]').forEach((el) => {
+      el.addEventListener('change', () => {
+        state.density = el.value;
+        store.set('density', state.density);
+        applyDensity();
+        announce(`Display density: ${state.density}`);
+      });
+    });
+
+    document.getElementById('a11y-text-decrease')?.addEventListener('click', () => {
+      if (state.textScale > 0) {
+        state.textScale -= 1;
+        store.set('text-scale', state.textScale);
+        applyTextScale();
+        announce(`Text size: ${TEXT_SCALES[state.textScale]}%`);
+      }
+    });
+
+    document.getElementById('a11y-text-increase')?.addEventListener('click', () => {
+      if (state.textScale < TEXT_SCALES.length - 1) {
+        state.textScale += 1;
+        store.set('text-scale', state.textScale);
+        applyTextScale();
+        announce(`Text size: ${TEXT_SCALES[state.textScale]}%`);
+      }
+    });
+
+    document.getElementById('a11y-contrast')?.addEventListener('click', () => {
+      state.contrast = !state.contrast;
+      store.set('high-contrast', state.contrast ? 'on' : 'off');
+      applyContrast();
+      announce(`High contrast: ${state.contrast ? 'on' : 'off'}`);
+    });
+
+    document.getElementById('a11y-reduce-motion')?.addEventListener('click', () => {
+      state.motion = !state.motion;
+      store.set('reduce-motion', state.motion ? 'on' : 'off');
+      applyMotion();
+      announce(`Reduce motion: ${state.motion ? 'on' : 'off'}`);
+    });
+
+    document.getElementById('a11y-reset')?.addEventListener('click', () => {
+      state.theme = 'system';
+      state.textScale = DEFAULT_TEXT_SCALE;
+      state.density = 'default';
+      state.contrast = false;
+      state.motion = false;
+      ['theme', 'text-scale', 'density', 'high-contrast', 'reduce-motion'].forEach(store.remove);
+      syncAll();
+      announce('Accessibility settings reset');
+    });
+
+    mq.addEventListener('change', () => {
+      if (state.theme === 'system') applyTheme();
+    });
+
+    syncAll();
+  })();
+</script>

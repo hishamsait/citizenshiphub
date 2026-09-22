@@ -8,9 +8,13 @@ CREATE TABLE IF NOT EXISTS countries (
     name TEXT NOT NULL,
     capital TEXT,
     region TEXT,
+    subregion TEXT,
+    slug TEXT,
     citizenship_by_descent INTEGER DEFAULT 0, -- 0 = False, 1 = True
     naturalization_years INTEGER,
-    official_fee_eur REAL
+    official_fee_eur REAL,
+    dual_citizenship_allowed INTEGER,
+    coverage REAL
 );
 
 -- 2. Pairwise Visa Matrix (Country A -> Country B)
@@ -32,6 +36,11 @@ CREATE TABLE IF NOT EXISTS passport_rankings (
     visa_free_count INTEGER NOT NULL,
     voa_count INTEGER NOT NULL,
     eta_count INTEGER NOT NULL,
+    evisa_count INTEGER,
+    visa_required_count INTEGER,
+    no_admission_count INTEGER,
+    dense_rank INTEGER,
+    percentile REAL,
     FOREIGN KEY (passport_iso) REFERENCES countries(iso2)
 );
 
@@ -46,3 +55,119 @@ CREATE TABLE IF NOT EXISTS leads (
 
 -- Optimization Index for Instant Matrix Lookups
 CREATE INDEX IF NOT EXISTS idx_visa_lookup ON visa_rules(passport_iso, destination_iso);
+
+-- 5. Country Profile Enrichment (Phase 1)
+CREATE TABLE IF NOT EXISTS country_profiles (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    flag TEXT,
+    area_km2 REAL,
+    demonym TEXT,
+    languages TEXT,          -- JSON array of strings
+    currencies TEXT,         -- JSON array of { code, name, symbol }
+    calling_code TEXT,
+    latlng TEXT,             -- JSON array [lat, lng]
+    landlocked INTEGER,      -- 0 = False, 1 = True
+    borders TEXT,            -- JSON array of ISO2 codes
+    tld TEXT,                -- JSON array of top-level domains
+    un_member INTEGER,       -- 0 = False, 1 = True
+    independent INTEGER,     -- 0 = False, 1 = True
+    population INTEGER,
+    population_year INTEGER,
+    gdp_usd_m REAL,          -- total GDP, millions USD (Natural Earth)
+    gdp_year INTEGER,
+    income_group TEXT,
+    economy TEXT,
+    continent TEXT
+);
+
+-- 6. Economic & Development Indicators (Phase 2)
+CREATE TABLE IF NOT EXISTS country_economics (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    iso3 TEXT,
+    gdp_per_capita_usd REAL,
+    gdp_per_capita_year INTEGER,
+    inflation_pct REAL,
+    inflation_year INTEGER,
+    life_expectancy REAL,
+    life_expectancy_year INTEGER,
+    gdp_growth_pct REAL,
+    gdp_growth_year INTEGER,
+    hdi REAL,
+    hdi_year INTEGER,
+    hdi_rank INTEGER
+);
+
+-- 7. Freedom & Governance Indices (Phase 3)
+CREATE TABLE IF NOT EXISTS country_freedom (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    cpi_score REAL, cpi_rank INTEGER, cpi_year INTEGER,
+    fiw_score REAL, fiw_rank INTEGER, fiw_year INTEGER, fiw_status TEXT,
+    human_rights_score REAL, human_rights_rank INTEGER, human_rights_year INTEGER,
+    democracy_score REAL, democracy_rank INTEGER, democracy_year INTEGER,
+    happiness_score REAL, happiness_rank INTEGER, happiness_year INTEGER
+);
+
+-- 8. Tax & Financial Data (Phase 4b)
+CREATE TABLE IF NOT EXISTS country_tax (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    personal_income_tax REAL,   -- top marginal rate %
+    corporate_tax REAL,         -- %
+    vat REAL,                   -- standard VAT/GST rate %
+    territorial INTEGER,        -- 0 = worldwide, 1 = territorial
+    wealth INTEGER,             -- 0 = no wealth tax, 1 = wealth tax
+    non_dom INTEGER             -- 0/1 non-domiciled (remittance-basis) regime
+);
+
+-- 9. Citizenship routes & residency signals (Phase 4a + Phase 5)
+CREATE TABLE IF NOT EXISTS country_citizenship (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    cbi INTEGER,                       -- citizenship by investment
+    golden_visa INTEGER,               -- residency by investment
+    marriage_years INTEGER,
+    language_required INTEGER,
+    max_generations INTEGER,           -- NULL = unlimited
+    birthright INTEGER,                -- jus soli
+    cbi_min_investment_eur REAL,
+    golden_visa_min_investment_eur REAL,
+    digital_nomad_visa INTEGER,
+    language_level TEXT
+);
+
+-- 10. Editorial guide bodies (rendered from Markdown at ETL time)
+CREATE TABLE IF NOT EXISTS country_guides (
+    iso2 TEXT PRIMARY KEY REFERENCES countries(iso2),
+    slug TEXT NOT NULL,
+    summary TEXT,
+    body_md TEXT,
+    body_html TEXT
+);
+
+-- 11. Per-dataset metadata (generatedAt, sources, license, encoding, etc.)
+CREATE TABLE IF NOT EXISTS dataset_meta (
+    dataset_id TEXT PRIMARY KEY,
+    generated_at TEXT,
+    verified_at TEXT,
+    source TEXT,
+    license TEXT,
+    disclaimer TEXT,
+    score_definition TEXT,
+    total_countries INTEGER,
+    total_destinations INTEGER,
+    encoding TEXT,    -- JSON object
+    sources TEXT      -- JSON array of { name, url, updatedAt }
+);
+
+-- 12. Data-source attribution registry
+CREATE TABLE IF NOT EXISTS data_sources (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    url TEXT,
+    provides TEXT,
+    license_name TEXT,
+    license_url TEXT,
+    license_restrictions TEXT,
+    attribution TEXT,
+    note TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_guides_slug ON country_guides(slug);

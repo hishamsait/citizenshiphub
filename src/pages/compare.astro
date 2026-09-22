@@ -1,19 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PassportCompare from '../components/PassportCompare';
-import matrixData from '../data/visa-matrix.json';
-import passportsData from '../data/passports.json';
-import rankingsData from '../data/rankings.json';
-import type { VisaMatrix, PassportsData, RankingsData } from '../data/types';
+import { getDb } from '../lib/db/client';
+import { listCountries } from '../lib/db/countries';
+import { listRankings } from '../lib/db/rankings';
 
-export const prerender = true;
-
-const { matrix } = matrixData as unknown as VisaMatrix;
-const { passports } = passportsData as unknown as PassportsData;
-const { rankings } = rankingsData as unknown as RankingsData;
-
-const countries = passports.map((p) => ({ code: p.code, name: p.name, region: p.region }));
-const ranked = rankings.map((r) => ({
+const db = getDb(Astro.locals);
+const countries = (await listCountries(db)).map((c) => ({ code: c.code, name: c.name, region: c.region }));
+const ranked = (await listRankings(db)).map((r) => ({
   code: r.code,
   name: r.name,
   rank: r.rank,
@@ -43,6 +37,6 @@ const initialCodes = ['a', 'b', 'c', 'd']
     </div>
   </section>
   <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-    <PassportCompare client:load matrix={matrix} countries={countries} rankings={ranked} initialCodes={initialCodes} />
+    <PassportCompare client:load countries={countries} rankings={ranked} initialCodes={initialCodes} />
   </section>
 </BaseLayout>

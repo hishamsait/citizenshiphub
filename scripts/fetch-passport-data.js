@@ -27,6 +27,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const CACHE_DIR = path.join(__dirname, '.cache');
 const DEFAULT_OUT = path.resolve(ROOT, 'src', 'data');
+const NATURAL_EARTH_PATH = path.join(ROOT, 'src', 'data', 'world-countries.geo.json');
 
 const SOURCES = [
   {
@@ -188,14 +189,99 @@ function classify(raw) {
 function makeMetadataIndex(metadata) {
   const idx = new Map();
   for (const c of metadata || []) {
-    idx.set(String(c.cca2).toUpperCase(), {
+    const code = String(c.cca2 ?? '').toUpperCase();
+    if (!code) continue;
+    idx.set(code, {
       name: c.name?.common ?? c.name?.official ?? c.cca2,
       region: c.region ?? 'Unknown',
       subregion: c.subregion ?? '',
       capital: Array.isArray(c.capital) ? c.capital[0] : c.capital ?? '',
+      areaKm2: typeof c.area === 'number' ? c.area : null,
+      flag: typeof c.flag === 'string' && c.flag ? c.flag : null,
+      demonym: c.demonyms?.eng?.m ?? c.demonyms?.eng?.f ?? null,
+      languages: c.languages ? Object.values(c.languages) : [],
+      currencies: c.currencies
+        ? Object.entries(c.currencies).map(([code, v]) => ({
+            code,
+            name: v?.name ?? null,
+            symbol: v?.symbol ?? null,
+          }))
+        : [],
+      callingCode: c.idd ? formatCallingCode(c.idd) : null,
+      latlng: Array.isArray(c.latlng) && c.latlng.length === 2 ? c.latlng : null,
+      landlocked: typeof c.landlocked === 'boolean' ? c.landlocked : null,
+      borders: Array.isArray(c.borders) ? c.borders : [],
+      tld: Array.isArray(c.tld) ? c.tld : [],
+      unMember: typeof c.unMember === 'boolean' ? c.unMember : null,
+      independent: typeof c.independent === 'boolean' ? c.independent : null,
     });
   }
   return idx;
+}
+
+/** Combine mledoze idd ({ root: "+3", suffixes: ["51"] }) into a representative dial code. */
+function formatCallingCode(idd) {
+  const root = idd?.root ?? '';
+  if (!root) return null;
+  const suffixes = Array.isArray(idd?.suffixes) ? idd.suffixes : [];
+  if (suffixes.length === 1) return `${root}${suffixes[0]}`;
+  return root; // multi-suffix plans (e.g. NANP "+1") — show the root
+}
+
+/** Index Natural Earth stats (population / GDP / income) already bundled in the repo. */
+function makeNaturalEarthIndex() {
+  const idx = new Map();
+  let geo;
+  try {
+    geo = JSON.parse(fs.readFileSync(NATURAL_EARTH_PATH, 'utf8'));
+  } catch {
+    return idx;
+  }
+  for (const feature of geo?.features ?? []) {
+    const p = feature?.properties ?? {};
+    const a2 = String(p.ISO_A2 ?? '').toUpperCase();
+    const a2eh = String(p.ISO_A2_EH ?? '').toUpperCase();
+    const key = a2 && a2 !== '-99' && a2 !== 'NULL' ? a2 : a2eh && a2eh !== '-99' && a2eh !== 'NULL' ? a2eh : null;
+    if (!key) continue;
+    idx.set(key, {
+      population: typeof p.POP_EST === 'number' ? p.POP_EST : null,
+      populationYear: typeof p.POP_YEAR === 'number' ? p.POP_YEAR : null,
+      gdpUsdM: typeof p.GDP_MD === 'number' ? p.GDP_MD : null,
+      gdpYear: typeof p.GDP_YEAR === 'number' ? p.GDP_YEAR : null,
+      incomeGroup: p.INCOME_GRP ?? null,
+      economy: p.ECONOMY ?? null,
+      continent: p.CONTINENT ?? null,
+      regionUn: p.REGION_UN ?? null,
+    });
+  }
+  return idx;
+}
+
+/** Merge mledoze metadata with Natural Earth statistics into a single profile object. */
+function buildProfile(meta, ne) {
+  const m = meta ?? {};
+  const n = ne ?? {};
+  return {
+    flag: m.flag ?? null,
+    areaKm2: m.areaKm2 ?? null,
+    demonym: m.demonym ?? null,
+    languages: m.languages ?? [],
+    currencies: m.currencies ?? [],
+    callingCode: m.callingCode ?? null,
+    latlng: m.latlng ?? null,
+    landlocked: m.landlocked ?? null,
+    borders: m.borders ?? [],
+    tld: m.tld ?? [],
+    unMember: m.unMember ?? null,
+    independent: m.independent ?? null,
+    population: n.population ?? null,
+    populationYear: n.populationYear ?? null,
+    gdpUsdM: n.gdpUsdM ?? null,
+    gdpYear: n.gdpYear ?? null,
+    incomeGroup: n.incomeGroup ?? null,
+    economy: n.economy ?? null,
+    continent: n.continent ?? null,
+  };
 }
 
 function makeSeedIndex() {
@@ -212,7 +298,7 @@ function scoreOf(c) {
     : c.visaFree + c.visaOnArrival + c.eta;
 }
 
-function buildFromMatrix(csvText, metaIndex, seedIndex) {
+function buildFromMatrix(csvText, metaIndex, seedIndex, neIndex) {
   const rows = parseCsv(csvText);
   if (rows.length < 2) throw new Error('Matrix CSV is empty or missing a header row');
   const header = rows[0].slice(1).map((d) => d.trim().toUpperCase()).filter(Boolean);
@@ -264,12 +350,14 @@ function buildFromMatrix(csvText, metaIndex, seedIndex) {
       }
     }
     const meta = metaIndex.get(code) ?? seedIndex.get(code) ?? { name: code, region: 'Unknown', subregion: '', capital: '' };
+    const profile = buildProfile(meta, neIndex.get(code));
     passports.push({
       code,
       name: meta.name,
       region: meta.region,
       subregion: meta.subregion,
       capital: meta.capital,
+      profile,
       ...counts,
       mobilityScore: scoreOf(counts),
       coverage: Number((scoreOf(counts) / header.length).toFixed(4)),
@@ -290,6 +378,7 @@ function buildFromSeed() {
         region,
         subregion,
         capital,
+        profile: null,
         ...counts,
         mobilityScore: scoreOf(counts),
         coverage: null,
@@ -321,10 +410,15 @@ function rank(passports) {
 }
 
 function makeMeta(source, totalCountries) {
+  const sources = [];
+  if (source) sources.push({ name: source.name, url: source.url ?? null, updatedAt: source.updatedAt ?? null });
+  sources.push({ name: 'countries (mledoze)', url: METADATA_URL, updatedAt: null });
+  sources.push({ name: 'Natural Earth (world countries)', url: 'https://www.naturalearthdata.com/', updatedAt: null });
   return {
     generatedAt: new Date().toISOString(),
-    sources: source ? [{ name: source.name, url: source.url ?? null, updatedAt: source.updatedAt ?? null }] : [],
-    license: 'MIT (derived from passportindex.org via imorte/passport-index-data)',
+    sources,
+    license:
+      'MIT (passport matrix via imorte/passport-index-data); mledoze/countries (MIT, some ODbL-derived fields); Natural Earth (public domain)',
     disclaimer: 'Informational only — not legal, immigration, or travel advice. Verify with official sources.',
     scoreDefinition: SCORE_INCLUDES_EVISA
       ? 'mobilityScore = visaFree + visaOnArrival + eta + eVisa'
@@ -358,6 +452,7 @@ async function main() {
   }
   const metaIndex = makeMetadataIndex(metadata);
   const seedIndex = makeSeedIndex();
+  const neIndex = makeNaturalEarthIndex();
 
   let passports = null;
   let matrix = null;
@@ -379,7 +474,7 @@ async function main() {
           fs.writeFileSync(cachePath, csv);
           log(opts, `✓ Fetched ${src.name} (${(csv.length / 1024).toFixed(0)} KB)`);
         }
-        const built = buildFromMatrix(csv, metaIndex, seedIndex);
+        const built = buildFromMatrix(csv, metaIndex, seedIndex, neIndex);
         passports = built.passports;
         matrix = built.matrix;
         totalDestinations = built.totalDestinations;

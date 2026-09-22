@@ -7,7 +7,23 @@ citizenshipByDescent: true
 naturalizationYears: 8
 dualCitizenshipAllowed: false
 officialFeeEUR: null
+cbi: false
+goldenVisa: false
+marriageYears: null
+languageRequired: null
+maxGenerations: 3
+birthright: false
+cbiMinInvestmentEUR: null
+goldenVisaMinInvestmentEUR: null
+digitalNomadVisa: false
+languageLevel: null
 summary: "Citizenship by descent is available; naturalisation requires 8 years; dual citizenship is generally not permitted."
+flag: "🇸🇰"
+areaKm2: 49037
+population: 5454073
+languages:
+  - "Slovak"
+demonym: "Slovak"
 ---
 
 ## Why Slovakia?
@@ -18,11 +34,11 @@ The Slovakia passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Slovakia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent, and in some cases from grandparents or more distant ancestors.
+Slovakia applies jus sanguinis — citizenship can be acquired by descent across multiple generations.
 
 ## Naturalisation
 
-Naturalisation typically requires **8 years** of residence, usually alongside language and integration requirements.
+Naturalisation typically requires **8 years** of residence.
 
 ## Dual citizenship
 
@@ -31,6 +47,13 @@ Slovakia generally does not permit dual citizenship — naturalising usually req
 ## Fees & timeline
 
 There is no standard published application fee — costs vary, so check with official sources.
+
+## Tax considerations
+
+- Top personal income tax rate: **25%**
+- Corporate income tax rate: **21%**
+- Standard VAT/GST rate: **20%**
+- Taxation basis: **worldwide** (residents are generally taxed on worldwide income)
 
 ---
 _Compiled from the Citizenship Hub law dataset (approximate). Verify with official government sources before relying on this information._

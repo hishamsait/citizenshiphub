@@ -7,7 +7,23 @@ citizenshipByDescent: true
 naturalizationYears: null
 dualCitizenshipAllowed: false
 officialFeeEUR: null
+cbi: false
+goldenVisa: false
+marriageYears: null
+languageRequired: null
+maxGenerations: 1
+birthright: false
+cbiMinInvestmentEUR: null
+goldenVisaMinInvestmentEUR: null
+digitalNomadVisa: false
+languageLevel: null
 summary: "Citizenship by descent is available; naturalisation is restricted; dual citizenship is generally not permitted."
+flag: "🇨🇳"
+areaKm2: 9706961
+population: 1397715000
+languages:
+  - "Chinese"
+demonym: "Chinese"
 ---
 
 ## Why China?
@@ -18,7 +34,7 @@ The China passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-China applies jus sanguinis — citizenship can be acquired by descent from a citizen parent, and in some cases from grandparents or more distant ancestors.
+China applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -31,6 +47,13 @@ China generally does not permit dual citizenship — naturalising usually requir
 ## Fees & timeline
 
 There is no standard published application fee — costs vary, so check with official sources.
+
+## Tax considerations
+
+- Top personal income tax rate: **45%**
+- Corporate income tax rate: **25%**
+- Standard VAT/GST rate: **13%**
+- Taxation basis: **worldwide** (residents are generally taxed on worldwide income)
 
 ---
 _Compiled from the Citizenship Hub law dataset (approximate). Verify with official government sources before relying on this information._
