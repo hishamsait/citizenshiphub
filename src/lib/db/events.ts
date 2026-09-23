@@ -1,4 +1,5 @@
 import type { Db } from './client';
+import { categorizeReferrer } from '../utils';
 
 export type EventType = 'pageview' | 'search' | 'lead_open' | 'web_vital' | 'scroll_depth' | 'custom';
 
@@ -142,5 +143,217 @@ export async function webVitalValues(db: Db, since: string): Promise<VitalValue[
     )
     .bind(since)
     .all<VitalValue>();
+  return results;
+}
+
+export interface SourceStat {
+  source: string;
+  views: number;
+}
+
+/** Coarse acquisition sources derived from the pageview `referrer` column. */
+export async function trafficSources(db: Db, since: string): Promise<SourceStat[]> {
+  const { results } = await db
+    .prepare(
+      `SELECT referrer, COUNT(*) AS views
+       FROM events
+       WHERE type = 'pageview' AND created_at >= ?
+       GROUP BY referrer
+       ORDER BY views DESC`,
+    )
+    .bind(since)
+    .all<{ referrer: string | null; views: number }>();
+
+  const buckets = new Map<string, number>();
+  for (const row of results) {
+    const source = categorizeReferrer(row.referrer);
+    buckets.set(source, (buckets.get(source) ?? 0) + row.views);
+  }
+  return [...buckets.entries()]
+    .map(([source, views]) => ({ source, views }))
+    .sort((a, b) => b.views - a.views);
+}
+
+export interface EngagementStats {
+  pagesPerSession: number | null;
+  bounceRate: number | null;
+  returningRate: number | null;
+  newSessions: number;
+  returningSessions: number;
+}
+
+/** Pages/session, bounce rate and new-vs-returning from the session_id column. */
+export async function engagementStats(db: Db, since: string): Promise<EngagementStats> {
+  const [pv, sessions, bounce, returning] = await Promise.all([
+    db.prepare(`SELECT COUNT(*) AS n FROM events WHERE type = 'pageview' AND created_at >= ?`).bind(since).first<{ n: number }>(),
+    db.prepare(`SELECT COUNT(DISTINCT session_id) AS n FROM events WHERE type = 'pageview' AND created_at >= ?`).bind(since).first<{ n: number }>(),
+    db
+      .prepare(
+        `SELECT COUNT(*) AS n FROM (
+           SELECT session_id FROM events WHERE type = 'pageview' AND created_at >= ?
+           GROUP BY session_id HAVING COUNT(*) = 1
+         )`,
+      )
+      .bind(since)
+      .first<{ n: number }>(),
+    db
+      .prepare(
+        `SELECT COUNT(*) AS n FROM (
+           SELECT session_id FROM events WHERE type = 'pageview' AND created_at >= ?
+           GROUP BY session_id HAVING COUNT(DISTINCT strftime('%Y-%m-%d', created_at)) > 1
+         )`,
+      )
+      .bind(since)
+      .first<{ n: number }>(),
+  ]);
+
+  const pageviews = pv?.n ?? 0;
+  const sessionCount = sessions?.n ?? 0;
+  const bounceCount = bounce?.n ?? 0;
+  const returningCount = returning?.n ?? 0;
+
+  return {
+    pagesPerSession: sessionCount > 0 ? pageviews / sessionCount : null,
+    bounceRate: sessionCount > 0 ? (bounceCount / sessionCount) * 100 : null,
+    returningRate: sessionCount > 0 ? (returningCount / sessionCount) * 100 : null,
+    newSessions: sessionCount - returningCount,
+    returningSessions: returningCount,
+  };
+}
+
+export interface UtmStat {
+  source: string;
+  medium: string;
+  campaign: string;
+  views: number;
+}
+
+/** UTM campaign breakdown from the pageview `properties` JSON column. */
+export async function utmBreakdown(db: Db, since: string): Promise<UtmStat[]> {
+  const { results } = await db
+    .prepare(
+      `SELECT properties, COUNT(*) AS views
+       FROM events
+       WHERE type = 'pageview' AND created_at >= ? AND properties IS NOT NULL
+       GROUP BY properties`,
+    )
+    .bind(since)
+    .all<{ properties: string; views: number }>();
+
+  const map = new Map<string, UtmStat>();
+  for (const row of results) {
+    let parsed: Record<string, unknown> = {};
+    try {
+      parsed = JSON.parse(row.properties) as Record<string, unknown>;
+    } catch {
+      continue;
+    }
+    const source = typeof parsed.utm_source === 'string' ? parsed.utm_source : '';
+    const medium = typeof parsed.utm_medium === 'string' ? parsed.utm_medium : '';
+    const campaign = typeof parsed.utm_campaign === 'string' ? parsed.utm_campaign : '';
+    if (!source && !medium && !campaign) continue;
+    const key = `${source}|${medium}|${campaign}`;
+    const existing = map.get(key) ?? { source, medium, campaign, views: 0 };
+    existing.views += row.views;
+    map.set(key, existing);
+  }
+  return [...map.values()].sort((a, b) => b.views - a.views);
+}
+
+export interface SearchQueryStat {
+  query: string;
+  count: number;
+  noResults: number;
+}
+
+export interface SearchStats {
+  total: number;
+  noResults: number;
+  noResultRate: number | null;
+  queries: SearchQueryStat[];
+}
+
+/** Aggregate on-site search events (query + result count stored in properties). */
+export async function searchStats(db: Db, since: string): Promise<SearchStats> {
+  const { results } = await db
+    .prepare(
+      `SELECT properties FROM events WHERE type = 'search' AND created_at >= ? AND properties IS NOT NULL`,
+    )
+    .bind(since)
+    .all<{ properties: string }>();
+
+  const map = new Map<string, SearchQueryStat>();
+  let total = 0;
+  let noResults = 0;
+
+  for (const row of results) {
+    let parsed: Record<string, unknown> = {};
+    try {
+      parsed = JSON.parse(row.properties) as Record<string, unknown>;
+    } catch {
+      continue;
+    }
+    const query = typeof parsed.query === 'string' ? parsed.query.trim() : '';
+    if (!query) continue;
+    const resCount = typeof parsed.results === 'number' ? parsed.results : null;
+    total += 1;
+    if (resCount === 0) noResults += 1;
+
+    const cur = map.get(query) ?? { query, count: 0, noResults: 0 };
+    cur.count += 1;
+    if (resCount === 0) cur.noResults += 1;
+    map.set(query, cur);
+  }
+
+  return {
+    total,
+    noResults,
+    noResultRate: total > 0 ? (noResults / total) * 100 : null,
+    queries: [...map.values()].sort((a, b) => b.count - a.count).slice(0, 25),
+  };
+}
+
+export async function countEventsByType(db: Db, since: string, type: EventType): Promise<number> {
+  const r = await db
+    .prepare(`SELECT COUNT(*) AS n FROM events WHERE type = ? AND created_at >= ?`)
+    .bind(type, since)
+    .first<{ n: number }>();
+  return r?.n ?? 0;
+}
+
+/** Count `custom` events whose `properties.action` matches (e.g. 'lead_submit'). */
+export async function countCustomAction(db: Db, since: string, action: string): Promise<number> {
+  const { results } = await db
+    .prepare(
+      `SELECT properties FROM events WHERE type = 'custom' AND created_at >= ? AND properties IS NOT NULL`,
+    )
+    .bind(since)
+    .all<{ properties: string }>();
+  return results.filter((row) => {
+    try {
+      const parsed = JSON.parse(row.properties) as Record<string, unknown>;
+      return parsed.action === action;
+    } catch {
+      return false;
+    }
+  }).length;
+}
+
+export interface VitalValueByDevice {
+  device: string;
+  metric: string;
+  value: number;
+}
+
+/** Raw web-vital samples annotated with device for p75-per-device aggregation. */
+export async function webVitalValuesByDevice(db: Db, since: string): Promise<VitalValueByDevice[]> {
+  const { results } = await db
+    .prepare(
+      `SELECT COALESCE(device, 'other') AS device, metric, value
+       FROM events
+       WHERE type = 'web_vital' AND created_at >= ? AND metric IS NOT NULL AND value IS NOT NULL`,
+    )
+    .bind(since)
+    .all<VitalValueByDevice>();
   return results;
 }

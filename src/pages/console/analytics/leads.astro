@@ -1,0 +1,185 @@
+---
+import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
+import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
+import { getDb } from '../../../lib/db/client';
+import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { resolveRange } from '../../../lib/analytics/types';
+import { formatNumber } from '../../../lib/utils';
+import { Clock, Users, Globe, BookOpen } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const range = resolveRange(Astro.url.searchParams.get('range'));
+const data = await firstPartyProvider.leadsAnalytics(db, range);
+
+const fmt = (n: number) => formatNumber(n);
+const stageLabel = (s: string) =>
+  ({ contacted: 'Contacted', qualified: 'Qualified', closed: 'Closed' })[s] ?? s;
+const maxViews = Math.max(1, ...data.topGuides.map((g) => g.views));
+const maxGeo = Math.max(1, ...data.geo.map((g) => g.count));
+const maxSource = Math.max(1, ...data.leadSources.map((s) => s.count));
+---
+
+<ConsoleLayout
+  title="Analytics Leads"
+  description="Pipeline velocity, lead geo and guide conversion."
+>
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500">Showing the last {range.days} days</p>
+    <TimeRangePicker />
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-3">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Clock className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Pipeline velocity</h2>
+      </div>
+      <ul class="space-y-2.5">
+        {
+          data.velocity.map((v) => (
+            <li class="flex items-center justify-between text-sm">
+              <span class="text-slate-700">{stageLabel(v.stage)}</span>
+              <span class="tabular-nums text-slate-400">
+                {v.avgDays == null ? '—' : `${v.avgDays.toFixed(1)}d`} · {v.count}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Globe className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Lead geo</h2>
+      </div>
+      {
+        data.geo.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No lead geo data yet.</p>
+        ) : (
+          <ul class="space-y-2.5">
+            {
+              data.geo.map((g) => (
+                <li>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-slate-700">{g.label}</span>
+                    <span class="tabular-nums text-slate-400">{fmt(g.count)}</span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-gold-500"
+                      style={`width:${((g.count / maxGeo) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Users className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Lead sources</h2>
+      </div>
+      {
+        data.leadSources.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No attribution data yet.</p>
+        ) : (
+          <ul class="space-y-2.5">
+            {
+              data.leadSources.map((s) => (
+                <li>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-slate-700">{s.label}</span>
+                    <span class="tabular-nums text-slate-400">{fmt(s.count)}</span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-brand-700"
+                      style={`width:${((s.count / maxSource) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Users className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Service × destination</h2>
+      </div>
+      {
+        data.matrix.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No lead combinations recorded yet.</p>
+        ) : (
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
+                  <th class="pb-2 font-medium">Service</th>
+                  <th class="pb-2 font-medium">Destination</th>
+                  <th class="pb-2 text-right font-medium">Leads</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                {
+                  data.matrix.map((m) => (
+                    <tr>
+                      <td class="py-2.5 pr-3 text-slate-700">{m.service}</td>
+                      <td class="py-2.5 pr-3 text-slate-500">{m.country}</td>
+                      <td class="py-2.5 text-right tabular-nums text-slate-900">{fmt(m.count)}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <BookOpen className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Guide conversion leaderboard</h2>
+      </div>
+      {
+        data.topGuides.length === 0 ? (
+          <p class="py-6 text-center text-sm text-slate-400">No guide views recorded yet.</p>
+        ) : (
+          <ul class="space-y-3">
+            {
+              data.topGuides.map((g) => (
+                <li>
+                  <div class="flex items-center justify-between gap-3 text-sm">
+                    <a href={`/countries/${g.slug}`} class="truncate text-slate-700 hover:text-brand-700">
+                      {g.name}
+                    </a>
+                    <span class="shrink-0 tabular-nums text-slate-400">
+                      {fmt(g.views)} views · {g.leads} leads
+                    </span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-brand-700"
+                      style={`width:${((g.views / maxViews) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+  </div>
+</ConsoleLayout>

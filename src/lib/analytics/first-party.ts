@@ -12,6 +12,8 @@ export interface OverviewData {
   topPages: events.PathStat[];
   topCountries: events.CountryStat[];
   devices: events.DeviceStat[];
+  engagement: events.EngagementStats;
+  sources: events.SourceStat[];
 }
 
 export interface ContentData {
@@ -28,12 +30,42 @@ export interface PagesData {
   rows: { path: string; views: number; uniques: number; share: number }[];
 }
 
-export interface PerformanceData {
-  metrics: { metric: string; p75: number | null; samples: number }[];
+export interface VitalMetric {
+  metric: string;
+  p75: number | null;
+  samples: number;
 }
 
-export interface SearchConsoleData {
-  configured: boolean;
+export interface PerformanceData {
+  metrics: VitalMetric[];
+  byDevice: { device: string; metrics: { metric: string; p75: number | null }[] }[];
+  distribution: { metric: string; good: number; needsImprovement: number; poor: number }[];
+}
+
+export interface AcquisitionData {
+  sources: events.SourceStat[];
+  campaigns: events.UtmStat[];
+}
+
+export interface SearchAnalyticsData {
+  total: number;
+  noResults: number;
+  noResultRate: number | null;
+  queries: events.SearchQueryStat[];
+}
+
+export interface FunnelData {
+  stages: { key: string; label: string; count: number }[];
+  openToSubmitRate: number | null;
+  submitToCaptureRate: number | null;
+}
+
+export interface LeadsAnalyticsData {
+  velocity: leads.StatusTiming[];
+  matrix: leads.ServiceCountry[];
+  geo: leads.FieldCount[];
+  leadSources: leads.FieldCount[];
+  topGuides: { iso2: string; slug: string; name: string; views: number; leads: number; conversion: number }[];
 }
 
 export interface AnalyticsProvider {
@@ -41,7 +73,10 @@ export interface AnalyticsProvider {
   content(db: Db, range: TimeRange): Promise<ContentData>;
   pages(db: Db, range: TimeRange): Promise<PagesData>;
   performance(db: Db, range: TimeRange): Promise<PerformanceData>;
-  searchConsole(db: Db, range: TimeRange): Promise<SearchConsoleData>;
+  acquisition(db: Db, range: TimeRange): Promise<AcquisitionData>;
+  search(db: Db, range: TimeRange): Promise<SearchAnalyticsData>;
+  funnel(db: Db, range: TimeRange): Promise<FunnelData>;
+  leadsAnalytics(db: Db, range: TimeRange): Promise<LeadsAnalyticsData>;
 }
 
 async function buildSeries(
@@ -67,10 +102,63 @@ function percentile(values: number[], p: number): number {
   return sorted[lo] * (1 - t) + sorted[hi] * t;
 }
 
+const VITAL_BOUNDS: Record<string, [number, number]> = {
+  LCP: [2500, 4000],
+  CLS: [0.1, 0.25],
+  INP: [200, 500],
+  TTFB: [800, 1800],
+  FCP: [1800, 3000],
+};
+
+function roundVital(metric: string, value: number): number {
+  if (metric === 'CLS') return Math.round(value * 1000) / 1000;
+  return Math.round(value);
+}
+
+async function guideConversion(
+  db: Db,
+  since: string,
+): Promise<{ iso2: string; slug: string; name: string; views: number; leads: number; conversion: number }[]> {
+  const guides = await db
+    .prepare(`SELECT g.iso2, g.slug, c.name FROM country_guides g JOIN countries c ON c.iso2 = g.iso2`)
+    .all<{ iso2: string; slug: string; name: string }>();
+  const isoBySlug = new Map(guides.results.map((g) => [g.slug, g.iso2]));
+  const slugByIso = new Map(guides.results.map((g) => [g.iso2, g.slug]));
+  const nameByIso = new Map(guides.results.map((g) => [g.iso2, g.name]));
+
+  const viewsByIso = new Map<string, number>();
+  const paths = await events.topPaths(db, since, 500);
+  for (const p of paths) {
+    if (!p.path.startsWith('/countries/')) continue;
+    const slug = p.path.slice('/countries/'.length).split('?')[0].replace(/\/$/, '');
+    const iso = isoBySlug.get(slug);
+    if (iso) viewsByIso.set(iso, (viewsByIso.get(iso) ?? 0) + p.views);
+  }
+
+  const leadRows = await leads.leadsByCountry(db, since);
+  const leadsByIso = new Map<string, number>();
+  for (const r of leadRows) if (r.key) leadsByIso.set(r.key, r.count);
+
+  const out: { iso2: string; slug: string; name: string; views: number; leads: number; conversion: number }[] = [];
+  for (const [iso, views] of viewsByIso) {
+    if (views === 0) continue;
+    const leadCount = leadsByIso.get(iso) ?? 0;
+    out.push({
+      iso2: iso,
+      slug: slugByIso.get(iso) ?? iso.toLowerCase(),
+      name: nameByIso.get(iso) ?? iso,
+      views,
+      leads: leadCount,
+      conversion: (leadCount / views) * 100,
+    });
+  }
+  return out.sort((a, b) => b.views - a.views).slice(0, 12);
+}
+
 export const firstPartyProvider: AnalyticsProvider = {
   async overview(db, range) {
     const since = sinceSql(range.days);
-    const [pageviews, visitors, leadCount, series, topPages, topCountries, devices] =
+    const [pageviews, visitors, leadCount, series, topPages, topCountries, devices, engagement, sources] =
       await Promise.all([
         events.countPageviews(db, since),
         events.countUniqueVisitors(db, since),
@@ -79,6 +167,8 @@ export const firstPartyProvider: AnalyticsProvider = {
         events.topPaths(db, since, 8),
         events.pageviewsByCountry(db, since),
         events.pageviewsByDevice(db, since),
+        events.engagementStats(db, since),
+        events.trafficSources(db, since),
       ]);
 
     return {
@@ -90,6 +180,8 @@ export const firstPartyProvider: AnalyticsProvider = {
       topPages,
       topCountries,
       devices,
+      engagement,
+      sources,
     };
   },
 
@@ -153,27 +245,106 @@ export const firstPartyProvider: AnalyticsProvider = {
 
   async performance(db, range) {
     const since = sinceSql(range.days);
-    const values = await events.webVitalValues(db, since);
+    const [values, byDeviceRows] = await Promise.all([
+      events.webVitalValues(db, since),
+      events.webVitalValuesByDevice(db, since),
+    ]);
+
     const byMetric = new Map<string, number[]>();
     for (const v of values) {
       const arr = byMetric.get(v.metric) ?? [];
       arr.push(v.value);
       byMetric.set(v.metric, arr);
     }
-    const metrics = ['LCP', 'CLS', 'INP', 'TTFB'].map((metric) => {
+
+    const metricKeys = ['LCP', 'CLS', 'INP', 'TTFB', 'FCP'];
+    const metrics: VitalMetric[] = metricKeys.map((metric) => {
       const arr = byMetric.get(metric) ?? [];
       const p75 = arr.length ? percentile(arr, 75) : null;
       return {
         metric,
-        p75: p75 === null ? null : metric === 'CLS' ? Math.round(p75 * 1000) / 1000 : Math.round(p75),
+        p75: p75 === null ? null : roundVital(metric, p75),
         samples: arr.length,
       };
     });
-    return { metrics };
+
+    const deviceMap = new Map<string, Map<string, number[]>>();
+    for (const row of byDeviceRows) {
+      const metricMap = deviceMap.get(row.device) ?? new Map<string, number[]>();
+      const arr = metricMap.get(row.metric) ?? [];
+      arr.push(row.value);
+      metricMap.set(row.metric, arr);
+      deviceMap.set(row.device, metricMap);
+    }
+    const byDevice = [...deviceMap.entries()].map(([device, metricMap]) => ({
+      device,
+      metrics: metricKeys.map((metric) => {
+        const arr = metricMap.get(metric) ?? [];
+        const p75 = arr.length ? percentile(arr, 75) : null;
+        return { metric, p75: p75 === null ? null : roundVital(metric, p75) };
+      }),
+    }));
+
+    const distribution = metricKeys.map((metric) => {
+      const arr = byMetric.get(metric) ?? [];
+      const [good, needs] = VITAL_BOUNDS[metric] ?? [0, 0];
+      let goodCount = 0;
+      let needsCount = 0;
+      let poorCount = 0;
+      for (const v of arr) {
+        if (v <= good) goodCount += 1;
+        else if (v <= needs) needsCount += 1;
+        else poorCount += 1;
+      }
+      return { metric, good: goodCount, needsImprovement: needsCount, poor: poorCount };
+    });
+
+    return { metrics, byDevice, distribution };
   },
 
-  async searchConsole() {
-    return { configured: false };
+  async acquisition(db, range) {
+    const since = sinceSql(range.days);
+    const [sources, campaigns] = await Promise.all([
+      events.trafficSources(db, since),
+      events.utmBreakdown(db, since),
+    ]);
+    return { sources, campaigns };
+  },
+
+  async search(db, range) {
+    const since = sinceSql(range.days);
+    return events.searchStats(db, since);
+  },
+
+  async funnel(db, range) {
+    const since = sinceSql(range.days);
+    const [opens, submits, captured] = await Promise.all([
+      events.countEventsByType(db, since, 'lead_open'),
+      events.countCustomAction(db, since, 'lead_submit'),
+      leads.countLeads(db, since),
+    ]);
+    const stages = [
+      { key: 'open', label: 'Modal opened', count: opens },
+      { key: 'submit', label: 'Form submitted', count: submits },
+      { key: 'captured', label: 'Lead captured', count: captured },
+    ];
+    return {
+      stages,
+      openToSubmitRate: opens > 0 ? (submits / opens) * 100 : null,
+      submitToCaptureRate: submits > 0 ? (captured / submits) * 100 : null,
+    };
+  },
+
+  async leadsAnalytics(db, range) {
+    const since = sinceSql(range.days);
+    const [velocity, matrix, geo, leadSources, topGuides] = await Promise.all([
+      leads.leadPipelineVelocity(db),
+      leads.leadsByServiceCountry(db, since),
+      leads.leadsByVisitorCountry(db, since),
+      leads.leadSourceBreakdown(db, since),
+      guideConversion(db, since),
+    ]);
+    return { velocity, matrix, geo, leadSources, topGuides };
   },
 };
 

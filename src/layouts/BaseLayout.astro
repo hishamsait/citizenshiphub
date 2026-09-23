@@ -135,6 +135,14 @@ const pageTitle = title.includes('Citizenship Hub') ? title : `${title} · Citiz
             new PerformanceObserver(function (list) {
               var entries = list.getEntries();
               for (var i = 0; i < entries.length; i++) {
+                if (entries[i].name === 'first-contentful-paint') metrics['FCP'] = entries[i].startTime;
+              }
+            }).observe({ type: 'paint', buffered: true });
+          } catch (e) {}
+          try {
+            new PerformanceObserver(function (list) {
+              var entries = list.getEntries();
+              for (var i = 0; i < entries.length; i++) {
                 var e = entries[i];
                 metrics['INP'] = Math.max(metrics['INP'] || 0, e.duration);
               }

@@ -9,7 +9,7 @@ import { firstPartyProvider } from '../../lib/analytics/first-party';
 import { resolveRange } from '../../lib/analytics/types';
 import { listLeads } from '../../lib/db/leads';
 import { formatNumber } from '../../lib/utils';
-import { Users, Eye, MousePointerClick, TrendingUp, ArrowRight } from 'lucide-react';
+import { Users, Eye, MousePointerClick, TrendingUp, ArrowRight, Gauge, Files, RefreshCw } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
@@ -42,6 +42,27 @@ const fmt = (n: number) => formatNumber(n);
       value={overview.conversionRate == null ? '—' : `${overview.conversionRate.toFixed(1)}%`}
       icon={TrendingUp}
       hint="Leads per visitor"
+    />
+  </div>
+
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    <StatCard
+      label="Bounce rate"
+      value={overview.engagement.bounceRate == null ? '—' : `${overview.engagement.bounceRate.toFixed(1)}%`}
+      icon={Gauge}
+      hint="Single-page sessions"
+    />
+    <StatCard
+      label="Pages / session"
+      value={overview.engagement.pagesPerSession == null ? '—' : overview.engagement.pagesPerSession.toFixed(1)}
+      icon={Files}
+      hint="Average per visitor"
+    />
+    <StatCard
+      label="Returning visitors"
+      value={fmt(overview.engagement.returningSessions)}
+      icon={RefreshCw}
+      hint={`${overview.engagement.returningRate == null ? '—' : `${overview.engagement.returningRate.toFixed(0)}%`} of sessions`}
     />
   </div>
 

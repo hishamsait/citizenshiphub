@@ -7,7 +7,7 @@ import { getDb } from '../../../lib/db/client';
 import { firstPartyProvider } from '../../../lib/analytics/first-party';
 import { resolveRange } from '../../../lib/analytics/types';
 import { formatNumber } from '../../../lib/utils';
-import { Users, Eye, MousePointerClick, TrendingUp, Globe, Monitor } from 'lucide-react';
+import { Users, Eye, MousePointerClick, TrendingUp, Globe, Monitor, Gauge, Files, RefreshCw } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
@@ -36,6 +36,27 @@ const maxDevice = Math.max(1, ...data.devices.map((d) => d.views));
       value={data.conversionRate == null ? '—' : `${data.conversionRate.toFixed(1)}%`}
       icon={TrendingUp}
       hint="Leads per visitor"
+    />
+  </div>
+
+  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+    <StatCard
+      label="Bounce rate"
+      value={data.engagement.bounceRate == null ? '—' : `${data.engagement.bounceRate.toFixed(1)}%`}
+      icon={Gauge}
+      hint="Single-page sessions"
+    />
+    <StatCard
+      label="Pages / session"
+      value={data.engagement.pagesPerSession == null ? '—' : data.engagement.pagesPerSession.toFixed(1)}
+      icon={Files}
+      hint="Average per visitor"
+    />
+    <StatCard
+      label="Returning visitors"
+      value={fmt(data.engagement.returningSessions)}
+      icon={RefreshCw}
+      hint={`${data.engagement.returningRate == null ? '—' : `${data.engagement.returningRate.toFixed(0)}%`} of sessions`}
     />
   </div>
 
@@ -144,5 +165,27 @@ const maxDevice = Math.max(1, ...data.devices.map((d) => d.views));
         }
       </div>
     </div>
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div class="mb-3 flex items-center gap-2">
+      <Globe className="h-4 w-4 text-slate-400" aria-hidden="true" />
+      <h2 class="text-sm font-semibold text-slate-900">Traffic sources</h2>
+    </div>
+    {
+      data.sources.length === 0 ? (
+        <p class="py-4 text-center text-sm text-slate-400">No data yet.</p>
+      ) : (
+        <div class="flex flex-wrap gap-2">
+          {
+            data.sources.map((s) => (
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
+                {s.source} · {fmt(s.views)}
+              </span>
+            ))
+          }
+        </div>
+      )
+    }
   </div>
 </ConsoleLayout>

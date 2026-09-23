@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PassportRankTable from '../components/PassportRankTable';
 import type { TableRow } from '../components/PassportRankTable';
 import { getDb } from '../lib/db/client';
+import { insertEvent } from '../lib/db/events';
+import { detectDevice } from '../lib/utils';
 import { listRankings } from '../lib/db/rankings';
 import { listEconomics } from '../lib/db/economics';
 import { listFreedom } from '../lib/db/freedom';
@@ -91,6 +93,28 @@ const asOf = meta?.generatedAt
       day: 'numeric',
     })
   : 'recently';
+
+// First-party tracking of on-site search (query + approximate result count).
+if (q) {
+  const qLower = q.toLowerCase();
+  const matchedCount = rows.filter(
+    (r) => r.name.toLowerCase().includes(qLower) || r.code.toLowerCase().includes(qLower),
+  ).length;
+  const sessionId = Astro.cookies.get('ch_sid')?.value ?? '';
+  if (sessionId) {
+    const runtime = Astro.locals.runtime;
+    const ua = Astro.request.headers.get('user-agent') ?? '';
+    await insertEvent(db, {
+      sessionId,
+      type: 'search',
+      path: '/passports/',
+      referrer: Astro.request.headers.get('referer'),
+      country: runtime?.cf?.country ?? null,
+      device: detectDevice(ua),
+      properties: { query: q, results: matchedCount },
+    }).catch(() => {});
+  }
+}
 ---
 
 <BaseLayout

@@ -175,6 +175,16 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
     if (country && opts.targetCountryIso) country.value = opts.targetCountryIso;
 
     dialog.showModal();
+
+    try {
+      navigator.sendBeacon(
+        '/api/track',
+        new Blob(
+          [JSON.stringify({ type: 'lead_open', properties: { serviceType: opts.serviceType, targetCountryIso: opts.targetCountryIso } })],
+          { type: 'application/json' },
+        ),
+      );
+    } catch (e) {}
   }
 
   (window as unknown as { openLeadModal: typeof openLeadModal }).openLeadModal = openLeadModal;
@@ -217,11 +227,22 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
     if (submitBtn) submitBtn.disabled = true;
     if (errorEl) errorEl.classList.add('hidden');
 
+    const query = new URLSearchParams(window.location.search);
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, targetCountryIso, serviceType }),
+        body: JSON.stringify({
+          name,
+          email,
+          targetCountryIso,
+          serviceType,
+          landingPath: window.location.pathname,
+          referrer: document.referrer || '',
+          utmSource: query.get('utm_source') ?? '',
+          utmMedium: query.get('utm_medium') ?? '',
+          utmCampaign: query.get('utm_campaign') ?? '',
+        }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -230,6 +251,15 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
       form.classList.add('hidden');
       if (success) success.classList.remove('hidden');
       setTimeout(() => dialog.close(), 1600);
+      try {
+        navigator.sendBeacon(
+          '/api/track',
+          new Blob(
+            [JSON.stringify({ type: 'custom', properties: { action: 'lead_submit', serviceType, targetCountryIso } })],
+            { type: 'application/json' },
+          ),
+        );
+      } catch (e) {}
     } catch (err) {
       if (errorEl) {
         errorEl.textContent =

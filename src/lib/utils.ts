@@ -74,3 +74,20 @@ export function formatDateTime(iso: string | null | undefined): string {
     d.getUTCMinutes(),
   )}`;
 }
+
+/** Bucket a raw HTTP referrer into a coarse acquisition source (used by analytics). */
+export function categorizeReferrer(referrer: string | null | undefined): string {
+  if (!referrer) return 'Direct';
+  let host: string;
+  try {
+    host = new URL(referrer).hostname;
+  } catch {
+    host = referrer;
+  }
+  if (/google\./i.test(host)) return 'Google';
+  if (/bing\./i.test(host)) return 'Bing';
+  if (/duckduckgo\./i.test(host)) return 'DuckDuckGo';
+  if (/yahoo\./i.test(host)) return 'Yahoo';
+  if (/facebook\.|instagram\.|linkedin\.|twitter\.|x\.com|reddit\.|tiktok\./i.test(host)) return 'Social';
+  return 'Other';
+}

@@ -28,6 +28,17 @@ function shouldTrackPageview(request: Request, pathname: string): boolean {
   return true;
 }
 
+/** Extract any present UTM params from a URL into a JSON-ready object (or null). */
+function utmProperties(url: URL): Record<string, unknown> | null {
+  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
+  const out: Record<string, unknown> = {};
+  for (const key of keys) {
+    const value = url.searchParams.get(key);
+    if (value) out[key] = value;
+  }
+  return Object.keys(out).length > 0 ? out : null;
+}
+
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
 
@@ -81,6 +92,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
             referrer: context.request.headers.get('referer'),
             country: runtime?.cf?.country ?? null,
             device: detectDevice(ua),
+            properties: utmProperties(context.url),
           }).catch(() => {}),
         );
       }

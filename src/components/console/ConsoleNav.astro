@@ -9,6 +9,9 @@ import {
   Sparkles,
   Users,
   Globe,
+  Share2,
+  Funnel,
+  BarChart3,
 } from 'lucide-react';
 
 const pathname = Astro.url.pathname;
@@ -68,11 +71,32 @@ const icon = (href: string) => (isActive(href) ? 'text-gold-300' : 'text-slate-4
         Performance
       </a>
       <a
-        href="/console/analytics/search-console"
-        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/search-console')]}
+        href="/console/analytics/acquisition"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/acquisition')]}
       >
-        <Search className={`h-4 w-4 shrink-0 ${icon('/console/analytics/search-console')}`} aria-hidden="true" />
-        Search Console
+        <Share2 className={`h-4 w-4 shrink-0 ${icon('/console/analytics/acquisition')}`} aria-hidden="true" />
+        Acquisition
+      </a>
+      <a
+        href="/console/analytics/search"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/search')]}
+      >
+        <Search className={`h-4 w-4 shrink-0 ${icon('/console/analytics/search')}`} aria-hidden="true" />
+        Search
+      </a>
+      <a
+        href="/console/analytics/funnel"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/funnel')]}
+      >
+        <Funnel className={`h-4 w-4 shrink-0 ${icon('/console/analytics/funnel')}`} aria-hidden="true" />
+        Funnel
+      </a>
+      <a
+        href="/console/analytics/leads"
+        class:list={['flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors', link('/console/analytics/leads')]}
+      >
+        <BarChart3 className={`h-4 w-4 shrink-0 ${icon('/console/analytics/leads')}`} aria-hidden="true" />
+        Leads analytics
       </a>
       <a
         href="/console/analytics/ai-insights"

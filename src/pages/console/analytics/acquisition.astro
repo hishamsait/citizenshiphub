@@ -1,0 +1,102 @@
+---
+import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
+import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
+import { getDb } from '../../../lib/db/client';
+import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { resolveRange } from '../../../lib/analytics/types';
+import { formatNumber } from '../../../lib/utils';
+import { Globe, TrendingUp } from 'lucide-react';
+
+const db = getDb(Astro.locals);
+const range = resolveRange(Astro.url.searchParams.get('range'));
+const data = await firstPartyProvider.acquisition(db, range);
+
+const fmt = (n: number) => formatNumber(n);
+const maxSource = Math.max(1, ...data.sources.map((s) => s.views));
+const totalViews = data.sources.reduce((sum, s) => sum + s.views, 0);
+---
+
+<ConsoleLayout
+  title="Analytics Acquisition"
+  description="Where your traffic comes from: referrers and UTM campaign tags."
+>
+  <div class="flex items-center justify-between gap-3">
+    <p class="text-sm text-slate-500">Showing the last {range.days} days</p>
+    <TimeRangePicker />
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Globe className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Traffic sources</h2>
+      </div>
+      {
+        data.sources.length === 0 ? (
+          <p class="py-8 text-center text-sm text-slate-400">No pageviews recorded yet.</p>
+        ) : (
+          <ul class="space-y-3">
+            {
+              data.sources.map((s) => (
+                <li>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-slate-700">{s.source}</span>
+                    <span class="tabular-nums text-slate-400">
+                      {fmt(s.views)} · {totalViews > 0 ? ((s.views / totalViews) * 100).toFixed(0) : 0}%
+                    </span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-brand-700"
+                      style={`width:${((s.views / maxSource) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <TrendingUp className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">UTM campaigns</h2>
+      </div>
+      {
+        data.campaigns.length === 0 ? (
+          <p class="py-8 text-center text-sm text-slate-400">
+            No UTM-tagged visits yet. Add <code class="text-xs">?utm_source=…</code> to links to see
+            campaign attribution.
+          </p>
+        ) : (
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
+                  <th class="pb-2 font-medium">Source</th>
+                  <th class="pb-2 font-medium">Medium</th>
+                  <th class="pb-2 font-medium">Campaign</th>
+                  <th class="pb-2 text-right font-medium">Views</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                {
+                  data.campaigns.map((c) => (
+                    <tr>
+                      <td class="py-2.5 pr-3 text-slate-700">{c.source || '—'}</td>
+                      <td class="py-2.5 pr-3 text-slate-500">{c.medium || '—'}</td>
+                      <td class="py-2.5 pr-3 text-slate-500">{c.campaign || '—'}</td>
+                      <td class="py-2.5 text-right tabular-nums text-slate-900">{fmt(c.views)}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</ConsoleLayout>
