@@ -82,10 +82,11 @@ console.log(`  otpauth:  ${uri}`);
 console.log('');
 if (created) {
   console.log('  ✔ Added ADMIN_TOTP_SECRET to .dev.vars');
-  console.log('    In production, set the same value as a Cloudflare secret:');
-  console.log('    npx wrangler secret put ADMIN_TOTP_SECRET');
+  console.log('    In production, set the same value as a Cloudflare Pages secret:');
+  console.log('    npx wrangler pages secret put ADMIN_TOTP_SECRET --project-name citizenshiphub');
 } else {
   console.log('  (Secret already present in .dev.vars showing enrollment for the existing value.)');
-  console.log('  In production, set the same value with: npx wrangler secret put ADMIN_TOTP_SECRET');
+  console.log('  In production, set the same value with:');
+  console.log('    npx wrangler pages secret put ADMIN_TOTP_SECRET --project-name citizenshiphub');
 }
 console.log('');
