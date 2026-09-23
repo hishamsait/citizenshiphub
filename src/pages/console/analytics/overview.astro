@@ -4,18 +4,25 @@ import StatCard from '../../../components/console/StatCard.astro';
 import Sparkline from '../../../components/console/Sparkline.astro';
 import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
 import { getDb } from '../../../lib/db/client';
-import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { createAnalyticsProvider } from '../../../lib/analytics/first-party';
 import { resolveRange } from '../../../lib/analytics/types';
 import { formatNumber } from '../../../lib/utils';
-import { Users, Eye, MousePointerClick, TrendingUp, Globe, Monitor, Gauge, Files, RefreshCw } from 'lucide-react';
+import { Users, Eye, MousePointerClick, TrendingUp, Globe, Monitor, Shield, Bot, Compass } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
-const data = await firstPartyProvider.overview(db, range);
+const data = await createAnalyticsProvider(Astro.locals.runtime.env).overview(db, range);
 
 const fmt = (n: number) => formatNumber(n);
 const maxCountry = Math.max(1, ...data.topCountries.map((c) => c.views));
 const maxDevice = Math.max(1, ...data.devices.map((d) => d.views));
+const maxBrowser = Math.max(1, ...data.browsers.map((b) => b.views));
+const maxOs = Math.max(1, ...data.oss.map((o) => o.views));
+const eyeball = data.requestSources.find((r) => r.source === 'eyeball')?.views ?? 0;
+const geoGuides = data.geoDestination
+  .filter((g) => g.path.startsWith('/countries/'))
+  .map((g) => ({ country: g.country, dest: g.path.slice('/countries/'.length).replace(/\/$/, '').split('?')[0], views: g.views }))
+  .slice(0, 24);
 ---
 
 <ConsoleLayout
@@ -39,25 +46,9 @@ const maxDevice = Math.max(1, ...data.devices.map((d) => d.views));
     />
   </div>
 
-  <div class="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-    <StatCard
-      label="Bounce rate"
-      value={data.engagement.bounceRate == null ? '—' : `${data.engagement.bounceRate.toFixed(1)}%`}
-      icon={Gauge}
-      hint="Single-page sessions"
-    />
-    <StatCard
-      label="Pages / session"
-      value={data.engagement.pagesPerSession == null ? '—' : data.engagement.pagesPerSession.toFixed(1)}
-      icon={Files}
-      hint="Average per visitor"
-    />
-    <StatCard
-      label="Returning visitors"
-      value={fmt(data.engagement.returningSessions)}
-      icon={RefreshCw}
-      hint={`${data.engagement.returningRate == null ? '—' : `${data.engagement.returningRate.toFixed(0)}%`} of sessions`}
-    />
+  <div class="mt-4 grid gap-4 sm:grid-cols-2">
+    <StatCard label="Threats blocked" value={fmt(data.threats)} icon={Shield} hint="Blocked by Cloudflare" />
+    <StatCard label="Real visitors" value={fmt(eyeball)} icon={Bot} hint="End-user requests" />
   </div>
 
   <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -184,6 +175,132 @@ const maxDevice = Math.max(1, ...data.devices.map((d) => d.views));
               </span>
             ))
           }
+        </div>
+      )
+    }
+  </div>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Monitor className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Browsers</h2>
+      </div>
+      {
+        data.browsers.length === 0 ? (
+          <p class="py-4 text-center text-sm text-slate-400">No data yet.</p>
+        ) : (
+          <ul class="space-y-2.5">
+            {
+              data.browsers.map((b) => (
+                <li>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-slate-700">{b.browser}</span>
+                    <span class="tabular-nums text-slate-400">{fmt(b.views)}</span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-brand-700"
+                      style={`width:${((b.views / maxBrowser) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Bot className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Operating systems</h2>
+      </div>
+      {
+        data.oss.length === 0 ? (
+          <p class="py-4 text-center text-sm text-slate-400">No data yet.</p>
+        ) : (
+          <ul class="space-y-2.5">
+            {
+              data.oss.map((o) => (
+                <li>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-slate-700">{o.os}</span>
+                    <span class="tabular-nums text-slate-400">{fmt(o.views)}</span>
+                  </div>
+                  <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-slate-100">
+                    <div
+                      class="h-1.5 rounded-full bg-gold-500"
+                      style={`width:${((o.views / maxOs) * 100).toFixed(1)}%`}
+                    ></div>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div class="mb-3 flex items-center gap-2">
+      <Shield className="h-4 w-4 text-slate-400" aria-hidden="true" />
+      <h2 class="text-sm font-semibold text-slate-900">Traffic quality</h2>
+    </div>
+    {
+      data.requestSources.length === 0 ? (
+        <p class="py-4 text-center text-sm text-slate-400">No data yet.</p>
+      ) : (
+        <div class="flex flex-wrap gap-2">
+          {
+            data.requestSources.map((r) => (
+              <span class="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
+                {r.source === 'eyeball' ? 'End users' : r.source === 'edgeWorkerFetch' ? 'Worker subrequests' : r.source} ·{' '}
+                {fmt(r.views)}
+              </span>
+            ))
+          }
+        </div>
+      )
+    }
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div class="mb-3 flex items-center gap-2">
+      <Compass className="h-4 w-4 text-slate-400" aria-hidden="true" />
+      <h2 class="text-sm font-semibold text-slate-900">Destination demand by country</h2>
+    </div>
+    {
+      geoGuides.length === 0 ? (
+        <p class="py-4 text-center text-sm text-slate-400">No guide views recorded yet.</p>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
+                <th class="pb-2 font-medium">Country</th>
+                <th class="pb-2 font-medium">Destination guide</th>
+                <th class="pb-2 text-right font-medium">Views</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {
+                geoGuides.map((g) => (
+                  <tr>
+                    <td class="py-2 pr-3 text-slate-700">{g.country}</td>
+                    <td class="py-2 pr-3">
+                      <a href={`/countries/${g.dest}`} class="text-slate-700 hover:text-brand-700">
+                        {g.dest}
+                      </a>
+                    </td>
+                    <td class="py-2 text-right tabular-nums text-slate-500">{fmt(g.views)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
       )
     }

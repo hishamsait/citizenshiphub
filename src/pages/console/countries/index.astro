@@ -5,11 +5,14 @@ import { getDb } from '../../../lib/db/client';
 import { listCountriesWithCoverage } from '../../../lib/db/countries-console';
 import { listCountriesAnalytics } from '../../../lib/db/country-analytics';
 import { listLatestScrapeStatus } from '../../../lib/db/scrapes';
+import { trafficFromEnv } from '../../../lib/analytics/cloudflare';
 
 const db = getDb(Astro.locals);
+const traffic = await trafficFromEnv(Astro.locals.runtime.env, 30);
+const pathViews = new Map(traffic.topPaths.map((p) => [p.path, p.views] as const));
 const [countries, analytics, scrapeStatus] = await Promise.all([
   listCountriesWithCoverage(db),
-  listCountriesAnalytics(db),
+  listCountriesAnalytics(db, pathViews),
   listLatestScrapeStatus(db),
 ]);
 const rows = countries.map((c) => ({

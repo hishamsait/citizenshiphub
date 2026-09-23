@@ -2,6 +2,11 @@ import type { Db } from '../db/client';
 import * as events from '../db/events';
 import * as leads from '../db/leads';
 import { sinceSql } from './types';
+import {
+  trafficFromEnv,
+  type CloudflareAnalyticsEnv,
+  type CloudflareTraffic,
+} from './cloudflare';
 
 export interface Insight {
   id: string;
@@ -16,24 +21,28 @@ function pct(current: number, previous: number): number | null {
   return ((current - previous) / previous) * 100;
 }
 
-export async function generateInsights(db: Db, rangeDays: number): Promise<Insight[]> {
+/**
+ * Deterministic, rule-based insights. Traffic signals (pageviews, visitors,
+ * top pages) come from Cloudflare; leads/content come from D1.
+ */
+export async function generateInsights(
+  db: Db,
+  rangeDays: number,
+  traffic: CloudflareTraffic,
+): Promise<Insight[]> {
   const currentSince = sinceSql(rangeDays);
   const priorSince = sinceSql(rangeDays * 2);
 
-  const [leadDays, viewDays, serviceSplit, countrySplit, withoutGuides, topPages, visitors] =
-    await Promise.all([
-      leads.leadsByDay(db, priorSince),
-      events.pageviewsByDay(db, priorSince),
-      leads.leadsByService(db, currentSince),
-      leads.leadsByCountry(db, currentSince),
-      db
-        .prepare(
-          `SELECT COUNT(*) AS n FROM countries c LEFT JOIN country_guides g ON g.iso2 = c.iso2 WHERE g.iso2 IS NULL`,
-        )
-        .first<{ n: number }>(),
-      events.topPaths(db, currentSince, 5),
-      events.countUniqueVisitors(db, currentSince),
-    ]);
+  const [leadDays, serviceSplit, countrySplit, withoutGuides] = await Promise.all([
+    leads.leadsByDay(db, priorSince),
+    leads.leadsByService(db, currentSince),
+    leads.leadsByCountry(db, currentSince),
+    db
+      .prepare(
+        `SELECT COUNT(*) AS n FROM countries c LEFT JOIN country_guides g ON g.iso2 = c.iso2 WHERE g.iso2 IS NULL`,
+      )
+      .first<{ n: number }>(),
+  ]);
 
   const currentLeads = leadDays
     .filter((d) => d.day >= currentSince)
@@ -41,9 +50,8 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
   const previousLeads = leadDays
     .filter((d) => d.day < currentSince)
     .reduce((s, d) => s + d.count, 0);
-  const currentViews = viewDays
-    .filter((d) => d.day >= currentSince)
-    .reduce((s, d) => s + d.views, 0);
+  const currentViews = traffic.pageviews;
+  const visitors = traffic.visitors;
 
   if (currentLeads === 0 && currentViews === 0) {
     return [
@@ -52,7 +60,7 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
         category: 'traffic',
         tone: 'neutral',
         title: 'Waiting for first visitors',
-        body: `No pageviews or leads have been recorded in the last ${rangeDays} days. Insights will appear automatically once traffic starts flowing.`,
+        body: `No traffic or leads have been recorded in the last ${rangeDays} days. Insights will appear automatically once visitors start arriving.`,
       },
     ];
   }
@@ -103,13 +111,13 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
     });
   }
 
-  if (topPages.length > 0) {
+  if (traffic.topPaths.length > 0) {
     insights.push({
       id: 'top-page',
       category: 'traffic',
       tone: 'neutral',
       title: 'Most viewed page',
-      body: `“${topPages[0].path}” is the most viewed page with ${topPages[0].views} views.`,
+      body: `“${traffic.topPaths[0].path}” is the most viewed page with ${traffic.topPaths[0].views} views.`,
     });
   }
 
@@ -120,13 +128,12 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
       category: 'content',
       tone: 'neutral',
       title: 'Content coverage gap',
-      body: `${gaps} countries still have no editorial guide a candidate for content expansion.`,
+      body: `${gaps} countries still have no editorial guide — a candidate for content expansion.`,
     });
   }
 
   return insights.slice(0, 6);
 }
-
 const INSIGHTS_MODEL = '@cf/meta/llama-3.1-8b-instruct';
 // Cheaper/free alternatives: '@cf/meta/llama-3.2-3b-instruct', '@cf/meta/llama-3.2-1b-instruct', '@cf/google/gemma-7b-it-lora'
 
@@ -136,24 +143,13 @@ interface AiRuntime {
   };
 }
 
-const SYSTEM_PROMPT = `You are an analytics co-pilot for "Citizenship Hub", a website about global passports, visa mobility and citizenship-by-descent/investment guides. Given a JSON digest of the site's recent first-party analytics, produce 3 to 6 concise, specific, actionable insights for the site owner. Each insight must reference concrete figures from the digest and suggest a next step where useful. Return ONLY a JSON object (no markdown fences) of this shape:
+const SYSTEM_PROMPT = `You are an analytics co-pilot for "Citizenship Hub", a website about global passports, visa mobility and citizenship-by-descent/investment guides. Given a JSON digest of the site's recent analytics, produce 3 to 6 concise, specific, actionable insights for the site owner. Each insight must reference concrete figures from the digest and suggest a next step where useful. Return ONLY a JSON object (no markdown fences) of this shape:
 {
   "insights": [
     {"category": "traffic", "tone": "neutral", "title": "short headline", "body": "one or two sentences with specific numbers"}
   ]
 }
 "category" must be one of: traffic, leads, content, performance. "tone" must be one of: positive, neutral, negative.`;
-
-function percentile(values: number[], p: number): number {
-  if (values.length === 0) return 0;
-  const sorted = [...values].sort((a, b) => a - b);
-  const idx = (p / 100) * (sorted.length - 1);
-  const lo = Math.floor(idx);
-  const hi = Math.ceil(idx);
-  if (lo === hi) return sorted[lo];
-  const t = idx - lo;
-  return sorted[lo] * (1 - t) + sorted[hi] * t;
-}
 
 function extractJson(text: string): Record<string, unknown> | null {
   const cleaned = text.replace(/```(?:json)?/gi, '').trim();
@@ -189,13 +185,7 @@ function normalizeInsights(raw: Record<string, unknown>): Insight[] {
 
 interface Digest {
   windowDays: number;
-  traffic: {
-    pageviews: number;
-    visitors: number;
-    bounceRatePct: number | null;
-    pagesPerSession: number | null;
-    returningRatePct: number | null;
-  };
+  traffic: { pageviews: number; visitors: number };
   sources: events.SourceStat[];
   campaigns: events.UtmStat[];
   search: { total: number; noResultRatePct: number | null; topQueries: events.SearchQueryStat[] };
@@ -213,63 +203,38 @@ interface Digest {
   topPages: events.PathStat[];
   performance: { metric: string; p75: number | null }[];
 }
-
-async function buildDigest(db: Db, rangeDays: number): Promise<Digest> {
+async function buildDigest(db: Db, rangeDays: number, traffic: CloudflareTraffic): Promise<Digest> {
   const since = sinceSql(rangeDays);
-  const [
-    pageviews, visitors, engagement, sources, campaigns, search, geo, devices, vitals,
-    leadCount, serviceSplit, countrySplit, matrix, leadGeo, topPages,
-    totalCountries, totalGuides, withoutGuides,
-  ] = await Promise.all([
-    events.countPageviews(db, since),
-    events.countUniqueVisitors(db, since),
-    events.engagementStats(db, since),
-    events.trafficSources(db, since),
-    events.utmBreakdown(db, since),
-    events.searchStats(db, since),
-    events.pageviewsByCountry(db, since),
-    events.pageviewsByDevice(db, since),
-    events.webVitalValues(db, since),
-    leads.countLeads(db, since),
-    leads.leadsByService(db, since),
-    leads.leadsByCountry(db, since),
-    leads.leadsByServiceCountry(db, since),
-    leads.leadsByVisitorCountry(db, since),
-    events.topPaths(db, since, 10),
-    db.prepare('SELECT COUNT(*) AS n FROM countries').first<{ n: number }>(),
-    db.prepare('SELECT COUNT(*) AS n FROM country_guides').first<{ n: number }>(),
-    db.prepare('SELECT COUNT(*) AS n FROM countries c LEFT JOIN country_guides g ON g.iso2 = c.iso2 WHERE g.iso2 IS NULL').first<{ n: number }>(),
-  ]);
-
-  const byMetric = new Map<string, number[]>();
-  for (const v of vitals) {
-    const arr = byMetric.get(v.metric) ?? [];
-    arr.push(v.value);
-    byMetric.set(v.metric, arr);
-  }
-  const performance = ['LCP', 'CLS', 'INP', 'TTFB', 'FCP'].map((m) => {
-    const arr = byMetric.get(m) ?? [];
-    return { metric: m, p75: arr.length ? percentile(arr, 75) : null };
-  });
+  const [search, leadCount, serviceSplit, countrySplit, matrix, leadGeo, campaigns, totalCountries, totalGuides, withoutGuides] =
+    await Promise.all([
+      events.searchStats(db, since),
+      leads.countLeads(db, since),
+      leads.leadsByService(db, since),
+      leads.leadsByCountry(db, since),
+      leads.leadsByServiceCountry(db, since),
+      leads.leadsByVisitorCountry(db, since),
+      events.utmBreakdown(db, since),
+      db.prepare('SELECT COUNT(*) AS n FROM countries').first<{ n: number }>(),
+      db.prepare('SELECT COUNT(*) AS n FROM country_guides').first<{ n: number }>(),
+      db
+        .prepare(
+          'SELECT COUNT(*) AS n FROM countries c LEFT JOIN country_guides g ON g.iso2 = c.iso2 WHERE g.iso2 IS NULL',
+        )
+        .first<{ n: number }>(),
+    ]);
 
   const countries = totalCountries?.n ?? 0;
   const guides = totalGuides?.n ?? 0;
 
   return {
     windowDays: rangeDays,
-    traffic: {
-      pageviews,
-      visitors,
-      bounceRatePct: engagement.bounceRate,
-      pagesPerSession: engagement.pagesPerSession,
-      returningRatePct: engagement.returningRate,
-    },
-    sources: sources.slice(0, 6),
+    traffic: { pageviews: traffic.pageviews, visitors: traffic.visitors },
+    sources: traffic.sources.slice(0, 6),
     campaigns: campaigns.slice(0, 6),
     search: { total: search.total, noResultRatePct: search.noResultRate, topQueries: search.queries.slice(0, 5) },
     leads: {
       total: leadCount,
-      conversionRatePct: visitors > 0 ? (leadCount / visitors) * 100 : null,
+      conversionRatePct: traffic.visitors > 0 ? (leadCount / traffic.visitors) * 100 : null,
       topServices: serviceSplit.slice(0, 5),
       topDestinations: countrySplit.slice(0, 5),
       serviceDestination: matrix.slice(0, 8),
@@ -281,10 +246,10 @@ async function buildDigest(db: Db, rangeDays: number): Promise<Digest> {
       coveragePct: countries > 0 ? (guides / countries) * 100 : 0,
       withoutGuides: withoutGuides?.n ?? 0,
     },
-    geo: geo.slice(0, 8),
-    devices,
-    topPages: topPages.slice(0, 8),
-    performance,
+    geo: traffic.countries.slice(0, 8),
+    devices: traffic.devices,
+    topPages: traffic.topPaths.slice(0, 8),
+    performance: traffic.performance.metrics,
   };
 }
 
@@ -294,15 +259,16 @@ async function buildDigest(db: Db, rangeDays: number): Promise<Digest> {
  * there is no data, or the model call/parse fails.
  */
 export async function generateAiInsights(
-  env: AiRuntime,
+  env: AiRuntime & CloudflareAnalyticsEnv,
   db: Db,
   rangeDays: number,
 ): Promise<Insight[]> {
-  if (!env.AI) return generateInsights(db, rangeDays);
+  const traffic = await trafficFromEnv(env, rangeDays);
+  if (!env.AI) return generateInsights(db, rangeDays, traffic);
   try {
-    const digest = await buildDigest(db, rangeDays);
+    const digest = await buildDigest(db, rangeDays, traffic);
     if (digest.traffic.pageviews === 0 && digest.leads.total === 0) {
-      return generateInsights(db, rangeDays);
+      return generateInsights(db, rangeDays, traffic);
     }
     const result = await env.AI.run(INSIGHTS_MODEL, {
       messages: [
@@ -314,12 +280,12 @@ export async function generateAiInsights(
       response_format: { type: 'json_object' },
     });
     const content = typeof result === 'string' ? result : (result as { response?: string } | null)?.response;
-    if (!content) return generateInsights(db, rangeDays);
+    if (!content) return generateInsights(db, rangeDays, traffic);
     const parsed = extractJson(content);
-    if (!parsed) return generateInsights(db, rangeDays);
+    if (!parsed) return generateInsights(db, rangeDays, traffic);
     const insights = normalizeInsights(parsed);
-    return insights.length > 0 ? insights : generateInsights(db, rangeDays);
+    return insights.length > 0 ? insights : generateInsights(db, rangeDays, traffic);
   } catch {
-    return generateInsights(db, rangeDays);
+    return generateInsights(db, rangeDays, traffic);
   }
 }

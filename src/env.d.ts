@@ -42,4 +42,17 @@ interface Env {
   GOOGLE_SITE_VERIFICATION?: string;
   /** Bing Webmaster Tools verification token (optional; emits a verification meta tag). */
   BING_SITE_VERIFICATION?: string;
+  /** Cloudflare API token used for GraphQL Analytics (scope: Analytics:Read + Zone:Read). */
+  CF_API_TOKEN?: string;
+  /** Alias kept for backward compatibility. */
+  CF_ANALYTICS_API_TOKEN?: string;
+  /** Cloudflare account ID for the GraphQL Analytics API. */
+  CF_ACCOUNT_ID?: string;
+  /** Cloudflare zone ID whose traffic/performance analytics are surfaced in the Console. */
+  CF_ZONE_ID?: string;
+  /** Cloudflare Web Analytics site tag (optional; enables Core Web Vitals via RUM). */
+  CF_SITE_TAG?: string;
+  /** Reuse an existing Cloudflare token/account if present (fallback names). */
+  CLOUDFLARE_API_TOKEN?: string;
+  CLOUDFLARE_ACCOUNT_ID?: string;
 }

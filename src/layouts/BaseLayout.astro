@@ -102,20 +102,13 @@ const bingVerification = Astro.locals.runtime?.env?.BING_SITE_VERIFICATION;
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
     <script is:inline>
+      // First-party scroll-depth tracking only. Pageviews and Core Web Vitals are
+      // collected by Cloudflare Web Analytics, so this script no longer reports
+      // web vitals — just the deepest scroll reached per session.
       (function () {
         try {
-          var metrics = {};
-          var reported = false;
+          var maxDepth = 0;
           function report() {
-            if (reported) return;
-            reported = true;
-            if (Object.keys(metrics).length > 0) {
-              try {
-                // One beacon for all web vitals (was one beacon per metric → up to 5 writes/page).
-                var payload = JSON.stringify({ type: 'web_vital', properties: { metrics: metrics } });
-                navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
-              } catch (e) {}
-            }
             if (maxDepth > 0) {
               try {
                 var d = JSON.stringify({ type: 'scroll_depth', value: maxDepth, path: window.location.pathname });
@@ -123,44 +116,6 @@ const bingVerification = Astro.locals.runtime?.env?.BING_SITE_VERIFICATION;
               } catch (e) {}
             }
           }
-          function observe(type, entryType) {
-            try {
-              new PerformanceObserver(function (list) {
-                var entries = list.getEntries();
-                for (var i = 0; i < entries.length; i++) {
-                  var e = entries[i];
-                  if (type === 'CLS' && e.hadRecentInput) continue;
-                  var v = type === 'INP' ? e.duration : type === 'LCP' ? e.startTime : e.value;
-                  if (type === 'INP') metrics[type] = Math.max(metrics[type] || 0, v);
-                  else metrics[type] = v;
-                }
-              }).observe({ type: entryType, buffered: true });
-            } catch (e) {}
-          }
-          observe('LCP', 'largest-contentful-paint');
-          observe('CLS', 'layout-shift');
-          try {
-            new PerformanceObserver(function (list) {
-              var entries = list.getEntries();
-              for (var i = 0; i < entries.length; i++) {
-                if (entries[i].name === 'first-contentful-paint') metrics['FCP'] = entries[i].startTime;
-              }
-            }).observe({ type: 'paint', buffered: true });
-          } catch (e) {}
-          try {
-            new PerformanceObserver(function (list) {
-              var entries = list.getEntries();
-              for (var i = 0; i < entries.length; i++) {
-                var e = entries[i];
-                metrics['INP'] = Math.max(metrics['INP'] || 0, e.duration);
-              }
-            }).observe({ type: 'event', buffered: true, durationThreshold: 0 });
-          } catch (e) {}
-          try {
-            var nav = performance.getEntriesByType('navigation')[0];
-            if (nav && nav.responseStart) metrics['TTFB'] = nav.responseStart;
-          } catch (e) {}
-          var maxDepth = 0;
           function updateDepth() {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;

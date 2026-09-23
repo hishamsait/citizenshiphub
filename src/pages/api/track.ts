@@ -3,9 +3,10 @@ import { getDb } from '../../lib/db/client';
 import { insertEvent, type EventType } from '../../lib/db/events';
 import { detectDevice } from '../../lib/utils';
 
-const ALLOWED: EventType[] = ['web_vital', 'search', 'lead_open', 'scroll_depth', 'custom'];
+const ALLOWED: EventType[] = ['search', 'lead_open', 'scroll_depth', 'custom'];
 
-/** POST /api/track client-side first-party events (web vitals, searches, etc.). */
+/** POST /api/track client-side first-party events (searches, scroll, lead funnel).
+ *  Web vitals are no longer captured here — they come from Cloudflare Web Analytics. */
 export const POST: APIRoute = async ({ request, cookies, locals }) => {
   let body: Record<string, unknown>;
   try {

@@ -238,6 +238,32 @@ emitted in `<head>` automatically when the variable is set:
 
 For local development, add these to `.dev.vars`.
 
+### Cloudflare analytics (recommended)
+
+Traffic analytics (pageviews, visitors, top pages, geography, devices, referrers) and Core Web Vitals are read
+directly from Cloudflare's GraphQL Analytics API instead of being written into D1. To enable them:
+
+1. Enable **Cloudflare Web Analytics** on the zone (this also powers Core Web Vitals via the RUM beacon).
+2. Create a scoped API token with `Analytics:Read` + `Zone:Read` permissions.
+3. Expose three environment variables (Cloudflare Pages settings + `.dev.vars` for local dev):
+
+| Variable                  | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| `CF_API_TOKEN`            | Scoped Cloudflare API token (Analytics:Read + Zone:Read) |
+| `CF_ACCOUNT_ID`           | Cloudflare account ID                                    |
+| `CF_ZONE_ID`              | Zone ID whose traffic is surfaced in the Console         |
+| `CF_SITE_TAG`             | Web Analytics site tag (optional; enables Core Web Vitals) |
+
+`CF_API_TOKEN` / `CF_ACCOUNT_ID` also fall back to `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`, so an
+existing Cloudflare token (with `Analytics:Read` added) can be reused without creating new variables.
+
+Traffic sources (referrer host) are not pulled from Cloudflare — that field requires a permission the analytics token
+does not carry. Lead-source attribution still works from the D1 `leads` snapshot.
+
+Without these variables the Console still works — it simply shows "no data" for the traffic/performance widgets.
+D1 remains the source of truth for leads, the lead funnel, on-site search, scroll depth, and UTM campaign
+attribution (recorded as a minimal `custom` event only when UTM params are present).
+
 ### One-time setup
 
 ```bash

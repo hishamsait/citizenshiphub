@@ -5,11 +5,6 @@ export interface ServiceCount {
   count: number;
 }
 
-export interface DeviceCount {
-  device: string;
-  views: number;
-}
-
 export interface ScrollDepthStats {
   samples: number;
   avg: number | null;
@@ -20,13 +15,12 @@ export interface ScrollDepthStats {
 
 export interface CountryAnalytics {
   views: number;
-  visitors: number;
   leads: number;
-  conversion: number | null;
   leadsByService: ServiceCount[];
   scrollDepth: ScrollDepthStats;
-  devices: DeviceCount[];
 }
+
+const EMPTY_SCROLL: ScrollDepthStats = { samples: 0, avg: null, reached50: null, reached75: null, reached100: null };
 
 async function getLeads(db: Db, iso2: string): Promise<{ leads: number; leadsByService: ServiceCount[] }> {
   const [leadRow, byService] = await Promise.all([
@@ -43,35 +37,6 @@ async function getLeads(db: Db, iso2: string): Promise<{ leads: number; leadsByS
   return { leads: leadRow?.n ?? 0, leadsByService: byService.results };
 }
 
-async function countPathViews(db: Db, paths: [string, string]): Promise<number> {
-  const r = await db
-    .prepare(`SELECT COUNT(*) AS n FROM events WHERE type = 'pageview' AND (path = ? OR path = ?)`)
-    .bind(paths[0], paths[1])
-    .first<{ n: number }>();
-  return r?.n ?? 0;
-}
-
-async function countPathVisitors(db: Db, paths: [string, string]): Promise<number> {
-  const r = await db
-    .prepare(`SELECT COUNT(DISTINCT session_id) AS n FROM events WHERE type = 'pageview' AND (path = ? OR path = ?)`)
-    .bind(paths[0], paths[1])
-    .first<{ n: number }>();
-  return r?.n ?? 0;
-}
-
-async function pathDevices(db: Db, paths: [string, string]): Promise<DeviceCount[]> {
-  const { results } = await db
-    .prepare(
-      `SELECT COALESCE(device, 'other') AS device, COUNT(*) AS views
-       FROM events
-       WHERE type = 'pageview' AND (path = ? OR path = ?)
-       GROUP BY COALESCE(device, 'other') ORDER BY views DESC`,
-    )
-    .bind(paths[0], paths[1])
-    .all<DeviceCount>();
-  return results;
-}
-
 async function pathScroll(db: Db, paths: [string, string]): Promise<number[]> {
   const { results } = await db
     .prepare(
@@ -83,30 +48,28 @@ async function pathScroll(db: Db, paths: [string, string]): Promise<number[]> {
   return results.map((r) => r.value);
 }
 
-export async function getCountryAnalytics(db: Db, iso2: string): Promise<CountryAnalytics> {
+/**
+ * Per-country analytics. `pathViews` is a map of `path -> views` built from
+ * Cloudflare's top-paths data (see src/lib/analytics/cloudflare.ts); leads and
+ * scroll depth still come from D1. Per-country visitors/devices are no longer
+ * tracked — those are only available at the whole-zone level in Cloudflare.
+ */
+export async function getCountryAnalytics(
+  db: Db,
+  iso2: string,
+  pathViews: Map<string, number>,
+): Promise<CountryAnalytics> {
   const country = await db.prepare('SELECT slug FROM countries WHERE iso2 = ?').bind(iso2).first<{ slug: string | null }>();
   const slug = country?.slug ?? null;
   const leadsData = await getLeads(db, iso2);
 
   if (!slug) {
-    return {
-      views: 0,
-      visitors: 0,
-      leads: leadsData.leads,
-      conversion: null,
-      leadsByService: leadsData.leadsByService,
-      scrollDepth: { samples: 0, avg: null, reached50: null, reached75: null, reached100: null },
-      devices: [],
-    };
+    return { views: 0, leads: leadsData.leads, leadsByService: leadsData.leadsByService, scrollDepth: EMPTY_SCROLL };
   }
 
   const paths: [string, string] = [`/countries/${slug}`, `/countries/${slug}/`];
-  const [views, visitors, devices, scroll] = await Promise.all([
-    countPathViews(db, paths),
-    countPathVisitors(db, paths),
-    pathDevices(db, paths),
-    pathScroll(db, paths),
-  ]);
+  const views = (pathViews.get(paths[0]) ?? 0) + (pathViews.get(paths[1]) ?? 0);
+  const scroll = await pathScroll(db, paths);
 
   const samples = scroll.length;
   const avg = samples > 0 ? scroll.reduce((a, b) => a + b, 0) / samples : null;
@@ -115,9 +78,7 @@ export async function getCountryAnalytics(db: Db, iso2: string): Promise<Country
 
   return {
     views,
-    visitors,
     leads: leadsData.leads,
-    conversion: visitors > 0 ? (leadsData.leads / visitors) * 100 : null,
     leadsByService: leadsData.leadsByService,
     scrollDepth: {
       samples,
@@ -126,7 +87,6 @@ export async function getCountryAnalytics(db: Db, iso2: string): Promise<Country
       reached75: reaching(75),
       reached100: reaching(100),
     },
-    devices,
   };
 }
 
@@ -141,7 +101,10 @@ function slugFromPath(path: string): string {
 }
 
 /** Bulk per-country analytics for the Countries list table (one pass, no N+1). */
-export async function listCountriesAnalytics(db: Db): Promise<Record<string, CountryAnalyticsSummary>> {
+export async function listCountriesAnalytics(
+  db: Db,
+  pathViews: Map<string, number>,
+): Promise<Record<string, CountryAnalyticsSummary>> {
   const guides = await db.prepare('SELECT iso2, slug FROM country_guides').all<{ iso2: string; slug: string }>();
   const isoBySlug = new Map(guides.results.map((g) => [g.slug, g.iso2]));
 
@@ -149,12 +112,11 @@ export async function listCountriesAnalytics(db: Db): Promise<Record<string, Cou
   const empty = (): CountryAnalyticsSummary => ({ views: 0, leads: 0, scrollAvg: null });
   const get = (iso2: string) => summary[iso2] ?? (summary[iso2] = empty());
 
-  const views = await db
-    .prepare(`SELECT path, COUNT(*) AS views FROM events WHERE type = 'pageview' AND path LIKE '/countries/%' GROUP BY path`)
-    .all<{ path: string; views: number }>();
-  for (const row of views.results) {
-    const iso2 = isoBySlug.get(slugFromPath(row.path));
-    if (iso2) get(iso2).views += row.views;
+  // Views come from Cloudflare's path data (keyed by request path).
+  for (const [path, views] of pathViews) {
+    if (!path.startsWith('/countries/')) continue;
+    const iso2 = isoBySlug.get(slugFromPath(path));
+    if (iso2) get(iso2).views += views;
   }
 
   const leads = await db

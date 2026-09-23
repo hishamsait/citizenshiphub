@@ -2,13 +2,14 @@
 import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
 import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
 import { getDb } from '../../../lib/db/client';
-import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { createAnalyticsProvider } from '../../../lib/analytics/first-party';
 import { resolveRange } from '../../../lib/analytics/types';
-import { Gauge } from 'lucide-react';
+import { formatNumber } from '../../../lib/utils';
+import { Gauge, Zap, Activity } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
-const data = await firstPartyProvider.performance(db, range);
+const data = await createAnalyticsProvider(Astro.locals.runtime.env).performance(db, range);
 
 function band(metric: string, value: number | null) {
   if (value == null) return { label: 'No data', cls: 'bg-slate-100 text-slate-500' };
@@ -37,11 +38,15 @@ const labels: Record<string, string> = {
   TTFB: 'Time to First Byte',
   FCP: 'First Contentful Paint',
 };
+
+const fmt = (n: number) => formatNumber(n);
+const cacheRatio = data.cache.requests > 0 ? (data.cache.cachedRequests / data.cache.requests) * 100 : null;
+const mb = (b: number) => (b / 1048576).toFixed(1) + ' MB';
 ---
 
 <ConsoleLayout
   title="Analytics Performance"
-  description="Real-user Core Web Vitals (75th percentile) collected on-device."
+  description="Real-user Core Web Vitals (75th percentile) from Cloudflare Web Analytics."
 >
   <div class="flex items-center justify-between gap-3">
     <p class="text-sm text-slate-500">Samples from the last {range.days} days</p>
@@ -68,34 +73,6 @@ const labels: Record<string, string> = {
         );
       })
     }
-  </div>
-
-  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-    <h2 class="mb-3 text-sm font-semibold text-slate-900">Rating distribution</h2>
-    <div class="overflow-x-auto">
-      <table class="w-full text-sm">
-        <thead>
-          <tr class="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
-            <th class="pb-2 font-medium">Metric</th>
-            <th class="pb-2 text-right font-medium">Good</th>
-            <th class="pb-2 text-right font-medium">Needs improvement</th>
-            <th class="pb-2 text-right font-medium">Poor</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-100">
-          {
-            data.distribution.map((d) => (
-              <tr>
-                <td class="py-2.5 pr-3 font-medium text-slate-700">{d.metric}</td>
-                <td class="py-2.5 text-right tabular-nums text-emerald-600">{d.good}</td>
-                <td class="py-2.5 text-right tabular-nums text-amber-600">{d.needsImprovement}</td>
-                <td class="py-2.5 text-right tabular-nums text-red-600">{d.poor}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
   </div>
 
   <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -126,10 +103,62 @@ const labels: Record<string, string> = {
     </div>
   </div>
 
+  <div class="mt-6 grid gap-6 lg:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Zap className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Cache & bandwidth</h2>
+      </div>
+      <dl class="space-y-2 text-sm">
+        <div class="flex justify-between">
+          <dt class="text-slate-500">Data served</dt>
+          <dd class="tabular-nums text-slate-900">{mb(data.cache.bytes)}</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="text-slate-500">Cached requests</dt>
+          <dd class="tabular-nums text-slate-900">{fmt(data.cache.cachedRequests)}</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="text-slate-500">Cached bandwidth</dt>
+          <dd class="tabular-nums text-slate-900">{mb(data.cache.cachedBytes)}</dd>
+        </div>
+        <div class="flex justify-between">
+          <dt class="text-slate-500">Cache hit ratio</dt>
+          <dd class="tabular-nums text-slate-900">{cacheRatio == null ? '—' : `${cacheRatio.toFixed(1)}%`}</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-3 flex items-center gap-2">
+        <Activity className="h-4 w-4 text-slate-400" aria-hidden="true" />
+        <h2 class="text-sm font-semibold text-slate-900">Response status codes</h2>
+      </div>
+      {
+        data.statusCodes.length === 0 ? (
+          <p class="py-4 text-center text-sm text-slate-400">No data yet.</p>
+        ) : (
+          <ul class="space-y-2">
+            {
+              data.statusCodes.map((s) => (
+                <li class="flex items-center justify-between text-sm">
+                  <span class="text-slate-700">{s.status}</span>
+                  <span class="tabular-nums text-slate-400">{fmt(s.views)}</span>
+                </li>
+              ))
+            }
+          </ul>
+        )
+      }
+    </div>
+  </div>
+
   <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 text-sm text-slate-500 shadow-sm">
     <p>
-      These figures are captured from real visitors via a lightweight on-page reporter. They represent the
-      <strong class="text-slate-700"> 75th percentile</strong> across all sessions in the selected window.
+      These figures come from <strong class="text-slate-700">Cloudflare Web Analytics</strong> and represent the
+      <strong class="text-slate-700"> 75th percentile</strong> across real visitors in the selected window. If the
+      cards are empty, enable Web Analytics on the zone and set <code class="text-xs">CF_ANALYTICS_API_TOKEN</code>{' '}
+      / <code class="text-xs">CF_ZONE_ID</code>.
     </p>
   </div>
 </ConsoleLayout>

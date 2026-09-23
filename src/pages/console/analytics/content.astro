@@ -3,14 +3,14 @@ import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
 import StatCard from '../../../components/console/StatCard.astro';
 import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
 import { getDb } from '../../../lib/db/client';
-import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { createAnalyticsProvider } from '../../../lib/analytics/first-party';
 import { resolveRange } from '../../../lib/analytics/types';
 import { formatNumber } from '../../../lib/utils';
-import { Globe, BookOpen, Percent, FileWarning, Clock } from 'lucide-react';
+import { Globe, BookOpen, Percent, FileWarning, Clock, AlertTriangle } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
-const data = await firstPartyProvider.content(db, range);
+const data = await createAnalyticsProvider(Astro.locals.runtime.env).content(db, range);
 
 const fmt = (n: number) => formatNumber(n);
 const maxViews = Math.max(1, ...data.topGuides.map((g) => g.views));
@@ -94,5 +94,38 @@ const maxViews = Math.max(1, ...data.topGuides.map((g) => g.views));
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div class="mb-3 flex items-center gap-2">
+      <AlertTriangle className="h-4 w-4 text-slate-400" aria-hidden="true" />
+      <h2 class="text-sm font-semibold text-slate-900">404 / missing content</h2>
+    </div>
+    {
+      data.notFoundPaths.length === 0 ? (
+        <p class="py-4 text-center text-sm text-slate-400">No 404s recorded in this window.</p>
+      ) : (
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-100 text-left text-xs uppercase tracking-wide text-slate-400">
+                <th class="pb-2 font-medium">Path</th>
+                <th class="pb-2 text-right font-medium">Requests</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {
+                data.notFoundPaths.map((p) => (
+                  <tr>
+                    <td class="py-2 pr-3 font-mono text-xs text-slate-700">{p.path}</td>
+                    <td class="py-2 text-right tabular-nums text-slate-500">{fmt(p.views)}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      )
+    }
   </div>
 </ConsoleLayout>

@@ -1,13 +1,15 @@
 import { defineMiddleware } from 'astro:middleware';
 import { insertEvent } from './lib/db/events';
-import { detectDevice } from './lib/utils';
 import { SESSION_COOKIE, verifySessionToken } from './lib/auth/session';
 
 /**
  * Console admin middleware:
  *   1. Protects /console (and /api/console) behind a signed session cookie issued
  *      by the passwordless TOTP login page.
- *   2. Records first-party pageviews for public HTML pages (fire-and-forget).
+ *   2. Issues an anonymous session cookie for lead + event attribution.
+ *   3. Records first-party UTM campaign landings as `custom` events. Pageviews
+ *      and web vitals are now read straight from Cloudflare, so only UTM-tagged
+ *      landings are written to D1 (negligible volume).
  */
 
 const CONSOLE_PUBLIC_PATHS = new Set(['/console/login', '/api/console/login', '/api/console/logout']);
@@ -28,11 +30,7 @@ function shouldTrackPageview(request: Request, pathname: string): boolean {
   return true;
 }
 
-/** Fraction of pageviews to record. Analytics stay statistically valid while
- *  write volume is cut ~10x. Set to 1 to track every pageview. */
-const PAGEVIEW_SAMPLE_RATE = 0.1;
-
-/** User agents that are almost certainly bots/crawlers (server-side pageviews). */
+/** User agents that are almost certainly bots/crawlers (server-side events). */
 const BOT_UA_PATTERN =
   /bot|crawler|spider|slurp|baiduspider|googlebot|bingbot|yandex|duckduckbot|facebookexternalhit|facebot|twitterbot|pinterest|ahrefs|semrush|mj12|rogerbot|exabot|ia_archiver|petalbot|applebot|uptimerobot|pingdom|monitor/i;
 
@@ -43,16 +41,6 @@ function isBot(
 ): boolean {
   if (cf?.botManagement?.verifiedBot) return true;
   return BOT_UA_PATTERN.test(request.headers.get('user-agent') ?? '');
-}
-
-/** Deterministic per-session bucket in [0,1) so a session is always tracked or never tracked. */
-function sampleBucket(sessionId: string): number {
-  let h = 0x811c9dc5;
-  for (let i = 0; i < sessionId.length; i++) {
-    h ^= sessionId.charCodeAt(i);
-    h = Math.imul(h, 0x01000193);
-  }
-  return (h >>> 0) / 0x100000000;
 }
 
 /** Extract any present UTM params from a URL into a JSON-ready object (or null). */
@@ -89,7 +77,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
   }
 
-  // 2. Ensure an anonymous session cookie exists for first-party analytics.
+  // 2. Ensure an anonymous session cookie exists (used by lead + event attribution).
   const track = shouldTrackPageview(context.request, pathname);
   let sessionId = context.cookies.get('ch_sid')?.value ?? '';
   if (track && !sessionId) {
@@ -104,32 +92,32 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   const response = await next();
 
-  // 3. Record the pageview after the response is produced (never block it).
-  //    Skip bots entirely and sample down to a fraction of pageviews so the
-  //    D1 write volume scales with real, sampled traffic — not crawler noise.
+  // 3. Record a UTM campaign landing (custom 'utm' event) — fire-and-forget,
+  //    never for bots. This is the only remaining first-party *traffic* signal;
+  //    everything else comes from Cloudflare.
   if (track && sessionId) {
-    try {
-      const runtime = context.locals.runtime;
-      const cf = runtime?.cf;
-      if (!isBot(context.request, cf) && sampleBucket(sessionId) < PAGEVIEW_SAMPLE_RATE) {
-        const db = runtime?.env?.DB;
-        if (db) {
-          const ua = context.request.headers.get('user-agent') ?? '';
-          runtime?.ctx?.waitUntil(
-            insertEvent(db, {
-              sessionId,
-              type: 'pageview',
-              path: pathname,
-              referrer: context.request.headers.get('referer'),
-              country: cf?.country ?? null,
-              device: detectDevice(ua),
-              properties: utmProperties(context.url),
-            }).catch(() => {}),
-          );
+    const utm = utmProperties(context.url);
+    if (utm) {
+      try {
+        const runtime = context.locals.runtime;
+        const cf = runtime?.cf;
+        if (!isBot(context.request, cf)) {
+          const db = runtime?.env?.DB;
+          if (db) {
+            runtime?.ctx?.waitUntil(
+              insertEvent(db, {
+                sessionId,
+                type: 'custom',
+                path: pathname,
+                country: cf?.country ?? null,
+                properties: { action: 'utm', ...utm },
+              }).catch(() => {}),
+            );
+          }
         }
+      } catch {
+        // Tracking must never break a page render.
       }
-    } catch {
-      // Tracking must never break a page render.
     }
   }
 

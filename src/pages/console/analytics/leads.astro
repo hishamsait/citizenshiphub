@@ -2,14 +2,14 @@
 import ConsoleLayout from '../../../layouts/ConsoleLayout.astro';
 import TimeRangePicker from '../../../components/console/TimeRangePicker.astro';
 import { getDb } from '../../../lib/db/client';
-import { firstPartyProvider } from '../../../lib/analytics/first-party';
+import { createAnalyticsProvider } from '../../../lib/analytics/first-party';
 import { resolveRange } from '../../../lib/analytics/types';
 import { formatNumber } from '../../../lib/utils';
 import { Clock, Users, Globe, BookOpen } from 'lucide-react';
 
 const db = getDb(Astro.locals);
 const range = resolveRange(Astro.url.searchParams.get('range'));
-const data = await firstPartyProvider.leadsAnalytics(db, range);
+const data = await createAnalyticsProvider(Astro.locals.runtime.env).leadsAnalytics(db, range);
 
 const fmt = (n: number) => formatNumber(n);
 const stageLabel = (s: string) =>

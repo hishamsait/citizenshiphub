@@ -30,11 +30,6 @@ interface ServiceCount {
   count: number;
 }
 
-interface DeviceCount {
-  device: string;
-  views: number;
-}
-
 interface ScrollDepthStats {
   samples: number;
   avg: number | null;
@@ -45,12 +40,9 @@ interface ScrollDepthStats {
 
 interface CountryAnalytics {
   views: number;
-  visitors: number;
   leads: number;
-  conversion: number | null;
   leadsByService: ServiceCount[];
   scrollDepth: ScrollDepthStats;
-  devices: DeviceCount[];
 }
 
 interface CountrySource {
@@ -416,7 +408,7 @@ export default function CountriesTable({ countries }: Props) {
                 <>
                   <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">Analytics</h3>
 
-                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                       <p className="text-xs text-slate-500">Views</p>
                       <p className="mt-1 text-xl font-bold tabular-nums text-slate-900">
@@ -424,23 +416,9 @@ export default function CountriesTable({ countries }: Props) {
                       </p>
                     </div>
                     <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-xs text-slate-500">Visitors</p>
-                      <p className="mt-1 text-xl font-bold tabular-nums text-slate-900">
-                        {detail.analytics.visitors.toLocaleString('en-US')}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
                       <p className="text-xs text-slate-500">Leads</p>
                       <p className="mt-1 text-xl font-bold tabular-nums text-slate-900">
                         {detail.analytics.leads.toLocaleString('en-US')}
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                      <p className="text-xs text-slate-500">Conversion</p>
-                      <p className="mt-1 text-xl font-bold tabular-nums text-slate-900">
-                        {detail.analytics.conversion == null
-                          ? '—'
-                          : `${detail.analytics.conversion.toFixed(1)}%`}
                       </p>
                     </div>
                   </div>
@@ -482,34 +460,17 @@ export default function CountriesTable({ countries }: Props) {
                     </div>
                   </div>
 
-                  {(detail.analytics.leadsByService.length > 0 || detail.analytics.devices.length > 0) && (
-                    <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                      {detail.analytics.leadsByService.length > 0 && (
-                        <div className="rounded-xl border border-slate-200 p-4">
-                          <p className="text-sm font-semibold text-slate-900">Leads by service</p>
-                          <ul className="mt-2 space-y-1.5">
-                            {detail.analytics.leadsByService.map((s) => (
-                              <li key={s.label} className="flex justify-between text-sm">
-                                <span className="text-slate-600">{s.label}</span>
-                                <span className="tabular-nums text-slate-900">{s.count}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {detail.analytics.devices.length > 0 && (
-                        <div className="rounded-xl border border-slate-200 p-4">
-                          <p className="text-sm font-semibold text-slate-900">Devices</p>
-                          <ul className="mt-2 space-y-1.5">
-                            {detail.analytics.devices.map((d) => (
-                              <li key={d.device} className="flex justify-between text-sm">
-                                <span className="capitalize text-slate-600">{d.device}</span>
-                                <span className="tabular-nums text-slate-900">{d.views}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                  {detail.analytics.leadsByService.length > 0 && (
+                    <div className="mt-4 rounded-xl border border-slate-200 p-4">
+                      <p className="text-sm font-semibold text-slate-900">Leads by service</p>
+                      <ul className="mt-2 space-y-1.5">
+                        {detail.analytics.leadsByService.map((s) => (
+                          <li key={s.label} className="flex justify-between text-sm">
+                            <span className="text-slate-600">{s.label}</span>
+                            <span className="tabular-nums text-slate-900">{s.count}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 
