@@ -28,6 +28,33 @@ function shouldTrackPageview(request: Request, pathname: string): boolean {
   return true;
 }
 
+/** Fraction of pageviews to record. Analytics stay statistically valid while
+ *  write volume is cut ~10x. Set to 1 to track every pageview. */
+const PAGEVIEW_SAMPLE_RATE = 0.1;
+
+/** User agents that are almost certainly bots/crawlers (server-side pageviews). */
+const BOT_UA_PATTERN =
+  /bot|crawler|spider|slurp|baiduspider|googlebot|bingbot|yandex|duckduckbot|facebookexternalhit|facebot|twitterbot|pinterest|ahrefs|semrush|mj12|rogerbot|exabot|ia_archiver|petalbot|applebot|uptimerobot|pingdom|monitor/i;
+
+/** Cloudflare's verified-bot flag (when available) plus a UA regex fallback. */
+function isBot(
+  request: Request,
+  cf?: { botManagement?: { verifiedBot?: boolean } } | null,
+): boolean {
+  if (cf?.botManagement?.verifiedBot) return true;
+  return BOT_UA_PATTERN.test(request.headers.get('user-agent') ?? '');
+}
+
+/** Deterministic per-session bucket in [0,1) so a session is always tracked or never tracked. */
+function sampleBucket(sessionId: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < sessionId.length; i++) {
+    h ^= sessionId.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (h >>> 0) / 0x100000000;
+}
+
 /** Extract any present UTM params from a URL into a JSON-ready object (or null). */
 function utmProperties(url: URL): Record<string, unknown> | null {
   const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
@@ -78,23 +105,28 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const response = await next();
 
   // 3. Record the pageview after the response is produced (never block it).
+  //    Skip bots entirely and sample down to a fraction of pageviews so the
+  //    D1 write volume scales with real, sampled traffic — not crawler noise.
   if (track && sessionId) {
     try {
       const runtime = context.locals.runtime;
-      const db = runtime?.env?.DB;
-      if (db) {
-        const ua = context.request.headers.get('user-agent') ?? '';
-        runtime?.ctx?.waitUntil(
-          insertEvent(db, {
-            sessionId,
-            type: 'pageview',
-            path: pathname,
-            referrer: context.request.headers.get('referer'),
-            country: runtime?.cf?.country ?? null,
-            device: detectDevice(ua),
-            properties: utmProperties(context.url),
-          }).catch(() => {}),
-        );
+      const cf = runtime?.cf;
+      if (!isBot(context.request, cf) && sampleBucket(sessionId) < PAGEVIEW_SAMPLE_RATE) {
+        const db = runtime?.env?.DB;
+        if (db) {
+          const ua = context.request.headers.get('user-agent') ?? '';
+          runtime?.ctx?.waitUntil(
+            insertEvent(db, {
+              sessionId,
+              type: 'pageview',
+              path: pathname,
+              referrer: context.request.headers.get('referer'),
+              country: cf?.country ?? null,
+              device: detectDevice(ua),
+              properties: utmProperties(context.url),
+            }).catch(() => {}),
+          );
+        }
       }
     } catch {
       // Tracking must never break a page render.

@@ -14,7 +14,7 @@ every country with a practical guide to acquiring its citizenship.
 - **Best passports to obtain** — a "second passport" score balancing travel freedom against ease of acquisition.
 - **Destinations** — reverse look-up: for any country, see which passports can enter and under what conditions.
 - **Citizenship guides** — Markdown guides covering descent rules, naturalisation timelines, dual-citizenship rules, and fees.
-- **SEO & UX** — canonical URLs, OpenGraph/Twitter cards, JSON-LD, a no-JS dark mode, and an accessible skip link.
+- **SEO & UX** — canonical URLs, a D1-backed `sitemap.xml`, OpenGraph/Twitter cards with branded + per-country social images, JSON-LD (Article, FAQ, Breadcrumb, HowTo, Organization), a no-JS dark mode, and an accessible skip link.
 
 ## Requirements
 
@@ -68,6 +68,8 @@ npm run db:seed                          # persist all datasets + guides + meta 
 | `npm run db:migrate`        | Apply D1 migrations to the remote database                        |
 | `npm run db:seed:generate`  | Generate `scripts/.generated/seed.sql` from the datasets          |
 | `npm run db:seed`           | Generate + apply the D1 seed to the remote database               |
+| `npm run generate:og`       | Regenerate the default social share image (`public/og-default.png`) |
+| `npm run generate:og:countries` | Regenerate the per-country share images (`public/og/countries/*.png`) |
 
 Direct script invocations:
 
@@ -223,6 +225,19 @@ gh secret set CLOUDFLARE_API_TOKEN
 gh secret set CLOUDFLARE_ACCOUNT_ID
 ```
 
+### Search console verification (optional)
+
+To verify the site in Google Search Console / Bing Webmaster Tools, add the provider's
+verification token as a Cloudflare Pages environment variable. The matching `<meta>` tag is
+emitted in `<head>` automatically when the variable is set:
+
+| Variable                     | Emits                                    |
+| ---------------------------- | ---------------------------------------- |
+| `GOOGLE_SITE_VERIFICATION`   | `<meta name="google-site-verification">` |
+| `BING_SITE_VERIFICATION`     | `<meta name="msvalidate.01">`            |
+
+For local development, add these to `.dev.vars`.
+
 ### One-time setup
 
 ```bash
@@ -248,6 +263,7 @@ npx wrangler d1 migrations apply citizenshiphub-db --local
 - `GET  /api/visa-matrix?passport=IE` — visa-matrix row for a single passport.
 - `GET  /api/search?q=ireland` — search countries and guide summaries.
 - `POST /api/lead` — capture a lead: `{ "email": "...", "targetCountryIso": "PT", "serviceType": "Golden Visa" }`.
+- `GET  /sitemap.xml` — XML sitemap generated from D1 (static pages + all country guides).
 
 ## Disclaimer
 

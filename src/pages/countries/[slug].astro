@@ -560,6 +560,18 @@ if (cbi) {
   });
 }
 
+const howToSections = checklistRoutes
+  .filter((route) => route.documents.length > 0)
+  .map((route) => ({
+    '@type': 'HowToSection',
+    name: route.title,
+    itemListElement: route.documents.map((doc) => ({
+      '@type': 'HowToStep',
+      name: doc.label,
+      ...(doc.hint ? { text: doc.hint } : {}),
+    })),
+  }));
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -571,6 +583,14 @@ const jsonLd = {
       mainEntityOfPage: pageUrl,
     },
     {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://citizenshiphub.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Countries', item: 'https://citizenshiphub.com/countries/' },
+        { '@type': 'ListItem', position: 3, name, item: pageUrl },
+      ],
+    },
+    {
       '@type': 'FAQPage',
       mainEntity: faqEntries.map((f) => ({
         '@type': 'Question',
@@ -578,6 +598,9 @@ const jsonLd = {
         acceptedAnswer: { '@type': 'Answer', text: f.a },
       })),
     },
+    ...(howToSections.length > 0
+      ? [{ '@type': 'HowTo', name: `Documents required to obtain ${name} citizenship`, step: howToSections }]
+      : []),
   ],
 };
 ---
@@ -585,6 +608,7 @@ const jsonLd = {
 <BaseLayout
   title={`${name} Citizenship & Visa Access`}
   description={summary ?? `Citizenship guide and visa access for ${name}.`}
+  image={`/og/countries/${guide.slug}.png`}
   canonical={Astro.url.pathname}
   jsonLd={jsonLd}
 >

@@ -21,3 +21,6 @@ pnpm-debug.log*
 .dev.vars
 worker-configuration.d.ts
 scripts/.generated/
+
+# generated OpenGraph share images (rebuilt in CI)
+public/og/countries/

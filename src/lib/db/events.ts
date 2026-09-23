@@ -134,16 +134,50 @@ export async function pageviewsByDevice(db: Db, since: string): Promise<DeviceSt
   return results;
 }
 
+const VITAL_METRIC_KEYS = ['LCP', 'CLS', 'INP', 'FCP', 'TTFB'] as const;
+
+interface VitalRow {
+  metric: string | null;
+  value: number | null;
+  properties: string | null;
+}
+
+/** Expand a single events row into one sample per reported web-vital metric.
+ *  New payloads store every metric in `properties.metrics` (one row per page);
+ *  legacy rows store one metric/value per row. Both are supported. */
+function expandVitalSamples(row: VitalRow): VitalValue[] {
+  if (row.properties) {
+    try {
+      const parsed = JSON.parse(row.properties) as Record<string, unknown>;
+      const metrics = parsed.metrics as Record<string, unknown> | undefined;
+      if (metrics && typeof metrics === 'object') {
+        const out: VitalValue[] = [];
+        for (const key of VITAL_METRIC_KEYS) {
+          const v = metrics[key];
+          if (typeof v === 'number' && Number.isFinite(v)) out.push({ metric: key, value: v });
+        }
+        if (out.length > 0) return out;
+      }
+    } catch {
+      // Fall through to the legacy column format.
+    }
+  }
+  if (row.metric && typeof row.value === 'number') {
+    return [{ metric: row.metric, value: row.value }];
+  }
+  return [];
+}
+
 export async function webVitalValues(db: Db, since: string): Promise<VitalValue[]> {
   const { results } = await db
     .prepare(
-      `SELECT metric, value
+      `SELECT metric, value, properties
        FROM events
-       WHERE type = 'web_vital' AND created_at >= ? AND metric IS NOT NULL AND value IS NOT NULL`,
+       WHERE type = 'web_vital' AND created_at >= ? AND (metric IS NOT NULL OR properties IS NOT NULL)`,
     )
     .bind(since)
-    .all<VitalValue>();
-  return results;
+    .all<VitalRow>();
+  return results.flatMap(expandVitalSamples);
 }
 
 export interface SourceStat {
@@ -349,11 +383,17 @@ export interface VitalValueByDevice {
 export async function webVitalValuesByDevice(db: Db, since: string): Promise<VitalValueByDevice[]> {
   const { results } = await db
     .prepare(
-      `SELECT COALESCE(device, 'other') AS device, metric, value
+      `SELECT COALESCE(device, 'other') AS device, metric, value, properties
        FROM events
-       WHERE type = 'web_vital' AND created_at >= ? AND metric IS NOT NULL AND value IS NOT NULL`,
+       WHERE type = 'web_vital' AND created_at >= ? AND (metric IS NOT NULL OR properties IS NOT NULL)`,
     )
     .bind(since)
-    .all<VitalValueByDevice>();
-  return results;
+    .all<VitalRow & { device: string }>();
+  const out: VitalValueByDevice[] = [];
+  for (const row of results) {
+    for (const sample of expandVitalSamples(row)) {
+      out.push({ device: row.device, metric: sample.metric, value: sample.value });
+    }
+  }
+  return out;
 }

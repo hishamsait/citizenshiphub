@@ -24,11 +24,25 @@ const featured = rankings.find((r) => r.rank === 1);
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Citizenship Hub',
-  url: 'https://citizenshiphub.com/',
-  description:
-    'Global passport rankings, visa mobility data, and citizenship-by-descent and naturalisation guides.',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'Citizenship Hub',
+      url: 'https://citizenshiphub.com/',
+      description:
+        'Global passport rankings, visa mobility data, and citizenship-by-descent and naturalisation guides.',
+    },
+    {
+      '@type': 'Organization',
+      name: 'Citizenship Hub',
+      url: 'https://citizenshiphub.com/',
+      description:
+        'Global passport rankings, visa mobility data, and citizenship-by-descent and naturalisation guides.',
+      logo: { '@type': 'ImageObject', url: 'https://citizenshiphub.com/og-default.png' },
+      // Add social profiles once available, e.g.:
+      // sameAs: ['https://x.com/citizenshiphub', 'https://www.linkedin.com/company/citizenshiphub'],
+    },
+  ],
 };
 ---
 

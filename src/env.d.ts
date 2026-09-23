@@ -38,4 +38,8 @@ interface Env {
   ADMIN_TOTP_SECRET?: string;
   /** Cloudflare Workers AI binding for AI-assisted data scraping. */
   AI?: AiBinding;
+  /** Google Search Console verification token (optional; emits a verification meta tag). */
+  GOOGLE_SITE_VERIFICATION?: string;
+  /** Bing Webmaster Tools verification token (optional; emits a verification meta tag). */
+  BING_SITE_VERIFICATION?: string;
 }

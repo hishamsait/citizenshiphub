@@ -71,6 +71,18 @@ export async function listGuides(db: Db): Promise<Guide[]> {
   return results.map(mapRow);
 }
 
+/**
+ * Lightweight list of live guide slugs (used by /sitemap.xml). Mirrors the
+ * JOIN in `listGuides` so only slugs backed by a real country are returned,
+ * without pulling the full Markdown bodies.
+ */
+export async function listGuideSlugs(db: Db): Promise<string[]> {
+  const { results } = await db
+    .prepare(`SELECT g.slug FROM country_guides g JOIN countries c ON c.iso2 = g.iso2 ORDER BY g.slug ASC`)
+    .all<{ slug: string }>();
+  return results.map((r) => r.slug);
+}
+
 export async function getGuideBySlug(db: Db, slug: string): Promise<Guide | null> {
   const r = await db.prepare(`${SELECT} WHERE g.slug = ?`).bind(slug).first<GuideRow>();
   return r ? mapRow(r) : null;
