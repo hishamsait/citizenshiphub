@@ -32,19 +32,19 @@ The North Korea passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-North Korea applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+North Korea applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
-Naturalisation in North Korea is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in North Korea is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
-North Korea generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+North Korea generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

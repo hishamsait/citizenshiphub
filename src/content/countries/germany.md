@@ -33,7 +33,7 @@ able to support yourself and hold permanent residence or an equivalent status.
 
 ## Dual citizenship
 
-Dual citizenship is now **allowed** — you are no longer required to renounce your existing citizenship.
+Dual citizenship is now **allowed** you are no longer required to renounce your existing citizenship.
 
 ## Fees & timeline
 

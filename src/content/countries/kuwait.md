@@ -34,19 +34,19 @@ The Kuwait passport offers visa-free, visa-on-arrival, ETA, or e-visa access to 
 
 ## Citizenship by descent
 
-Kuwait applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Kuwait applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
-Naturalisation in Kuwait is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in Kuwait is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
-Kuwait generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Kuwait generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

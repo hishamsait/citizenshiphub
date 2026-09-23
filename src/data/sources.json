@@ -21,7 +21,7 @@
     "url": "https://www.naturalearthdata.com/",
     "provides": "Map geometry plus population, GDP (total), income group, economy, and continent classifications.",
     "license": { "name": "Public domain", "url": "https://www.naturalearthdata.com/about/terms-of-use/" },
-    "attribution": "Made with Natural Earth (public domain) — naturalearthdata.com."
+    "attribution": "Made with Natural Earth (public domain) naturalearthdata.com."
   },
   {
     "id": "world-bank",
@@ -29,7 +29,7 @@
     "url": "https://data.worldbank.org/",
     "provides": "GDP per capita (current US$) and inflation (CPI annual %).",
     "license": { "name": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/" },
-    "attribution": "GDP per capita and inflation from the World Bank (CC BY 4.0) — data.worldbank.org."
+    "attribution": "GDP per capita and inflation from the World Bank (CC BY 4.0) data.worldbank.org."
   },
   {
     "id": "undp",
@@ -46,7 +46,7 @@
     "provides": "Intermediate distribution of the Corruption Perceptions Index, V-Dem Human Rights Index, and V-Dem Liberal Democracy Index.",
     "license": { "name": "CC BY 4.0 (third-party data subject to third-party licenses)", "url": "https://ourworldindata.org/faqs#how-is-our-work-copyrighted" },
     "attribution": "Indices sourced via Our World in Data (CC BY 4.0).",
-    "note": "Our World in Data states that third-party datasets remain subject to the original publisher’s license — see the individual sources below."
+    "note": "Our World in Data states that third-party datasets remain subject to the original publisher’s license see the individual sources below."
   },
   {
     "id": "transparency-international",
@@ -71,7 +71,7 @@
     "name": "Freedom House",
     "url": "https://freedomhouse.org/report/freedom-world",
     "provides": "Freedom in the World scores and status.",
-    "license": { "name": "© Freedom House — all rights reserved", "url": "https://freedomhouse.org/" },
+    "license": { "name": "© Freedom House all rights reserved", "url": "https://freedomhouse.org/" },
     "attribution": "Freedom in the World 2024, © Freedom House (used with attribution for informational purposes).",
     "note": "Review Freedom House republication terms before commercial use."
   },
@@ -80,7 +80,7 @@
     "name": "Tax Foundation",
     "url": "https://taxfoundation.org/",
     "provides": "Reference for personal income and corporate tax rates.",
-    "license": { "name": "© Tax Foundation — attribution requested", "url": "https://taxfoundation.org/" },
+    "license": { "name": "© Tax Foundation attribution requested", "url": "https://taxfoundation.org/" },
     "attribution": "Tax rates cross-checked against the Tax Foundation."
   },
   {
@@ -88,7 +88,7 @@
     "name": "OECD Tax Database",
     "url": "https://www.oecd.org/tax/tax-policy/tax-database/",
     "provides": "Reference for personal income tax, corporate tax, and VAT/GST rates.",
-    "license": { "name": "OECD — see oecd.org terms", "url": "https://www.oecd.org/termsandconditions/" },
+    "license": { "name": "OECD see oecd.org terms", "url": "https://www.oecd.org/termsandconditions/" },
     "attribution": "Tax rates cross-checked against the OECD Tax Database."
   },
   {
@@ -96,7 +96,7 @@
     "name": "KPMG Tax Rates Online",
     "url": "https://kpmg.com/xx/en/services/tax/tax-tools-and-resources/tax-rates-online.html",
     "provides": "Reference for personal income tax, corporate tax, and indirect tax rates.",
-    "license": { "name": "© KPMG — attribution requested", "url": "https://kpmg.com/" },
+    "license": { "name": "© KPMG attribution requested", "url": "https://kpmg.com/" },
     "attribution": "Tax rates cross-checked against KPMG Tax Rates Online."
   },
   {

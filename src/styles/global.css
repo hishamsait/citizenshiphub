@@ -166,7 +166,7 @@
 
 /* ---- Accessibility settings (unlayered so they override Tailwind theme vars) ---- */
 
-/* Text size — scales the font (root font-size) without zooming the layout */
+/* Text size scales the font (root font-size) without zooming the layout */
 /* 1 = 100% (default, no rule needed). 0 is smaller-than-default. */
 html[data-text-scale="0"] { font-size: 87.5%; }
 html[data-text-scale="2"] { font-size: 112.5%; }
@@ -186,11 +186,11 @@ html {
   --container-7xl: 1280px;
 }
 
-/* Display density — scales the spacing scale (Gmail-style) */
+/* Display density scales the spacing scale (Gmail-style) */
 html[data-density="compact"]     { --spacing: 3.2px; }
 html[data-density="comfortable"] { --spacing: 5px; }
 
-/* High contrast — forced high-contrast palette + stronger affordances */
+/* High contrast forced high-contrast palette + stronger affordances */
 html.high-contrast {
   color-scheme: light;
 
@@ -242,7 +242,7 @@ html.high-contrast a {
   text-underline-offset: 2px;
 }
 
-/* Reduce motion — explicit override of the OS-level preference */
+/* Reduce motion explicit override of the OS-level preference */
 html.reduce-motion {
   scroll-behavior: auto;
 }

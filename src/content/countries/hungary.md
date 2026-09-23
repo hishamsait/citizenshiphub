@@ -34,7 +34,7 @@ The Hungary passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Hungary applies jus sanguinis with no generational limit — citizenship can be passed down indefinitely through ancestry.
+Hungary applies jus sanguinis with no generational limit citizenship can be passed down indefinitely through ancestry.
 
 ## Naturalisation
 
@@ -46,7 +46,7 @@ Hungary generally permits dual citizenship.
 
 ## Investment routes
 
-Hungary offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) — a residence permit leading to naturalisation.
+Hungary offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
@@ -54,7 +54,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

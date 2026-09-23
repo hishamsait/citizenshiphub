@@ -34,7 +34,7 @@ The Thailand passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Thailand applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Thailand applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Thailand generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Thailand generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Thailand offers a **golden visa** (residency by investment) — a residence permit leading to naturalisation.
+Thailand offers a **golden visa** (residency by investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
@@ -54,7 +54,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

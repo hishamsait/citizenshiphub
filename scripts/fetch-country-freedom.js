@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Citizenship Hub — freedom & governance ETL.
+ * Citizenship Hub freedom & governance ETL.
  *
  * Fetches the Corruption Perceptions Index (Transparency International, via
  * Our World in Data) and Freedom in the World (Freedom House), normalises
@@ -8,12 +8,12 @@
  *   src/data/country-freedom.json
  *
  * Data sources:
- *   - Transparency International — Corruption Perceptions Index (via OWID)
+ *   - Transparency International Corruption Perceptions Index (via OWID)
  *       https://ourworldindata.org/grapher/corruption-perception-index
- *   - V-Dem — Human Rights Index & Liberal Democracy Index (via OWID)
+ *   - V-Dem Human Rights Index & Liberal Democracy Index (via OWID)
  *       https://ourworldindata.org/grapher/human-rights-index-vdem
  *       https://ourworldindata.org/grapher/liberal-democracy-index
- *   - Freedom House — Freedom in the World 2024 (All_data_FIW_2013-2024.xlsx)
+ *   - Freedom House Freedom in the World 2024 (All_data_FIW_2013-2024.xlsx)
  *       https://freedomhouse.org/report/freedom-world
  *
  * Usage:
@@ -47,11 +47,11 @@ const OWID_SOURCES = [
 const FIW_URL = 'https://freedomhouse.org/sites/default/files/2024-02/All_data_FIW_2013-2024.xlsx';
 
 const SOURCES = [
-  { name: 'Transparency International — Corruption Perceptions Index (via Our World in Data)', url: 'https://www.transparency.org/en/cpi/2024', updatedAt: null },
-  { name: 'V-Dem — Human Rights Index (via Our World in Data)', url: 'https://v-dem.net/', updatedAt: null },
-  { name: 'V-Dem — Liberal Democracy Index (via Our World in Data)', url: 'https://v-dem.net/', updatedAt: null },
-  { name: 'World Happiness Report — Life satisfaction (Cantril ladder, via Our World in Data)', url: 'https://worldhappiness.report/', updatedAt: null },
-  { name: 'Freedom House — Freedom in the World 2024', url: 'https://freedomhouse.org/report/freedom-world', updatedAt: null },
+  { name: 'Transparency International Corruption Perceptions Index (via Our World in Data)', url: 'https://www.transparency.org/en/cpi/2024', updatedAt: null },
+  { name: 'V-Dem Human Rights Index (via Our World in Data)', url: 'https://v-dem.net/', updatedAt: null },
+  { name: 'V-Dem Liberal Democracy Index (via Our World in Data)', url: 'https://v-dem.net/', updatedAt: null },
+  { name: 'World Happiness Report Life satisfaction (Cantril ladder, via Our World in Data)', url: 'https://worldhappiness.report/', updatedAt: null },
+  { name: 'Freedom House Freedom in the World 2024', url: 'https://freedomhouse.org/report/freedom-world', updatedAt: null },
 ];
 
 const FIW_STATUS = { F: 'Free', PF: 'Partly Free', NF: 'Not Free' };
@@ -366,7 +366,7 @@ function makeMeta(totalCountries) {
     generatedAt: new Date().toISOString(),
     sources: SOURCES,
     license: 'Transparency International CPI (CC BY-ND 4.0, via Our World in Data CC BY); V-Dem (CC BY); Freedom House Freedom in the World 2024 (© Freedom House, informational use)',
-    disclaimer: 'Informational only — indices reflect the methodologies of the external organisations. Verify with the original sources.',
+    disclaimer: 'Informational only indices reflect the methodologies of the external organisations. Verify with the original sources.',
     totalCountries,
   };
 }
@@ -378,7 +378,7 @@ function writeJson(file, data) {
 async function main() {
   const opts = parseArgs();
   const startedAt = Date.now();
-  log(opts, '\nCitizenship Hub — freedom & governance ETL');
+  log(opts, '\nCitizenship Hub freedom & governance ETL');
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   fs.mkdirSync(opts.outDir, { recursive: true });
@@ -438,7 +438,7 @@ async function main() {
   const withLdi = countries.filter((c) => c.democracy !== null).length;
   const withHappiness = countries.filter((c) => c.happiness !== null).length;
   const withFiw = countries.filter((c) => c.fiw !== null).length;
-  log(opts, `  coverage — CPI: ${withCpi} · Human Rights: ${withHri} · Liberal Democracy: ${withLdi} · Life satisfaction: ${withHappiness} · Freedom in the World: ${withFiw}`);
+  log(opts, `  coverage CPI: ${withCpi} · Human Rights: ${withHri} · Liberal Democracy: ${withLdi} · Life satisfaction: ${withHappiness} · Freedom in the World: ${withFiw}`);
 
   log(opts, `\nDone in ${((Date.now() - startedAt) / 1000).toFixed(1)}s → ${path.relative(ROOT, opts.outDir)}/`);
 }

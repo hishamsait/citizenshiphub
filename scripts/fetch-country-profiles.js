@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Citizenship Hub — country economic & development profile ETL.
+ * Citizenship Hub country economic & development profile ETL.
  *
  * Fetches World Bank indicators (GDP per capita, inflation) and the UNDP
  * Human Development Index, normalises every value to ISO2, and writes:
@@ -8,8 +8,8 @@
  *
  * Data sources:
  *   - World Bank API (CC BY 4.0)
- *       GDP per capita (current US$)  — NY.GDP.PCAP.CD
- *       Inflation, consumer prices    — FP.CPI.TOTL.ZG
+ *       GDP per capita (current US$)  NY.GDP.PCAP.CD
+ *       Inflation, consumer prices    FP.CPI.TOTL.ZG
  *   - UNDP Human Development Report composite indices CSV (CC BY 3.0 IGO)
  *
  * Usage:
@@ -42,11 +42,11 @@ const UNDP_URL =
   'https://hdr.undp.org/sites/default/files/2023-24_HDR/HDR23-24_Composite_indices_complete_time_series.csv';
 
 const SOURCES = [
-  { name: 'World Bank — GDP per capita (current US$)', url: 'https://data.worldbank.org/indicator/NY.GDP.PCAP.CD', updatedAt: null },
-  { name: 'World Bank — Inflation, consumer prices (annual %)', url: 'https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG', updatedAt: null },
-  { name: 'World Bank — Life expectancy at birth (years)', url: 'https://data.worldbank.org/indicator/SP.DYN.LE00.IN', updatedAt: null },
-  { name: 'World Bank — GDP growth (annual %)', url: 'https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG', updatedAt: null },
-  { name: 'UNDP Human Development Report — HDI', url: 'https://hdr.undp.org/data-center/documentation-and-downloads', updatedAt: null },
+  { name: 'World Bank GDP per capita (current US$)', url: 'https://data.worldbank.org/indicator/NY.GDP.PCAP.CD', updatedAt: null },
+  { name: 'World Bank Inflation, consumer prices (annual %)', url: 'https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG', updatedAt: null },
+  { name: 'World Bank Life expectancy at birth (years)', url: 'https://data.worldbank.org/indicator/SP.DYN.LE00.IN', updatedAt: null },
+  { name: 'World Bank GDP growth (annual %)', url: 'https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG', updatedAt: null },
+  { name: 'UNDP Human Development Report HDI', url: 'https://hdr.undp.org/data-center/documentation-and-downloads', updatedAt: null },
 ];
 
 function parseArgs() {
@@ -278,7 +278,7 @@ function makeMeta(totalCountries) {
     generatedAt: new Date().toISOString(),
     sources: SOURCES,
     license: 'World Bank (CC BY 4.0); UNDP Human Development Report (CC BY 3.0 IGO)',
-    disclaimer: 'Informational only — not investment, financial, or legal advice. Indicators are point-in-time and may be revised by the source.',
+    disclaimer: 'Informational only not investment, financial, or legal advice. Indicators are point-in-time and may be revised by the source.',
     totalCountries,
   };
 }
@@ -290,7 +290,7 @@ function writeJson(file, data) {
 async function main() {
   const opts = parseArgs();
   const startedAt = Date.now();
-  log(opts, '\nCitizenship Hub — country profiles ETL');
+  log(opts, '\nCitizenship Hub country profiles ETL');
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   fs.mkdirSync(opts.outDir, { recursive: true });
@@ -348,7 +348,7 @@ async function main() {
   const withLife = countries.filter((c) => c.lifeExpectancy !== null).length;
   const withGrowth = countries.filter((c) => c.gdpGrowthPct !== null).length;
   const withHdi = countries.filter((c) => c.hdi !== null).length;
-  log(opts, `  coverage — GDP/capita: ${withGdp} · inflation: ${withInflation} · life expectancy: ${withLife} · GDP growth: ${withGrowth} · HDI: ${withHdi}`);
+  log(opts, `  coverage GDP/capita: ${withGdp} · inflation: ${withInflation} · life expectancy: ${withLife} · GDP growth: ${withGrowth} · HDI: ${withHdi}`);
 
   log(opts, `\nDone in ${((Date.now() - startedAt) / 1000).toFixed(1)}s → ${path.relative(ROOT, opts.outDir)}/`);
 }

@@ -3,33 +3,33 @@
     "generatedAt": "2026-09-22T00:13:55.315Z",
     "sources": [
       {
-        "name": "World Bank — GDP per capita (current US$)",
+        "name": "World Bank GDP per capita (current US$)",
         "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
         "updatedAt": null
       },
       {
-        "name": "World Bank — Inflation, consumer prices (annual %)",
+        "name": "World Bank Inflation, consumer prices (annual %)",
         "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
         "updatedAt": null
       },
       {
-        "name": "World Bank — Life expectancy at birth (years)",
+        "name": "World Bank Life expectancy at birth (years)",
         "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
         "updatedAt": null
       },
       {
-        "name": "World Bank — GDP growth (annual %)",
+        "name": "World Bank GDP growth (annual %)",
         "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG",
         "updatedAt": null
       },
       {
-        "name": "UNDP Human Development Report — HDI",
+        "name": "UNDP Human Development Report HDI",
         "url": "https://hdr.undp.org/data-center/documentation-and-downloads",
         "updatedAt": null
       }
     ],
     "license": "World Bank (CC BY 4.0); UNDP Human Development Report (CC BY 3.0 IGO)",
-    "disclaimer": "Informational only — not investment, financial, or legal advice. Indicators are point-in-time and may be revised by the source.",
+    "disclaimer": "Informational only not investment, financial, or legal advice. Indicators are point-in-time and may be revised by the source.",
     "totalCountries": 199
   },
   "countries": [

@@ -34,19 +34,19 @@ The Macau passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Macau applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Macau applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
-Naturalisation in Macau is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in Macau is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
-Macau generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Macau generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

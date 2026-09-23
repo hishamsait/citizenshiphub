@@ -32,7 +32,7 @@ The Libya passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Libya applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Libya applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -40,11 +40,11 @@ Naturalisation typically requires **10 years** of residence.
 
 ## Dual citizenship
 
-Libya generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Libya generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

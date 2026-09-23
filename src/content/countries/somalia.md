@@ -33,7 +33,7 @@ The Somalia passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Somalia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Somalia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -41,11 +41,11 @@ Naturalisation typically requires **7 years** of residence.
 
 ## Dual citizenship
 
-Somalia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Somalia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

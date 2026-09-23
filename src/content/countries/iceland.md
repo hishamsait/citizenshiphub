@@ -32,7 +32,7 @@ The Iceland passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Iceland applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Iceland applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -48,7 +48,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

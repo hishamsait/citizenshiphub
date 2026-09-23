@@ -1,4 +1,4 @@
-// Citizenship-law facts — Americas (best-effort; verify before reliance).
+// Citizenship-law facts Americas (best-effort; verify before reliance).
 export const LAWS = {
   AG: { d: true, y: 5, c: true, cbi: true, n: 'Also citizenship by investment.' },
   AR: { d: true, y: 2, c: true, n: '2 yrs (shortest standard residence).' },

@@ -66,7 +66,7 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
       category: 'leads',
       tone: leadTrend >= 0 ? 'positive' : 'negative',
       title: leadTrend >= 0 ? 'Lead volume trending up' : 'Lead volume dipped',
-      body: `${currentLeads} leads in the last ${rangeDays} days — ${leadTrend >= 0 ? 'up' : 'down'} ${Math.abs(leadTrend).toFixed(0)}% vs the prior ${rangeDays}-day period.`,
+      body: `${currentLeads} leads in the last ${rangeDays} days ${leadTrend >= 0 ? 'up' : 'down'} ${Math.abs(leadTrend).toFixed(0)}% vs the prior ${rangeDays}-day period.`,
     });
   }
 
@@ -120,7 +120,7 @@ export async function generateInsights(db: Db, rangeDays: number): Promise<Insig
       category: 'content',
       tone: 'neutral',
       title: 'Content coverage gap',
-      body: `${gaps} countries still have no editorial guide — a candidate for content expansion.`,
+      body: `${gaps} countries still have no editorial guide a candidate for content expansion.`,
     });
   }
 

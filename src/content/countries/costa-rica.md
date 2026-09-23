@@ -32,7 +32,7 @@ The Costa Rica passport offers visa-free, visa-on-arrival, ETA, or e-visa access
 
 ## Citizenship by descent
 
-Costa Rica applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Costa Rica applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -50,7 +50,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

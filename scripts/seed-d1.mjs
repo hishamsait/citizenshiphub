@@ -21,9 +21,12 @@ const laws = readJson('src/data/citizenship-laws.json').countries;
 const economics = readJson('src/data/country-profiles.json').countries;
 const freedom = readJson('src/data/country-freedom.json').countries;
 const tax = readJson('src/data/country-tax.json').countries;
+const documents = readJson('src/data/citizenship-documents.json');
 
 const lawByCode = new Map(laws.map((c) => [String(c.iso2).toUpperCase(), c]));
 const sources = readJson('src/data/sources.json');
+const countryNews = readJson('src/data/country-news.json');
+const countrySources = readJson('src/data/country-sources.json');
 
 /** URL-safe slug (mirrors `slugify` in src/lib/utils.ts). */
 function slugify(value) {
@@ -182,7 +185,22 @@ statements.push(
   `INSERT OR REPLACE INTO country_citizenship (iso2, cbi, golden_visa, marriage_years, language_required, max_generations, birthright, cbi_min_investment_eur, golden_visa_min_investment_eur, digital_nomad_visa, language_level) VALUES\n${citizenshipRows.join(',\n')};`,
 );
 
-// country_guides — editorial guide bodies rendered to HTML at ETL time
+// citizenship_documents global route templates + per-country overrides
+const docRows = [];
+for (const [route, c] of Object.entries(documents.routes ?? {})) {
+  docRows.push(`('*', ${lit(route)}, ${lit(c.title ?? null)}, ${lit(c.description ?? null)}, ${lit(c.note ?? null)}, ${jsonLit(c.documents ?? [])})`);
+}
+for (const [iso2, routes] of Object.entries(documents.countries ?? {})) {
+  for (const [route, c] of Object.entries(routes ?? {})) {
+    docRows.push(`(${lit(iso2)}, ${lit(route)}, ${lit(c.title ?? null)}, ${lit(c.description ?? null)}, ${lit(c.note ?? null)}, ${jsonLit(c.documents ?? [])})`);
+  }
+}
+statements.push('DELETE FROM citizenship_documents;');
+statements.push(
+  `INSERT INTO citizenship_documents (iso2, route, title, description, note, documents) VALUES\n${docRows.join(',\n')};`,
+);
+
+// country_guides editorial guide bodies rendered to HTML at ETL time
 const guidesDir = resolve(root, 'src', 'content', 'countries');
 const guideFiles = readdirSync(guidesDir).filter((f) => f.endsWith('.md'));
 const guideRows = [];
@@ -202,7 +220,7 @@ for (let i = 0; i < guideRows.length; i += 20) {
   );
 }
 
-// dataset_meta — datasource metadata (generatedAt, sources, license, encoding, …)
+// dataset_meta datasource metadata (generatedAt, sources, license, encoding, …)
 const metaRows = [];
 const pushMeta = (id, meta, extra = {}) =>
   metaRows.push(
@@ -225,7 +243,7 @@ statements.push(
   `INSERT OR REPLACE INTO dataset_meta (dataset_id, generated_at, verified_at, source, license, disclaimer, score_definition, total_countries, total_destinations, encoding, sources) VALUES\n${metaRows.join(',\n')};`,
 );
 
-// data_sources — attribution registry
+// data_sources attribution registry
 const sourceRows = sources.map(
   (s) =>
     `(${lit(s.id)}, ${lit(s.name)}, ${lit(s.url ?? null)}, ${lit(s.provides ?? null)}, ${lit(s.license?.name ?? null)}, ${lit(
@@ -235,6 +253,36 @@ const sourceRows = sources.map(
 statements.push(
   `INSERT OR REPLACE INTO data_sources (id, name, url, provides, license_name, license_url, license_restrictions, attribution, note) VALUES\n${sourceRows.join(',\n')};`,
 );
+
+// country_news (RSS-fetched immigration & citizenship headlines)
+const newsRows = [];
+for (const c of countryNews.countries ?? []) {
+  for (const item of c.items ?? []) {
+    newsRows.push(
+      `(${lit(item.id)}, ${lit(c.iso2)}, ${lit(item.title)}, ${lit(item.url ?? null)}, ${lit(item.sourceName ?? null)}, ${lit(item.publishedAt ?? null)}, ${lit(item.snippet ?? null)})`,
+    );
+  }
+}
+if (newsRows.length) {
+  statements.push(
+    `INSERT OR REPLACE INTO country_news (id, iso2, title, url, source_name, published_at, snippet) VALUES\n${newsRows.join(',\n')};`,
+  );
+}
+
+// country_immigration_sources (curated reference links)
+const countrySourceRows = [];
+for (const c of countrySources.countries ?? []) {
+  for (const s of c.sources ?? []) {
+    countrySourceRows.push(
+      `(${lit(s.id)}, ${lit(c.iso2)}, ${lit(s.name)}, ${lit(s.url ?? null)}, ${lit(s.category ?? null)}, ${lit(s.note ?? null)})`,
+    );
+  }
+}
+if (countrySourceRows.length) {
+  statements.push(
+    `INSERT OR REPLACE INTO country_immigration_sources (id, iso2, name, url, category, note) VALUES\n${countrySourceRows.join(',\n')};`,
+  );
+}
 
 const outDir = resolve(root, 'scripts', '.generated');
 mkdirSync(outDir, { recursive: true });
@@ -250,7 +298,10 @@ console.log(`  country_economics: ${economicsRows.length}`);
 console.log(`  country_freedom:   ${freedomRows.length}`);
 console.log(`  country_tax:       ${taxRows.length}`);
 console.log(`  country_citizenship: ${citizenshipRows.length}`);
+console.log(`  citizenship_documents: ${docRows.length}`);
 console.log(`  country_guides:    ${guideRows.length}`);
 console.log(`  dataset_meta:      ${metaRows.length}`);
 console.log(`  data_sources:      ${sourceRows.length}`);
+console.log(`  country_news:      ${newsRows.length}`);
+console.log(`  country_immigration_sources: ${countrySourceRows.length}`);
 console.log('Apply to the remote D1 database with: npm run db:seed');

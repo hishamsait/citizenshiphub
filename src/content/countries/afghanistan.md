@@ -34,7 +34,7 @@ The Afghanistan passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-Afghanistan applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Afghanistan applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Afghanistan generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Afghanistan generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ---
 _Compiled from the Citizenship Hub law dataset (approximate). Verify with official government sources before relying on this information._

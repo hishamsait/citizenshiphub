@@ -3,33 +3,33 @@
     "generatedAt": "2026-09-22T00:13:55.666Z",
     "sources": [
       {
-        "name": "Transparency International — Corruption Perceptions Index (via Our World in Data)",
+        "name": "Transparency International Corruption Perceptions Index (via Our World in Data)",
         "url": "https://www.transparency.org/en/cpi/2024",
         "updatedAt": null
       },
       {
-        "name": "V-Dem — Human Rights Index (via Our World in Data)",
+        "name": "V-Dem Human Rights Index (via Our World in Data)",
         "url": "https://v-dem.net/",
         "updatedAt": null
       },
       {
-        "name": "V-Dem — Liberal Democracy Index (via Our World in Data)",
+        "name": "V-Dem Liberal Democracy Index (via Our World in Data)",
         "url": "https://v-dem.net/",
         "updatedAt": null
       },
       {
-        "name": "World Happiness Report — Life satisfaction (Cantril ladder, via Our World in Data)",
+        "name": "World Happiness Report Life satisfaction (Cantril ladder, via Our World in Data)",
         "url": "https://worldhappiness.report/",
         "updatedAt": null
       },
       {
-        "name": "Freedom House — Freedom in the World 2024",
+        "name": "Freedom House Freedom in the World 2024",
         "url": "https://freedomhouse.org/report/freedom-world",
         "updatedAt": null
       }
     ],
     "license": "Transparency International CPI (CC BY-ND 4.0, via Our World in Data CC BY); V-Dem (CC BY); Freedom House Freedom in the World 2024 (© Freedom House, informational use)",
-    "disclaimer": "Informational only — indices reflect the methodologies of the external organisations. Verify with the original sources.",
+    "disclaimer": "Informational only indices reflect the methodologies of the external organisations. Verify with the original sources.",
     "totalCountries": 199
   },
   "countries": [

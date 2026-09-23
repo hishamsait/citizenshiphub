@@ -34,7 +34,7 @@ The Netherlands passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-Netherlands applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Netherlands applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,11 +44,11 @@ Netherlands typically requires **A2** language proficiency for naturalisation.
 
 ## Dual citizenship
 
-Netherlands generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Netherlands generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Netherlands offers a **golden visa** (residency by investment) (from ≈ **€1,250,000** in qualifying investment) — a residence permit leading to naturalisation.
+Netherlands offers a **golden visa** (residency by investment) (from ≈ **€1,250,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 

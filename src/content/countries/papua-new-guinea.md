@@ -34,7 +34,7 @@ The Papua New Guinea passport offers visa-free, visa-on-arrival, ETA, or e-visa 
 
 ## Citizenship by descent
 
-Papua New Guinea applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Papua New Guinea applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **8 years** of residence.
 
 ## Dual citizenship
 
-Papua New Guinea generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Papua New Guinea generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

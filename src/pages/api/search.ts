@@ -9,7 +9,7 @@ interface SearchRow {
   summary: string | null;
 }
 
-/** GET /api/search?q=ireland — DB-backed search across countries and guides. */
+/** GET /api/search?q=ireland DB-backed search across countries and guides. */
 export const GET: APIRoute = async ({ request, locals }) => {
   const url = new URL(request.url);
   const q = (url.searchParams.get('q') ?? '').trim();

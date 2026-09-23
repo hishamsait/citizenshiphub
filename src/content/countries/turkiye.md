@@ -34,7 +34,7 @@ The Türkiye passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Türkiye applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Türkiye applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -46,11 +46,11 @@ Türkiye generally permits dual citizenship.
 
 ## Investment routes
 
-Türkiye offers **citizenship by investment** (from ≈ **€370,000** in qualifying investment) — a direct route to citizenship through investment.
+Türkiye offers **citizenship by investment** (from ≈ **€370,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

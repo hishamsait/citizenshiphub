@@ -34,7 +34,7 @@ The Armenia passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Armenia applies jus sanguinis with no generational limit — citizenship can be passed down indefinitely through ancestry.
+Armenia applies jus sanguinis with no generational limit citizenship can be passed down indefinitely through ancestry.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Armenia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Armenia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

@@ -10,5 +10,8 @@
       "database_id": "657b53a0-85ca-4504-a8aa-09e30a28a4ad",
       "migrations_dir": "migrations"
     }
-  ]
+  ],
+  "ai": {
+    "binding": "AI"
+  }
 }

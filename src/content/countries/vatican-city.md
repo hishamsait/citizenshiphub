@@ -38,15 +38,15 @@ Vatican City does not generally offer citizenship by descent.
 
 ## Naturalisation
 
-Naturalisation in Vatican City is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in Vatican City is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
-Vatican City generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Vatican City generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

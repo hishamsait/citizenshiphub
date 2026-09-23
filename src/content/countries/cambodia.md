@@ -32,7 +32,7 @@ The Cambodia passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Cambodia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Cambodia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -40,15 +40,15 @@ Naturalisation typically requires **7 years** of residence.
 
 ## Dual citizenship
 
-Cambodia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Cambodia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Cambodia offers **citizenship by investment** (from ≈ **€225,000** in qualifying investment) — a direct route to citizenship through investment.
+Cambodia offers **citizenship by investment** (from ≈ **€225,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

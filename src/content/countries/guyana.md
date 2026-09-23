@@ -32,7 +32,7 @@ The Guyana passport offers visa-free, visa-on-arrival, ETA, or e-visa access to 
 
 ## Citizenship by descent
 
-Guyana applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Guyana applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -40,7 +40,7 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Guyana generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Guyana generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Other routes
 
@@ -48,7 +48,7 @@ Citizenship is granted by **birth in the territory** (jus soli).
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

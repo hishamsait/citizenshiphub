@@ -7,7 +7,7 @@ citizenshipByDescent: true
 naturalizationYears: null
 dualCitizenshipAllowed: false
 officialFeeEUR: null
-summary: The UAE passport is the world's strongest, but citizenship is tightly restricted — largely by Emirati descent or rare nomination.
+summary: The UAE passport is the world's strongest, but citizenship is tightly restricted largely by Emirati descent or rare nomination.
 ---
 
 ## Why the United Arab Emirates?
@@ -18,11 +18,11 @@ The UAE passport is one of the world's most powerful, with broad visa-free acces
 
 The UAE applies **jus sanguinis** (right of blood), not birthright citizenship:
 
-- You are automatically a citizen if you are born — in the UAE or abroad — to an **Emirati father**.
+- You are automatically a citizen if you are born in the UAE or abroad to an **Emirati father**.
 - You are also a citizen if born to an Emirati mother and a father who is unknown or stateless.
 - Since October 2017, an Emirati mother with a foreign husband can confer citizenship on her children once they reach **age 6** (previously age 18).
 
-There is no grandparent or broader ancestry programme — descent runs through parents only.
+There is no grandparent or broader ancestry programme descent runs through parents only.
 
 ## Naturalisation
 
@@ -34,10 +34,10 @@ Naturalisation is discretionary and rarely granted:
 
 ## Dual citizenship
 
-Dual citizenship is **generally not permitted** — naturalised citizens ordinarily renounce their previous nationality.
+Dual citizenship is **generally not permitted** naturalised citizens ordinarily renounce their previous nationality.
 
 The exception is the **2021 reform**, which allows those naturalised through the nomination categories (investors, doctors, scientists, artists, and similar) to **retain their original citizenship**.
 
 ## Fees & timeline
 
-There is **no standard published application fee** — naturalisation is a nomination-based, discretionary process rather than a fixed application with a fee schedule. There is also no fixed processing timeline; grants are made at the government's discretion.
+There is **no standard published application fee** naturalisation is a nomination-based, discretionary process rather than a fixed application with a fee schedule. There is also no fixed processing timeline; grants are made at the government's discretion.

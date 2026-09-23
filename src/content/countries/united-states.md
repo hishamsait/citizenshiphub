@@ -34,7 +34,7 @@ The United States passport offers visa-free, visa-on-arrival, ETA, or e-visa acc
 
 ## Citizenship by descent
 
-United States applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+United States applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -46,7 +46,7 @@ United States generally permits dual citizenship.
 
 ## Investment routes
 
-United States offers a **golden visa** (residency by investment) — a residence permit leading to naturalisation.
+United States offers a **golden visa** (residency by investment) a residence permit leading to naturalisation.
 
 ## Other routes
 

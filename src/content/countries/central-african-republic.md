@@ -33,7 +33,7 @@ The Central African Republic passport offers visa-free, visa-on-arrival, ETA, or
 
 ## Citizenship by descent
 
-Central African Republic applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Central African Republic applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Central African Republic generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

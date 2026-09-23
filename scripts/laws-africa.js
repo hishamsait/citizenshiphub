@@ -1,4 +1,4 @@
-// Citizenship-law facts — Africa (best-effort; verify before reliance).
+// Citizenship-law facts Africa (best-effort; verify before reliance).
 export const LAWS = {
   DZ: { d: true, y: 7, c: false },
   AO: { d: true, y: 10, c: false },

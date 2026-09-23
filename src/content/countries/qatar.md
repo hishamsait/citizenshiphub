@@ -34,19 +34,19 @@ The Qatar passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Qatar applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Qatar applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
-Naturalisation in Qatar is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in Qatar is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
-Qatar generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Qatar generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

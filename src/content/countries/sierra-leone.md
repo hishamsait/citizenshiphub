@@ -32,7 +32,7 @@ The Sierra Leone passport offers visa-free, visa-on-arrival, ETA, or e-visa acce
 
 ## Citizenship by descent
 
-Sierra Leone applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Sierra Leone applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,7 +44,7 @@ Sierra Leone generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

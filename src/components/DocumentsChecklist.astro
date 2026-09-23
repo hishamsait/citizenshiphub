@@ -1,0 +1,178 @@
+---
+import type { CountryRouteChecklist } from '../lib/db/documents';
+
+interface Props {
+  routes: CountryRouteChecklist[];
+  iso2: string;
+}
+
+const { routes, iso2 } = Astro.props;
+const hasTabs = routes.length > 1;
+---
+
+<div class="mt-6" data-checklist data-iso2={iso2}>
+  {
+    hasTabs && (
+      <div
+        class="flex gap-1 overflow-x-auto border-b border-slate-200 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        role="tablist"
+        aria-label="Citizenship routes"
+      >
+        {
+          routes.map((route, i) => (
+            <button
+              type="button"
+              role="tab"
+              id={`route-tab-${route.route}`}
+              aria-controls={`route-panel-${route.route}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              data-checklist-tab
+              data-route={route.route}
+              class="checklist-tab -mb-px inline-flex shrink-0 items-center gap-2 whitespace-nowrap border-b-2 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              {route.title}
+              <span class="checklist-tab-count rounded-full px-2 py-0.5 text-xs font-semibold">{route.documents.length}</span>
+            </button>
+          ))
+        }
+      </div>
+    )
+  }
+
+  <div class={hasTabs ? 'mt-5' : 'grid gap-6 lg:grid-cols-2'}>
+    {
+      routes.map((route, i) => (
+        <div
+          class="route-checklist flex flex-col rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200"
+          data-route={route.route}
+          role={hasTabs ? 'tabpanel' : undefined}
+          id={hasTabs ? `route-panel-${route.route}` : undefined}
+          aria-labelledby={hasTabs ? `route-tab-${route.route}` : undefined}
+          hidden={hasTabs && i !== 0}
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-display text-lg font-bold text-slate-900">{route.title}</h3>
+              {route.description && <p class="mt-1 text-sm leading-relaxed text-slate-500">{route.description}</p>}
+            </div>
+            <span
+              class="route-progress shrink-0 rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-500"
+              data-progress
+              data-total={route.documents.length}
+            >
+              {route.documents.length} items
+            </span>
+          </div>
+
+          {
+            route.note && (
+              <p class="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-800">{route.note}</p>
+            )
+          }
+
+          <ul class="mt-4 space-y-2">
+            {
+              route.documents.map((doc, i) => (
+                <li>
+                  <label class="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-1.5 text-sm text-slate-700 transition hover:bg-slate-50">
+                    <input
+                      type="checkbox"
+                      class="doc-check mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-brand-700 focus:ring-brand-500"
+                      data-index={i}
+                    />
+                    <span class="min-w-0">
+                      <span class="block font-medium text-slate-800">{doc.label}</span>
+                      {doc.hint && <span class="block text-xs text-slate-400">{doc.hint}</span>}
+                    </span>
+                  </label>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'citizenshiphub.documents.v1';
+
+  const load = (): Record<string, boolean> => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') as Record<string, boolean>;
+    } catch {
+      return {};
+    }
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-checklist]').forEach((root) => {
+    const iso2 = root.dataset.iso2 ?? '';
+    let state = load();
+
+    root.querySelectorAll<HTMLElement>('.route-checklist').forEach((card) => {
+      const route = card.dataset.route ?? '';
+      const boxes = Array.from(card.querySelectorAll<HTMLInputElement>('.doc-check'));
+      const progressEl = card.querySelector<HTMLElement>('[data-progress]');
+      const idFor = (i: number) => `${iso2}:${route}:${i}`;
+
+      const renderProgress = () => {
+        const done = boxes.filter((b) => b.checked).length;
+        if (progressEl) progressEl.textContent = `${done} of ${boxes.length}`;
+      };
+
+      boxes.forEach((box, i) => {
+        const id = idFor(i);
+        box.checked = !!state[id];
+        box.addEventListener('change', () => {
+          state = load();
+          state[id] = box.checked;
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          } catch {
+            /* ignore quota / privacy errors */
+          }
+          renderProgress();
+        });
+      });
+
+      renderProgress();
+    });
+
+    // Tab switching (only when multiple routes)
+    root.querySelectorAll<HTMLButtonElement>('[data-checklist-tab]').forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const route = tab.dataset.route ?? '';
+        root.querySelectorAll<HTMLButtonElement>('[data-checklist-tab]').forEach((t) => {
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        root.querySelectorAll<HTMLElement>('.route-checklist').forEach((panel) => {
+          panel.hidden = panel.dataset.route !== route;
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .checklist-tab {
+    border-color: transparent;
+    color: var(--color-slate-500);
+  }
+  .checklist-tab:hover {
+    border-color: var(--color-slate-300);
+    color: var(--color-slate-900);
+  }
+  .checklist-tab[aria-selected='true'] {
+    border-color: var(--color-brand-700);
+    color: var(--color-brand-700);
+  }
+  .checklist-tab-count {
+    background: var(--color-slate-100);
+    color: var(--color-slate-500);
+  }
+  .checklist-tab[aria-selected='true'] .checklist-tab-count {
+    background: var(--color-brand-50);
+    color: var(--color-brand-700);
+  }
+</style>

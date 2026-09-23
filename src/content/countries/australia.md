@@ -34,7 +34,7 @@ The Australia passport offers visa-free, visa-on-arrival, ETA, or e-visa access 
 
 ## Citizenship by descent
 
-Australia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Australia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 

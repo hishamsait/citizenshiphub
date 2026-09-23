@@ -34,7 +34,7 @@ The Luxembourg passport offers visa-free, visa-on-arrival, ETA, or e-visa access
 
 ## Citizenship by descent
 
-Luxembourg applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Luxembourg applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -46,11 +46,11 @@ Luxembourg generally permits dual citizenship.
 
 ## Investment routes
 
-Luxembourg offers a **golden visa** (residency by investment) (from ≈ **€500,000** in qualifying investment) — a residence permit leading to naturalisation.
+Luxembourg offers a **golden visa** (residency by investment) (from ≈ **€500,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

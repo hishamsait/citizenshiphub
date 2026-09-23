@@ -35,7 +35,7 @@ The Philippines passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-Philippines applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Philippines applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -47,7 +47,7 @@ Philippines generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

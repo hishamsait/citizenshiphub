@@ -34,7 +34,7 @@ The Italy passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Italy applies jus sanguinis with no generational limit — citizenship can be passed down indefinitely through ancestry.
+Italy applies jus sanguinis with no generational limit citizenship can be passed down indefinitely through ancestry.
 
 ## Naturalisation
 
@@ -48,7 +48,7 @@ Italy generally permits dual citizenship.
 
 ## Investment routes
 
-Italy offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) — a residence permit leading to naturalisation.
+Italy offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 

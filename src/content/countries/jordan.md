@@ -34,7 +34,7 @@ The Jordan passport offers visa-free, visa-on-arrival, ETA, or e-visa access to 
 
 ## Citizenship by descent
 
-Jordan applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Jordan applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,15 +42,15 @@ Naturalisation typically requires **15 years** of residence.
 
 ## Dual citizenship
 
-Jordan generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Jordan generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Jordan offers **citizenship by investment** (from ≈ **€690,000** in qualifying investment) — a direct route to citizenship through investment.
+Jordan offers **citizenship by investment** (from ≈ **€690,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

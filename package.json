@@ -17,7 +17,10 @@
     "fetch:data:fresh": "node scripts/fetch-passport-data.js --fresh",
     "fetch:profiles": "node scripts/fetch-country-profiles.js",
     "fetch:freedom": "node scripts/fetch-country-freedom.js",
+    "fetch:news": "node scripts/fetch-country-news.js",
+    "generate:sources": "node scripts/generate-country-sources.js",
     "db:migrate": "wrangler d1 migrations apply citizenshiphub-db --remote",
+    "db:migrate:local": "wrangler d1 migrations apply citizenshiphub-db --local",
     "db:seed:generate": "node scripts/seed-d1.mjs",
     "db:seed": "node scripts/seed-d1.mjs && wrangler d1 execute citizenshiphub-db --remote --file=scripts/.generated/seed.sql",
     "cf-typegen": "wrangler types",
@@ -38,6 +41,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/cloudflare": "^12.6.13",
+    "@cloudflare/workers-types": "^4.20260702.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/d3-geo": "^3.1.1",
     "@types/react": "^19.3.0",

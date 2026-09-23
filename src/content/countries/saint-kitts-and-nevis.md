@@ -33,7 +33,7 @@ The Saint Kitts and Nevis passport offers visa-free, visa-on-arrival, ETA, or e-
 
 ## Citizenship by descent
 
-Saint Kitts and Nevis applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Saint Kitts and Nevis applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Saint Kitts and Nevis generally permits dual citizenship.
 
 ## Investment routes
 
-Saint Kitts and Nevis offers **citizenship by investment** (from ≈ **€230,000** in qualifying investment) — a direct route to citizenship through investment.
+Saint Kitts and Nevis offers **citizenship by investment** (from ≈ **€230,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Other routes
 
@@ -55,7 +55,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

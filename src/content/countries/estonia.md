@@ -34,7 +34,7 @@ The Estonia passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Estonia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Estonia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,7 +42,7 @@ Naturalisation typically requires **8 years** of residence.
 
 ## Dual citizenship
 
-Estonia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Estonia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Other routes
 
@@ -50,7 +50,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

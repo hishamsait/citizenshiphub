@@ -37,7 +37,7 @@ The Switzerland passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-Switzerland applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Switzerland applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -51,11 +51,11 @@ Switzerland generally permits dual citizenship.
 
 ## Investment routes
 
-Switzerland offers a **golden visa** (residency by investment) — a residence permit leading to naturalisation.
+Switzerland offers a **golden visa** (residency by investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

@@ -96,7 +96,7 @@ function main() {
       { name: 'KPMG Tax Rates Online', url: 'https://kpmg.com/xx/en/services/tax/tax-tools-and-resources/tax-rates-online.html', updatedAt: null },
     ],
     license: 'Compiled from public sources (approximate); not tax advice.',
-    disclaimer: 'Informational only — tax rates change frequently; verify with a qualified tax adviser.',
+    disclaimer: 'Informational only tax rates change frequently; verify with a qualified tax adviser.',
     totalCountries: passports.length,
   };
   const taxCountries = passports.map((p) => {
@@ -156,17 +156,17 @@ function renderGuide(c, p, rank, profile, tax) {
 
   const descent = c.citizenshipByDescent
     ? c.maxGenerations === null
-      ? `${c.name} applies jus sanguinis with no generational limit — citizenship can be passed down indefinitely through ancestry.`
+      ? `${c.name} applies jus sanguinis with no generational limit citizenship can be passed down indefinitely through ancestry.`
       : c.maxGenerations === 2
-        ? `${c.name} applies jus sanguinis — citizenship can be acquired by descent from a parent or grandparent.`
+        ? `${c.name} applies jus sanguinis citizenship can be acquired by descent from a parent or grandparent.`
         : c.maxGenerations >= 3
-          ? `${c.name} applies jus sanguinis — citizenship can be acquired by descent across multiple generations.`
-          : `${c.name} applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.`
+          ? `${c.name} applies jus sanguinis citizenship can be acquired by descent across multiple generations.`
+          : `${c.name} applies jus sanguinis citizenship can be acquired by descent from a citizen parent.`
     : `${c.name} does not generally offer citizenship by descent.`;
 
   const naturalisation =
     c.naturalizationYears === null
-      ? `Naturalisation in ${c.name} is restricted or not standardised — there is no straightforward residency-based route for most people.`
+      ? `Naturalisation in ${c.name} is restricted or not standardised there is no straightforward residency-based route for most people.`
       : `Naturalisation typically requires **${c.naturalizationYears} years** of residence${
           c.marriageYears != null ? ` (reduced to **${c.marriageYears} years** for spouses)` : ''
         }.`;
@@ -182,11 +182,11 @@ function renderGuide(c, p, rank, profile, tax) {
 
   const dual = c.dualCitizenshipAllowed
     ? `${c.name} generally permits dual citizenship.`
-    : `${c.name} generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.`;
+    : `${c.name} generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.`;
 
   const fees =
     c.officialFeeEUR === null
-      ? `There is no standard published application fee — costs vary, so check with official sources.`
+      ? `There is no standard published application fee costs vary, so check with official sources.`
       : c.officialFeeEUR === 0
         ? `There is no application fee.`
         : `The application fee is around **€${c.officialFeeEUR}** (approximate).`;
@@ -198,7 +198,7 @@ function renderGuide(c, p, rank, profile, tax) {
         c.cbiMinInvestmentEUR != null
           ? ` (from ≈ **€${c.cbiMinInvestmentEUR.toLocaleString('en-US')}** in qualifying investment)`
           : ''
-      } — a direct route to citizenship through investment.`,
+      } a direct route to citizenship through investment.`,
     );
   }
   if (c.goldenVisa) {
@@ -207,7 +207,7 @@ function renderGuide(c, p, rank, profile, tax) {
         c.goldenVisaMinInvestmentEUR != null
           ? ` (from ≈ **€${c.goldenVisaMinInvestmentEUR.toLocaleString('en-US')}** in qualifying investment)`
           : ''
-      } — a residence permit leading to naturalisation.`,
+      } a residence permit leading to naturalisation.`,
     );
   }
 

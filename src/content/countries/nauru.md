@@ -34,7 +34,7 @@ The Nauru passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Nauru applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Nauru applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,15 +42,15 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Nauru generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Nauru generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Nauru offers **citizenship by investment** (from ≈ **€97,000** in qualifying investment) — a direct route to citizenship through investment.
+Nauru offers **citizenship by investment** (from ≈ **€97,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

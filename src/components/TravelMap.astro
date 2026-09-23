@@ -18,7 +18,7 @@ const legend: AccessStatus[] = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa',
         const status = statusByIso2[c.iso2] ?? 'unknown';
         return (
           <path d={c.d} style={`fill:${STATUS_FILL[status]};stroke:var(--map-stroke)`} stroke-width="0.5">
-            <title>{`${c.name} — ${STATUS_LABEL[status]}`}</title>
+            <title>{`${c.name} ${STATUS_LABEL[status]}`}</title>
           </path>
         );
       })

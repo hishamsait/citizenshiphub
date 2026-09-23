@@ -29,7 +29,7 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
 
 <BaseLayout
   title="Visa Explorer"
-  description="See where any passport can travel visa-free, visa on arrival, ETA, or e-visa — browse every destination by access status."
+  description="See where any passport can travel visa-free, visa on arrival, ETA, or e-visa browse every destination by access status."
 >
   <section>
     <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
@@ -40,7 +40,7 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
       </nav>
       <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Visa explorer</h1>
       <p class="mt-3 max-w-2xl text-slate-600">
-        Pick a passport and browse every destination by access status — visa-free, visa on arrival, ETA, e-visa, or visa
+        Pick a passport and browse every destination by access status visa-free, visa on arrival, ETA, e-visa, or visa
         required.
       </p>
     </div>
@@ -138,7 +138,7 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
   <section class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
     <p class="font-display text-xl text-slate-900" role="status" aria-live="polite">
       The <b id="passportNameLabel" class="text-brand-700">{byCode.get(DEFAULT_PASSPORT)?.name ?? DEFAULT_PASSPORT}</b>{' '}
-      passport — <b id="matchCount">0</b> matching destinations
+      passport <b id="matchCount">0</b> matching destinations
     </p>
     <div id="countBadges" class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-5"></div>
     <div
@@ -436,7 +436,7 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
     const status = statusByCode[path.dataset.alpha2];
     const days = daysByCode[path.dataset.alpha2];
     const label = status ? STATUS_LABEL[status] : 'Unknown';
-    tooltip.textContent = `${path.dataset.name} — ${label}${days != null ? ` · ${days} days` : ''}`;
+    tooltip.textContent = `${path.dataset.name} ${label}${days != null ? ` · ${days} days` : ''}`;
     tooltip.style.left = `${e.clientX + 14}px`;
     tooltip.style.top = `${e.clientY + 14}px`;
     tooltip.hidden = false;

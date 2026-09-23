@@ -34,7 +34,7 @@ The Bulgaria passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Bulgaria applies jus sanguinis — citizenship can be acquired by descent across multiple generations.
+Bulgaria applies jus sanguinis citizenship can be acquired by descent across multiple generations.
 
 ## Naturalisation
 
@@ -46,11 +46,11 @@ Bulgaria generally permits dual citizenship.
 
 ## Investment routes
 
-Bulgaria offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) — a residence permit leading to naturalisation.
+Bulgaria offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

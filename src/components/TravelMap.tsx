@@ -31,7 +31,7 @@ export default function TravelMap({ paths, statusByIso2 }: Props) {
               style={{ fill: STATUS_FILL[status], stroke: 'var(--map-stroke)' }}
               strokeWidth="0.5"
             >
-              <title>{`${c.name} — ${STATUS_LABEL[status]}`}</title>
+              <title>{`${c.name} ${STATUS_LABEL[status]}`}</title>
             </path>
           );
         })}

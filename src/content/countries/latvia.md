@@ -32,7 +32,7 @@ The Latvia passport offers visa-free, visa-on-arrival, ETA, or e-visa access to 
 
 ## Citizenship by descent
 
-Latvia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Latvia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,7 +44,7 @@ Latvia generally permits dual citizenship.
 
 ## Investment routes
 
-Latvia offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) — a residence permit leading to naturalisation.
+Latvia offers a **golden visa** (residency by investment) (from ≈ **€250,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
@@ -52,7 +52,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

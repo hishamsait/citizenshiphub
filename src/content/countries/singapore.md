@@ -36,7 +36,7 @@ The Singapore passport offers visa-free, visa-on-arrival, ETA, or e-visa access 
 
 ## Citizenship by descent
 
-Singapore applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Singapore applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,15 +44,15 @@ Naturalisation typically requires **2 years** of residence.
 
 ## Dual citizenship
 
-Singapore generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Singapore generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Singapore offers a **golden visa** (residency by investment) (from ≈ **€1,700,000** in qualifying investment) — a residence permit leading to naturalisation.
+Singapore offers a **golden visa** (residency by investment) (from ≈ **€1,700,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

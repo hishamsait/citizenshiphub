@@ -36,7 +36,7 @@ The New Zealand passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-New Zealand applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+New Zealand applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 

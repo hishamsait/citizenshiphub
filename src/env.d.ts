@@ -19,6 +19,15 @@ interface D1PreparedStatement {
   run(): Promise<D1Result>;
 }
 
+/** Minimal shape of the Cloudflare Workers AI binding used by the Console scraper. */
+interface AiBinding {
+  run(
+    model: string,
+    inputs: Record<string, unknown>,
+    options?: Record<string, unknown>,
+  ): Promise<unknown>;
+}
+
 interface Env {
   DB: {
     prepare(query: string): D1PreparedStatement;
@@ -27,4 +36,6 @@ interface Env {
   };
   /** Base32 TOTP secret for the passwordless Console sign-in. */
   ADMIN_TOTP_SECRET?: string;
+  /** Cloudflare Workers AI binding for AI-assisted data scraping. */
+  AI?: AiBinding;
 }

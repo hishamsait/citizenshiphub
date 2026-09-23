@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowDown, ArrowUp, ChevronsUpDown, ExternalLink, Loader2, Search, X } from 'lucide-react';
+import { ArrowDown, ArrowUp, ChevronsUpDown, ExternalLink, Link2, Loader2, Newspaper, RefreshCw, Search, Sparkles, X } from 'lucide-react';
 import { formatDateTime } from '../../lib/utils';
 import { COUNTRY_DATASETS } from '../../lib/country-datasets';
 
@@ -12,6 +12,7 @@ interface Country {
   datasets: Record<string, boolean>;
   lastRefreshedAt: string | null;
   analytics: { views: number; leads: number; scrollAvg: number | null };
+  scrape: { status: 'running' | 'success' | 'failed'; fetchedAt: string | null } | null;
 }
 
 interface DataPoint {
@@ -52,6 +53,41 @@ interface CountryAnalytics {
   devices: DeviceCount[];
 }
 
+interface CountrySource {
+  name: string;
+  url: string;
+  category: string;
+  note: string | null;
+}
+
+interface NewsItem {
+  title: string;
+  url: string;
+  sourceName: string;
+  publishedAt: string | null;
+  snippet: string | null;
+}
+
+interface ScrapeFact {
+  field: string;
+  value: string;
+  confidence: number;
+  evidence: string;
+}
+
+interface ScrapeRun {
+  id: string;
+  iso2: string;
+  status: 'running' | 'success' | 'failed';
+  summary: string | null;
+  facts: ScrapeFact[];
+  sources: { name: string; url: string; category: string; status: string; error?: string | null }[];
+  error: string | null;
+  model: string | null;
+  fetchedAt: string | null;
+  createdAt: string;
+}
+
 interface CountryDetail {
   iso2: string;
   name: string;
@@ -61,13 +97,16 @@ interface CountryDetail {
   lastRefreshedAt: string | null;
   points: DataPoint[];
   analytics: CountryAnalytics;
+  sources: CountrySource[];
+  news: NewsItem[];
+  scrapes: ScrapeRun[];
 }
 
 interface Props {
   countries: Country[];
 }
 
-type SortKey = 'name' | 'views' | 'leads' | 'scrollAvg' | 'lastRefreshedAt';
+type SortKey = 'name' | 'views' | 'leads' | 'scrollAvg';
 
 function SortableHeader({
   label,
@@ -135,9 +174,6 @@ export default function CountriesTable({ countries }: Props) {
         case 'scrollAvg':
           cmp = (a.analytics.scrollAvg ?? -1) - (b.analytics.scrollAvg ?? -1);
           break;
-        case 'lastRefreshedAt':
-          cmp = (a.lastRefreshedAt ?? '').localeCompare(b.lastRefreshedAt ?? '');
-          break;
       }
       return sortDir === 'asc' ? cmp : -cmp;
     });
@@ -184,6 +220,31 @@ export default function CountriesTable({ countries }: Props) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  const [scraping, setScraping] = useState(false);
+  const [scrapeError, setScrapeError] = useState<string | null>(null);
+
+  async function scrapeNow() {
+    if (!detail) return;
+    setScraping(true);
+    setScrapeError(null);
+    try {
+      const res = await fetch('/api/console/scrape', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ iso2: detail.iso2 }),
+      });
+      if (!res.ok) throw new Error('Scrape failed.');
+      const run = (await res.json()) as ScrapeRun;
+      setDetail((prev) =>
+        prev ? { ...prev, scrapes: [run, ...prev.scrapes.filter((s) => s.id !== run.id)] } : prev,
+      );
+    } catch (e) {
+      setScrapeError(e instanceof Error ? e.message : 'Scrape failed.');
+    } finally {
+      setScraping(false);
+    }
+  }
+
   return (
     <>
       <div className="relative max-w-xs">
@@ -205,19 +266,16 @@ export default function CountriesTable({ countries }: Props) {
 
       <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[1000px] text-sm">
+          <table className="w-full min-w-[720px] text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400">
                 <SortableHeader label="Country" column="name" activeKey={sortKey} dir={sortDir} onSort={toggleSort} className="px-5" />
-                {COUNTRY_DATASETS.map((d) => (
-                  <th key={d.id} className="px-2 py-3 text-center font-medium" title={d.label}>
-                    {d.short}
-                  </th>
-                ))}
+                <th className="px-3 py-3 font-medium" title="Data streams: green = fetched, red = missing">Streams</th>
                 <SortableHeader label="Views" column="views" activeKey={sortKey} dir={sortDir} onSort={toggleSort} align="right" />
                 <SortableHeader label="Leads" column="leads" activeKey={sortKey} dir={sortDir} onSort={toggleSort} align="right" />
-                <SortableHeader label="Scroll" column="scrollAvg" activeKey={sortKey} dir={sortDir} onSort={toggleSort} align="right" />
-                <SortableHeader label="Last refreshed" column="lastRefreshedAt" activeKey={sortKey} dir={sortDir} onSort={toggleSort} className="px-5" />
+                <SortableHeader label="Scroll depth" column="scrollAvg" activeKey={sortKey} dir={sortDir} onSort={toggleSort} align="right" />
+                <th className="px-3 py-3 text-center font-medium" title="Latest AI scrape status">Scrape</th>
+                <th className="px-5 py-3 text-right font-medium">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -238,22 +296,51 @@ export default function CountriesTable({ countries }: Props) {
                       </span>
                     </button>
                   </td>
-                  {COUNTRY_DATASETS.map((d) => (
-                    <td key={d.id} className="px-2 py-3 text-center">
-                      <span
-                        className={`mx-auto block h-2.5 w-2.5 rounded-full ${
-                          c.datasets[d.id] ? 'bg-emerald-500' : 'bg-slate-200'
-                        }`}
-                        title={`${d.label} — ${c.datasets[d.id] ? 'available' : 'missing'}`}
-                      />
-                    </td>
-                  ))}
+                  <td className="px-3 py-3">
+                    <div className="flex max-w-[220px] flex-wrap items-center gap-x-2 gap-y-1">
+                      {COUNTRY_DATASETS.map((d) => (
+                        <span
+                          key={d.id}
+                          className={`text-[10px] font-semibold uppercase tracking-wide ${
+                            c.datasets[d.id] ? 'text-emerald-600' : 'text-red-400'
+                          }`}
+                          title={`${d.label} — ${c.datasets[d.id] ? 'available' : 'missing'}`}
+                        >
+                          {d.short}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
                   <td className="px-3 py-3 text-right tabular-nums text-slate-700">{c.analytics.views.toLocaleString('en-US')}</td>
                   <td className="px-3 py-3 text-right tabular-nums text-slate-700">{c.analytics.leads.toLocaleString('en-US')}</td>
                   <td className="px-3 py-3 text-right tabular-nums text-slate-700">
                     {c.analytics.scrollAvg == null ? '—' : `${Math.round(c.analytics.scrollAvg)}%`}
                   </td>
-                  <td className="px-5 py-3 tabular-nums text-slate-500">{formatDateTime(c.lastRefreshedAt)}</td>
+                  <td className="px-3 py-3 text-center">
+                    {c.scrape ? (
+                      <span
+                        className={`inline-block h-2.5 w-2.5 rounded-full ${
+                          c.scrape.status === 'success'
+                            ? 'bg-emerald-500'
+                            : c.scrape.status === 'running'
+                              ? 'bg-amber-400'
+                              : 'bg-red-400'
+                        }`}
+                        title={`AI scrape ${c.scrape.status}${c.scrape.fetchedAt ? ` · ${formatDateTime(c.scrape.fetchedAt)}` : ''}`}
+                      />
+                    ) : (
+                      <span className="inline-block h-2.5 w-2.5 rounded-full bg-slate-200" title="Not scraped yet" />
+                    )}
+                  </td>
+                  <td className="px-5 py-3 text-right">
+                    <button
+                      type="button"
+                      onClick={() => open(c.iso2)}
+                      className="inline-flex items-center gap-1 rounded-lg border border-slate-200 px-2.5 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-brand-700 hover:text-brand-700"
+                    >
+                      Details
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -426,10 +513,73 @@ export default function CountriesTable({ countries }: Props) {
                     </div>
                   )}
 
-                  <div className="mt-6 mb-4 flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm">
-                    <span className="text-slate-500">Last refreshed</span>
-                    <strong className="text-slate-900">{formatDateTime(detail.lastRefreshedAt)}</strong>
-                    <span className="text-xs text-slate-400">UTC</span>
+                  <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-brand-700" aria-hidden="true" />
+                        <h3 className="text-sm font-semibold text-slate-900">AI scrape</h3>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={scrapeNow}
+                        disabled={scraping}
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-brand-700 px-3 py-1.5 text-xs font-semibold text-slate-50 transition hover:bg-brand-800 disabled:cursor-not-allowed disabled:opacity-60"
+                      >
+                        <RefreshCw className={`h-3.5 w-3.5 ${scraping ? 'animate-spin' : ''}`} aria-hidden="true" />
+                        {scraping ? 'Scraping…' : 'Scrape now'}
+                      </button>
+                    </div>
+                    {scrapeError && <p className="mt-2 text-xs text-red-600">{scrapeError}</p>}
+                    {detail.scrapes.length === 0 ? (
+                      <p className="mt-2 text-sm text-slate-500">
+                        No AI scrape yet. Run one to fetch the latest information from this country's genuine sources.
+                      </p>
+                    ) : (
+                      <div className="mt-3">
+                        <div className="flex items-center gap-2 text-xs">
+                          <span
+                            className={`inline-block h-2 w-2 rounded-full ${
+                              detail.scrapes[0].status === 'success'
+                                ? 'bg-emerald-500'
+                                : detail.scrapes[0].status === 'running'
+                                  ? 'bg-amber-400'
+                                  : 'bg-red-400'
+                            }`}
+                            aria-hidden="true"
+                          />
+                          <span className="font-semibold capitalize text-slate-700">{detail.scrapes[0].status}</span>
+                          {detail.scrapes[0].model && (
+                            <span className="text-slate-400">· {detail.scrapes[0].model}</span>
+                          )}
+                          <span className="ml-auto text-slate-400">{formatDateTime(detail.scrapes[0].fetchedAt)}</span>
+                        </div>
+                        {detail.scrapes[0].summary && (
+                          <p className="mt-2 text-sm leading-relaxed text-slate-600">{detail.scrapes[0].summary}</p>
+                        )}
+                        {detail.scrapes[0].facts.length > 0 && (
+                          <ul className="mt-3 space-y-2">
+                            {detail.scrapes[0].facts.map((f) => (
+                              <li key={f.field} className="rounded-lg bg-white px-3 py-2 text-sm ring-1 ring-slate-100">
+                                <div className="flex items-baseline justify-between gap-2">
+                                  <span className="font-medium text-slate-900">{f.field.replace(/_/g, ' ')}</span>
+                                  <span className="text-xs tabular-nums text-slate-400">{Math.round(f.confidence * 100)}%</span>
+                                </div>
+                                <p className="mt-0.5 text-slate-600">{f.value}</p>
+                                {f.evidence && <p className="mt-1 text-xs italic text-slate-400">“{f.evidence}”</p>}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        {detail.scrapes[0].error && <p className="mt-2 text-xs text-red-600">{detail.scrapes[0].error}</p>}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-6 mb-3 flex items-center justify-between">
+                    <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-400">Data streams</h3>
+                    <span className="text-xs text-slate-400">
+                      Last refreshed <strong className="text-slate-600">{formatDateTime(detail.lastRefreshedAt)}</strong> UTC
+                    </span>
                   </div>
                   <div className="overflow-hidden rounded-xl border border-slate-200">
                     <div className="overflow-x-auto">
@@ -449,7 +599,7 @@ export default function CountriesTable({ countries }: Props) {
                                 <div className="flex items-center gap-2">
                                   <span
                                     className={`h-2 w-2 shrink-0 rounded-full ${
-                                      p.present ? 'bg-emerald-500' : 'bg-slate-300'
+                                      p.present ? 'bg-emerald-500' : 'bg-red-400'
                                     }`}
                                     aria-hidden="true"
                                   />
@@ -468,6 +618,65 @@ export default function CountriesTable({ countries }: Props) {
                       </table>
                     </div>
                   </div>
+
+                  {detail.sources.length > 0 && (
+                    <div className="mt-6 rounded-xl border border-slate-200 p-4">
+                      <div className="flex items-center gap-2">
+                        <Link2 className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                        <h3 className="text-sm font-semibold text-slate-900">Genuine sources</h3>
+                      </div>
+                      <ul className="mt-3 space-y-2">
+                        {detail.sources.map((s) => (
+                          <li key={`${s.name}-${s.url}`} className="text-sm">
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="font-medium text-slate-800">{s.name}</span>
+                              {s.category && (
+                                <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[0.68rem] font-medium uppercase tracking-wide text-slate-500">
+                                  {s.category}
+                                </span>
+                              )}
+                            </div>
+                            {s.url && (
+                              <a
+                                href={s.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="mt-0.5 inline-flex items-center gap-1 break-all text-xs text-brand-700 hover:text-brand-800"
+                              >
+                                {s.url}
+                                <ExternalLink className="h-3 w-3 shrink-0" aria-hidden="true" />
+                              </a>
+                            )}
+                            {s.note && <p className="mt-0.5 text-xs text-slate-500">{s.note}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {detail.news.length > 0 && (
+                    <div className="mt-6 rounded-xl border border-slate-200 p-4">
+                      <div className="flex items-center gap-2">
+                        <Newspaper className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                        <h3 className="text-sm font-semibold text-slate-900">Latest news</h3>
+                      </div>
+                      <ul className="mt-3 space-y-2">
+                        {detail.news.map((n) => (
+                          <li key={n.url} className="text-sm">
+                            <a href={n.url} target="_blank" rel="noreferrer" className="font-medium text-slate-800 hover:text-brand-700">
+                              {n.title}
+                            </a>
+                            <p className="mt-0.5 text-xs text-slate-500">
+                              {n.sourceName}
+                              {n.publishedAt ? ` · ${formatDateTime(n.publishedAt)}` : ''}
+                            </p>
+                            {n.snippet && <p className="mt-0.5 text-xs text-slate-400">{n.snippet}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                 </>
               )}
             </div>

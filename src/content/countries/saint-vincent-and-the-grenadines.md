@@ -33,7 +33,7 @@ The Saint Vincent and the Grenadines passport offers visa-free, visa-on-arrival,
 
 ## Citizenship by descent
 
-Saint Vincent and the Grenadines applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Saint Vincent and the Grenadines applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Saint Vincent and the Grenadines generally permits dual citizenship.
 
 ## Investment routes
 
-Saint Vincent and the Grenadines offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) — a direct route to citizenship through investment.
+Saint Vincent and the Grenadines offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Other routes
 
@@ -55,7 +55,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

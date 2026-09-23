@@ -19,7 +19,7 @@
       }
     ],
     "license": "MIT (passport matrix via imorte/passport-index-data); mledoze/countries (MIT, some ODbL-derived fields); Natural Earth (public domain)",
-    "disclaimer": "Informational only — not legal, immigration, or travel advice. Verify with official sources.",
+    "disclaimer": "Informational only not legal, immigration, or travel advice. Verify with official sources.",
     "scoreDefinition": "mobilityScore = visaFree + visaOnArrival + eta + eVisa",
     "totalCountries": 199,
     "encoding": {

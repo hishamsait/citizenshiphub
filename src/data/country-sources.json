@@ -1,0 +1,2814 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-22T22:36:40.473Z",
+    "source": "Curated official government portals + Wikipedia nationality-law pages.",
+    "totalCountries": 199,
+    "disclaimer": "Reference links only — verify with official sources before acting."
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "name": "Afghanistan",
+      "sources": [
+        {
+          "id": "src-af-wikipedia",
+          "name": "Wikipedia — Afghan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Afghan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AL",
+      "name": "Albania",
+      "sources": [
+        {
+          "id": "src-al-wikipedia",
+          "name": "Wikipedia — Albanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Albanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "DZ",
+      "name": "Algeria",
+      "sources": [
+        {
+          "id": "src-dz-wikipedia",
+          "name": "Wikipedia — Algerian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Algerian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AD",
+      "name": "Andorra",
+      "sources": [
+        {
+          "id": "src-ad-wikipedia",
+          "name": "Wikipedia — Andorran nationality law",
+          "url": "https://en.wikipedia.org/wiki/Andorran_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AO",
+      "name": "Angola",
+      "sources": [
+        {
+          "id": "src-ao-wikipedia",
+          "name": "Wikipedia — Angolan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Angolan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AG",
+      "name": "Antigua and Barbuda",
+      "sources": [
+        {
+          "id": "src-ag-wikipedia",
+          "name": "Wikipedia — Antiguan, Barbudan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Antiguan%2C_Barbudan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AR",
+      "name": "Argentina",
+      "sources": [
+        {
+          "id": "src-ar-wikipedia",
+          "name": "Wikipedia — Argentine nationality law",
+          "url": "https://en.wikipedia.org/wiki/Argentine_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ar-gov",
+          "name": "Dirección Nacional de Migraciones (Argentina)",
+          "url": "https://www.argentina.gob.ar/interior/migraciones",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "AM",
+      "name": "Armenia",
+      "sources": [
+        {
+          "id": "src-am-wikipedia",
+          "name": "Wikipedia — Armenian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Armenian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AU",
+      "name": "Australia",
+      "sources": [
+        {
+          "id": "src-au-wikipedia",
+          "name": "Wikipedia — Australian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Australian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-au-gov",
+          "name": "Department of Home Affairs (Australia)",
+          "url": "https://immi.homeaffairs.gov.au/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "AT",
+      "name": "Austria",
+      "sources": [
+        {
+          "id": "src-at-wikipedia",
+          "name": "Wikipedia — Austrian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Austrian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-at-gov",
+          "name": "Migration.gv.at (Austria)",
+          "url": "https://www.migration.gv.at/en/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "AZ",
+      "name": "Azerbaijan",
+      "sources": [
+        {
+          "id": "src-az-wikipedia",
+          "name": "Wikipedia — Azerbaijani nationality law",
+          "url": "https://en.wikipedia.org/wiki/Azerbaijani_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BS",
+      "name": "Bahamas",
+      "sources": [
+        {
+          "id": "src-bs-wikipedia",
+          "name": "Wikipedia — Bahamian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bahamian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BH",
+      "name": "Bahrain",
+      "sources": [
+        {
+          "id": "src-bh-wikipedia",
+          "name": "Wikipedia — Bahraini nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bahraini_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BD",
+      "name": "Bangladesh",
+      "sources": [
+        {
+          "id": "src-bd-wikipedia",
+          "name": "Wikipedia — Bangladeshi nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bangladeshi_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BB",
+      "name": "Barbados",
+      "sources": [
+        {
+          "id": "src-bb-wikipedia",
+          "name": "Wikipedia — Barbadian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Barbadian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BY",
+      "name": "Belarus",
+      "sources": [
+        {
+          "id": "src-by-wikipedia",
+          "name": "Wikipedia — Belarusian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Belarusian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BE",
+      "name": "Belgium",
+      "sources": [
+        {
+          "id": "src-be-wikipedia",
+          "name": "Wikipedia — Belgian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Belgian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-be-gov",
+          "name": "Immigration Office (Belgium)",
+          "url": "https://www.ibz.be/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "BZ",
+      "name": "Belize",
+      "sources": [
+        {
+          "id": "src-bz-wikipedia",
+          "name": "Wikipedia — Belizean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Belizean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BJ",
+      "name": "Benin",
+      "sources": [
+        {
+          "id": "src-bj-wikipedia",
+          "name": "Wikipedia — Beninese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Beninese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BT",
+      "name": "Bhutan",
+      "sources": [
+        {
+          "id": "src-bt-wikipedia",
+          "name": "Wikipedia — Bhutanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bhutanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BO",
+      "name": "Bolivia",
+      "sources": [
+        {
+          "id": "src-bo-wikipedia",
+          "name": "Wikipedia — Bolivian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bolivian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BA",
+      "name": "Bosnia and Herzegovina",
+      "sources": [
+        {
+          "id": "src-ba-wikipedia",
+          "name": "Wikipedia — Bosnian, Herzegovinian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bosnian%2C_Herzegovinian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BW",
+      "name": "Botswana",
+      "sources": [
+        {
+          "id": "src-bw-wikipedia",
+          "name": "Wikipedia — Motswana nationality law",
+          "url": "https://en.wikipedia.org/wiki/Motswana_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BR",
+      "name": "Brazil",
+      "sources": [
+        {
+          "id": "src-br-wikipedia",
+          "name": "Wikipedia — Brazilian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Brazilian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-br-gov",
+          "name": "Ministério da Justiça — Migrações (Brazil)",
+          "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/estrangeiro",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "BN",
+      "name": "Brunei",
+      "sources": [
+        {
+          "id": "src-bn-wikipedia",
+          "name": "Wikipedia — Bruneian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bruneian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "sources": [
+        {
+          "id": "src-bg-wikipedia",
+          "name": "Wikipedia — Bulgarian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Bulgarian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BF",
+      "name": "Burkina Faso",
+      "sources": [
+        {
+          "id": "src-bf-wikipedia",
+          "name": "Wikipedia — Burkinabe nationality law",
+          "url": "https://en.wikipedia.org/wiki/Burkinabe_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "BI",
+      "name": "Burundi",
+      "sources": [
+        {
+          "id": "src-bi-wikipedia",
+          "name": "Wikipedia — Burundian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Burundian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KH",
+      "name": "Cambodia",
+      "sources": [
+        {
+          "id": "src-kh-wikipedia",
+          "name": "Wikipedia — Cambodian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Cambodian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CM",
+      "name": "Cameroon",
+      "sources": [
+        {
+          "id": "src-cm-wikipedia",
+          "name": "Wikipedia — Cameroonian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Cameroonian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CA",
+      "name": "Canada",
+      "sources": [
+        {
+          "id": "src-ca-wikipedia",
+          "name": "Wikipedia — Canadian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Canadian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ca-gov",
+          "name": "Immigration, Refugees and Citizenship Canada",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship.html",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "CV",
+      "name": "Cape Verde",
+      "sources": [
+        {
+          "id": "src-cv-wikipedia",
+          "name": "Wikipedia — Cape Verdean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Cape_Verdean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CF",
+      "name": "Central African Republic",
+      "sources": [
+        {
+          "id": "src-cf-wikipedia",
+          "name": "Wikipedia — Central African Republic nationality law",
+          "url": "https://en.wikipedia.org/wiki/Central_African_Republic_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TD",
+      "name": "Chad",
+      "sources": [
+        {
+          "id": "src-td-wikipedia",
+          "name": "Wikipedia — Chadian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Chadian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CL",
+      "name": "Chile",
+      "sources": [
+        {
+          "id": "src-cl-wikipedia",
+          "name": "Wikipedia — Chilean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Chilean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CN",
+      "name": "China",
+      "sources": [
+        {
+          "id": "src-cn-wikipedia",
+          "name": "Wikipedia — Chinese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Chinese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CO",
+      "name": "Colombia",
+      "sources": [
+        {
+          "id": "src-co-wikipedia",
+          "name": "Wikipedia — Colombian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Colombian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KM",
+      "name": "Comoros",
+      "sources": [
+        {
+          "id": "src-km-wikipedia",
+          "name": "Wikipedia — Comoran nationality law",
+          "url": "https://en.wikipedia.org/wiki/Comoran_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CG",
+      "name": "Congo",
+      "sources": [
+        {
+          "id": "src-cg-wikipedia",
+          "name": "Wikipedia — Republic of the Congo nationality law",
+          "url": "https://en.wikipedia.org/wiki/Republic_of_the_Congo_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CD",
+      "name": "DR Congo",
+      "sources": [
+        {
+          "id": "src-cd-wikipedia",
+          "name": "Wikipedia — Democratic Republic of the Congo nationality law",
+          "url": "https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CR",
+      "name": "Costa Rica",
+      "sources": [
+        {
+          "id": "src-cr-wikipedia",
+          "name": "Wikipedia — Costa Rican nationality law",
+          "url": "https://en.wikipedia.org/wiki/Costa_Rican_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CI",
+      "name": "Ivory Coast",
+      "sources": [
+        {
+          "id": "src-ci-wikipedia",
+          "name": "Wikipedia — Ivorian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ivorian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "HR",
+      "name": "Croatia",
+      "sources": [
+        {
+          "id": "src-hr-wikipedia",
+          "name": "Wikipedia — Croatian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Croatian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CU",
+      "name": "Cuba",
+      "sources": [
+        {
+          "id": "src-cu-wikipedia",
+          "name": "Wikipedia — Cuban nationality law",
+          "url": "https://en.wikipedia.org/wiki/Cuban_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CY",
+      "name": "Cyprus",
+      "sources": [
+        {
+          "id": "src-cy-wikipedia",
+          "name": "Wikipedia — Cypriot nationality law",
+          "url": "https://en.wikipedia.org/wiki/Cypriot_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "CZ",
+      "name": "Czechia",
+      "sources": [
+        {
+          "id": "src-cz-wikipedia",
+          "name": "Wikipedia — Czech nationality law",
+          "url": "https://en.wikipedia.org/wiki/Czech_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "DK",
+      "name": "Denmark",
+      "sources": [
+        {
+          "id": "src-dk-wikipedia",
+          "name": "Wikipedia — Danish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Danish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-dk-gov",
+          "name": "Danish Immigration Service",
+          "url": "https://www.nyidanmark.dk/en-GB",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "DJ",
+      "name": "Djibouti",
+      "sources": [
+        {
+          "id": "src-dj-wikipedia",
+          "name": "Wikipedia — Djibouti nationality law",
+          "url": "https://en.wikipedia.org/wiki/Djibouti_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "DM",
+      "name": "Dominica",
+      "sources": [
+        {
+          "id": "src-dm-wikipedia",
+          "name": "Wikipedia — Dominican nationality law",
+          "url": "https://en.wikipedia.org/wiki/Dominican_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "DO",
+      "name": "Dominican Republic",
+      "sources": [
+        {
+          "id": "src-do-wikipedia",
+          "name": "Wikipedia — Dominican Republic nationality law",
+          "url": "https://en.wikipedia.org/wiki/Dominican_Republic_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "EC",
+      "name": "Ecuador",
+      "sources": [
+        {
+          "id": "src-ec-wikipedia",
+          "name": "Wikipedia — Ecuadorean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ecuadorean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "EG",
+      "name": "Egypt",
+      "sources": [
+        {
+          "id": "src-eg-wikipedia",
+          "name": "Wikipedia — Egyptian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Egyptian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SV",
+      "name": "El Salvador",
+      "sources": [
+        {
+          "id": "src-sv-wikipedia",
+          "name": "Wikipedia — Salvadoran nationality law",
+          "url": "https://en.wikipedia.org/wiki/Salvadoran_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GQ",
+      "name": "Equatorial Guinea",
+      "sources": [
+        {
+          "id": "src-gq-wikipedia",
+          "name": "Wikipedia — Equatorial Guinean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Equatorial_Guinean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ER",
+      "name": "Eritrea",
+      "sources": [
+        {
+          "id": "src-er-wikipedia",
+          "name": "Wikipedia — Eritrean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Eritrean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "EE",
+      "name": "Estonia",
+      "sources": [
+        {
+          "id": "src-ee-wikipedia",
+          "name": "Wikipedia — Estonian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Estonian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SZ",
+      "name": "Eswatini",
+      "sources": [
+        {
+          "id": "src-sz-wikipedia",
+          "name": "Wikipedia — Swazi nationality law",
+          "url": "https://en.wikipedia.org/wiki/Swazi_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ET",
+      "name": "Ethiopia",
+      "sources": [
+        {
+          "id": "src-et-wikipedia",
+          "name": "Wikipedia — Ethiopian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ethiopian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "FJ",
+      "name": "Fiji",
+      "sources": [
+        {
+          "id": "src-fj-wikipedia",
+          "name": "Wikipedia — Fijian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Fijian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "FI",
+      "name": "Finland",
+      "sources": [
+        {
+          "id": "src-fi-wikipedia",
+          "name": "Wikipedia — Finnish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Finnish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-fi-gov",
+          "name": "Finnish Immigration Service",
+          "url": "https://migri.fi/en/home",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "FR",
+      "name": "France",
+      "sources": [
+        {
+          "id": "src-fr-wikipedia",
+          "name": "Wikipedia — French nationality law",
+          "url": "https://en.wikipedia.org/wiki/French_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-fr-gov",
+          "name": "France-Visas / Service Public",
+          "url": "https://www.service-public.fr/particuliers/vosdroits/N111",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "GA",
+      "name": "Gabon",
+      "sources": [
+        {
+          "id": "src-ga-wikipedia",
+          "name": "Wikipedia — Gabonese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Gabonese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GM",
+      "name": "Gambia",
+      "sources": [
+        {
+          "id": "src-gm-wikipedia",
+          "name": "Wikipedia — Gambian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Gambian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GE",
+      "name": "Georgia",
+      "sources": [
+        {
+          "id": "src-ge-wikipedia",
+          "name": "Wikipedia — Georgian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Georgian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "DE",
+      "name": "Germany",
+      "sources": [
+        {
+          "id": "src-de-wikipedia",
+          "name": "Wikipedia — German nationality law",
+          "url": "https://en.wikipedia.org/wiki/German_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-de-gov",
+          "name": "Federal Office for Migration and Refugees (Germany)",
+          "url": "https://www.bamf.de/EN/Home/home_node.html",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "GH",
+      "name": "Ghana",
+      "sources": [
+        {
+          "id": "src-gh-wikipedia",
+          "name": "Wikipedia — Ghanaian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ghanaian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GR",
+      "name": "Greece",
+      "sources": [
+        {
+          "id": "src-gr-wikipedia",
+          "name": "Wikipedia — Greek nationality law",
+          "url": "https://en.wikipedia.org/wiki/Greek_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gr-gov",
+          "name": "Ministry of Migration and Asylum (Greece)",
+          "url": "https://migration.gov.gr/en/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "GD",
+      "name": "Grenada",
+      "sources": [
+        {
+          "id": "src-gd-wikipedia",
+          "name": "Wikipedia — Grenadian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Grenadian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GT",
+      "name": "Guatemala",
+      "sources": [
+        {
+          "id": "src-gt-wikipedia",
+          "name": "Wikipedia — Guatemalan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Guatemalan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GN",
+      "name": "Guinea",
+      "sources": [
+        {
+          "id": "src-gn-wikipedia",
+          "name": "Wikipedia — Guinean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Guinean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GW",
+      "name": "Guinea-Bissau",
+      "sources": [
+        {
+          "id": "src-gw-wikipedia",
+          "name": "Wikipedia — Guinea-Bissauan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Guinea-Bissauan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "GY",
+      "name": "Guyana",
+      "sources": [
+        {
+          "id": "src-gy-wikipedia",
+          "name": "Wikipedia — Guyanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Guyanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "HT",
+      "name": "Haiti",
+      "sources": [
+        {
+          "id": "src-ht-wikipedia",
+          "name": "Wikipedia — Haitian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Haitian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "HN",
+      "name": "Honduras",
+      "sources": [
+        {
+          "id": "src-hn-wikipedia",
+          "name": "Wikipedia — Honduran nationality law",
+          "url": "https://en.wikipedia.org/wiki/Honduran_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "HK",
+      "name": "Hong Kong",
+      "sources": [
+        {
+          "id": "src-hk-wikipedia",
+          "name": "Wikipedia — Hong Konger nationality law",
+          "url": "https://en.wikipedia.org/wiki/Hong_Konger_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "HU",
+      "name": "Hungary",
+      "sources": [
+        {
+          "id": "src-hu-wikipedia",
+          "name": "Wikipedia — Hungarian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Hungarian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IS",
+      "name": "Iceland",
+      "sources": [
+        {
+          "id": "src-is-wikipedia",
+          "name": "Wikipedia — Icelander nationality law",
+          "url": "https://en.wikipedia.org/wiki/Icelander_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IN",
+      "name": "India",
+      "sources": [
+        {
+          "id": "src-in-wikipedia",
+          "name": "Wikipedia — Indian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Indian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-in-gov",
+          "name": "Indian Citizenship Online",
+          "url": "https://indiancitizenshiponline.nic.in/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "ID",
+      "name": "Indonesia",
+      "sources": [
+        {
+          "id": "src-id-wikipedia",
+          "name": "Wikipedia — Indonesian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Indonesian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IR",
+      "name": "Iran",
+      "sources": [
+        {
+          "id": "src-ir-wikipedia",
+          "name": "Wikipedia — Iranian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Iranian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IQ",
+      "name": "Iraq",
+      "sources": [
+        {
+          "id": "src-iq-wikipedia",
+          "name": "Wikipedia — Iraqi nationality law",
+          "url": "https://en.wikipedia.org/wiki/Iraqi_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IE",
+      "name": "Ireland",
+      "sources": [
+        {
+          "id": "src-ie-wikipedia",
+          "name": "Wikipedia — Irish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Irish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ie-gov",
+          "name": "Irish Immigration",
+          "url": "https://www.irishimmigration.ie/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "IL",
+      "name": "Israel",
+      "sources": [
+        {
+          "id": "src-il-wikipedia",
+          "name": "Wikipedia — Israeli nationality law",
+          "url": "https://en.wikipedia.org/wiki/Israeli_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "IT",
+      "name": "Italy",
+      "sources": [
+        {
+          "id": "src-it-wikipedia",
+          "name": "Wikipedia — Italian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Italian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-it-gov",
+          "name": "Ministero dell'Interno (Italy)",
+          "url": "https://www.interno.gov.it/it/temi/immigrazione-e-asilo",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "JM",
+      "name": "Jamaica",
+      "sources": [
+        {
+          "id": "src-jm-wikipedia",
+          "name": "Wikipedia — Jamaican nationality law",
+          "url": "https://en.wikipedia.org/wiki/Jamaican_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "JP",
+      "name": "Japan",
+      "sources": [
+        {
+          "id": "src-jp-wikipedia",
+          "name": "Wikipedia — Japanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Japanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-jp-gov",
+          "name": "Immigration Services Agency of Japan",
+          "url": "https://www.moj.go.jp/isa/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "JO",
+      "name": "Jordan",
+      "sources": [
+        {
+          "id": "src-jo-wikipedia",
+          "name": "Wikipedia — Jordanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Jordanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KZ",
+      "name": "Kazakhstan",
+      "sources": [
+        {
+          "id": "src-kz-wikipedia",
+          "name": "Wikipedia — Kazakhstani nationality law",
+          "url": "https://en.wikipedia.org/wiki/Kazakhstani_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KE",
+      "name": "Kenya",
+      "sources": [
+        {
+          "id": "src-ke-wikipedia",
+          "name": "Wikipedia — Kenyan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Kenyan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KI",
+      "name": "Kiribati",
+      "sources": [
+        {
+          "id": "src-ki-wikipedia",
+          "name": "Wikipedia — I-Kiribati nationality law",
+          "url": "https://en.wikipedia.org/wiki/I-Kiribati_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "XK",
+      "name": "Kosovo",
+      "sources": [
+        {
+          "id": "src-xk-wikipedia",
+          "name": "Wikipedia — Kosovar nationality law",
+          "url": "https://en.wikipedia.org/wiki/Kosovar_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KW",
+      "name": "Kuwait",
+      "sources": [
+        {
+          "id": "src-kw-wikipedia",
+          "name": "Wikipedia — Kuwaiti nationality law",
+          "url": "https://en.wikipedia.org/wiki/Kuwaiti_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KG",
+      "name": "Kyrgyzstan",
+      "sources": [
+        {
+          "id": "src-kg-wikipedia",
+          "name": "Wikipedia — Kirghiz nationality law",
+          "url": "https://en.wikipedia.org/wiki/Kirghiz_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LA",
+      "name": "Laos",
+      "sources": [
+        {
+          "id": "src-la-wikipedia",
+          "name": "Wikipedia — Laotian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Laotian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LV",
+      "name": "Latvia",
+      "sources": [
+        {
+          "id": "src-lv-wikipedia",
+          "name": "Wikipedia — Latvian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Latvian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LB",
+      "name": "Lebanon",
+      "sources": [
+        {
+          "id": "src-lb-wikipedia",
+          "name": "Wikipedia — Lebanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Lebanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LS",
+      "name": "Lesotho",
+      "sources": [
+        {
+          "id": "src-ls-wikipedia",
+          "name": "Wikipedia — Mosotho nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mosotho_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LR",
+      "name": "Liberia",
+      "sources": [
+        {
+          "id": "src-lr-wikipedia",
+          "name": "Wikipedia — Liberian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Liberian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LY",
+      "name": "Libya",
+      "sources": [
+        {
+          "id": "src-ly-wikipedia",
+          "name": "Wikipedia — Libyan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Libyan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LI",
+      "name": "Liechtenstein",
+      "sources": [
+        {
+          "id": "src-li-wikipedia",
+          "name": "Wikipedia — Liechtensteiner nationality law",
+          "url": "https://en.wikipedia.org/wiki/Liechtensteiner_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LT",
+      "name": "Lithuania",
+      "sources": [
+        {
+          "id": "src-lt-wikipedia",
+          "name": "Wikipedia — Lithuanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Lithuanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LU",
+      "name": "Luxembourg",
+      "sources": [
+        {
+          "id": "src-lu-wikipedia",
+          "name": "Wikipedia — Luxembourger nationality law",
+          "url": "https://en.wikipedia.org/wiki/Luxembourger_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MO",
+      "name": "Macau",
+      "sources": [
+        {
+          "id": "src-mo-wikipedia",
+          "name": "Wikipedia — Macanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Macanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MG",
+      "name": "Madagascar",
+      "sources": [
+        {
+          "id": "src-mg-wikipedia",
+          "name": "Wikipedia — Malagasy nationality law",
+          "url": "https://en.wikipedia.org/wiki/Malagasy_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MW",
+      "name": "Malawi",
+      "sources": [
+        {
+          "id": "src-mw-wikipedia",
+          "name": "Wikipedia — Malawian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Malawian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MY",
+      "name": "Malaysia",
+      "sources": [
+        {
+          "id": "src-my-wikipedia",
+          "name": "Wikipedia — Malaysian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Malaysian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MV",
+      "name": "Maldives",
+      "sources": [
+        {
+          "id": "src-mv-wikipedia",
+          "name": "Wikipedia — Maldivan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Maldivan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ML",
+      "name": "Mali",
+      "sources": [
+        {
+          "id": "src-ml-wikipedia",
+          "name": "Wikipedia — Malian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Malian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MT",
+      "name": "Malta",
+      "sources": [
+        {
+          "id": "src-mt-wikipedia",
+          "name": "Wikipedia — Maltese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Maltese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MH",
+      "name": "Marshall Islands",
+      "sources": [
+        {
+          "id": "src-mh-wikipedia",
+          "name": "Wikipedia — Marshallese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Marshallese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MR",
+      "name": "Mauritania",
+      "sources": [
+        {
+          "id": "src-mr-wikipedia",
+          "name": "Wikipedia — Mauritanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mauritanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MU",
+      "name": "Mauritius",
+      "sources": [
+        {
+          "id": "src-mu-wikipedia",
+          "name": "Wikipedia — Mauritian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mauritian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MX",
+      "name": "Mexico",
+      "sources": [
+        {
+          "id": "src-mx-wikipedia",
+          "name": "Wikipedia — Mexican nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mexican_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mx-gov",
+          "name": "Instituto Nacional de Migración (Mexico)",
+          "url": "https://www.gob.mx/inm",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "FM",
+      "name": "Micronesia",
+      "sources": [
+        {
+          "id": "src-fm-wikipedia",
+          "name": "Wikipedia — Micronesian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Micronesian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MD",
+      "name": "Moldova",
+      "sources": [
+        {
+          "id": "src-md-wikipedia",
+          "name": "Wikipedia — Moldovan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Moldovan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MC",
+      "name": "Monaco",
+      "sources": [
+        {
+          "id": "src-mc-wikipedia",
+          "name": "Wikipedia — Monegasque nationality law",
+          "url": "https://en.wikipedia.org/wiki/Monegasque_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MN",
+      "name": "Mongolia",
+      "sources": [
+        {
+          "id": "src-mn-wikipedia",
+          "name": "Wikipedia — Mongolian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mongolian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ME",
+      "name": "Montenegro",
+      "sources": [
+        {
+          "id": "src-me-wikipedia",
+          "name": "Wikipedia — Montenegrin nationality law",
+          "url": "https://en.wikipedia.org/wiki/Montenegrin_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MA",
+      "name": "Morocco",
+      "sources": [
+        {
+          "id": "src-ma-wikipedia",
+          "name": "Wikipedia — Moroccan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Moroccan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MZ",
+      "name": "Mozambique",
+      "sources": [
+        {
+          "id": "src-mz-wikipedia",
+          "name": "Wikipedia — Mozambican nationality law",
+          "url": "https://en.wikipedia.org/wiki/Mozambican_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MM",
+      "name": "Myanmar",
+      "sources": [
+        {
+          "id": "src-mm-wikipedia",
+          "name": "Wikipedia — Burmese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Burmese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NA",
+      "name": "Namibia",
+      "sources": [
+        {
+          "id": "src-na-wikipedia",
+          "name": "Wikipedia — Namibian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Namibian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NR",
+      "name": "Nauru",
+      "sources": [
+        {
+          "id": "src-nr-wikipedia",
+          "name": "Wikipedia — Nauruan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Nauruan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NP",
+      "name": "Nepal",
+      "sources": [
+        {
+          "id": "src-np-wikipedia",
+          "name": "Wikipedia — Nepalese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Nepalese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NL",
+      "name": "Netherlands",
+      "sources": [
+        {
+          "id": "src-nl-wikipedia",
+          "name": "Wikipedia — Dutch nationality law",
+          "url": "https://en.wikipedia.org/wiki/Dutch_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-nl-gov",
+          "name": "Immigration and Naturalisation Service (Netherlands)",
+          "url": "https://ind.nl/en",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "NZ",
+      "name": "New Zealand",
+      "sources": [
+        {
+          "id": "src-nz-wikipedia",
+          "name": "Wikipedia — New Zealander nationality law",
+          "url": "https://en.wikipedia.org/wiki/New_Zealander_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-nz-gov",
+          "name": "Immigration New Zealand",
+          "url": "https://www.immigration.govt.nz/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "NI",
+      "name": "Nicaragua",
+      "sources": [
+        {
+          "id": "src-ni-wikipedia",
+          "name": "Wikipedia — Nicaraguan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Nicaraguan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NE",
+      "name": "Niger",
+      "sources": [
+        {
+          "id": "src-ne-wikipedia",
+          "name": "Wikipedia — Nigerien nationality law",
+          "url": "https://en.wikipedia.org/wiki/Nigerien_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NG",
+      "name": "Nigeria",
+      "sources": [
+        {
+          "id": "src-ng-wikipedia",
+          "name": "Wikipedia — Nigerian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Nigerian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ng-gov",
+          "name": "Nigeria Immigration Service",
+          "url": "https://immigration.gov.ng/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "KP",
+      "name": "North Korea",
+      "sources": [
+        {
+          "id": "src-kp-wikipedia",
+          "name": "Wikipedia — North Korean nationality law",
+          "url": "https://en.wikipedia.org/wiki/North_Korean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "MK",
+      "name": "North Macedonia",
+      "sources": [
+        {
+          "id": "src-mk-wikipedia",
+          "name": "Wikipedia — Macedonian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Macedonian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "NO",
+      "name": "Norway",
+      "sources": [
+        {
+          "id": "src-no-wikipedia",
+          "name": "Wikipedia — Norwegian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Norwegian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-no-gov",
+          "name": "Norwegian Directorate of Immigration",
+          "url": "https://www.udi.no/en/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "OM",
+      "name": "Oman",
+      "sources": [
+        {
+          "id": "src-om-wikipedia",
+          "name": "Wikipedia — Omani nationality law",
+          "url": "https://en.wikipedia.org/wiki/Omani_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PK",
+      "name": "Pakistan",
+      "sources": [
+        {
+          "id": "src-pk-wikipedia",
+          "name": "Wikipedia — Pakistani nationality law",
+          "url": "https://en.wikipedia.org/wiki/Pakistani_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PW",
+      "name": "Palau",
+      "sources": [
+        {
+          "id": "src-pw-wikipedia",
+          "name": "Wikipedia — Palauan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Palauan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PS",
+      "name": "Palestine",
+      "sources": [
+        {
+          "id": "src-ps-wikipedia",
+          "name": "Wikipedia — Palestinian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Palestinian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PA",
+      "name": "Panama",
+      "sources": [
+        {
+          "id": "src-pa-wikipedia",
+          "name": "Wikipedia — Panamanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Panamanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PG",
+      "name": "Papua New Guinea",
+      "sources": [
+        {
+          "id": "src-pg-wikipedia",
+          "name": "Wikipedia — Papua New Guinean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Papua_New_Guinean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PY",
+      "name": "Paraguay",
+      "sources": [
+        {
+          "id": "src-py-wikipedia",
+          "name": "Wikipedia — Paraguayan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Paraguayan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PE",
+      "name": "Peru",
+      "sources": [
+        {
+          "id": "src-pe-wikipedia",
+          "name": "Wikipedia — Peruvian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Peruvian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PH",
+      "name": "Philippines",
+      "sources": [
+        {
+          "id": "src-ph-wikipedia",
+          "name": "Wikipedia — Filipino nationality law",
+          "url": "https://en.wikipedia.org/wiki/Filipino_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "PL",
+      "name": "Poland",
+      "sources": [
+        {
+          "id": "src-pl-wikipedia",
+          "name": "Wikipedia — Polish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Polish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pl-gov",
+          "name": "Office for Foreigners (Poland)",
+          "url": "https://www.gov.pl/web/udsc-en",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "PT",
+      "name": "Portugal",
+      "sources": [
+        {
+          "id": "src-pt-wikipedia",
+          "name": "Wikipedia — Portuguese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Portuguese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pt-gov",
+          "name": "AIMA — Agência para a Integração, Migrações e Asilo",
+          "url": "https://aima.gov.pt/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "QA",
+      "name": "Qatar",
+      "sources": [
+        {
+          "id": "src-qa-wikipedia",
+          "name": "Wikipedia — Qatari nationality law",
+          "url": "https://en.wikipedia.org/wiki/Qatari_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "RO",
+      "name": "Romania",
+      "sources": [
+        {
+          "id": "src-ro-wikipedia",
+          "name": "Wikipedia — Romanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Romanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "RU",
+      "name": "Russia",
+      "sources": [
+        {
+          "id": "src-ru-wikipedia",
+          "name": "Wikipedia — Russian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Russian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "RW",
+      "name": "Rwanda",
+      "sources": [
+        {
+          "id": "src-rw-wikipedia",
+          "name": "Wikipedia — Rwandan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Rwandan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "KN",
+      "name": "Saint Kitts and Nevis",
+      "sources": [
+        {
+          "id": "src-kn-wikipedia",
+          "name": "Wikipedia — Saint Kitts and Nevis nationality law",
+          "url": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "LC",
+      "name": "Saint Lucia",
+      "sources": [
+        {
+          "id": "src-lc-wikipedia",
+          "name": "Wikipedia — Saint Lucian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Saint_Lucian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "WS",
+      "name": "Samoa",
+      "sources": [
+        {
+          "id": "src-ws-wikipedia",
+          "name": "Wikipedia — Samoan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Samoan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SM",
+      "name": "San Marino",
+      "sources": [
+        {
+          "id": "src-sm-wikipedia",
+          "name": "Wikipedia — Sammarinese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Sammarinese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ST",
+      "name": "São Tomé and Príncipe",
+      "sources": [
+        {
+          "id": "src-st-wikipedia",
+          "name": "Wikipedia — São Toméan nationality law",
+          "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9an_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SA",
+      "name": "Saudi Arabia",
+      "sources": [
+        {
+          "id": "src-sa-wikipedia",
+          "name": "Wikipedia — Saudi Arabian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SN",
+      "name": "Senegal",
+      "sources": [
+        {
+          "id": "src-sn-wikipedia",
+          "name": "Wikipedia — Senegalese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Senegalese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "RS",
+      "name": "Serbia",
+      "sources": [
+        {
+          "id": "src-rs-wikipedia",
+          "name": "Wikipedia — Serbian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Serbian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SC",
+      "name": "Seychelles",
+      "sources": [
+        {
+          "id": "src-sc-wikipedia",
+          "name": "Wikipedia — Seychellois nationality law",
+          "url": "https://en.wikipedia.org/wiki/Seychellois_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SL",
+      "name": "Sierra Leone",
+      "sources": [
+        {
+          "id": "src-sl-wikipedia",
+          "name": "Wikipedia — Sierra Leonean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Sierra_Leonean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SG",
+      "name": "Singapore",
+      "sources": [
+        {
+          "id": "src-sg-wikipedia",
+          "name": "Wikipedia — Singaporean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Singaporean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sg-gov",
+          "name": "Immigration & Checkpoints Authority (Singapore)",
+          "url": "https://www.ica.gov.sg/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "SK",
+      "name": "Slovakia",
+      "sources": [
+        {
+          "id": "src-sk-wikipedia",
+          "name": "Wikipedia — Slovak nationality law",
+          "url": "https://en.wikipedia.org/wiki/Slovak_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SI",
+      "name": "Slovenia",
+      "sources": [
+        {
+          "id": "src-si-wikipedia",
+          "name": "Wikipedia — Slovene nationality law",
+          "url": "https://en.wikipedia.org/wiki/Slovene_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SB",
+      "name": "Solomon Islands",
+      "sources": [
+        {
+          "id": "src-sb-wikipedia",
+          "name": "Wikipedia — Solomon Islander nationality law",
+          "url": "https://en.wikipedia.org/wiki/Solomon_Islander_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SO",
+      "name": "Somalia",
+      "sources": [
+        {
+          "id": "src-so-wikipedia",
+          "name": "Wikipedia — Somali nationality law",
+          "url": "https://en.wikipedia.org/wiki/Somali_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ZA",
+      "name": "South Africa",
+      "sources": [
+        {
+          "id": "src-za-wikipedia",
+          "name": "Wikipedia — South African nationality law",
+          "url": "https://en.wikipedia.org/wiki/South_African_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-za-gov",
+          "name": "Department of Home Affairs (South Africa)",
+          "url": "https://www.dha.gov.za/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "KR",
+      "name": "South Korea",
+      "sources": [
+        {
+          "id": "src-kr-wikipedia",
+          "name": "Wikipedia — South Korean nationality law",
+          "url": "https://en.wikipedia.org/wiki/South_Korean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kr-gov",
+          "name": "Korea Immigration Service",
+          "url": "https://www.immigration.go.kr/immigration_eng/index.do",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "SS",
+      "name": "South Sudan",
+      "sources": [
+        {
+          "id": "src-ss-wikipedia",
+          "name": "Wikipedia — South Sudanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/South_Sudanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ES",
+      "name": "Spain",
+      "sources": [
+        {
+          "id": "src-es-wikipedia",
+          "name": "Wikipedia — Spanish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Spanish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-es-gov",
+          "name": "Ministerio de Inclusión — Extranjería",
+          "url": "https://extranjeros.inclusion.gob.es/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "LK",
+      "name": "Sri Lanka",
+      "sources": [
+        {
+          "id": "src-lk-wikipedia",
+          "name": "Wikipedia — Sri Lankan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Sri_Lankan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "sources": [
+        {
+          "id": "src-vc-wikipedia",
+          "name": "Wikipedia — Saint Vincent and the Grenadines nationality law",
+          "url": "https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SD",
+      "name": "Sudan",
+      "sources": [
+        {
+          "id": "src-sd-wikipedia",
+          "name": "Wikipedia — Sudanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Sudanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SR",
+      "name": "Suriname",
+      "sources": [
+        {
+          "id": "src-sr-wikipedia",
+          "name": "Wikipedia — Surinamer nationality law",
+          "url": "https://en.wikipedia.org/wiki/Surinamer_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "SE",
+      "name": "Sweden",
+      "sources": [
+        {
+          "id": "src-se-wikipedia",
+          "name": "Wikipedia — Swedish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Swedish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-se-gov",
+          "name": "Swedish Migration Agency",
+          "url": "https://www.migrationsverket.se/English/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "CH",
+      "name": "Switzerland",
+      "sources": [
+        {
+          "id": "src-ch-wikipedia",
+          "name": "Wikipedia — Swiss nationality law",
+          "url": "https://en.wikipedia.org/wiki/Swiss_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ch-gov",
+          "name": "State Secretariat for Migration (Switzerland)",
+          "url": "https://www.sem.admin.ch/sem/en/home.html",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "SY",
+      "name": "Syria",
+      "sources": [
+        {
+          "id": "src-sy-wikipedia",
+          "name": "Wikipedia — Syrian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Syrian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TW",
+      "name": "Taiwan",
+      "sources": [
+        {
+          "id": "src-tw-wikipedia",
+          "name": "Wikipedia — Taiwanese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Taiwanese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TJ",
+      "name": "Tajikistan",
+      "sources": [
+        {
+          "id": "src-tj-wikipedia",
+          "name": "Wikipedia — Tadzhik nationality law",
+          "url": "https://en.wikipedia.org/wiki/Tadzhik_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TZ",
+      "name": "Tanzania",
+      "sources": [
+        {
+          "id": "src-tz-wikipedia",
+          "name": "Wikipedia — Tanzanian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Tanzanian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TH",
+      "name": "Thailand",
+      "sources": [
+        {
+          "id": "src-th-wikipedia",
+          "name": "Wikipedia — Thai nationality law",
+          "url": "https://en.wikipedia.org/wiki/Thai_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TL",
+      "name": "Timor-Leste",
+      "sources": [
+        {
+          "id": "src-tl-wikipedia",
+          "name": "Wikipedia — East Timorese nationality law",
+          "url": "https://en.wikipedia.org/wiki/East_Timorese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TG",
+      "name": "Togo",
+      "sources": [
+        {
+          "id": "src-tg-wikipedia",
+          "name": "Wikipedia — Togolese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Togolese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TO",
+      "name": "Tonga",
+      "sources": [
+        {
+          "id": "src-to-wikipedia",
+          "name": "Wikipedia — Tongan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Tongan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TT",
+      "name": "Trinidad and Tobago",
+      "sources": [
+        {
+          "id": "src-tt-wikipedia",
+          "name": "Wikipedia — Trinidadian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Trinidadian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TN",
+      "name": "Tunisia",
+      "sources": [
+        {
+          "id": "src-tn-wikipedia",
+          "name": "Wikipedia — Tunisian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Tunisian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TR",
+      "name": "Türkiye",
+      "sources": [
+        {
+          "id": "src-tr-wikipedia",
+          "name": "Wikipedia — Turkish nationality law",
+          "url": "https://en.wikipedia.org/wiki/Turkish_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TM",
+      "name": "Turkmenistan",
+      "sources": [
+        {
+          "id": "src-tm-wikipedia",
+          "name": "Wikipedia — Turkmen nationality law",
+          "url": "https://en.wikipedia.org/wiki/Turkmen_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "TV",
+      "name": "Tuvalu",
+      "sources": [
+        {
+          "id": "src-tv-wikipedia",
+          "name": "Wikipedia — Tuvaluan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Tuvaluan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "UG",
+      "name": "Uganda",
+      "sources": [
+        {
+          "id": "src-ug-wikipedia",
+          "name": "Wikipedia — Ugandan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ugandan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "UA",
+      "name": "Ukraine",
+      "sources": [
+        {
+          "id": "src-ua-wikipedia",
+          "name": "Wikipedia — Ukrainian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ukrainian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "AE",
+      "name": "United Arab Emirates",
+      "sources": [
+        {
+          "id": "src-ae-wikipedia",
+          "name": "Wikipedia — Emirati nationality law",
+          "url": "https://en.wikipedia.org/wiki/Emirati_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ae-gov",
+          "name": "Federal Authority for Identity & Citizenship (UAE)",
+          "url": "https://icp.gov.ae/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "GB",
+      "name": "United Kingdom",
+      "sources": [
+        {
+          "id": "src-gb-wikipedia",
+          "name": "Wikipedia — British nationality law",
+          "url": "https://en.wikipedia.org/wiki/British_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gb-gov",
+          "name": "UK Visas and Immigration",
+          "url": "https://www.gov.uk/browse/visas-immigration",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "US",
+      "name": "United States",
+      "sources": [
+        {
+          "id": "src-us-wikipedia",
+          "name": "Wikipedia — United States nationality law",
+          "url": "https://en.wikipedia.org/wiki/United_States_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-us-gov",
+          "name": "U.S. Citizenship and Immigration Services",
+          "url": "https://www.uscis.gov/",
+          "category": "Government",
+          "note": "Official government source for immigration and citizenship."
+        }
+      ]
+    },
+    {
+      "iso2": "UY",
+      "name": "Uruguay",
+      "sources": [
+        {
+          "id": "src-uy-wikipedia",
+          "name": "Wikipedia — Uruguayan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Uruguayan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "UZ",
+      "name": "Uzbekistan",
+      "sources": [
+        {
+          "id": "src-uz-wikipedia",
+          "name": "Wikipedia — Uzbekistani nationality law",
+          "url": "https://en.wikipedia.org/wiki/Uzbekistani_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "VU",
+      "name": "Vanuatu",
+      "sources": [
+        {
+          "id": "src-vu-wikipedia",
+          "name": "Wikipedia — Ni-Vanuatu nationality law",
+          "url": "https://en.wikipedia.org/wiki/Ni-Vanuatu_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "VA",
+      "name": "Vatican City",
+      "sources": [
+        {
+          "id": "src-va-wikipedia",
+          "name": "Wikipedia — Vatican City citizenship",
+          "url": "https://en.wikipedia.org/wiki/Vatican_City_citizenship",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "VE",
+      "name": "Venezuela",
+      "sources": [
+        {
+          "id": "src-ve-wikipedia",
+          "name": "Wikipedia — Venezuelan nationality law",
+          "url": "https://en.wikipedia.org/wiki/Venezuelan_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "VN",
+      "name": "Vietnam",
+      "sources": [
+        {
+          "id": "src-vn-wikipedia",
+          "name": "Wikipedia — Vietnamese nationality law",
+          "url": "https://en.wikipedia.org/wiki/Vietnamese_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "YE",
+      "name": "Yemen",
+      "sources": [
+        {
+          "id": "src-ye-wikipedia",
+          "name": "Wikipedia — Yemeni nationality law",
+          "url": "https://en.wikipedia.org/wiki/Yemeni_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ZM",
+      "name": "Zambia",
+      "sources": [
+        {
+          "id": "src-zm-wikipedia",
+          "name": "Wikipedia — Zambian nationality law",
+          "url": "https://en.wikipedia.org/wiki/Zambian_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    },
+    {
+      "iso2": "ZW",
+      "name": "Zimbabwe",
+      "sources": [
+        {
+          "id": "src-zw-wikipedia",
+          "name": "Wikipedia — Zimbabwean nationality law",
+          "url": "https://en.wikipedia.org/wiki/Zimbabwean_nationality_law",
+          "category": "Law",
+          "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        }
+      ]
+    }
+  ]
+}

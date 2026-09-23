@@ -33,7 +33,7 @@ The Cyprus passport offers visa-free, visa-on-arrival, ETA, or e-visa access to 
 
 ## Citizenship by descent
 
-Cyprus applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Cyprus applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Cyprus generally permits dual citizenship.
 
 ## Investment routes
 
-Cyprus offers a **golden visa** (residency by investment) (from ≈ **€300,000** in qualifying investment) — a residence permit leading to naturalisation.
+Cyprus offers a **golden visa** (residency by investment) (from ≈ **€300,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
@@ -53,7 +53,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

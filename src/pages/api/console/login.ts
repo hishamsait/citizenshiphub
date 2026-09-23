@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { verifyTotp } from '../../../lib/auth/totp';
 import { createSessionToken, SESSION_COOKIE, SESSION_TTL_SECONDS } from '../../../lib/auth/session';
 
-/** POST /api/console/login — verify a TOTP code and issue a signed session cookie. */
+/** POST /api/console/login verify a TOTP code and issue a signed session cookie. */
 export const POST: APIRoute = async ({ request, cookies, locals }) => {
   const secret = locals.runtime?.env?.ADMIN_TOTP_SECRET;
   if (typeof secret !== 'string' || secret.length === 0) {

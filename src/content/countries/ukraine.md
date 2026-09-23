@@ -34,7 +34,7 @@ The Ukraine passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Ukraine applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Ukraine applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Ukraine generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Ukraine generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

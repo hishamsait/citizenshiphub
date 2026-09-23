@@ -33,7 +33,7 @@ The Dominica passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Dominica applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Dominica applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Dominica generally permits dual citizenship.
 
 ## Investment routes
 
-Dominica offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) — a direct route to citizenship through investment.
+Dominica offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Other routes
 
@@ -55,7 +55,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

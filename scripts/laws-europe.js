@@ -1,4 +1,4 @@
-// Citizenship-law facts — Europe (best-effort; verify before reliance).
+// Citizenship-law facts Europe (best-effort; verify before reliance).
 // d = citizenshipByDescent (jus sanguinis), y = naturalisation years (null = restricted),
 // c = dual citizenship allowed, f = official fee in EUR (null = varies), n = note.
 export const LAWS = {

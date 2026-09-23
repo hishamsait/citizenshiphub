@@ -8,7 +8,7 @@ import {
   type LeadStatus,
 } from '../../../lib/db/leads';
 
-/** GET /api/console/leads — paginated, filterable list. */
+/** GET /api/console/leads paginated, filterable list. */
 export const GET: APIRoute = async ({ request, locals }) => {
   const url = new URL(request.url);
   const db = getDb(locals);
@@ -34,7 +34,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
   return json(result);
 };
 
-/** PATCH /api/console/leads — update a lead's status. */
+/** PATCH /api/console/leads update a lead's status. */
 export const PATCH: APIRoute = async ({ request, locals }) => {
   const body = (await request.json().catch(() => null)) as { id?: number; status?: string } | null;
   if (!body || typeof body.id !== 'number' || typeof body.status !== 'string') {
@@ -48,7 +48,7 @@ export const PATCH: APIRoute = async ({ request, locals }) => {
   return json({ ok: true });
 };
 
-/** DELETE /api/console/leads?id=123 — delete a lead. */
+/** DELETE /api/console/leads?id=123 delete a lead. */
 export const DELETE: APIRoute = async ({ request, locals }) => {
   const url = new URL(request.url);
   const id = parseInt(url.searchParams.get('id') ?? '', 10);

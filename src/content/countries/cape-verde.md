@@ -31,7 +31,7 @@ The Cape Verde passport offers visa-free, visa-on-arrival, ETA, or e-visa access
 
 ## Citizenship by descent
 
-Cape Verde applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Cape Verde applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -47,7 +47,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

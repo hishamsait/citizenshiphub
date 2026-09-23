@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getDb } from '../../lib/db/client';
 import { getMatrixForPassport } from '../../lib/db/visa';
 
-/** GET /api/visa-matrix?passport=IE — visa matrix row for a single passport. */
+/** GET /api/visa-matrix?passport=IE visa matrix row for a single passport. */
 export const GET: APIRoute = async ({ request, locals }) => {
   const url = new URL(request.url);
   const passport = (url.searchParams.get('passport') ?? '').trim().toUpperCase();

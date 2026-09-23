@@ -33,7 +33,7 @@ The Tajikistan passport offers visa-free, visa-on-arrival, ETA, or e-visa access
 
 ## Citizenship by descent
 
-Tajikistan applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Tajikistan applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -41,11 +41,11 @@ Naturalisation typically requires **5 years** of residence.
 
 ## Dual citizenship
 
-Tajikistan generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Tajikistan generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

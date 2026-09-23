@@ -162,7 +162,7 @@ export interface CitizenshipLaw {
   marriageYears: number | null; // reduced naturalisation via marriage
   languageRequired: boolean | null;
   maxGenerations: number | null; // descent depth (null = unlimited)
-  birthright: boolean | null;   // jus soli — citizenship by birth in territory
+  birthright: boolean | null;   // jus soli citizenship by birth in territory
   cbiMinInvestmentEUR: number | null;
   goldenVisaMinInvestmentEUR: number | null;
   digitalNomadVisa: boolean | null;
@@ -178,4 +178,44 @@ export interface CitizenshipLawsData {
     totalCountries: number;
   };
   countries: CitizenshipLaw[];
+}
+
+export type CitizenshipRouteKey =
+  | 'descent'
+  | 'naturalisation'
+  | 'marriage'
+  | 'birthright'
+  | 'cbi'
+  | 'golden-visa'
+  | 'digital-nomad';
+
+export interface DocumentItem {
+  label: string;
+  hint?: string;
+}
+
+export interface RouteChecklist {
+  title: string;
+  description?: string;
+  note?: string;
+  documents: DocumentItem[];
+}
+
+/** A country-specific override; `documents` fully replaces the route template. */
+export interface RouteChecklistOverride {
+  title?: string;
+  description?: string;
+  note?: string;
+  documents?: DocumentItem[];
+}
+
+export interface CitizenshipDocumentsData {
+  meta: {
+    generatedAt: string;
+    source: string;
+    disclaimer: string;
+    totalRoutes: number;
+  };
+  routes: Record<CitizenshipRouteKey, RouteChecklist>;
+  countries: Record<string, Partial<Record<CitizenshipRouteKey, RouteChecklistOverride>>>;
 }

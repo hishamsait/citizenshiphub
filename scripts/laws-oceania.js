@@ -1,4 +1,4 @@
-// Citizenship-law facts — Oceania (best-effort; verify before reliance).
+// Citizenship-law facts Oceania (best-effort; verify before reliance).
 export const LAWS = {
   AU: { d: true, y: 4, c: true, f: 330, n: '4 yrs lawful residence (1 yr PR); fee AUD $540.' },
   FJ: { d: true, y: 5, c: true },

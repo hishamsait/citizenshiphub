@@ -12,6 +12,11 @@ export default defineConfig({
     imageService: 'passthrough',
     platformProxy: {
       enabled: true,
+      // Workers AI has no local simulator, so Wrangler would otherwise try to
+      // start a "remote preview session" (which requires `wrangler login`).
+      // Keep local dev auth-free; `env.AI` is simply undefined here and the
+      // scraper falls back deterministically. The binding still works in prod.
+      remoteBindings: false,
     },
   }),
   integrations: [react()],

@@ -1,6 +1,6 @@
 /**
  * RFC 6238 TOTP (time-based one-time password) verification on the Web Crypto
- * API — runs identically on Cloudflare Workers and Node 18+ with no runtime
+ * API runs identically on Cloudflare Workers and Node 18+ with no runtime
  * dependencies.
  */
 

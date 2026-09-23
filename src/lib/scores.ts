@@ -8,7 +8,7 @@ function weighted(values: { v: number | null | undefined; w: number }[]): number
   return Math.round(parts.reduce((s, p) => s + (p.v as number) * p.w, 0) / totalW);
 }
 
-/** Freedom & quality of life — composite 0–100 (higher = freer). */
+/** Freedom & quality of life composite 0–100 (higher = freer). */
 export function scoreFreedom(f: CountryFreedom): number | null {
   return weighted([
     { v: f.cpi?.score, w: 25 },
@@ -19,7 +19,7 @@ export function scoreFreedom(f: CountryFreedom): number | null {
   ]);
 }
 
-/** Economic opportunity — composite 0–100 (higher = richer/healthier). */
+/** Economic opportunity composite 0–100 (higher = richer/healthier). */
 export function scoreEconomy(e: EconomicIndicators): number | null {
   const hdi = e.hdi != null ? e.hdi * 100 : null;
   const gdp =
@@ -37,7 +37,7 @@ export function scoreEconomy(e: EconomicIndicators): number | null {
   ]);
 }
 
-/** Tax-friendliness — composite 0–100 (higher = lower tax burden). */
+/** Tax-friendliness composite 0–100 (higher = lower tax burden). */
 export function scoreTax(t: TaxProfile): number | null {
   const base = weighted([
     { v: t.personalIncomeTax != null ? Math.max(0, 100 - (t.personalIncomeTax / 60) * 100) : null, w: 40 },

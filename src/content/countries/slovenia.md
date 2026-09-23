@@ -34,7 +34,7 @@ The Slovenia passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Slovenia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Slovenia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **10 years** of residence.
 
 ## Dual citizenship
 
-Slovenia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Slovenia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

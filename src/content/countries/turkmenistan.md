@@ -33,7 +33,7 @@ The Turkmenistan passport offers visa-free, visa-on-arrival, ETA, or e-visa acce
 
 ## Citizenship by descent
 
-Turkmenistan applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Turkmenistan applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -41,11 +41,11 @@ Naturalisation typically requires **7 years** of residence.
 
 ## Dual citizenship
 
-Turkmenistan generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Turkmenistan generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

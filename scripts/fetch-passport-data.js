@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Citizenship Hub — passport data ETL.
+ * Citizenship Hub passport data ETL.
  *
  * Fetches an open ISO2 passport-destination matrix, classifies each requirement,
  * enriches with country metadata (region/subregion/capital), computes a mobility
@@ -60,7 +60,7 @@ const ENCODING = {
   '?': 'unknown',
 };
 
-// Offline fallback — exact counts measured from the Feb-2026 ISO2 matrix.
+// Offline fallback exact counts measured from the Feb-2026 ISO2 matrix.
 // [code, name, region, subregion, capital, visaFree, visaOnArrival, eta, eVisa, visaRequired, noAdmission]
 const SEED = [
   ['AE', 'United Arab Emirates', 'Asia', 'Western Asia', 'Abu Dhabi', 127, 34, 8, 18, 11, 0],
@@ -225,7 +225,7 @@ function formatCallingCode(idd) {
   if (!root) return null;
   const suffixes = Array.isArray(idd?.suffixes) ? idd.suffixes : [];
   if (suffixes.length === 1) return `${root}${suffixes[0]}`;
-  return root; // multi-suffix plans (e.g. NANP "+1") — show the root
+  return root; // multi-suffix plans (e.g. NANP "+1") show the root
 }
 
 /** Index Natural Earth stats (population / GDP / income) already bundled in the repo. */
@@ -419,7 +419,7 @@ function makeMeta(source, totalCountries) {
     sources,
     license:
       'MIT (passport matrix via imorte/passport-index-data); mledoze/countries (MIT, some ODbL-derived fields); Natural Earth (public domain)',
-    disclaimer: 'Informational only — not legal, immigration, or travel advice. Verify with official sources.',
+    disclaimer: 'Informational only not legal, immigration, or travel advice. Verify with official sources.',
     scoreDefinition: SCORE_INCLUDES_EVISA
       ? 'mobilityScore = visaFree + visaOnArrival + eta + eVisa'
       : 'mobilityScore = visaFree + visaOnArrival + eta',
@@ -438,7 +438,7 @@ function slugify(name) {
 async function main() {
   const opts = parseArgs();
   const startedAt = Date.now();
-  log(opts, '\nCitizenship Hub — passport data ETL');
+  log(opts, '\nCitizenship Hub passport data ETL');
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   fs.mkdirSync(opts.outDir, { recursive: true });
@@ -488,7 +488,7 @@ async function main() {
   }
 
   if (!passports || passports.length === 0) {
-    log(opts, `⚠ No live data available — falling back to bundled seed (${SEED.length} countries).`);
+    log(opts, `⚠ No live data available falling back to bundled seed (${SEED.length} countries).`);
     passports = buildFromSeed().passports;
     source = { name: 'bundled seed (offline fallback)', url: null, updatedAt: null };
   }

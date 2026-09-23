@@ -34,7 +34,7 @@ The Egypt passport offers visa-free, visa-on-arrival, ETA, or e-visa access to *
 
 ## Citizenship by descent
 
-Egypt applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Egypt applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -46,11 +46,11 @@ Egypt generally permits dual citizenship.
 
 ## Investment routes
 
-Egypt offers **citizenship by investment** (from ≈ **€230,000** in qualifying investment) — a direct route to citizenship through investment.
+Egypt offers **citizenship by investment** (from ≈ **€230,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

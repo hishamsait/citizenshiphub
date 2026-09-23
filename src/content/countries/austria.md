@@ -34,7 +34,7 @@ The Austria passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Austria applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Austria applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,11 +44,11 @@ Austria typically requires **B1** language proficiency for naturalisation.
 
 ## Dual citizenship
 
-Austria generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Austria generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Austria offers a **golden visa** (residency by investment) (from ≈ **€3,000,000** in qualifying investment) — a residence permit leading to naturalisation.
+Austria offers a **golden visa** (residency by investment) (from ≈ **€3,000,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Fees & timeline
 

@@ -36,7 +36,7 @@ The Vanuatu passport offers visa-free, visa-on-arrival, ETA, or e-visa access to
 
 ## Citizenship by descent
 
-Vanuatu applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Vanuatu applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,15 +44,15 @@ Naturalisation typically requires **10 years** of residence.
 
 ## Dual citizenship
 
-Vanuatu generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Vanuatu generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Vanuatu offers **citizenship by investment** (from ≈ **€120,000** in qualifying investment) — a direct route to citizenship through investment.
+Vanuatu offers **citizenship by investment** (from ≈ **€120,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

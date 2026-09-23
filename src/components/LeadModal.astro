@@ -1,5 +1,5 @@
 ---
-// Reusable lead-generation modal. Mount it once — it lives in `BaseLayout`
+// Reusable lead-generation modal. Mount it once it lives in `BaseLayout`
 // so it is available on every page. Open it either by adding
 // `data-lead-modal-open` (optionally with `data-service-type` and
 // `data-target-iso`) to any element, or programmatically via
@@ -41,7 +41,7 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
         Get matched with a specialist
       </h2>
       <p id="lead-modal-subtitle" class="mt-2 text-sm leading-relaxed text-slate-500">
-        Tell us where you're headed and a licensed advisor will reach out — free, with no obligation.
+        Tell us where you're headed and a licensed advisor will reach out free, with no obligation.
       </p>
     </div>
 
@@ -114,7 +114,7 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
 
       <p id="lead-modal-error" class="hidden rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"></p>
       <p class="text-xs leading-relaxed text-slate-400">
-        By submitting you agree to be contacted by email about immigration services. No spam — unsubscribe anytime.
+        By submitting you agree to be contacted by email about immigration services. No spam unsubscribe anytime.
       </p>
     </form>
 
@@ -155,7 +155,7 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
 
   const DEFAULT_TITLE = 'Get matched with a specialist';
   const DEFAULT_SUBTITLE =
-    "Tell us where you're headed and a licensed advisor will reach out — free, with no obligation.";
+    "Tell us where you're headed and a licensed advisor will reach out free, with no obligation.";
   const titleEl = document.getElementById('lead-modal-title');
   const subtitleEl = document.getElementById('lead-modal-subtitle');
 
@@ -233,7 +233,7 @@ const serviceTypes = ['Golden Visa', 'Citizenship by Investment', 'Legal Help', 
     } catch (err) {
       if (errorEl) {
         errorEl.textContent =
-          err instanceof Error ? err.message : 'Something went wrong — please try again.';
+          err instanceof Error ? err.message : 'Something went wrong please try again.';
         errorEl.classList.remove('hidden');
       }
     } finally {

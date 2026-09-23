@@ -34,11 +34,11 @@ The Palestine passport offers visa-free, visa-on-arrival, ETA, or e-visa access 
 
 ## Citizenship by descent
 
-Palestine applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Palestine applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
-Naturalisation in Palestine is restricted or not standardised — there is no straightforward residency-based route for most people.
+Naturalisation in Palestine is restricted or not standardised there is no straightforward residency-based route for most people.
 
 ## Dual citizenship
 
@@ -46,7 +46,7 @@ Palestine generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

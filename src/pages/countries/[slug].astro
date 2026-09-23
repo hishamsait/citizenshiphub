@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CountryCard from '../../components/CountryCard.astro';
+import DocumentsChecklist from '../../components/DocumentsChecklist.astro';
 import TravelMap from '../../components/TravelMap.astro';
 import { formatEuro, formatNumber, formatArea, formatUsd, formatPercent, formatGdpUsdM, slugify } from '../../lib/utils';
 import { decodeCell, STATUS_LABEL, type AccessStatus } from '../../lib/visa';
@@ -12,9 +13,12 @@ import { getEconomics } from '../../lib/db/economics';
 import { getFreedom } from '../../lib/db/freedom';
 import { getTax } from '../../lib/db/tax';
 import { getCitizenshipLaw, listCitizenshipLaws } from '../../lib/db/citizenship';
+import { getDocumentsForCountry } from '../../lib/db/documents';
 import { listRankings } from '../../lib/db/rankings';
 import { getMatrixForPassport, getReverseMatrix } from '../../lib/db/visa';
 import { listSources } from '../../lib/db/sources';
+import { listCountryNews } from '../../lib/db/news';
+import { listCountrySources } from '../../lib/db/country-sources';
 
 const db = getDb(Astro.locals);
 const slug = Astro.params.slug ?? '';
@@ -24,21 +28,32 @@ if (!guide) return Astro.redirect('/countries/');
 const iso2 = guide.iso2.toUpperCase();
 const { name, capital, region, subregion, summary, citizenshipByDescent, naturalizationYears, dualCitizenshipAllowed, officialFeeEUR, flag } = guide;
 
-const [profile, economics, freedom, tax, law, rankings, allGuides, allLaws, sources, matrix, allCountries, reverse] =
+const [profile, economics, freedom, tax, law, documents, rankings, allGuides, allLaws, sources, countryNews, countrySources, matrix, allCountries, reverse] =
   await Promise.all([
     getProfile(db, iso2),
     getEconomics(db, iso2),
     getFreedom(db, iso2),
     getTax(db, iso2),
     getCitizenshipLaw(db, iso2),
+    getDocumentsForCountry(db, iso2),
     listRankings(db),
     listGuides(db),
     listCitizenshipLaws(db),
     listSources(db),
+    listCountryNews(db, iso2),
+    listCountrySources(db, iso2),
     getMatrixForPassport(db, iso2),
     listCountries(db),
     getReverseMatrix(db, iso2),
   ]);
+
+const formatNewsDate = (d: string | null) => {
+  if (!d) return '';
+  const date = new Date(d);
+  return Number.isNaN(date.getTime())
+    ? ''
+    : date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+};
 
 const mobility = rankings.find((r) => r.code === iso2) ?? null;
 const countryProfile = profile;
@@ -216,6 +231,33 @@ const relatedGuides = allGuides
   .map((x) => x.guide)
   .slice(0, 4);
 
+// Documents checklist only show the routes this country actually supports
+const checklistRouteOrder = ['descent', 'birthright', 'naturalisation', 'marriage', 'cbi', 'golden-visa', 'digital-nomad'];
+const supportedChecklistRoutes = new Set<string>();
+if (citizenshipByDescent) supportedChecklistRoutes.add('descent');
+if (birthright) supportedChecklistRoutes.add('birthright');
+supportedChecklistRoutes.add('naturalisation');
+if (marriageYears != null) supportedChecklistRoutes.add('marriage');
+if (cbi) supportedChecklistRoutes.add('cbi');
+if (goldenVisa) supportedChecklistRoutes.add('golden-visa');
+if (digitalNomadVisa) supportedChecklistRoutes.add('digital-nomad');
+const checklistRoutes = checklistRouteOrder
+  .filter((r) => supportedChecklistRoutes.has(r) && documents.some((d) => d.route === r))
+  .map((r) => documents.find((d) => d.route === r)!);
+
+// Sticky in-page tab navigation (order mirrors the sections below)
+const tabs = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'visitors', label: 'Visitors' },
+  { id: 'citizenship', label: 'Citizenship' },
+  ...(checklistRoutes.length > 0 ? [{ id: 'documents', label: 'Documents' }] : []),
+  { id: 'data', label: 'Data' },
+  { id: 'travel', label: 'Travel' },
+  { id: 'routes', label: 'Routes' },
+  { id: 'news', label: 'News' },
+  { id: 'sources', label: 'Sources' },
+];
+
 // Passport mobility rank + donut data
 const mobilityRank = mobility?.rank ?? null;
 const totalRanked = rankings.length;
@@ -325,14 +367,14 @@ const quickFields = [
   },
 ];
 
-// "Good news" hero badge — data-driven positive framing
+// "Good news" hero badge data-driven positive framing
 const goodNews = goldenVisa
-  ? 'Residency by investment (golden visa) is available here — often a faster path than full naturalisation.'
+  ? 'Residency by investment (golden visa) is available here often a faster path than full naturalisation.'
   : cbi
     ? 'Direct citizenship by investment is available here.'
     : digitalNomadVisa
-      ? 'A digital-nomad visa is available — a flexible way to start building a route in.'
-      : 'Eligibility is often wider than people expect — a free check takes under a minute.';
+      ? 'A digital-nomad visa is available a flexible way to start building a route in.'
+      : 'Eligibility is often wider than people expect a free check takes under a minute.';
 
 // Alternative routes to citizenship for this country
 interface RouteCard {
@@ -387,18 +429,18 @@ if (routeCards.length === 0) {
 
 // Route-aware quick-check messages
 const qcDescent = citizenshipByDescent
-  ? `If you have ${demonym ?? name} parentage, you may already be a citizen — an advisor can confirm the paperwork in one call.`
+  ? `If you have ${demonym ?? name} parentage, you may already be a citizen an advisor can confirm the paperwork in one call.`
   : `Descent is not the main route into ${name}, but an advisor can check whether any ancestry path applies to you.`;
 const qcInvest = goldenVisa
-  ? `The ${name} Golden Visa (residency by investment) is the most attainable route for investors${goldenVisaMinInvestmentEUR != null ? ` — up to 10-year renewable residency from about ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}. Worth a free eligibility check.`
+  ? `The ${name} Golden Visa (residency by investment) is the most attainable route for investors${goldenVisaMinInvestmentEUR != null ? ` up to 10-year renewable residency from about ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}. Worth a free eligibility check.`
   : cbi
     ? `A direct citizenship-by-investment route is available in ${name}${cbiMinInvestmentEUR != null ? ` from about ${formatEuro(cbiMinInvestmentEUR)}` : ''}. Worth a free eligibility check.`
     : `Investment and residency routes are often faster than full naturalisation. Worth a free eligibility check.`;
 const qcSpecialist = goldenVisa
-  ? `${name} actively nominates specialists and skilled professionals — and the Golden Visa covers professional talent too. Worth a free eligibility check.`
+  ? `${name} actively nominates specialists and skilled professionals and the Golden Visa covers professional talent too. Worth a free eligibility check.`
   : `Many countries actively seek specialists and skilled professionals. Worth a free eligibility check.`;
 const qcNone = goldenVisa
-  ? `No problem — the ${name} Golden Visa has broader entry criteria than citizenship, and many people qualify without realising it. A free check takes under a minute.`
+  ? `No problem the ${name} Golden Visa has broader entry criteria than citizenship, and many people qualify without realising it. A free check takes under a minute.`
   : `You may still qualify through residency, marriage, or other routes. A free check takes under a minute.`;
 
 const overviewFacts = [
@@ -487,8 +529,8 @@ const faqEntries = [
   {
     q: `Can I get ${name} citizenship by descent?`,
     a: citizenshipByDescent
-      ? `Yes — ${name} recognises citizenship by descent${maxGenerations != null ? `, generally limited to ${maxGenerations === 1 ? 'parents' : maxGenerations === 2 ? 'grandparents' : `${maxGenerations} generations`}` : ' with no stated generational limit'}. Verify your eligibility against official sources or speak to an advisor.`
-      : `Generally no — ${name} does not offer a broad citizenship-by-descent route; most applicants pursue naturalisation or a residency/investment route instead.`,
+      ? `Yes ${name} recognises citizenship by descent${maxGenerations != null ? `, generally limited to ${maxGenerations === 1 ? 'parents' : maxGenerations === 2 ? 'grandparents' : `${maxGenerations} generations`}` : ' with no stated generational limit'}. Verify your eligibility against official sources or speak to an advisor.`
+      : `Generally no ${name} does not offer a broad citizenship-by-descent route; most applicants pursue naturalisation or a residency/investment route instead.`,
   },
   {
     q: `How long does naturalisation take in ${name}?`,
@@ -500,7 +542,7 @@ const faqEntries = [
   {
     q: `Does ${name} allow dual citizenship?`,
     a: dualCitizenshipAllowed
-      ? `Yes — ${name} generally permits dual citizenship.`
+      ? `Yes ${name} generally permits dual citizenship.`
       : `${name} generally does not permit dual citizenship, so naturalising may require renouncing your existing nationality.`,
   },
 ];
@@ -508,13 +550,13 @@ const faqEntries = [
 if (goldenVisa) {
   faqEntries.push({
     q: `Does ${name} have a Golden Visa or residency-by-investment route?`,
-    a: `Yes — ${name} offers a residency-by-investment (golden visa) route${goldenVisaMinInvestmentEUR != null ? ` from approximately ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}, which can be faster and more attainable than full naturalisation.`,
+    a: `Yes ${name} offers a residency-by-investment (golden visa) route${goldenVisaMinInvestmentEUR != null ? ` from approximately ${formatEuro(goldenVisaMinInvestmentEUR)}` : ''}, which can be faster and more attainable than full naturalisation.`,
   });
 }
 if (cbi) {
   faqEntries.push({
     q: `Does ${name} offer citizenship by investment?`,
-    a: `Yes — ${name} offers a direct citizenship-by-investment route${cbiMinInvestmentEUR != null ? ` from approximately ${formatEuro(cbiMinInvestmentEUR)}` : ''}.`,
+    a: `Yes ${name} offers a direct citizenship-by-investment route${cbiMinInvestmentEUR != null ? ` from approximately ${formatEuro(cbiMinInvestmentEUR)}` : ''}.`,
   });
 }
 
@@ -548,481 +590,604 @@ const jsonLd = {
 >
   <div id="progressBar" class="fixed left-0 top-0 z-50 h-0.5 w-0 bg-gold-500"></div>
 
-  <article class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-    <header class="pt-4">
-      <nav aria-label="Breadcrumb" class="text-sm text-slate-500">
-        <a href="/countries/" class="transition-colors hover:text-brand-700">Countries</a>
-        <span aria-hidden="true" class="mx-1">·</span>
-        <span>{region}</span>
-        <span aria-hidden="true" class="mx-1">·</span>
-        <span class="text-slate-700">{name}</span>
-      </nav>
+  <article>
+    <div class="mx-auto max-w-7xl px-4 pt-10 sm:px-6" data-country-sticky-sentinel>
+      <header class="pt-4">
+        <nav aria-label="Breadcrumb" class="text-sm text-slate-500">
+          <a href="/countries/" class="transition-colors hover:text-brand-700">Countries</a>
+          <span aria-hidden="true" class="mx-1">·</span>
+          <span>{region}</span>
+          <span aria-hidden="true" class="mx-1">·</span>
+          <span class="text-slate-700">{name}</span>
+        </nav>
 
-      <div class="mt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div class="max-w-2xl">
-          <div class="flex items-center gap-4">
-            {flag && <span class="text-5xl leading-none" aria-hidden="true">{flag}</span>}
-            <div>
-              <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{name}</h1>
-              <p class="mt-1 text-xs font-semibold uppercase tracking-widest text-brand-700">
-                Citizenship guide · {iso2.toUpperCase()}
-              </p>
+        <div class="mt-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-4">
+              {flag && <span class="text-5xl leading-none" aria-hidden="true">{flag}</span>}
+              <div>
+                <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{name}</h1>
+                <p class="mt-1 text-xs font-semibold uppercase tracking-widest text-brand-700">
+                  Citizenship guide · {iso2.toUpperCase()}
+                </p>
+              </div>
+            </div>
+            <p class="mt-4 text-lg leading-relaxed text-slate-600">{summary}</p>
+          </div>
+          <div class="w-full max-w-xs shrink-0 rounded-2xl bg-gold-50 p-5 ring-1 ring-gold-200 lg:w-80">
+            <p class="text-sm font-semibold text-gold-700">✓ Good news</p>
+            <p class="mt-1 text-sm leading-relaxed text-gold-800">{goodNews}</p>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <nav
+      aria-label="On this page"
+      class="sticky top-16 z-30 bg-slate-50/80 backdrop-blur-xl"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex items-center gap-3 py-2.5">
+          <div
+            class="flex min-w-0 flex-1 gap-1 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {
+              tabs.map((t) => (
+                <a
+                  href={`#${t.id}`}
+                  data-tab={t.id}
+                  class="country-tab shrink-0 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                >
+                  {t.label}
+                </a>
+              ))
+            }
+          </div>
+          <div
+            class="country-brand shrink-0 overflow-hidden"
+            data-country-brand
+            title={`${name} (${iso2})`}
+          >
+            <div class="flex items-center gap-2">
+              {flag && <span class="shrink-0 text-lg leading-none" aria-hidden="true">{flag}</span>}
+              <span class="min-w-0 truncate text-sm font-semibold text-slate-900">{name}</span>
             </div>
           </div>
-          <p class="mt-4 text-lg leading-relaxed text-slate-600">{summary}</p>
-        </div>
-        <div class="w-full max-w-xs shrink-0 rounded-2xl bg-gold-50 p-5 ring-1 ring-gold-200 lg:w-80">
-          <p class="text-sm font-semibold text-gold-700">✓ Good news</p>
-          <p class="mt-1 text-sm leading-relaxed text-gold-800">{goodNews}</p>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <section
-      aria-label="At a glance"
-      class="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-slate-200 sm:grid-cols-3 lg:grid-cols-6"
-    >
-      {
-        quickFields.map((f) => (
-          <div class="bg-white px-4 py-4">
-            <dt class="text-[11px] font-medium uppercase tracking-wide text-slate-400">{f.label}</dt>
-            <dd class="mt-1 text-sm font-semibold text-slate-900">{f.value}</dd>
-          </div>
-        ))
-      }
-    </section>
-
-    <section
-      aria-label={`Who can visit ${name}?`}
-      class="mt-10 rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200"
-    >
-      <h2 class="font-display text-xl font-bold text-slate-900">Who can visit {name}?</h2>
-      <p class="mt-1 text-sm text-slate-500">
-        {visitorsAccessible} of {visitorsTotal} passports can enter {name} visa-free, visa on arrival, by ETA, or with an
-        e-visa.
-      </p>
-      <div class="mt-5 space-y-6">
+    <div class="mx-auto max-w-7xl px-4 pb-10 sm:px-6">
+      <section
+        id="overview"
+        aria-label="At a glance"
+        class="mt-8 grid scroll-mt-16 grid-cols-2 gap-px overflow-hidden rounded-2xl bg-slate-200 sm:grid-cols-3 lg:grid-cols-6"
+      >
         {
-          ACCESS_GROUPS.map((s) => {
-            const items = visitorGroups[s] ?? [];
-            if (items.length === 0) return null;
-            return (
-              <div>
-                <h3 class="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  {STATUS_LABEL[s]}
-                  <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
-                    {items.length}
-                  </span>
-                </h3>
-                <ul class="flex flex-wrap gap-1.5">
-                  {
-                    items.map((p) => (
-                      <li>
-                        <a
-                          href={`/countries/${slugify(p.name)}/`}
-                          class="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-sm text-slate-700 ring-1 ring-slate-200 hover:bg-brand-50 hover:text-brand-700"
-                        >
-                          {p.flag && <span class="text-base leading-none" aria-hidden="true">{p.flag}</span>}
-                          {p.name}
-                        </a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            );
-          })
+          quickFields.map((f) => (
+            <div class="bg-white px-4 py-4">
+              <dt class="text-[11px] font-medium uppercase tracking-wide text-slate-400">{f.label}</dt>
+              <dd class="mt-1 text-sm font-semibold text-slate-900">{f.value}</dd>
+            </div>
+          ))
         }
-        <p class="text-sm text-slate-500">{visitorsRequired} passports require a visa to visit {name}.</p>
-      </div>
-    </section>
+      </section>
 
-    <div class="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
-      <div class="min-w-0">
-        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
-          <h2 class="font-display text-xl font-bold text-slate-900">Am I eligible for {name} citizenship?</h2>
-          <p class="mt-1 text-sm text-slate-500">Tap the option closest to your situation for an instant steer.</p>
-          <div class="mt-4 flex flex-wrap gap-2" data-lead-context data-target-iso={iso2} data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}>
-            <button
-              type="button"
-              class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg={qcDescent}
-            >
-              I have {demonym ?? name} parentage
-            </button>
-            <button
-              type="button"
-              class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg={qcInvest}
-            >
-              I can invest or start a business
-            </button>
-            <button
-              type="button"
-              class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg={qcSpecialist}
-            >
-              I'm a specialist or skilled professional
-            </button>
-            <button
-              type="button"
-              class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
-              data-msg={qcNone}
-            >
-              None of these apply to me
-            </button>
-          </div>
-          <div id="qcResult" class="mt-4 hidden rounded-xl bg-emerald-50 p-4 text-sm leading-relaxed text-emerald-900">
-            <p id="qcText"></p>
-          </div>
+      <section
+        id="visitors"
+        aria-label={`Who can visit ${name}?`}
+        class="mt-10 scroll-mt-16 rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200"
+      >
+        <h2 class="font-display text-xl font-bold text-slate-900">Who can visit {name}?</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          {visitorsAccessible} of {visitorsTotal} passports can enter {name} visa-free, visa on arrival, by ETA, or with an
+          e-visa.
+        </p>
+        <div class="mt-5 space-y-6">
+          {
+            ACCESS_GROUPS.map((s) => {
+              const items = visitorGroups[s] ?? [];
+              if (items.length === 0) return null;
+              return (
+                <div>
+                  <h3 class="mb-2 flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+                    {STATUS_LABEL[s]}
+                    <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+                      {items.length}
+                    </span>
+                  </h3>
+                  <ul class="flex flex-wrap gap-1.5">
+                    {
+                      items.map((p) => (
+                        <li>
+                          <a
+                            href={`/countries/${slugify(p.name)}/`}
+                            class="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1 text-sm text-slate-700 ring-1 ring-slate-200 hover:bg-brand-50 hover:text-brand-700"
+                          >
+                            {p.flag && <span class="text-base leading-none" aria-hidden="true">{p.flag}</span>}
+                            {p.name}
+                          </a>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              );
+            })
+          }
+          <p class="text-sm text-slate-500">{visitorsRequired} passports require a visa to visit {name}.</p>
         </div>
+      </section>
 
-        <div class="country-prose prose prose-slate mt-8 max-w-none" set:html={guide.bodyHtml} />
-
-        {
-          goldenVisa && !cbi && (
-            <div class="mt-8 rounded-2xl border border-gold-200 bg-gold-50 p-6">
-              <p class="text-xs font-semibold uppercase tracking-widest text-gold-700">Residency by investment</p>
-              <h3 class="mt-2 font-display text-xl font-bold text-slate-900">
-                The good news: the {name} Golden Visa doesn't need any of that
-              </h3>
-              <p class="mt-2 text-sm leading-relaxed text-slate-700">
-                {goldenVisaMinInvestmentEUR != null
-                  ? `While citizenship is discretionary, the ${name} Golden Visa grants up to 10-year renewable residency through investment — from about ${formatEuro(goldenVisaMinInvestmentEUR)}, with a published fee schedule and processing timeline.`
-                  : `While citizenship is discretionary, the ${name} Golden Visa grants long-term renewable residency through investment — with a clear fee schedule and timeline instead of an unpredictable nomination process.`}
-              </p>
+      <div class="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
+        <div class="min-w-0">
+          <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+            <h2 id="citizenship" class="scroll-mt-16 font-display text-xl font-bold text-slate-900">Am I eligible for {name} citizenship?</h2>
+            <p class="mt-1 text-sm text-slate-500">Tap the option closest to your situation for an instant steer.</p>
+            <div class="mt-4 flex flex-wrap gap-2" data-lead-context data-target-iso={iso2} data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}>
               <button
                 type="button"
-                data-lead-modal-open
-                data-service-type="Golden Visa"
-                data-target-iso={iso2}
-                data-title={`Speak to a specialist about the ${name} Golden Visa`}
-                data-subtitle={`Full citizenship is discretionary, but the ${name} Golden Visa is far more attainable — get a free eligibility check with a licensed specialist.`}
-                class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+                class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
+                data-msg={qcDescent}
               >
-                Speak to a specialist about the {name} Golden Visa →
+                I have {demonym ?? name} parentage
+              </button>
+              <button
+                type="button"
+                class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
+                data-msg={qcInvest}
+              >
+                I can invest or start a business
+              </button>
+              <button
+                type="button"
+                class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
+                data-msg={qcSpecialist}
+              >
+                I'm a specialist or skilled professional
+              </button>
+              <button
+                type="button"
+                class="qc-btn rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-700 hover:text-brand-700"
+                data-msg={qcNone}
+              >
+                None of these apply to me
               </button>
             </div>
-          )
-        }
-      </div>
-      <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
-        {
-          mobility && (
-            <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
-              <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Passport mobility</h2>
-              <div class="mt-4 flex items-center gap-5">
-                <div class="relative h-32 w-32 shrink-0">
-                  <svg viewBox="0 0 120 120" class="h-full w-full -rotate-90" role="img" aria-label="Passport mobility donut chart">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="var(--map-unknown)" stroke-width="12"></circle>
+            <div id="qcResult" class="mt-4 hidden rounded-xl bg-emerald-50 p-4 text-sm leading-relaxed text-emerald-900">
+              <p id="qcText"></p>
+            </div>
+          </div>
+
+          <div class="country-prose prose prose-slate mt-8 max-w-none" set:html={guide.bodyHtml} />
+
+          {
+            goldenVisa && !cbi && (
+              <div class="mt-8 rounded-2xl border border-gold-200 bg-gold-50 p-6">
+                <p class="text-xs font-semibold uppercase tracking-widest text-gold-700">Residency by investment</p>
+                <h3 class="mt-2 font-display text-xl font-bold text-slate-900">
+                  The good news: the {name} Golden Visa doesn't need any of that
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-700">
+                  {goldenVisaMinInvestmentEUR != null
+                    ? `While citizenship is discretionary, the ${name} Golden Visa grants up to 10-year renewable residency through investment from about ${formatEuro(goldenVisaMinInvestmentEUR)}, with a published fee schedule and processing timeline.`
+                    : `While citizenship is discretionary, the ${name} Golden Visa grants long-term renewable residency through investment with a clear fee schedule and timeline instead of an unpredictable nomination process.`}
+                </p>
+                <button
+                  type="button"
+                  data-lead-modal-open
+                  data-service-type="Golden Visa"
+                  data-target-iso={iso2}
+                  data-title={`Speak to a specialist about the ${name} Golden Visa`}
+                  data-subtitle={`Full citizenship is discretionary, but the ${name} Golden Visa is far more attainable get a free eligibility check with a licensed specialist.`}
+                  class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+                >
+                  Speak to a specialist about the {name} Golden Visa →
+                </button>
+              </div>
+            )
+          }
+        </div>
+        <aside class="space-y-6 lg:sticky lg:top-24 lg:self-start">
+          {
+            mobility && (
+              <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Passport mobility</h2>
+                <div class="mt-4 flex items-center gap-5">
+                  <div class="relative h-32 w-32 shrink-0">
+                    <svg viewBox="0 0 120 120" class="h-full w-full -rotate-90" role="img" aria-label="Passport mobility donut chart">
+                      <circle cx="60" cy="60" r="54" fill="none" stroke="var(--map-unknown)" stroke-width="12"></circle>
+                      {
+                        donutArcs
+                          .filter((a) => a.value > 0)
+                          .map((a) => (
+                            <circle
+                              cx="60"
+                              cy="60"
+                              r="54"
+                              fill="none"
+                              stroke={a.color}
+                              stroke-width="12"
+                              stroke-dasharray={`${(a.frac * DONUT_C).toFixed(2)} ${DONUT_C.toFixed(2)}`}
+                              stroke-dashoffset={(-a.offset * DONUT_C).toFixed(2)}
+                            ></circle>
+                          ))
+                      }
+                    </svg>
+                    <div class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
+                      <span class="text-2xl font-extrabold text-slate-900">{mobility.mobilityScore}</span>
+                      <span class="text-[11px] leading-tight text-slate-400">destinations</span>
+                    </div>
+                  </div>
+                  <div class="min-w-0 flex-1 space-y-1.5">
                     {
-                      donutArcs
-                        .filter((a) => a.value > 0)
-                        .map((a) => (
-                          <circle
-                            cx="60"
-                            cy="60"
-                            r="54"
-                            fill="none"
-                            stroke={a.color}
-                            stroke-width="12"
-                            stroke-dasharray={`${(a.frac * DONUT_C).toFixed(2)} ${DONUT_C.toFixed(2)}`}
-                            stroke-dashoffset={(-a.offset * DONUT_C).toFixed(2)}
-                          ></circle>
-                        ))
+                      donutSegments.map((s) => (
+                        <div class="flex items-center justify-between gap-3 text-sm">
+                          <span class="flex items-center gap-2 text-slate-500">
+                            <span class="h-2.5 w-2.5 shrink-0 rounded-sm" style={`background-color:${s.color}`}></span>
+                            {s.label}
+                          </span>
+                          <span class="font-semibold text-slate-900">{s.value}</span>
+                        </div>
+                      ))
                     }
-                  </svg>
-                  <div class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-                    <span class="text-2xl font-extrabold text-slate-900">{mobility.mobilityScore}</span>
-                    <span class="text-[11px] leading-tight text-slate-400">destinations</span>
                   </div>
                 </div>
-                <div class="min-w-0 flex-1 space-y-1.5">
+                <a
+                  href={`/explore/?passport=${iso2}`}
+                  class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
+                >
+                  Explore destinations <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            )
+          }
+
+          <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+            <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">At a glance</h2>
+            <dl class="mt-4">
+              {
+                overviewFacts.map((f) => (
+                  <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                    <dt class="text-slate-500">{f.label}</dt>
+                    <dd class="text-right font-medium text-slate-900">{f.value}</dd>
+                  </div>
+                ))
+              }
+            </dl>
+          </div>
+
+          <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg">
+            <p class="text-xs font-semibold uppercase tracking-widest text-gold-300">Advisor match</p>
+            <h2 class="mt-2 font-display text-xl font-bold">
+              {goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Not sure where to start with ${name}?`}
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-slate-200">
+              {goldenVisa
+                ? `Full citizenship is hard to get but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get matched with a licensed immigration specialist for a free, no-obligation eligibility check.`
+                : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
+            </p>
+            <button
+              type="button"
+              data-lead-modal-open
+              data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}
+              data-target-iso={iso2}
+              data-title={goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Get matched on your fastest route to ${name}`}
+              data-subtitle={goldenVisa
+                ? `Full citizenship is hard to get but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get a free, no-obligation eligibility check.`
+                : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
+              class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
+            >
+              {goldenVisa ? 'Check Golden Visa eligibility →' : 'Get matched, free →'}
+            </button>
+            <p class="mt-3 text-xs text-slate-300">Partner referral we may earn a fee if you engage.</p>
+          </div>
+
+          <div id="alert" class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200" data-lead>
+            <h2 class="font-display text-lg font-bold text-slate-900">Get {name} citizenship updates</h2>
+            <p class="mt-1 text-sm text-slate-500">Law changes and route openings, straight to your inbox.</p>
+            <form class="lead-form" data-service-type="Updates" data-target-iso={iso2}>
+              <div class="lead-fields mt-4 space-y-3">
+                <input
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
+                />
+                <button
+                  type="submit"
+                  class="w-full rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
+                >
+                  Notify me
+                </button>
+              </div>
+              <p class="lead-error mt-3 hidden text-sm text-red-600"></p>
+            </form>
+            <p class="lead-done mt-3 hidden text-sm font-medium text-emerald-700">
+              ✓ You're on the list we'll email you when anything changes.
+            </p>
+          </div>
+
+        </aside>
+      </div>
+
+      {
+        checklistRoutes.length > 0 && (
+          <section id="documents" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+            <h2 class="text-2xl font-bold text-slate-900">Documents checklist</h2>
+            <p class="mt-1 text-sm text-slate-500">
+              The documents you'll typically need for each citizenship route in {name}. Tick items off as you gather them
+              your progress is saved on this device.
+            </p>
+            <DocumentsChecklist routes={checklistRoutes} iso2={iso2} />
+          </section>
+        )
+      }
+
+      <section id="data" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+        <h2 class="text-2xl font-bold text-slate-900">Country data</h2>
+        <p class="mt-1 text-sm text-slate-500">Overview, citizenship routes, economy, freedom, and tax at a glance.</p>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {
+            factSections.map((section) => (
+              <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-slate-500">{section.title}</h3>
+                <dl class="mt-4">
                   {
-                    donutSegments.map((s) => (
-                      <div class="flex items-center justify-between gap-3 text-sm">
-                        <span class="flex items-center gap-2 text-slate-500">
-                          <span class="h-2.5 w-2.5 shrink-0 rounded-sm" style={`background-color:${s.color}`}></span>
-                          {s.label}
-                        </span>
-                        <span class="font-semibold text-slate-900">{s.value}</span>
+                    section.facts.map((f) => (
+                      <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
+                        <dt class="text-slate-500">{f.label}</dt>
+                        <dd class="text-right font-medium text-slate-900">
+                          {f.value}
+                          {f.note && <span class="ml-1 text-xs font-normal text-slate-400">{f.note}</span>}
+                        </dd>
                       </div>
                     ))
                   }
-                </div>
+                </dl>
               </div>
-              <a
-                href={`/explore/?passport=${iso2}`}
-                class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-800"
-              >
-                Explore destinations <span aria-hidden="true">→</span>
-              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="travel" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+        <h2 class="text-2xl font-bold text-slate-900">Where the {name} passport can travel</h2>
+        <p class="mt-1 text-sm text-slate-500">Each dot is a destination colours show what you need to enter.</p>
+
+        <div class="mt-6 grid gap-8 lg:grid-cols-2">
+          <div>
+            <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
+              <li class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-free)"></span>
+                Visa-free
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-on-arrival)"></span>
+                Visa on arrival
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-eta)"></span>
+                ETA
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-e-visa)"></span>
+                e-Visa
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-required)"></span>
+                Visa required
+              </li>
+            </ul>
+
+            <div class="mt-6 space-y-7">
+              {
+                mobilityGroups.map((g) => {
+                  const summary = [
+                    g.free ? `${g.free} visa-free` : '',
+                    g.arrival ? `${g.arrival} on arrival` : '',
+                    g.eta ? `${g.eta} ETA` : '',
+                    g.evisa ? `${g.evisa} e-visa` : '',
+                    g.required ? `${g.required} required` : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' · ');
+                  const dots = [
+                    ...Array(g.free).fill('var(--map-visa-free)'),
+                    ...Array(g.arrival).fill('var(--map-visa-on-arrival)'),
+                    ...Array(g.eta).fill('var(--map-eta)'),
+                    ...Array(g.evisa).fill('var(--map-e-visa)'),
+                    ...Array(g.required).fill('var(--map-visa-required)'),
+                  ];
+                  return (
+                    <div>
+                      <div class="flex flex-wrap items-baseline justify-between gap-2">
+                        <h3 class="text-sm font-semibold text-slate-900">{g.group}</h3>
+                        <span class="text-xs text-slate-400">{summary}</span>
+                      </div>
+                      <div class="mt-2 flex flex-wrap gap-1">
+                        {dots.map((color) => (
+                          <span class="h-2.5 w-2.5 rounded-[3px]" style={`background-color:${color}`}></span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })
+              }
             </div>
+          </div>
+
+          <div>
+            <TravelMap statusByIso2={statusByIso2} />
+          </div>
+        </div>
+      </section>
+
+      <section id="routes" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+        <h2 class="text-2xl font-bold text-slate-900">Alternative paths to {name} citizenship</h2>
+        <p class="mt-1 text-sm text-slate-500">Beyond standard naturalisation, these routes may apply to you.</p>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {
+            routeCards.map((route) => (
+              <div class="flex flex-col rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
+                <h3 class="font-display text-lg font-bold text-slate-900">{route.title}</h3>
+                <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{route.body}</p>
+                <button
+                  type="button"
+                  data-lead-modal-open
+                  data-service-type={route.serviceType}
+                  data-target-iso={iso2}
+                  data-title={`${route.title} ${name}`}
+                  data-subtitle={route.body}
+                  class="mt-4 inline-flex w-fit cursor-pointer items-center gap-1 bg-transparent p-0 text-left text-sm font-semibold text-brand-700 hover:text-brand-800"
+                >
+                  {route.cta}
+                </button>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      {
+        relatedGuides.length > 0 && (
+          <section class="mt-16 border-t border-slate-200 pt-10">
+            <h2 class="text-2xl font-bold text-slate-900">More citizenship guides</h2>
+            <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {
+                relatedGuides.map((g) => (
+                  <CountryCard
+                    slug={g.slug}
+                    name={g.name}
+                    iso2={g.iso2}
+                    capital={g.capital ?? ''}
+                    region={g.region}
+                    summary={g.summary ?? ''}
+                    citizenshipByDescent={g.citizenshipByDescent}
+                    naturalizationYears={g.naturalizationYears}
+                    dualCitizenshipAllowed={g.dualCitizenshipAllowed}
+                    officialFeeEUR={g.officialFeeEUR}
+                    flag={g.flag}
+                  />
+                ))
+              }
+            </div>
+          </section>
+        )
+      }
+
+      <section id="news" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+        <h2 class="text-2xl font-bold text-slate-900">Latest {name} immigration news</h2>
+        <p class="mt-1 text-sm text-slate-500">Recent headlines on {name} immigration and citizenship, auto-fetched from Google News.</p>
+
+        {
+          countryNews.length > 0 ? (
+            <ul class="mt-6 grid gap-4 md:grid-cols-2">
+              {
+                countryNews.map((n) => (
+                  <li class="rounded-xl border border-slate-200 bg-white p-4">
+                    <a
+                      href={n.url}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      class="block font-semibold text-slate-900 hover:text-brand-700"
+                    >
+                      {n.title} ↗
+                    </a>
+                    <p class="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
+                      {n.sourceName && <span class="font-medium text-slate-600">{n.sourceName}</span>}
+                      {n.publishedAt && <time datetime={n.publishedAt}>{formatNewsDate(n.publishedAt)}</time>}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          ) : (
+            <p class="mt-6 rounded-lg bg-slate-100 p-4 text-sm text-slate-500">
+              No recent headlines yet. Check back soon, or follow the official sources below.
+            </p>
+          )
+        }
+      </section>
+
+      <section id="sources" class="mt-16 scroll-mt-16 border-t border-slate-200 pt-10">
+        <h2 class="text-2xl font-bold text-slate-900">{name} immigration &amp; citizenship sources</h2>
+        <p class="mt-1 text-sm text-slate-500">
+          Official government portals and reference pages for {name} citizenship and immigration rules.
+        </p>
+
+        {
+          countrySources.length > 0 ? (
+            <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+              {
+                countrySources.map((s) => (
+                  <li class="flex flex-col rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+                    <div class="flex flex-wrap items-center gap-2">
+                      <a
+                        href={s.url}
+                        target="_blank"
+                        rel="noopener nofollow"
+                        class="font-semibold text-slate-900 hover:text-brand-700"
+                      >
+                        {s.name} ↗
+                      </a>
+                      {s.category && (
+                        <span class="rounded-full bg-brand-50 px-2 py-0.5 text-xs font-medium text-brand-700">{s.category}</span>
+                      )}
+                    </div>
+                    {s.note && <p class="mt-1 text-xs text-slate-400">{s.note}</p>}
+                  </li>
+                ))
+              }
+            </ul>
+          ) : (
+            <p class="mt-6 rounded-lg bg-slate-100 p-4 text-sm text-slate-500">
+              No specific sources listed yet for {name}. Refer to the general data sources below.
+            </p>
           )
         }
 
-        <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">At a glance</h2>
-          <dl class="mt-4">
+        <details class="mt-6 rounded-xl border border-slate-200 bg-white p-4">
+          <summary class="cursor-pointer text-sm font-semibold text-slate-700">General data sources &amp; licenses</summary>
+          <ul class="mt-4 grid gap-4 sm:grid-cols-2">
             {
-              overviewFacts.map((f) => (
-                <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
-                  <dt class="text-slate-500">{f.label}</dt>
-                  <dd class="text-right font-medium text-slate-900">{f.value}</dd>
-                </div>
-              ))
-            }
-          </dl>
-        </div>
-
-        <div id="advisor" class="rounded-2xl bg-brand-700 p-6 text-slate-50 shadow-lg">
-          <p class="text-xs font-semibold uppercase tracking-widest text-gold-300">Advisor match</p>
-          <h2 class="mt-2 font-display text-xl font-bold">
-            {goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Not sure where to start with ${name}?`}
-          </h2>
-          <p class="mt-2 text-sm leading-relaxed text-slate-200">
-            {goldenVisa
-              ? `Full citizenship is hard to get — but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get matched with a licensed immigration specialist for a free, no-obligation eligibility check.`
-              : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
-          </p>
-          <button
-            type="button"
-            data-lead-modal-open
-            data-service-type={goldenVisa ? 'Golden Visa' : 'Legal Help'}
-            data-target-iso={iso2}
-            data-title={goldenVisa ? `Speak to a specialist about the ${name} Golden Visa` : `Get matched on your fastest route to ${name}`}
-            data-subtitle={goldenVisa
-              ? `Full citizenship is hard to get — but the ${name} Golden Visa and nomination-for-investors route are far more attainable. Get a free, no-obligation eligibility check.`
-              : `Get matched with a vetted immigration advisor for a free, no-obligation eligibility check on your fastest route to ${name}.`}
-            class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg bg-gold-500 px-4 py-2.5 text-sm font-semibold text-brand-900 transition hover:bg-gold-400"
-          >
-            {goldenVisa ? 'Check Golden Visa eligibility →' : 'Get matched, free →'}
-          </button>
-          <p class="mt-3 text-xs text-slate-300">Partner referral — we may earn a fee if you engage.</p>
-        </div>
-
-        <div id="alert" class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200" data-lead>
-          <h2 class="font-display text-lg font-bold text-slate-900">Get {name} citizenship updates</h2>
-          <p class="mt-1 text-sm text-slate-500">Law changes and route openings, straight to your inbox.</p>
-          <form class="lead-form" data-service-type="Updates" data-target-iso={iso2}>
-            <div class="lead-fields mt-4 space-y-3">
-              <input
-                type="email"
-                required
-                placeholder="you@example.com"
-                class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-gold-500 focus:outline-none focus:ring-2 focus:ring-gold-500/40"
-              />
-              <button
-                type="submit"
-                class="w-full rounded-lg bg-brand-700 px-4 py-2.5 text-sm font-semibold text-slate-50 transition hover:bg-brand-800"
-              >
-                Notify me
-              </button>
-            </div>
-            <p class="lead-error mt-3 hidden text-sm text-red-600"></p>
-          </form>
-          <p class="lead-done mt-3 hidden text-sm font-medium text-emerald-700">
-            ✓ You're on the list — we'll email you when anything changes.
-          </p>
-        </div>
-
-      </aside>
-    </div>
-
-    <section class="mt-16 border-t border-slate-200 pt-10">
-      <h2 class="text-2xl font-bold text-slate-900">Country data</h2>
-      <p class="mt-1 text-sm text-slate-500">Overview, citizenship routes, economy, freedom, and tax — at a glance.</p>
-      <div class="mt-6 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {
-          factSections.map((section) => (
-            <div class="rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
-              <h3 class="text-sm font-semibold uppercase tracking-wide text-slate-500">{section.title}</h3>
-              <dl class="mt-4">
-                {
-                  section.facts.map((f) => (
-                    <div class="flex items-center justify-between gap-4 py-2.5 text-sm">
-                      <dt class="text-slate-500">{f.label}</dt>
-                      <dd class="text-right font-medium text-slate-900">
-                        {f.value}
-                        {f.note && <span class="ml-1 text-xs font-normal text-slate-400">{f.note}</span>}
-                      </dd>
-                    </div>
-                  ))
-                }
-              </dl>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="mt-16 border-t border-slate-200 pt-10">
-      <h2 class="text-2xl font-bold text-slate-900">Where the {name} passport can travel</h2>
-      <p class="mt-1 text-sm text-slate-500">Each dot is a destination — colours show what you need to enter.</p>
-
-      <div class="mt-6 grid gap-8 lg:grid-cols-2">
-        <div>
-          <ul class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
-            <li class="flex items-center gap-1.5">
-              <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-free)"></span>
-              Visa-free
-            </li>
-            <li class="flex items-center gap-1.5">
-              <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-on-arrival)"></span>
-              Visa on arrival
-            </li>
-            <li class="flex items-center gap-1.5">
-              <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-eta)"></span>
-              ETA
-            </li>
-            <li class="flex items-center gap-1.5">
-              <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-e-visa)"></span>
-              e-Visa
-            </li>
-            <li class="flex items-center gap-1.5">
-              <span class="h-2.5 w-2.5 rounded-sm" style="background-color:var(--map-visa-required)"></span>
-              Visa required
-            </li>
-          </ul>
-
-          <div class="mt-6 space-y-7">
-            {
-              mobilityGroups.map((g) => {
-                const summary = [
-                  g.free ? `${g.free} visa-free` : '',
-                  g.arrival ? `${g.arrival} on arrival` : '',
-                  g.eta ? `${g.eta} ETA` : '',
-                  g.evisa ? `${g.evisa} e-visa` : '',
-                  g.required ? `${g.required} required` : '',
-                ]
-                  .filter(Boolean)
-                  .join(' · ');
-                const dots = [
-                  ...Array(g.free).fill('var(--map-visa-free)'),
-                  ...Array(g.arrival).fill('var(--map-visa-on-arrival)'),
-                  ...Array(g.eta).fill('var(--map-eta)'),
-                  ...Array(g.evisa).fill('var(--map-e-visa)'),
-                  ...Array(g.required).fill('var(--map-visa-required)'),
-                ];
-                return (
-                  <div>
-                    <div class="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 class="text-sm font-semibold text-slate-900">{g.group}</h3>
-                      <span class="text-xs text-slate-400">{summary}</span>
-                    </div>
-                    <div class="mt-2 flex flex-wrap gap-1">
-                      {dots.map((color) => (
-                        <span class="h-2.5 w-2.5 rounded-[3px]" style={`background-color:${color}`}></span>
-                      ))}
-                    </div>
+              sources.map((s) => (
+                <li class="text-sm text-slate-600">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <a
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener nofollow"
+                      class="font-semibold text-slate-900 hover:text-brand-700"
+                    >
+                      {s.name} ↗
+                    </a>
+                    <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
+                      {s.license.name}
+                    </span>
                   </div>
-                );
-              })
-            }
-          </div>
-        </div>
-
-        <div>
-          <TravelMap statusByIso2={statusByIso2} />
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-16 border-t border-slate-200 pt-10">
-      <h2 class="text-2xl font-bold text-slate-900">Alternative paths to {name} citizenship</h2>
-      <p class="mt-1 text-sm text-slate-500">Beyond standard naturalisation, these routes may apply to you.</p>
-      <div class="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {
-          routeCards.map((route) => (
-            <div class="flex flex-col rounded-2xl bg-white p-6 shadow-lg shadow-black/5 ring-1 ring-slate-200">
-              <h3 class="font-display text-lg font-bold text-slate-900">{route.title}</h3>
-              <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{route.body}</p>
-              <button
-                type="button"
-                data-lead-modal-open
-                data-service-type={route.serviceType}
-                data-target-iso={iso2}
-                data-title={`${route.title} — ${name}`}
-                data-subtitle={route.body}
-                class="mt-4 inline-flex w-fit cursor-pointer items-center gap-1 bg-transparent p-0 text-left text-sm font-semibold text-brand-700 hover:text-brand-800"
-              >
-                {route.cta}
-              </button>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    {
-      relatedGuides.length > 0 && (
-        <section class="mt-16 border-t border-slate-200 pt-10">
-          <h2 class="text-2xl font-bold text-slate-900">More citizenship guides</h2>
-          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {
-              relatedGuides.map((g) => (
-                <CountryCard
-                  slug={g.slug}
-                  name={g.name}
-                  iso2={g.iso2}
-                  capital={g.capital ?? ''}
-                  region={g.region}
-                  summary={g.summary ?? ''}
-                  citizenshipByDescent={g.citizenshipByDescent}
-                  naturalizationYears={g.naturalizationYears}
-                  dualCitizenshipAllowed={g.dualCitizenshipAllowed}
-                  officialFeeEUR={g.officialFeeEUR}
-                  flag={g.flag}
-                />
+                  <p class="mt-1">{s.provides}</p>
+                  <p class="mt-1 text-xs text-slate-400">{s.attribution}</p>
+                  {s.license.restrictions && (
+                    <p class="mt-1 inline-block rounded bg-amber-50 px-2 py-1 text-xs text-amber-800">
+                      Restrictions: {s.license.restrictions}
+                    </p>
+                  )}
+                  {s.note && <p class="mt-1 text-xs text-amber-700">{s.note}</p>}
+                </li>
               ))
             }
-          </div>
-        </section>
-      )
-    }
-    <section class="mt-16 border-t border-slate-200 pt-10">
-      <h2 class="text-xl font-bold text-slate-900">Data sources &amp; licenses</h2>
-      <p class="mt-2 text-sm text-slate-500">
-        This page draws on the following public sources. Each is listed with its license and the required attribution.
-      </p>
+          </ul>
+        </details>
 
-      <ul class="mt-6 grid gap-6 sm:grid-cols-2">
-        {
-          sources.map((s) => (
-            <li class="rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
-              <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener nofollow"
-                  class="font-semibold text-slate-900 hover:text-brand-700"
-                >
-                  {s.name} ↗
-                </a>
-                <span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-500">
-                  {s.license.name}
-                </span>
-              </div>
-              <p class="mt-1">{s.provides}</p>
-              <p class="mt-1 text-xs text-slate-400">{s.attribution}</p>
-              {s.license.restrictions && (
-                <p class="mt-1 inline-block rounded bg-amber-50 px-2 py-1 text-xs text-amber-800">
-                  Restrictions: {s.license.restrictions}
-                </p>
-              )}
-              {s.note && <p class="mt-1 text-xs text-amber-700">{s.note}</p>}
-            </li>
-          ))
-        }
-      </ul>
-
-      <p class="mt-6 rounded-lg bg-slate-100 p-4 text-xs leading-relaxed text-slate-500">
-        Citizenship Hub is an independent resource and is not affiliated with, endorsed by, or sponsored by any of the
-        organisations above. Informational only — not legal, immigration, tax, investment, or travel advice.
-        Requirements, scores, fees, and tax rates change frequently; always verify with the relevant official government
-        source before acting.
-      </p>
-    </section>
+        <p class="mt-6 rounded-lg bg-slate-100 p-4 text-xs leading-relaxed text-slate-500">
+          Citizenship Hub is an independent resource and is not affiliated with, endorsed by, or sponsored by any of the
+          organisations above. Informational only not legal, immigration, tax, investment, or travel advice.
+          Requirements, scores, fees, and tax rates change frequently; always verify with the relevant official government
+          source before acting.
+        </p>
+      </section>
+    </div>
   </article>
 
   <script>
@@ -1038,7 +1203,22 @@ const jsonLd = {
       onScroll();
     }
 
-    // Quick eligibility check — instant positive feedback
+    // Country identity — reveal once the section nav is stuck under the header
+    const stickySentinel = document.querySelector('[data-country-sticky-sentinel]');
+    const countryBrand = document.querySelector<HTMLElement>('[data-country-brand]');
+    if (stickySentinel && countryBrand && 'IntersectionObserver' in window) {
+      const brandObserver = new IntersectionObserver(
+        ([entry]) => {
+          countryBrand.classList.toggle('is-visible', !entry.isIntersecting);
+          if (entry.isIntersecting) countryBrand.setAttribute('aria-hidden', 'true');
+          else countryBrand.removeAttribute('aria-hidden');
+        },
+        { rootMargin: '-64px 0px 0px 0px' },
+      );
+      brandObserver.observe(stickySentinel);
+    }
+
+    // Quick eligibility check instant positive feedback
     const leadContext = document.querySelector<HTMLElement>('[data-lead-context]');
     const leadTargetIso = leadContext?.dataset.targetIso ?? '';
     const leadServiceType = leadContext?.dataset.serviceType ?? 'Golden Visa';
@@ -1066,7 +1246,7 @@ const jsonLd = {
       });
     });
 
-    // Lead capture — POST to /api/lead so every submission persists to the DB
+    // Lead capture POST to /api/lead so every submission persists to the DB
     document.querySelectorAll<HTMLFormElement>('.lead-form').forEach((form) => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -1096,7 +1276,7 @@ const jsonLd = {
           done?.classList.remove('hidden');
         } catch {
           if (errorEl) {
-            errorEl.textContent = 'Something went wrong — please try again.';
+            errorEl.textContent = 'Something went wrong please try again.';
             errorEl.classList.remove('hidden');
           }
         } finally {
@@ -1104,6 +1284,34 @@ const jsonLd = {
         }
       });
     });
+
+    // Section tab scrollspy highlight the active section's tab while scrolling
+    const sectionTabs = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-tab]'));
+    if (sectionTabs.length && 'IntersectionObserver' in window) {
+      const tabSections = sectionTabs
+        .map((tab) => document.getElementById(tab.dataset.tab || ''))
+        .filter((el): el is HTMLElement => el !== null);
+      const setActiveTab = (id: string | undefined) => {
+        for (const tab of sectionTabs) {
+          const active = id !== undefined && tab.dataset.tab === id;
+          if (active) tab.setAttribute('aria-current', 'true');
+          else tab.removeAttribute('aria-current');
+        }
+      };
+      const tabObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) if (entry.isIntersecting) setActiveTab(entry.target.id);
+        },
+        { rootMargin: '-35% 0px -55% 0px' },
+      );
+      for (const section of tabSections) tabObserver.observe(section);
+
+      // Highlight the hash target on load, falling back to the first section.
+      const hashId = window.location.hash ? window.location.hash.slice(1) : null;
+      const initialId =
+        hashId && tabSections.some((s) => s.id === hashId) ? hashId : sectionTabs[0]?.dataset.tab;
+      if (initialId) setActiveTab(initialId);
+    }
   </script>
 
   <style>
@@ -1114,6 +1322,31 @@ const jsonLd = {
     .country-prose :global(h2),
     .country-prose :global(h3) {
       scroll-margin-top: 6rem;
+    }
+
+    .country-tab[aria-current='true'] {
+      background: var(--color-brand-700);
+      color: var(--color-slate-50);
+    }
+
+    .country-brand {
+      max-width: 0;
+      opacity: 0;
+      transform: translateX(1.5rem);
+      transition:
+        max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .country-brand.is-visible {
+      max-width: 12rem;
+      opacity: 1;
+      transform: translateX(0);
+    }
+    @media (min-width: 640px) {
+      .country-brand.is-visible {
+        max-width: 20rem;
+      }
     }
   </style>
 </BaseLayout>

@@ -34,7 +34,7 @@ The Bosnia and Herzegovina passport offers visa-free, visa-on-arrival, ETA, or e
 
 ## Citizenship by descent
 
-Bosnia and Herzegovina applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Bosnia and Herzegovina applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -46,7 +46,7 @@ Bosnia and Herzegovina generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

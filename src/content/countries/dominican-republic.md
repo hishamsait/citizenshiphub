@@ -32,7 +32,7 @@ The Dominican Republic passport offers visa-free, visa-on-arrival, ETA, or e-vis
 
 ## Citizenship by descent
 
-Dominican Republic applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Dominican Republic applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -48,7 +48,7 @@ Citizenship is granted by **birth in the territory** (jus soli).
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

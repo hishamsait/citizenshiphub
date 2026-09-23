@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-22",
+    "source": "Compiled from official immigration/nationality guidance (approximate; verify against official sources before reliance).",
+    "disclaimer": "Informational only; not legal or immigration advice.",
+    "totalRoutes": 7
+  },
+  "routes": {
+    "descent": {
+      "title": "Citizenship by descent",
+      "description": "Proving your lineage to a citizen parent or ancestor.",
+      "documents": [
+        { "label": "Your birth certificate", "hint": "long-form / full copy" },
+        { "label": "Parent's birth certificate", "hint": "proving lineage" },
+        { "label": "Parent's citizenship certificate or passport" },
+        { "label": "Parents' marriage certificate", "hint": "if required to establish lineage" },
+        { "label": "Proof of name changes", "hint": "deed poll or marriage records, if any" },
+        { "label": "Certified translations", "hint": "for any foreign-language documents" },
+        { "label": "Completed application form", "hint": "plus any consular fee" }
+      ]
+    },
+    "naturalisation": {
+      "title": "Naturalisation",
+      "description": "The standard route via continuous lawful residence.",
+      "documents": [
+        { "label": "Valid passport or travel document" },
+        { "label": "Birth certificate", "hint": "certified copy" },
+        { "label": "Proof of lawful residence", "hint": "visas, residence permits, entry/exit records" },
+        { "label": "Police clearance certificate(s)", "hint": "from current and previous countries of residence" },
+        { "label": "Proof of income / self-sufficiency", "hint": "employment contract, tax returns, bank statements" },
+        { "label": "Language proficiency certificate", "hint": "if the country requires it" },
+        { "label": "Integration / civics test result", "hint": "if required" },
+        { "label": "Application form and fee payment receipt" }
+      ]
+    },
+    "marriage": {
+      "title": "Naturalisation via marriage",
+      "description": "A reduced residency route for spouses of citizens.",
+      "documents": [
+        { "label": "Marriage certificate" },
+        { "label": "Spouse's passport or citizenship certificate" },
+        { "label": "Proof of cohabitation / shared residence", "hint": "joint bills, tenancy, joint accounts" },
+        { "label": "Your valid passport or travel document" },
+        { "label": "Birth certificate", "hint": "certified copy" },
+        { "label": "Police clearance certificate(s)" },
+        { "label": "Proof of lawful residence", "hint": "visas / residence permits" }
+      ]
+    },
+    "birthright": {
+      "title": "Citizenship by birth (jus soli)",
+      "description": "Acquired by being born in the territory.",
+      "documents": [
+        { "label": "Child's birth certificate", "hint": "issued in-country showing place of birth" },
+        { "label": "Parents' identity documents", "hint": "passports / national IDs" },
+        { "label": "Parents' residence or status documents", "hint": "where applicable" },
+        { "label": "Application / registration form", "hint": "for a certificate of citizenship if needed" }
+      ]
+    },
+    "cbi": {
+      "title": "Citizenship by investment",
+      "description": "A direct route to citizenship through a qualifying investment.",
+      "documents": [
+        { "label": "Valid passport", "hint": "all applicants and dependants" },
+        { "label": "Proof of source of funds", "hint": "bank statements, tax returns, sale proceeds" },
+        { "label": "Bank reference letter(s)" },
+        { "label": "Proof of investment", "hint": "property contract, donation, or approved fund receipt" },
+        { "label": "Police clearance certificate(s)" },
+        { "label": "Medical certificate and/or health insurance" },
+        { "label": "Completed application forms", "hint": "main applicant plus dependants" },
+        { "label": "Due-diligence / application fee payment" }
+      ]
+    },
+    "golden-visa": {
+      "title": "Residency by investment (golden visa)",
+      "description": "A residence permit obtained through investment, often leading to naturalisation.",
+      "documents": [
+        { "label": "Valid passport" },
+        { "label": "Proof of investment", "hint": "property, fund, or business investment" },
+        { "label": "Proof of source of funds" },
+        { "label": "Police clearance certificate(s)" },
+        { "label": "Health insurance" },
+        { "label": "Application form and residence fee payment" }
+      ]
+    },
+    "digital-nomad": {
+      "title": "Digital nomad / remote-work visa",
+      "description": "A flexible, lower-barrier residency route for remote workers.",
+      "documents": [
+        { "label": "Valid passport" },
+        { "label": "Proof of remote employment or business", "hint": "contract, client agreements, or company registration" },
+        { "label": "Proof of income", "hint": "meeting the minimum threshold" },
+        { "label": "Health insurance" },
+        { "label": "Proof of accommodation" },
+        { "label": "Application form and fee payment" }
+      ]
+    }
+  },
+  "countries": {
+    "JP": {
+      "descent": {
+        "documents": [
+          { "label": "Your birth certificate" },
+          { "label": "Japanese parent's family register (koseki tōhon)" },
+          { "label": "Proof of the Japanese parent's nationality" },
+          { "label": "Notification of birth / retention of nationality", "hint": "filed within three months for children born abroad" },
+          { "label": "Certified translations", "hint": "for any foreign-language documents" }
+        ]
+      },
+      "naturalisation": {
+        "documents": [
+          { "label": "Valid passport and residence card" },
+          { "label": "Birth certificate" },
+          { "label": "Proof of continuous residence", "hint": "typically five years" },
+          { "label": "Proof of independent livelihood", "hint": "employment, tax, and pension records" },
+          { "label": "Japanese-language ability evidence", "hint": "e.g. JLPT certificate or interview" },
+          { "label": "Guarantor letter(s)", "hint": "a Japanese national who vouches for you" },
+          { "label": "Police clearance certificate(s)" },
+          { "label": "Application form and supporting documents" }
+        ]
+      }
+    },
+    "IT": {
+      "descent": {
+        "documents": [
+          { "label": "Your birth certificate" },
+          { "label": "Ancestor's Italian birth certificate", "hint": "comune record" },
+          { "label": "Ancestor's naturalisation records", "hint": "to confirm they remained Italian when relevant" },
+          { "label": "Marriage certificates along the lineage" },
+          { "label": "Apostilles and certified translations", "hint": "for non-Italian records" }
+        ]
+      }
+    },
+    "IE": {
+      "descent": {
+        "documents": [
+          { "label": "Your birth certificate" },
+          { "label": "Irish-born parent's or grandparent's birth certificate" },
+          { "label": "Parent's or grandparent's Irish passport / citizenship records" },
+          { "label": "Marriage certificates along the lineage" },
+          { "label": "Foreign Births Register entry", "hint": "for grandparent descent" },
+          { "label": "Certified translations / apostilles" }
+        ]
+      }
+    },
+    "PT": {
+      "descent": {
+        "documents": [
+          { "label": "Your birth certificate" },
+          { "label": "Portuguese parent's or grandparent's birth certificate" },
+          { "label": "Proof of the ancestor's Portuguese nationality" },
+          { "label": "Sephardic Jewish heritage certificate", "hint": "if applying via the Sephardic route" },
+          { "label": "Apostilles and certified translations" }
+        ]
+      }
+    },
+    "MT": {
+      "cbi": {
+        "documents": [
+          { "label": "Valid passport", "hint": "all applicants and dependants" },
+          { "label": "Proof of source of funds and wealth" },
+          { "label": "Bank reference letters" },
+          { "label": "Proof of qualifying investment", "hint": "contribution, property, or investment" },
+          { "label": "Police clearance certificate(s)" },
+          { "label": "Medical / health insurance" },
+          { "label": "Due-diligence questionnaire and fee" },
+          { "label": "Completed application forms", "hint": "main applicant plus dependants" }
+        ]
+      }
+    },
+    "DM": {
+      "cbi": {
+        "documents": [
+          { "label": "Valid passport", "hint": "all applicants and dependants" },
+          { "label": "Proof of source of funds" },
+          { "label": "Bank reference letter" },
+          { "label": "Proof of qualifying investment", "hint": "government donation or approved real estate" },
+          { "label": "Police clearance certificate(s)" },
+          { "label": "Medical certificate" },
+          { "label": "Completed application forms", "hint": "main applicant plus dependants" }
+        ]
+      }
+    }
+  }
+}

@@ -156,7 +156,7 @@ export default function VisaExplorer({ countries, paths, initialPassport }: Prop
       <TravelMap paths={paths} statusByIso2={statusByIso2} />
 
       <p className="text-sm text-slate-500" role="status" aria-live="polite">
-        The <span className="font-semibold text-slate-900">{nameByCode.get(passport)?.name ?? passport}</span> passport —{' '}
+        The <span className="font-semibold text-slate-900">{nameByCode.get(passport)?.name ?? passport}</span> passport{' '}
         {destinations.length} matching destination{destinations.length === 1 ? '' : 's'}.
       </p>
 

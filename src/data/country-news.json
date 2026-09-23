@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-22T22:38:46.999Z",
+    "source": "Google News RSS (news.google.com/rss/search)",
+    "query": "\"<country>\" immigration OR citizenship",
+    "totalCountries": 4,
+    "perCountryLimit": 6,
+    "disclaimer": "Informational only — headlines are auto-fetched and not verified."
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "name": "Afghanistan",
+      "items": [
+        {
+          "id": "news-af-1499c5f2f568",
+          "title": "Interpreter for Canadian troops during Afghanistan war denied immigration to B.C.",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPc24tZ0N3N2I3UHNFamdaeEU1eU1HSHhBLTVPNGVCZ3NfRnliWUVOVWpHSkdhWllYVEk0WUJTUHNkSUdFNFF6X04zN3k5VUNKVktHSm5Wbk1ab00zelFuQTJWLW14cXo2WmU5OFFraTRHS2laYXppOTRJbnBLWVY0RDlWcFQwTFMxYlVSaTJnWFljNEtJWEhEVHM1N0pQUExjaU1Hd01IRm81ZjBGVWc?oc=5",
+          "sourceName": "Vancouver Sun",
+          "publishedAt": "2026-09-18T13:11:30.000Z",
+          "snippet": "Interpreter for Canadian troops during Afghanistan war denied immigration to B.C. Vancouver Sun"
+        },
+        {
+          "id": "news-af-fe25f598312c",
+          "title": "Relative of Afghans who aided US military deported to Africa",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZDZvb2hMc1JEWUE5anY0SUUxWk9RSlJfeFZFLUdQUG9JSWREVldqU0s4aFZkNngtWmo3TzBCeEhhNENnS2ljUHhaZ1ZwVU5NZXVnWEpyNWFmN01aQ3FEUHpic3ZMYU5VNkZ5ZS1oaWV3RWFTU2hUSkJUNXJ2bVBMMlgxWmZYNHdoamJCSXMzeE5RdzVDbEp1ajdnZ25uNnY2cXfSAacBQVVfeXFMTm5yLW9GckRPZ3R1RG5jZXpyaEE0dW1SUXdHeklzd1ZqLV84R0JmamRSb0wxUjB2MTNwajAxallzRnhJN2lXVndqUzdfY3p0SU9CX2ZGMXpUOGpNQ0tybks4dkl2dFNPc242RURYdHYxV0g3T1NjVXJsQkJQMUFXaTdnOXJIb3lJWTJVbkVNb3pjaVhmbGs3ZkZ5eEVPSDNyc2c2STRXSXc?oc=5",
+          "sourceName": "Al Jazeera",
+          "publishedAt": "2026-08-30T07:00:00.000Z",
+          "snippet": "Relative of Afghans who aided US military deported to Africa Al Jazeera"
+        },
+        {
+          "id": "news-af-fa7a306c5fc9",
+          "title": "Supreme Court 'Temporary Protected Status' ruling alarms Bay Area immigration advocates",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTXpIQVhfNDR4Y244TUxiT3MtUkRRWHhQcnJ2a1FrSm1IZVYtQVBSVE9Xa2hKbm1oOTVrNTdNTk4tdUdldzlvSTVkYl8tb21ManBaV0I1YkZCWFBidzIxVnlwaU44cF9QUUJ3UFZkTUd1LUpMX0szUFdCX1I1dDhtb3BMckswTkdOb3B6d2I4cTVBOWFPZ3BtM25SRldTY2NKZmM3bzhObTRIakd1SnVNQzhkdVo5YjZteUNwX0Fn0gHDAUFVX3lxTE1GRnM2ZGNOMkNFNE1aQ3Z5YkctQ1hKZEFfYkNMR3pWa2NCaXZYaC1HT1pvYzlLSlhjMGdwQ0lMWHkwRVBFZW0xVlFaRHd3UUFKdXZuaWgtT2EzZ0Fna2pqUFItX3lPbmFTTmlaVWlLVmhDd0piS1ZtRUJwYlEwMTBabUc5TWsxV2JHR3c0V1ZnV0l2bjdPbkNyZml0c3N3WDA4NWcwOTBiNWZoUmFaeloycnluX3ZaZWxfaDNfUEJWWEd2dw?oc=5",
+          "sourceName": "ABC7 Bay Area",
+          "publishedAt": "2026-06-27T07:00:00.000Z",
+          "snippet": "Supreme Court 'Temporary Protected Status' ruling alarms Bay Area immigration advocates ABC7 Bay Area"
+        },
+        {
+          "id": "news-af-c7507a52e72d",
+          "title": "They fought for the U.S. in Afghanistan. Now they worry about losing their green cards",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOZDBoTEw3SVJ6dVVRRHl3QngwOGJaVk9PUWJPeUVBY01abWVfbjhOeVoyZGZnaUI0UEtpT1BlYUx6YUljRFhjTDRiWkpQVHhFQ184TVdzZlhZeWZjY1hFNzNDN3BnVlIwWXB0X0dyNl9JamlmOXNKSHRxZE4tN1lnSjg4RXVxQQ?oc=5",
+          "sourceName": "NPR",
+          "publishedAt": "2026-08-15T07:00:00.000Z",
+          "snippet": "They fought for the U.S. in Afghanistan. Now they worry about losing their green cards NPR"
+        },
+        {
+          "id": "news-af-4b6f86aca630",
+          "title": "Federal agency seeks to interview Afghan immigrants, alarming refugee groups",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNWnYxRVZUUHNaaGo3S1N0eS0yYnhqcUZvZFdLT1NhcmU1Y3dodWZqQ2hfSlJhTC0ycTZJTkRlUGIzNkpydjZPSnQwa1hwaV9ZVUwwekVwZGxBU3d2anhLclFmSFpJSDBwSXJpMWFWcDc5Y056cDdvQnNnYjNUT2tmdGxVRW1BMzJkSjhZbW13eWlvTml0SEVBV0VXUmxTdWIzdlhLYzhMbW0wRWo5QXFCU3NzX0lpNWYxY3NSdHoxSQ?oc=5",
+          "sourceName": "The Washington Post",
+          "publishedAt": "2026-07-24T07:00:00.000Z",
+          "snippet": "Federal agency seeks to interview Afghan immigrants, alarming refugee groups The Washington Post"
+        },
+        {
+          "id": "news-af-752b718c682f",
+          "title": "Why the U.S. is detaining a senior Afghan diplomat",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUTh6cmNNR1UzNXBnUEt5MEdFZFRQNHA1ckJKeEcyX1owZHk4eklCMVB3cjZWb3pQeVQ3UVpHdVNCVjVaTzcxS2dKenRRRDA5NlA5SHBheVh0YXFQRF8zcDY0NTdHRVpmQm14VlVJbDZzb3BOeHJDLS1hNFRxalpNVHB5SUg4RDBGUThaUDJTWk1PdTNFWTRwanZtRnVhNWozMVE?oc=5",
+          "sourceName": "Politico",
+          "publishedAt": "2026-06-09T07:00:00.000Z",
+          "snippet": "Why the U.S. is detaining a senior Afghan diplomat Politico"
+        }
+      ]
+    },
+    {
+      "iso2": "AL",
+      "name": "Albania",
+      "items": [
+        {
+          "id": "news-al-2dd3ba9939f6",
+          "title": "Albania Suspends Its Golden Passport Program Following EU Pressure",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWkVlNElHd2EzOFFNVGJQal96UG5oUkUtWDNCRm5CYUREZm5QbnhJNjN0YUc5eG5hNmp5a0lIR2xiWE1sZnM4MVU1UERvZUI1cTFHbFJqbUZ5dGk0SFVoN3BGSEh1a0I2YTdJTUx1SlpabzZqWGw4ZTcxQXJTX2M4UzRSSUw4bU13UmIySk1LWlE2NTFCRmdoSi1nWS12bkE?oc=5",
+          "sourceName": "Outbound Investment Group",
+          "publishedAt": "2026-09-21T06:40:39.000Z",
+          "snippet": "Albania Suspends Its Golden Passport Program Following EU Pressure Outbound Investment Group"
+        },
+        {
+          "id": "news-al-aa40e2acf2be",
+          "title": "Balkan Subnational Innovation Competitiveness Index | Reports & Briefings | May 26, 2026",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOTDRSWWFIanJaS0lGcy1ucFI4Z2FYNm9vRElKNngzOXZybUEyV1VER3QwbkVjdzY0STBCdTJiYmZua3BvRHVZOUZpSUVZcjFJckw5WkI0NlVFSzVJQ0pYZmtqZEYxUGxfdW1UZlVxQXQxa1I1bVlvNnczVzhwdFpYQVBfVmdxQlVpYWwxVXJKTG8wc3hlby1zRw?oc=5",
+          "sourceName": "Information Technology and Innovation Foundation",
+          "publishedAt": "2026-05-26T07:00:00.000Z",
+          "snippet": "Balkan Subnational Innovation Competitiveness Index | Reports & Briefings | May 26, 2026 Information Technology and Innovation Foundation"
+        },
+        {
+          "id": "news-al-909daf16e1b2",
+          "title": "Albanians are being unfairly demonised in illegal immigration debate",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQTzR4ZzYteW1VVkhyUDc0dWJFM1c2Rm8yTTk3LUJBa2ZNUXIxbUFueElHbUh6bzdXU1RRejFRdGJLV094b1Ewek1qWDNEMzdIVmR1b2dJTnQ3NUNiSHBfYVFPRDlFTWFDXzBJa1NUN21aWmRma0EzRjFCYUhMZEtsbl9yVXFMZHp3a0ZhR3M5andXREZIaS1ZQ0lTenlicVNuYUpjbmRLT2lCUQ?oc=5",
+          "sourceName": "The Guardian",
+          "publishedAt": "2026-04-21T07:00:00.000Z",
+          "snippet": "Albanians are being unfairly demonised in illegal immigration debate The Guardian"
+        },
+        {
+          "id": "news-al-f07e26056a74",
+          "title": "Former New York Mayor Eric Adams Granted Albanian Citizenship",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPcG41UTdUc1pjZ25kcXZ6bDFiRzJFdy12N0ZwZ3ZBUlhNOFBlNWtkZlVYNERPdGZNdFZMTnd5RkFVYWN0Y3Rla2JycW9FbUpQWmlaZGMxLVFfZVRNbHdWTUJDSFlCQnVEdmVEZHdyaVhLWnFDWFR2VHJSQkVGY1hiSHZ6emdZb1JDQjNhS3hPV0dyVHZTNWRQRjVyTDI?oc=5",
+          "sourceName": "Albanian Daily News",
+          "publishedAt": "2026-04-10T07:00:00.000Z",
+          "snippet": "Former New York Mayor Eric Adams Granted Albanian Citizenship Albanian Daily News"
+        },
+        {
+          "id": "news-al-4d817f229627",
+          "title": "Former NYC Mayor Eric Adams becomes an honorary Albanian citizen",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ROFJ4YTVpcHFLRjh4aC1FZjNleFZoenJOdU1nM2NSdVdER05RRDZzNGQ3bjhmTHFKbnlfRXlOTXRFVXZCTEREeEJEOGYzU003RWk0OXhsVnZveFhlVHFlX0VlUjRmQnY2STlvYk5fYU9fN2M?oc=5",
+          "sourceName": "CBS News",
+          "publishedAt": "2026-04-13T07:00:00.000Z",
+          "snippet": "Former NYC Mayor Eric Adams becomes an honorary Albanian citizen CBS News"
+        },
+        {
+          "id": "news-al-8d8d395a7b5b",
+          "title": "Eric Adams’ Albanian adventure: Behind former NYC mayor’s quest for a new passport",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQb1VWak1JR1hpRnpYQVJ2eHpEUDNlQ2pRU3NBSHpoTHdZbnFPUXhrdnhnSU5IMDdMUWM1azNGd2EwZjBVcS1FZ2ZYVjRNdTRYdFRsY1pLOEtzQ2J3RXJaRHFrRU4tMFhPX1hFanpGU0t1eHZ1WlNfOGZjUE9QdHE3ZzVRSGx3NkZTU3ZzbkthUm80ZGZ4MU14QTdEYXdmcElwVGtF?oc=5",
+          "sourceName": "politico.eu",
+          "publishedAt": "2026-04-23T07:00:00.000Z",
+          "snippet": "Eric Adams’ Albanian adventure: Behind former NYC mayor’s quest for a new passport politico.eu"
+        }
+      ]
+    },
+    {
+      "iso2": "DZ",
+      "name": "Algeria",
+      "items": [
+        {
+          "id": "news-dz-743d3ad6c7b8",
+          "title": "Colonial Algeria and the Politics of Citizenship . By Avner Ofrath. London: Bloomsbury Academic, 2023. Pp. x+194. $115.00 (cloth); $39.95 (paper); $35.95 (e-book).",
+          "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5KbGQ0angzT0RHdkc4ZTNpSlRQWXZQUGViOXBPazN6Rm1HV3BHb1paNmVDejcwbTIxZDdxRDNQOTNEeGNQVy1zVHA1SVdvNURUelVvSUZFOXE1S3AteDdTUUVSVWNBY00?oc=5",
+          "sourceName": "The University of Chicago Press: Journals",
+          "publishedAt": "2026-06-10T08:36:52.000Z",
+          "snippet": "Colonial Algeria and the Politics of Citizenship . By Avner Ofrath. London: Bloomsbury Academic, 2023. Pp. x+194. $115.00 (cloth); $39.95 (paper); $35.95 (e-book). The University of Chicago Press: Journals"
+        },
+        {
+          "id": "news-dz-cde8a0e5382e",
+          "title": "Board of Immigration Appeals denies Khalil’s appeal to deportation order, issues ‘final’ administrative removal order",
+          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOa3hzYXg0N0o3ak14OWxWdHphSTEtekRoM3RmblpxbEdYQnMybUZ1NTY4X0dJXy1nWVpYWGFBVm5FTTVMNXU3ZUFKd0FmVDVtUDZkTzJ4eFZQZm5Tblo4TGVmd0lqMVk5REpTcVBlS1RmRlZELUlDd01ySW1sZDVpSC1adEJvUTZGSlNRc0p4ZzdSNUs3cUk3QWZLcTBOTWxSa1lIUDQ0dkpldzVzUlhPdGhBMm9uVmI4QWR6WHJ1aGFEdWduajdNbXhicmFGSkMzRnJRQ2R6dEFxd05OT21pdUItT1hOYUctMmtVZ0FvQ0lZV2l3MVlz?oc=5",
+          "sourceName": "Columbia Daily Spectator",
+          "publishedAt": "2026-04-09T07:00:00.000Z",
+          "snippet": "Board of Immigration Appeals denies Khalil’s appeal to deportation order, issues ‘final’ administrative removal order Columbia Daily Spectator"
+        },
+        {
+          "id": "news-dz-321ba898aacf",
+          "title": "Algeria’s ‘Guillotine of Citizenship’: The Anatomy of a Paranoid Regime",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOR19JUzB2MTJGV2Y3Uy1DTkh6NjhlQVd3VlEtZkZManJuN2xvTFlaY2tPeVRhcmktWnRsSW4xY1JKRXAwV2NFRjNYcWpxb3YwcjQyd0tUMlYxWm13SlpCYWlIWDJiNmk3S2s1Vmo1bmsxNDRLVlNFR1BvSi1aUnpJU0JRYllxNEVtRFZLeTNKY20ydk15dWViZzVaVWt5ZUZ2OG1KZg?oc=5",
+          "sourceName": "Middle East Forum",
+          "publishedAt": "2026-02-27T08:00:00.000Z",
+          "snippet": "Algeria’s ‘Guillotine of Citizenship’: The Anatomy of a Paranoid Regime Middle East Forum"
+        },
+        {
+          "id": "news-dz-50cc3540f332",
+          "title": "Fears of political targeting as Algeria revisits citizenship law",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOUXVSQW9DSHBhbl83R1Y2Vi1qNWtGSThfRmdtXzl1NHFENkc5anhiUUNGMGxtbFJ2SUNRMVA2elVTUkJsSURjbDJFZmx2NUhGMUtvcWt5UllsSldNY1Faa2ZpOEZMa2ZOV0dBS24yU3NJVmpqazd1X2xibWdycXo4MzVQTEFHeDZ1bmxJQw?oc=5",
+          "sourceName": "The Arab Weekly",
+          "publishedAt": "2025-11-04T08:00:00.000Z",
+          "snippet": "Fears of political targeting as Algeria revisits citizenship law The Arab Weekly"
+        },
+        {
+          "id": "news-dz-29797d538333",
+          "title": "What Caused the Surge in Ceuta?",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQV3dXX0JrTFBELU5meW5YSGM0bzcwVVhtbmppQXp2b3ZJV0xURE5MSDI5QW54eldTYWZ2Wk5oUG9RUldHZVc0R0NjV25wek9jZFRxT19XYjViTjU3d0d4U1IxMWotei11aXFLUk5iWUoydGMtdXZJOEhaWUlZZEJOc19hZk9rVnBhd2J2VV9yc3U?oc=5",
+          "sourceName": "The New York Times",
+          "publishedAt": "2026-07-31T07:00:00.000Z",
+          "snippet": "What Caused the Surge in Ceuta? The New York Times"
+        },
+        {
+          "id": "news-dz-395875781b2a",
+          "title": "Spanish citizenship offer exposes Polisario’s hypocrisy",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNVGQ4ZEhiMUdJb1RWZUVLSWNWaWJOZ3RrcTJyUGoxMV9EZkJNTHlSc294Y0JpbDNNa2x0bUVOclVBQmdCVGViYjJqVkRhTElrN1FqNUtWSXY5ekJidjhldkpnMDRYV2tUQW9JbVRvQkxQZUFzMmE2czVQdnhMVEVHcWI0a2UzT1hqeU5pdDJjYnNWTGhIb21oU2xR?oc=5",
+          "sourceName": "The North Africa Post",
+          "publishedAt": "2026-09-15T15:15:24.000Z",
+          "snippet": "Spanish citizenship offer exposes Polisario’s hypocrisy The North Africa Post"
+        }
+      ]
+    },
+    {
+      "iso2": "AD",
+      "name": "Andorra",
+      "items": [
+        {
+          "id": "news-ad-202d360bebb8",
+          "title": "Marco Rubio congratulates Andorra on Meritxell Day and highlights shared commitment to national sovereignty",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQQUswNkxTbi01RUJvZVI4czJFTVVkUzhaYmwycGVsTnJwSGs5TkJ0S3R3dFAyczFEMEdCS2V4WmhEX05FYmVTQU1tSzJ0bmpMY3lGVWZZRzVXVFRmUVJnYU14Nlgzb0JQd3ZjZDBZamZ2ZjdmdUFLdWVERXBkLWFkX1ZDN25XLUQ4dXkwMDlB?oc=5",
+          "sourceName": "La Veu Lliure",
+          "publishedAt": "2026-09-08T07:00:00.000Z",
+          "snippet": "Marco Rubio congratulates Andorra on Meritxell Day and highlights shared commitment to national sovereignty La Veu Lliure"
+        },
+        {
+          "id": "news-ad-fa3e7813ea87",
+          "title": "Global: Immigration News Update – May 14, 2026",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOQ29xMU4wdHR0MjZhMTRFa3ZCYXNSSG16N1BjYmo0RDlTd1FSQ3VydEQ4TmZ0czQ2UHhIUkp5MHYtZ2oyZHNia2ZrbTAtdmVaY1BZLWwtR05LZWpMVGd2Um94V1h3VktkMkRrTnBCMFh3Q0tnOUF3MVVDRnFITEVuWUVjRmRYZURkQU5BZQ?oc=5",
+          "sourceName": "Corporate Immigration Partners, PC",
+          "publishedAt": "2026-05-14T07:00:00.000Z",
+          "snippet": "Global: Immigration News Update – May 14, 2026 Corporate Immigration Partners, PC"
+        },
+        {
+          "id": "news-ad-78536ef6d310",
+          "title": "Andorra Parliament Approves Bill Reshaping Passive Residency Investment Thresholds",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWmNVOWpDaDBzZGJ1cmxTdWNLcVRTelFQTlY4Y3lidFpGVFpMZGdxVjFSbGVCakdqWVBVV2FJSlI2VkRXbVF3TmRtdURCWHVjQWlaMlZKMUVKc29zaVVmejJ0NDRNc2ZHaXY5dmlpUURuMk1PU25iWUxmRnpFVmU2WkJGUjMtUmFDdHRZRnNtXzRkcUVFVXJQakxjS3FGZzRZT2N6aEFhWERxd1lBTUpGT241dFU1dw?oc=5",
+          "sourceName": "IMI Daily",
+          "publishedAt": "2026-01-24T08:00:00.000Z",
+          "snippet": "Andorra Parliament Approves Bill Reshaping Passive Residency Investment Thresholds IMI Daily"
+        },
+        {
+          "id": "news-ad-150256d61302",
+          "title": "Low Tax Countries in Europe: Where To Pay the Least in 2026",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9STi1Bc21wd1FodFFyYkYwSHZOSkhqVGxPZGRPQkp3cDZYQjBUTEpfYW0tc2lGUjBFdDdsVENLQ3ZnUGpzYmp5aDMtNnN2MWp0bE1GX0FoQ19lVFpOMDl3TFNQRnBETUMxazRvSExqQllTcEVMaE9J?oc=5",
+          "sourceName": "Nomad Capitalist",
+          "publishedAt": "2026-09-02T07:00:00.000Z",
+          "snippet": "Low Tax Countries in Europe: Where To Pay the Least in 2026 Nomad Capitalist"
+        },
+        {
+          "id": "news-ad-d45fb73da75d",
+          "title": "Immigration Permits Fall 22% as South American Community Gains Ground in Andorra",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdTNxY0V5M09TbmIwaUdCZVFjcml6Z0lwc25QZUsxd0NfM244ZDB0V0ExLTNZREszNUtTVU1pSllkdGRKZkhSM05RVWczRFVfLUV4Z1BxWWlIaU0xX2J1bUFYQU5udFhQOElxVG1JOGFScGcwSVM5cUJYWnlrVlYzbWRCTUJqVjBFdjFiNWhmVXZpaVFYNEYwNEV3c0tNend2YU5iZXRIcmVNOFZId09JUW1R?oc=5",
+          "sourceName": "La Veu Lliure",
+          "publishedAt": "2026-08-18T07:00:00.000Z",
+          "snippet": "Immigration Permits Fall 22% as South American Community Gains Ground in Andorra La Veu Lliure"
+        },
+        {
+          "id": "news-ad-6811cbd3a078",
+          "title": "Andorra Should Combat Racism, LGBTI-Phobia, and Expand Voting Rights",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcFJmU0IyaGFkVmc5a29LQVd4WnpSbEMxb09DVEZuRkM2OGNzUGtVU0hENWJGODhBZlkzS3dDWU1LMnFSdUcyeEZIX0wxWm1Fam5nNDJSUm9va2xfSFUtU3RkZkkxcWVOWmtEb3FHRFE5cjVqM3FVN2RweVk4YlVjV25XSHZqYVJ0SFJTTHB6Sk1EMnljdnR1X3FKbEJaOFM2TU43MnBvMA?oc=5",
+          "sourceName": "coe.int",
+          "publishedAt": "2024-10-21T07:00:00.000Z",
+          "snippet": "Andorra Should Combat Racism, LGBTI-Phobia, and Expand Voting Rights coe.int"
+        }
+      ]
+    }
+  ]
+}

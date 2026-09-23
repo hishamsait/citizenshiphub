@@ -36,7 +36,7 @@ export function scoreAcquisition(law: AcquisitionInput): AcquisitionResult {
     }
   }
 
-  // 2. Investment routes — the fastest paths for those who qualify
+  // 2. Investment routes the fastest paths for those who qualify
   if (law.cbi) {
     score += 30;
     reasons.push('Citizenship by investment');

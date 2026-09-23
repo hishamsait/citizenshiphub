@@ -35,7 +35,7 @@ The Malaysia passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Malaysia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Malaysia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -43,11 +43,11 @@ Naturalisation typically requires **10 years** of residence.
 
 ## Dual citizenship
 
-Malaysia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Malaysia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Investment routes
 
-Malaysia offers a **golden visa** (residency by investment) (from ≈ **€100,000** in qualifying investment) — a residence permit leading to naturalisation.
+Malaysia offers a **golden visa** (residency by investment) (from ≈ **€100,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
@@ -55,7 +55,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

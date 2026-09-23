@@ -32,7 +32,7 @@ The North Macedonia passport offers visa-free, visa-on-arrival, ETA, or e-visa a
 
 ## Citizenship by descent
 
-North Macedonia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+North Macedonia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -44,7 +44,7 @@ North Macedonia generally permits dual citizenship.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

@@ -4,15 +4,18 @@ import CountriesTable from '../../../components/console/CountriesTable';
 import { getDb } from '../../../lib/db/client';
 import { listCountriesWithCoverage } from '../../../lib/db/countries-console';
 import { listCountriesAnalytics } from '../../../lib/db/country-analytics';
+import { listLatestScrapeStatus } from '../../../lib/db/scrapes';
 
 const db = getDb(Astro.locals);
-const [countries, analytics] = await Promise.all([
+const [countries, analytics, scrapeStatus] = await Promise.all([
   listCountriesWithCoverage(db),
   listCountriesAnalytics(db),
+  listLatestScrapeStatus(db),
 ]);
 const rows = countries.map((c) => ({
   ...c,
   analytics: analytics[c.iso2] ?? { views: 0, leads: 0, scrollAvg: null },
+  scrape: scrapeStatus[c.iso2] ?? null,
 }));
 ---
 

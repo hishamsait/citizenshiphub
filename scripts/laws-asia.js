@@ -1,4 +1,4 @@
-// Citizenship-law facts — Asia (best-effort; verify before reliance).
+// Citizenship-law facts Asia (best-effort; verify before reliance).
 export const LAWS = {
   AF: { d: true, y: 5, c: false },
   AM: { d: true, y: 5, c: false, maxGenerations: null, n: 'Ethnic-Armenian descent/repatriation path.' },

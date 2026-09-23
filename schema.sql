@@ -172,3 +172,58 @@ CREATE TABLE IF NOT EXISTS data_sources (
 );
 
 CREATE INDEX IF NOT EXISTS idx_guides_slug ON country_guides(slug);
+
+-- 13. Documents checklist by citizenship route (Phase 7)
+-- Global route templates live under iso2 = '*'; country rows override a template's
+-- document list for that country + route.
+CREATE TABLE IF NOT EXISTS citizenship_documents (
+    iso2 TEXT NOT NULL,            -- '*' = global route template; otherwise a country ISO2 override
+    route TEXT NOT NULL,           -- 'descent' | 'naturalisation' | 'marriage' | 'birthright' | 'cbi' | 'golden-visa' | 'digital-nomad'
+    title TEXT,
+    description TEXT,
+    note TEXT,
+    documents TEXT NOT NULL,       -- JSON array [{ label, hint }]
+    PRIMARY KEY (iso2, route)
+);
+
+-- 14. Country-specific immigration & citizenship news (RSS-fetched)
+CREATE TABLE IF NOT EXISTS country_news (
+    id TEXT PRIMARY KEY,
+    iso2 TEXT NOT NULL,
+    title TEXT NOT NULL,
+    url TEXT,
+    source_name TEXT,
+    published_at TEXT,
+    snippet TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_country_news_iso2 ON country_news(iso2, published_at DESC);
+
+-- 15. Country-specific immigration & citizenship sources
+CREATE TABLE IF NOT EXISTS country_immigration_sources (
+    id TEXT PRIMARY KEY,
+    iso2 TEXT NOT NULL,
+    name TEXT NOT NULL,
+    url TEXT,
+    category TEXT,
+    note TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_country_sources_iso2 ON country_immigration_sources(iso2);
+
+-- 16. AI-assisted data scraping runs for the Console's Countries section.
+-- One row per scrape attempt for a country; `facts` and `sources` are JSON arrays
+-- produced by src/lib/ai/scraper.ts and read back via src/lib/db/scrapes.ts.
+CREATE TABLE IF NOT EXISTS scrape_runs (
+    id TEXT PRIMARY KEY,
+    iso2 TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'running',   -- 'running' | 'success' | 'failed'
+    summary TEXT,
+    facts TEXT,                               -- JSON [{ field, value, confidence, evidence }]
+    sources TEXT,                             -- JSON [{ name, url, category, status, error }]
+    error TEXT,
+    model TEXT,
+    fetched_at TEXT,
+    created_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_scrape_runs_iso2 ON scrape_runs(iso2, created_at DESC);
+

@@ -32,7 +32,7 @@ The Ethiopia passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Ethiopia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Ethiopia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -40,11 +40,11 @@ Naturalisation typically requires **4 years** of residence.
 
 ## Dual citizenship
 
-Ethiopia generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Ethiopia generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

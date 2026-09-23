@@ -34,7 +34,7 @@ The Lithuania passport offers visa-free, visa-on-arrival, ETA, or e-visa access 
 
 ## Citizenship by descent
 
-Lithuania applies jus sanguinis with no generational limit — citizenship can be passed down indefinitely through ancestry.
+Lithuania applies jus sanguinis with no generational limit citizenship can be passed down indefinitely through ancestry.
 
 ## Naturalisation
 
@@ -42,11 +42,11 @@ Naturalisation typically requires **10 years** of residence.
 
 ## Dual citizenship
 
-Lithuania generally does not permit dual citizenship — naturalising usually requires renouncing your existing nationality.
+Lithuania generally does not permit dual citizenship naturalising usually requires renouncing your existing nationality.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

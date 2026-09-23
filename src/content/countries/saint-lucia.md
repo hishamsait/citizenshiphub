@@ -33,7 +33,7 @@ The Saint Lucia passport offers visa-free, visa-on-arrival, ETA, or e-visa acces
 
 ## Citizenship by descent
 
-Saint Lucia applies jus sanguinis — citizenship can be acquired by descent from a citizen parent.
+Saint Lucia applies jus sanguinis citizenship can be acquired by descent from a citizen parent.
 
 ## Naturalisation
 
@@ -45,7 +45,7 @@ Saint Lucia generally permits dual citizenship.
 
 ## Investment routes
 
-Saint Lucia offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) — a direct route to citizenship through investment.
+Saint Lucia offers **citizenship by investment** (from ≈ **€92,000** in qualifying investment) a direct route to citizenship through investment.
 
 ## Other routes
 
@@ -55,7 +55,7 @@ A **digital-nomad / remote-work visa** is available.
 
 ## Fees & timeline
 
-There is no standard published application fee — costs vary, so check with official sources.
+There is no standard published application fee costs vary, so check with official sources.
 
 ## Tax considerations
 

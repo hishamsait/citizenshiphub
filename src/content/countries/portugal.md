@@ -34,7 +34,7 @@ The Portugal passport offers visa-free, visa-on-arrival, ETA, or e-visa access t
 
 ## Citizenship by descent
 
-Portugal applies jus sanguinis — citizenship can be acquired by descent from a parent or grandparent.
+Portugal applies jus sanguinis citizenship can be acquired by descent from a parent or grandparent.
 
 ## Naturalisation
 
@@ -48,7 +48,7 @@ Portugal generally permits dual citizenship.
 
 ## Investment routes
 
-Portugal offers a **golden visa** (residency by investment) (from ≈ **€500,000** in qualifying investment) — a residence permit leading to naturalisation.
+Portugal offers a **golden visa** (residency by investment) (from ≈ **€500,000** in qualifying investment) a residence permit leading to naturalisation.
 
 ## Other routes
 
