@@ -6,6 +6,8 @@ Global passport rankings, visa mobility data, and citizenship-by-descent / natur
 The site ranks and compares **199 passports**, shows where each one can travel without a traditional visa, and pairs
 every country with a practical guide to acquiring its citizenship.
 
+Citizenship Hub is a project by [Built Brilliant](https://builtbrilliant.com).
+
 ## Features
 
 - **Passport rankings** — a sortable, searchable table of all 199 passports, filterable by region and ranked by mobility score.
@@ -50,6 +52,8 @@ npm run db:seed                          # persist all datasets + guides + meta 
 | `/destinations/[slug]` | Who can visit a country, grouped by access status                    |
 | `/countries/`          | Citizenship guides index, grouped by region                          |
 | `/countries/[slug]`    | Individual citizenship guide + passport mobility map                 |
+| `/terms/`              | Terms & Conditions                                                   |
+| `/privacy/`            | Privacy Policy                                                       |
 | `404`                  | Custom not-found page (noindex)                                      |
 
 ## Scripts
@@ -122,7 +126,7 @@ Generated/committed files in `src/data/`:
 | `country-freedom.json`     | CPI, Human Rights, Liberal Democracy, and Freedom in the World       |
 | `country-tax.json`         | Personal/corporate/VAT tax rates and taxation basis per country      |
 | `types.ts`                 | Shared TypeScript interfaces for the datasets                         |
-| `world-countries.geo.json` | Natural Earth country polygons, projected to SVG paths for the maps   |
+| `world-countries.geo.json` | Natural Earth country polygons, slimmed to GeoJSON for the maps        |
 | `sources.json`             | Data-source attribution registry (seeded into `data_sources`)         |
 
 **Mobility score** is defined as `visaFree + visaOnArrival + eta + eVisa` — the number of destinations reachable
@@ -184,13 +188,14 @@ Cloudflare D1.
 
 **Components**
 
-- Astro: `Header`, `Footer`, `CountryCard`, `RankingsPreview`, `SearchBar`, `TravelMap.astro`
-- React: `PassportRankTable`, `VisaExplorer`, `PassportCompare`, `TravelMap`
+- Astro: `Header`, `Footer`, `CountryCard`, `RankingsPreview`, `SearchBar`, `OsmVisaMap`
+- React: `PassportRankTable`, `VisaExplorer`, `PassportCompare`, `OsmVisaMap` (Leaflet map island)
 
 **Library modules (`src/lib/`)**
 
 - `acquire.ts` — heuristic 0–100 "ease of acquisition" score (descent, naturalisation years, dual citizenship, fee).
-- `map.ts` — projects `world-countries.geo.json` into SVG path strings (server-side, cached).
+- `map.ts` — slims `world-countries.geo.json` into client-safe GeoJSON (server-side, cached).
+- `osm-map.ts` — Leaflet + OpenStreetMap glue: tile layer, choropleth styling, and recolor-on-update.
 - `utils.ts` — `cn`, `formatNumber`, `formatEuro`, `slugify`.
 - `visa.ts` — decodes visa-matrix cells and exposes status labels, badges, ranks, and map fill colours.
 

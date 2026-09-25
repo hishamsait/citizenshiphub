@@ -69,6 +69,20 @@ export const COUNTRY_DATASETS: CountryDataset[] = [
     includes: 'Summary + full article body.',
     datasetId: null,
   },
+  {
+    id: 'relocation',
+    label: 'Relocation & living',
+    short: 'Relocation',
+    includes: 'Internet penetration, driving side, timezone, healthcare system, climate.',
+    datasetId: 'country-relocation',
+  },
+  {
+    id: 'emergency',
+    label: 'Emergency numbers',
+    short: 'Emergency',
+    includes: 'Police, ambulance, fire and universal emergency numbers.',
+    datasetId: 'country-emergency',
+  },
 ];
 
 export const DATASET_BY_ID: Record<string, CountryDataset> = Object.fromEntries(

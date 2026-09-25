@@ -46,6 +46,8 @@ interface CoverageRow {
   has_tax: number;
   has_citizenship: number;
   has_guide: number;
+  has_relocation: number;
+  has_emergency: number;
 }
 
 interface MetaRow {
@@ -66,7 +68,9 @@ const COVERAGE_SELECT = `
     CASE WHEN f.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_freedom,
     CASE WHEN t.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_tax,
     CASE WHEN cc.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_citizenship,
-    CASE WHEN g.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_guide
+    CASE WHEN g.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_guide,
+    CASE WHEN rl.iso2 IS NOT NULL THEN 1 ELSE 0 END AS has_relocation,
+    CASE WHEN EXISTS (SELECT 1 FROM country_emergency em WHERE em.iso2 = c.iso2 LIMIT 1) THEN 1 ELSE 0 END AS has_emergency
   FROM countries c
   LEFT JOIN passport_rankings r ON r.passport_iso = c.iso2
   LEFT JOIN country_profiles pr ON pr.iso2 = c.iso2
@@ -74,7 +78,8 @@ const COVERAGE_SELECT = `
   LEFT JOIN country_freedom f ON f.iso2 = c.iso2
   LEFT JOIN country_tax t ON t.iso2 = c.iso2
   LEFT JOIN country_citizenship cc ON cc.iso2 = c.iso2
-  LEFT JOIN country_guides g ON g.iso2 = c.iso2`;
+  LEFT JOIN country_guides g ON g.iso2 = c.iso2
+  LEFT JOIN country_relocation rl ON rl.iso2 = c.iso2`;
 
 async function listDatasetMeta(db: Db): Promise<MetaMap> {
   const { results } = await db
@@ -95,6 +100,8 @@ function presence(row: CoverageRow): Record<string, boolean> {
     tax: !!row.has_tax,
     citizenship: !!row.has_citizenship,
     guide: !!row.has_guide,
+    relocation: !!row.has_relocation,
+    emergency: !!row.has_emergency,
   };
 }
 

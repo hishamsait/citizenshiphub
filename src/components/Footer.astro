@@ -11,8 +11,19 @@ const year = new Date().getFullYear();
           Global passport rankings and citizenship-by-descent guides researched, structured, and refreshed from open
           data.
         </p>
+        <p class="text-sm text-slate-500">
+          A project by{' '}
+          <a
+            href="https://builtbrilliant.com"
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-slate-700 underline-offset-2 hover:text-slate-900 hover:underline"
+          >
+            Built Brilliant ↗
+          </a>
+        </p>
       </div>
-      <nav aria-label="Footer" class="grid grid-cols-2 gap-8 text-sm">
+      <nav aria-label="Footer" class="grid grid-cols-2 gap-8 text-sm sm:grid-cols-3">
         <div class="space-y-2">
           <p class="font-medium text-slate-900">Explore</p>
           <a href="/" class="block text-slate-500 hover:text-slate-900">Home</a>
@@ -29,6 +40,11 @@ const year = new Date().getFullYear();
           >
             Passport Index ↗
           </a>
+        </div>
+        <div class="space-y-2">
+          <p class="font-medium text-slate-900">Legal</p>
+          <a href="/terms/" class="block text-slate-500 hover:text-slate-900">Terms &amp; Conditions</a>
+          <a href="/privacy/" class="block text-slate-500 hover:text-slate-900">Privacy Policy</a>
         </div>
       </nav>
     </div>
@@ -52,7 +68,18 @@ const year = new Date().getFullYear();
         Informational use only not legal, immigration, tax, or travel advice. Requirements change frequently; always
         verify with official government sources before travelling or applying.
       </p>
-      <p class="mt-2">© {year} Citizenship Hub. All rights reserved.</p>
+      <p class="mt-2">
+        © {year} Citizenship Hub — owned and operated by{' '}
+        <a
+          class="underline hover:text-slate-600"
+          href="https://builtbrilliant.com"
+          target="_blank"
+          rel="noopener"
+        >
+          Built Brilliant
+        </a>
+        . All rights reserved.
+      </p>
     </div>
   </div>
 </footer>

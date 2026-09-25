@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowDown, ArrowUp, ChevronsUpDown, ExternalLink, Link2, Loader2, Newspaper, RefreshCw, Search, Sparkles, X } from 'lucide-react';
-import { formatDateTime } from '../../lib/utils';
+import { formatDateTime, faviconUrl } from '../../lib/utils';
 import { COUNTRY_DATASETS } from '../../lib/country-datasets';
+import type { CountryRelocation, EmergencyService } from '../../data/types';
 
 interface Country {
   iso2: string;
@@ -92,6 +93,8 @@ interface CountryDetail {
   sources: CountrySource[];
   news: NewsItem[];
   scrapes: ScrapeRun[];
+  emergency: EmergencyService[];
+  relocation: CountryRelocation | null;
 }
 
 interface Props {
@@ -590,7 +593,7 @@ export default function CountriesTable({ countries }: Props) {
                         {detail.sources.map((s) => (
                           <li key={`${s.name}-${s.url}`} className="text-sm">
                             <div className="flex items-center justify-between gap-2">
-                              <span className="font-medium text-slate-800">{s.name}</span>
+                              <span className="flex items-center gap-2 font-medium text-slate-800"><img src={faviconUrl(s.url)} alt="" width="16" height="16" loading="lazy" className="h-4 w-4 shrink-0 rounded-sm" />{s.name}</span>
                               {s.category && (
                                 <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[0.68rem] font-medium uppercase tracking-wide text-slate-500">
                                   {s.category}
@@ -615,7 +618,48 @@ export default function CountriesTable({ countries }: Props) {
                     </div>
                   )}
 
+                  {detail.emergency.length > 0 && (
+                    <div className="mt-6 rounded-xl border border-slate-200 p-4">
+                      <h3 className="text-sm font-semibold text-slate-900">Emergency numbers</h3>
+                      <ul className="mt-3 space-y-2">
+                        {detail.emergency.map((e) => (
+                          <li key={e.service} className="text-sm">
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="font-medium text-slate-800">{e.service === 'universal' ? 'All emergencies' : e.service}</span>
+                              <span className="tabular-nums font-semibold text-slate-900">{e.number}</span>
+                            </div>
+                            {e.note && <p className="mt-0.5 text-xs text-slate-500">{e.note}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {detail.relocation && (
+                    <div className="mt-6 rounded-xl border border-slate-200 p-4">
+                      <h3 className="text-sm font-semibold text-slate-900">Relocation & living</h3>
+                      <dl className="mt-3 space-y-2 text-sm">
+                        {detail.relocation.internetPenetrationPct != null && (
+                          <div className="flex items-center justify-between gap-2"><dt className="text-slate-500">Internet penetration</dt><dd className="font-medium text-slate-900">{detail.relocation.internetPenetrationPct}%</dd></div>
+                        )}
+                        {detail.relocation.drivingSide && (
+                          <div className="flex items-center justify-between gap-2"><dt className="text-slate-500">Driving side</dt><dd className="font-medium text-slate-900">{detail.relocation.drivingSide}</dd></div>
+                        )}
+                        {detail.relocation.healthcareSystem && (
+                          <div className="flex items-center justify-between gap-2"><dt className="text-slate-500">Healthcare</dt><dd className="font-medium text-slate-900">{detail.relocation.healthcareSystem}</dd></div>
+                        )}
+                        {detail.relocation.climate && (
+                          <div className="flex items-center justify-between gap-2"><dt className="text-slate-500">Climate</dt><dd className="font-medium text-slate-900">{detail.relocation.climate}</dd></div>
+                        )}
+                        {detail.relocation.timezone && (
+                          <div className="flex items-center justify-between gap-2"><dt className="text-slate-500">Time zone</dt><dd className="font-medium text-slate-900">{detail.relocation.timezone}</dd></div>
+                        )}
+                      </dl>
+                    </div>
+                  )}
+
                   {detail.news.length > 0 && (
+
                     <div className="mt-6 rounded-xl border border-slate-200 p-4">
                       <div className="flex items-center gap-2">
                         <Newspaper className="h-4 w-4 text-slate-400" aria-hidden="true" />

@@ -1,0 +1,1596 @@
+{
+  "meta": {
+    "generatedAt": "2026-09-25T11:00:32.946Z",
+    "source": "Curated public emergency-service numbers (best effort).",
+    "license": "Public facts; no copyright applies.",
+    "disclaimer": "Emergency numbers change and vary by region — always verify locally.",
+    "totalCountries": 141
+  },
+  "countries": [
+    {
+      "iso2": "AF",
+      "services": [
+        {
+          "service": "police",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "AL",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "DZ",
+      "services": [
+        {
+          "service": "police",
+          "number": "17",
+          "note": "Ambulance & fire 14."
+        }
+      ]
+    },
+    {
+      "iso2": "AD",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "AO",
+      "services": [
+        {
+          "service": "police",
+          "number": "113"
+        },
+        {
+          "service": "fire",
+          "number": "115"
+        },
+        {
+          "service": "ambulance",
+          "number": "116"
+        }
+      ]
+    },
+    {
+      "iso2": "AR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "AU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "000",
+          "note": "112 works from mobile."
+        }
+      ]
+    },
+    {
+      "iso2": "AT",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "BH",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "BD",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "BY",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "Police 102, ambulance 103, fire 101."
+        }
+      ]
+    },
+    {
+      "iso2": "BE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "BT",
+      "services": [
+        {
+          "service": "police",
+          "number": "113"
+        },
+        {
+          "service": "ambulance",
+          "number": "112"
+        },
+        {
+          "service": "fire",
+          "number": "110"
+        }
+      ]
+    },
+    {
+      "iso2": "BO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911",
+          "note": "Police 110."
+        }
+      ]
+    },
+    {
+      "iso2": "BA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "BW",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "fire",
+          "number": "998"
+        },
+        {
+          "service": "ambulance",
+          "number": "997"
+        }
+      ]
+    },
+    {
+      "iso2": "BR",
+      "services": [
+        {
+          "service": "police",
+          "number": "190"
+        },
+        {
+          "service": "ambulance",
+          "number": "192"
+        },
+        {
+          "service": "fire",
+          "number": "193"
+        }
+      ]
+    },
+    {
+      "iso2": "BG",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "KH",
+      "services": [
+        {
+          "service": "police",
+          "number": "117"
+        },
+        {
+          "service": "fire",
+          "number": "118"
+        },
+        {
+          "service": "ambulance",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "CA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "CV",
+      "services": [
+        {
+          "service": "police",
+          "number": "132"
+        },
+        {
+          "service": "ambulance",
+          "number": "130"
+        },
+        {
+          "service": "fire",
+          "number": "131"
+        }
+      ]
+    },
+    {
+      "iso2": "CL",
+      "services": [
+        {
+          "service": "police",
+          "number": "133"
+        },
+        {
+          "service": "ambulance",
+          "number": "131"
+        },
+        {
+          "service": "fire",
+          "number": "132"
+        }
+      ]
+    },
+    {
+      "iso2": "CN",
+      "services": [
+        {
+          "service": "police",
+          "number": "110"
+        },
+        {
+          "service": "fire",
+          "number": "119"
+        },
+        {
+          "service": "ambulance",
+          "number": "120"
+        }
+      ]
+    },
+    {
+      "iso2": "CO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "123"
+        }
+      ]
+    },
+    {
+      "iso2": "CR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "HR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "CU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "106"
+        }
+      ]
+    },
+    {
+      "iso2": "CY",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "CZ",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "DK",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "DO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "EC",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "EG",
+      "services": [
+        {
+          "service": "police",
+          "number": "122"
+        },
+        {
+          "service": "ambulance",
+          "number": "123"
+        },
+        {
+          "service": "fire",
+          "number": "180"
+        }
+      ]
+    },
+    {
+      "iso2": "SV",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "EE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "SZ",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "ambulance",
+          "number": "977"
+        },
+        {
+          "service": "fire",
+          "number": "933"
+        }
+      ]
+    },
+    {
+      "iso2": "ET",
+      "services": [
+        {
+          "service": "police",
+          "number": "991"
+        },
+        {
+          "service": "ambulance",
+          "number": "907"
+        },
+        {
+          "service": "fire",
+          "number": "939"
+        }
+      ]
+    },
+    {
+      "iso2": "FJ",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911",
+          "note": "917 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "FI",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "FR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "GE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "DE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "GH",
+      "services": [
+        {
+          "service": "police",
+          "number": "191"
+        },
+        {
+          "service": "fire",
+          "number": "192"
+        },
+        {
+          "service": "ambulance",
+          "number": "193"
+        }
+      ]
+    },
+    {
+      "iso2": "GR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "GT",
+      "services": [
+        {
+          "service": "police",
+          "number": "110"
+        },
+        {
+          "service": "ambulance",
+          "number": "123"
+        },
+        {
+          "service": "fire",
+          "number": "122"
+        }
+      ]
+    },
+    {
+      "iso2": "HT",
+      "services": [
+        {
+          "service": "police",
+          "number": "114"
+        }
+      ]
+    },
+    {
+      "iso2": "HN",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "HK",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "HU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "IS",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "IN",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "Police 100, ambulance 102, fire 101."
+        }
+      ]
+    },
+    {
+      "iso2": "ID",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "Police 110."
+        }
+      ]
+    },
+    {
+      "iso2": "IR",
+      "services": [
+        {
+          "service": "police",
+          "number": "110"
+        },
+        {
+          "service": "ambulance",
+          "number": "115"
+        },
+        {
+          "service": "fire",
+          "number": "125"
+        }
+      ]
+    },
+    {
+      "iso2": "IE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999",
+          "note": "112 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "IL",
+      "services": [
+        {
+          "service": "police",
+          "number": "100"
+        },
+        {
+          "service": "ambulance",
+          "number": "101"
+        },
+        {
+          "service": "fire",
+          "number": "102"
+        }
+      ]
+    },
+    {
+      "iso2": "IT",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "JM",
+      "services": [
+        {
+          "service": "police",
+          "number": "119",
+          "note": "Fire 110."
+        }
+      ]
+    },
+    {
+      "iso2": "JP",
+      "services": [
+        {
+          "service": "police",
+          "number": "110"
+        },
+        {
+          "service": "ambulance",
+          "number": "119"
+        },
+        {
+          "service": "fire",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "JO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "KZ",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "Police 102, ambulance 103, fire 101."
+        }
+      ]
+    },
+    {
+      "iso2": "KE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999",
+          "note": "112 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "XK",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "KW",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "KG",
+      "services": [
+        {
+          "service": "police",
+          "number": "102"
+        },
+        {
+          "service": "ambulance",
+          "number": "103"
+        },
+        {
+          "service": "fire",
+          "number": "101"
+        }
+      ]
+    },
+    {
+      "iso2": "LA",
+      "services": [
+        {
+          "service": "police",
+          "number": "191"
+        },
+        {
+          "service": "ambulance",
+          "number": "195"
+        },
+        {
+          "service": "fire",
+          "number": "190"
+        }
+      ]
+    },
+    {
+      "iso2": "LV",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "LB",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "LS",
+      "services": [
+        {
+          "service": "police",
+          "number": "123"
+        },
+        {
+          "service": "ambulance",
+          "number": "121"
+        },
+        {
+          "service": "fire",
+          "number": "122"
+        }
+      ]
+    },
+    {
+      "iso2": "LI",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "LT",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "LU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "MO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "MG",
+      "services": [
+        {
+          "service": "police",
+          "number": "117"
+        },
+        {
+          "service": "fire",
+          "number": "118"
+        },
+        {
+          "service": "ambulance",
+          "number": "124"
+        }
+      ]
+    },
+    {
+      "iso2": "MY",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "MV",
+      "services": [
+        {
+          "service": "police",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "MT",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "MU",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "ambulance",
+          "number": "114"
+        },
+        {
+          "service": "fire",
+          "number": "115"
+        }
+      ]
+    },
+    {
+      "iso2": "MX",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "MD",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "MC",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "MN",
+      "services": [
+        {
+          "service": "police",
+          "number": "102"
+        },
+        {
+          "service": "ambulance",
+          "number": "103"
+        },
+        {
+          "service": "fire",
+          "number": "101"
+        }
+      ]
+    },
+    {
+      "iso2": "ME",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "MA",
+      "services": [
+        {
+          "service": "police",
+          "number": "19",
+          "note": "Ambulance & fire 15."
+        }
+      ]
+    },
+    {
+      "iso2": "MZ",
+      "services": [
+        {
+          "service": "police",
+          "number": "119"
+        },
+        {
+          "service": "fire",
+          "number": "198"
+        },
+        {
+          "service": "ambulance",
+          "number": "117"
+        }
+      ]
+    },
+    {
+      "iso2": "MM",
+      "services": [
+        {
+          "service": "universal",
+          "number": "199"
+        }
+      ]
+    },
+    {
+      "iso2": "NA",
+      "services": [
+        {
+          "service": "police",
+          "number": "10111"
+        }
+      ]
+    },
+    {
+      "iso2": "NP",
+      "services": [
+        {
+          "service": "police",
+          "number": "100"
+        },
+        {
+          "service": "fire",
+          "number": "101"
+        },
+        {
+          "service": "ambulance",
+          "number": "102"
+        }
+      ]
+    },
+    {
+      "iso2": "NL",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "NZ",
+      "services": [
+        {
+          "service": "universal",
+          "number": "111"
+        }
+      ]
+    },
+    {
+      "iso2": "NI",
+      "services": [
+        {
+          "service": "police",
+          "number": "118"
+        },
+        {
+          "service": "ambulance",
+          "number": "128"
+        },
+        {
+          "service": "fire",
+          "number": "115"
+        }
+      ]
+    },
+    {
+      "iso2": "NG",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "199 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "MK",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "NO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "OM",
+      "services": [
+        {
+          "service": "police",
+          "number": "9999"
+        }
+      ]
+    },
+    {
+      "iso2": "PK",
+      "services": [
+        {
+          "service": "police",
+          "number": "15"
+        },
+        {
+          "service": "ambulance",
+          "number": "1122"
+        },
+        {
+          "service": "fire",
+          "number": "16"
+        }
+      ]
+    },
+    {
+      "iso2": "PA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "PG",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "PY",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "PE",
+      "services": [
+        {
+          "service": "police",
+          "number": "105"
+        },
+        {
+          "service": "ambulance",
+          "number": "117"
+        },
+        {
+          "service": "fire",
+          "number": "116"
+        }
+      ]
+    },
+    {
+      "iso2": "PH",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "PL",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "PT",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "QA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "RO",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "RU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "Police 102, ambulance 103, fire 101."
+        }
+      ]
+    },
+    {
+      "iso2": "RW",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "WS",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "SM",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "SA",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "ambulance",
+          "number": "997"
+        },
+        {
+          "service": "fire",
+          "number": "998"
+        }
+      ]
+    },
+    {
+      "iso2": "RS",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "SC",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "SG",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "ambulance",
+          "number": "995"
+        },
+        {
+          "service": "fire",
+          "number": "995"
+        }
+      ]
+    },
+    {
+      "iso2": "SK",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "SI",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "SB",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "ZA",
+      "services": [
+        {
+          "service": "police",
+          "number": "10111"
+        },
+        {
+          "service": "ambulance",
+          "number": "10177"
+        },
+        {
+          "service": "fire",
+          "number": "10177",
+          "note": "112 works from mobile."
+        }
+      ]
+    },
+    {
+      "iso2": "KR",
+      "services": [
+        {
+          "service": "police",
+          "number": "112"
+        },
+        {
+          "service": "ambulance",
+          "number": "119"
+        },
+        {
+          "service": "fire",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "ES",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "LK",
+      "services": [
+        {
+          "service": "police",
+          "number": "119",
+          "note": "Fire & ambulance 110."
+        }
+      ]
+    },
+    {
+      "iso2": "SD",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "SE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "CH",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "TW",
+      "services": [
+        {
+          "service": "police",
+          "number": "110"
+        },
+        {
+          "service": "ambulance",
+          "number": "119"
+        },
+        {
+          "service": "fire",
+          "number": "119"
+        }
+      ]
+    },
+    {
+      "iso2": "TZ",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "999 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "TH",
+      "services": [
+        {
+          "service": "police",
+          "number": "191"
+        },
+        {
+          "service": "ambulance",
+          "number": "1669"
+        },
+        {
+          "service": "fire",
+          "number": "199"
+        }
+      ]
+    },
+    {
+      "iso2": "TO",
+      "services": [
+        {
+          "service": "police",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "TN",
+      "services": [
+        {
+          "service": "police",
+          "number": "197"
+        },
+        {
+          "service": "ambulance",
+          "number": "190"
+        },
+        {
+          "service": "fire",
+          "number": "198"
+        }
+      ]
+    },
+    {
+      "iso2": "TR",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "UG",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112",
+          "note": "999 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "UA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "AE",
+      "services": [
+        {
+          "service": "police",
+          "number": "999"
+        },
+        {
+          "service": "ambulance",
+          "number": "998"
+        },
+        {
+          "service": "fire",
+          "number": "997"
+        }
+      ]
+    },
+    {
+      "iso2": "GB",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999",
+          "note": "112 also works."
+        }
+      ]
+    },
+    {
+      "iso2": "US",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "UY",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "UZ",
+      "services": [
+        {
+          "service": "police",
+          "number": "102"
+        },
+        {
+          "service": "ambulance",
+          "number": "103"
+        },
+        {
+          "service": "fire",
+          "number": "101"
+        }
+      ]
+    },
+    {
+      "iso2": "VU",
+      "services": [
+        {
+          "service": "universal",
+          "number": "111"
+        }
+      ]
+    },
+    {
+      "iso2": "VA",
+      "services": [
+        {
+          "service": "universal",
+          "number": "112"
+        }
+      ]
+    },
+    {
+      "iso2": "VE",
+      "services": [
+        {
+          "service": "universal",
+          "number": "911"
+        }
+      ]
+    },
+    {
+      "iso2": "VN",
+      "services": [
+        {
+          "service": "police",
+          "number": "113"
+        },
+        {
+          "service": "fire",
+          "number": "114"
+        },
+        {
+          "service": "ambulance",
+          "number": "115"
+        }
+      ]
+    },
+    {
+      "iso2": "ZM",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999"
+        }
+      ]
+    },
+    {
+      "iso2": "ZW",
+      "services": [
+        {
+          "service": "universal",
+          "number": "999",
+          "note": "Ambulance 994, fire 993."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const updated = new Date().toISOString().slice(0, 10);
+---
+
+<BaseLayout
+  title="Terms & Conditions"
+  description="The terms and conditions that govern your use of Citizenship Hub, a project by Built Brilliant."
+>
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+      <a href="/" class="transition hover:text-slate-900">Home</a>
+      <span aria-hidden="true" class="mx-1.5 text-slate-300">·</span>
+      <span class="text-slate-700">Terms &amp; Conditions</span>
+    </nav>
+
+    <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+      Terms &amp; Conditions
+    </h1>
+    <p class="mt-2 text-sm text-slate-500">Last updated: {updated}</p>
+
+    <div class="mt-8 space-y-10 text-sm leading-relaxed text-slate-600">
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">1. Ownership</h2>
+        <p class="mt-2">
+          Citizenship Hub ("the Site") is a project owned and operated by{' '}
+          <a
+            href="https://builtbrilliant.com"
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-brand-700 underline-offset-2 hover:underline"
+          >
+            Built Brilliant
+          </a>
+          . Throughout these terms, "we", "us", and "our" refer to Built Brilliant.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">2. Informational use only</h2>
+        <p class="mt-2">
+          The Site provides passport rankings, visa-mobility information, and citizenship guides for general
+          informational purposes only. Nothing on the Site constitutes legal, immigration, tax, investment, or travel
+          advice.
+        </p>
+        <p class="mt-2">
+          Requirements, rules, scores, and fees change frequently and vary by individual circumstances. Always verify
+          information with the relevant official government source or a qualified professional before relying on it.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">3. Third-party data and content</h2>
+        <p class="mt-2">
+          The Site draws on data and content from multiple public and third-party sources, each subject to its own
+          license and terms. Attribution and license details are shown on each country page. We do not claim ownership
+          of third-party data, which is provided "as is".
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">4. Intellectual property</h2>
+        <p class="mt-2">
+          The Site's design, text, code, and original content are the property of Built Brilliant or its licensors and
+          are protected by applicable intellectual-property laws. You may view and share links to the Site for personal,
+          non-commercial use, but you may not reproduce, republish, or redistribute its content without prior written
+          permission.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">5. Acceptable use</h2>
+        <p class="mt-2">
+          You agree to use the Site only for lawful purposes and not to attempt to disrupt, overload, or gain unauthorised
+          access to the Site or its underlying systems.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">6. Limitation of liability</h2>
+        <p class="mt-2">
+          The Site is provided on an "as is" and "as available" basis. To the fullest extent permitted by law, Built
+          Brilliant disclaims all warranties and shall not be liable for any loss or damage arising from your use of, or
+          reliance on, the Site or its content.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">7. Changes to these terms</h2>
+        <p class="mt-2">
+          We may update these terms from time to time. Any changes will be posted on this page, and the "Last updated"
+          date above will be revised accordingly. Continued use of the Site after changes are posted constitutes
+          acceptance of the updated terms.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">8. Contact</h2>
+        <p class="mt-2">
+          Questions about these terms can be directed to{' '}
+          <a
+            href="https://builtbrilliant.com"
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-brand-700 underline-offset-2 hover:underline"
+          >
+            Built Brilliant
+          </a>
+          .
+        </p>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

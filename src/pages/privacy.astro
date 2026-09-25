@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const updated = new Date().toISOString().slice(0, 10);
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="How Citizenship Hub, a project by Built Brilliant, collects, uses, and protects your information."
+>
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <nav class="mb-4 text-sm text-slate-500" aria-label="Breadcrumb">
+      <a href="/" class="transition hover:text-slate-900">Home</a>
+      <span aria-hidden="true" class="mx-1.5 text-slate-300">·</span>
+      <span class="text-slate-700">Privacy Policy</span>
+    </nav>
+
+    <h1 class="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">Privacy Policy</h1>
+    <p class="mt-2 text-sm text-slate-500">Last updated: {updated}</p>
+
+    <div class="mt-8 space-y-10 text-sm leading-relaxed text-slate-600">
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">1. Who we are</h2>
+        <p class="mt-2">
+          Citizenship Hub ("the Site") is owned and operated by{' '}
+          <a
+            href="https://builtbrilliant.com"
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-brand-700 underline-offset-2 hover:underline"
+          >
+            Built Brilliant
+          </a>
+          , which acts as the data controller for any personal information collected through the Site.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">2. Information we collect</h2>
+        <p class="mt-2">We keep data collection minimal and do not sell personal information. We may collect:</p>
+        <ul class="mt-2 list-disc space-y-1 pl-5">
+          <li>
+            <strong class="font-medium text-slate-900">Contact details</strong> you submit through the lead form (for
+            example, your name and email address).
+          </li>
+          <li>
+            <strong class="font-medium text-slate-900">Anonymous usage data</strong>, such as the pages you visit,
+            on-site searches, and how far you scroll, used to understand how the Site is used.
+          </li>
+          <li>
+            <strong class="font-medium text-slate-900">Technical data</strong>, such as browser type, device type,
+            approximate location, and referring site, collected via analytics.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">3. Cookies</h2>
+        <p class="mt-2">
+          The Site uses an anonymous session cookie for attribution and analytics purposes. An additional cookie is used
+          only for the authenticated administration console and is not set for ordinary visitors. You can control or
+          delete cookies through your browser settings.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">4. Third-party services</h2>
+        <p class="mt-2">
+          We use Cloudflare Web Analytics to measure aggregated, privacy-respecting traffic and performance data.
+          Cloudflare may process this data in accordance with its own privacy policy.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">5. How we use information</h2>
+        <p class="mt-2">We use the information we collect to:</p>
+        <ul class="mt-2 list-disc space-y-1 pl-5">
+          <li>respond to enquiries and provide the services you request;</li>
+          <li>improve the Site and understand how visitors use it; and</li>
+          <li>maintain the security and performance of the Site.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">6. Data retention</h2>
+        <p class="mt-2">
+          We retain personal information only for as long as necessary to fulfil the purposes described above or as
+          required by law. Anonymous analytics data is retained in aggregate form.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">7. Your rights</h2>
+        <p class="mt-2">
+          Depending on your jurisdiction, you may have the right to access, correct, or delete your personal
+          information, or to object to or restrict its processing. To exercise these rights, please contact us.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold text-slate-900">8. Contact</h2>
+        <p class="mt-2">
+          Privacy questions can be directed to{' '}
+          <a
+            href="https://builtbrilliant.com"
+            target="_blank"
+            rel="noopener"
+            class="font-medium text-brand-700 underline-offset-2 hover:underline"
+          >
+            Built Brilliant
+          </a>
+          .
+        </p>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

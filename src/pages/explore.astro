@@ -1,14 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Search } from 'lucide-react';
-import { getWorldPaths } from '../lib/map';
+import OsmVisaMap from '../components/OsmVisaMap.astro';
 import { STATUS_FILL, STATUS_LABEL, STATUS_BADGE } from '../lib/visa';
 import { getDb } from '../lib/db/client';
 import { listCountries } from '../lib/db/countries';
 
 const db = getDb(Astro.locals);
 const countries = await listCountries(db);
-const paths = getWorldPaths();
 
 const FILTER_STATUSES = ['visa-free', 'visa-on-arrival', 'eta', 'e-visa', 'visa-required'] as const;
 const FEATURED_CODES = ['AE', 'US', 'GB', 'DE', 'IN', 'NG', 'BR', 'ES'];
@@ -151,34 +150,7 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
   </section>
 
   <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-    <div class="relative">
-      <svg
-        id="worldMap"
-        viewBox="0 0 960 500"
-        role="img"
-        aria-label="World map colored by visa status for the selected passport"
-        class="h-auto w-full rounded-2xl border border-slate-200 bg-white shadow-sm"
-      >
-        {
-          paths.map((c) => (
-            <path
-              d={c.d}
-              data-alpha2={c.iso2}
-              data-name={c.name}
-              class="country-path cursor-pointer transition-opacity duration-150"
-              fill="var(--map-unknown)"
-              stroke="var(--map-stroke)"
-              stroke-width="0.5"
-            ></path>
-          ))
-        }
-      </svg>
-      <div
-        id="mapTooltip"
-        hidden
-        class="pointer-events-none fixed z-50 rounded-md bg-brand-700 px-2.5 py-1.5 text-xs text-slate-50"
-      ></div>
-    </div>
+    <OsmVisaMap interactive statusByIso2={{}} />
   </section>
 
   <section class="mx-auto max-w-7xl px-4 pb-12 sm:px-6">
@@ -251,8 +223,6 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
   const countBadges = document.getElementById('countBadges');
   const resultsList = document.getElementById('resultsList');
   const emptyState = document.getElementById('emptyState');
-  const worldMap = document.getElementById('worldMap');
-  const tooltip = document.getElementById('mapTooltip');
   const loading = document.getElementById('loading');
 
   const esc = (s) =>
@@ -344,19 +314,9 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
           <p class="text-xs font-medium text-slate-500">${esc(STATUS_LABEL[s])}</p>
         </div>`,
     ).join('');
-    document.querySelectorAll('.country-path').forEach((path) => {
-      const alpha2 = path.dataset.alpha2;
-      if (!alpha2) return;
-      if (alpha2 === currentCode) {
-        path.style.fill = STATUS_FILL.home;
-        path.classList.remove('opacity-20');
-        return;
-      }
-      const status = statusByCode[alpha2];
-      const isVisible = status ? activeFilters.has(status) : false;
-      path.style.fill = status ? STATUS_FILL[status] ?? STATUS_FILL.unknown : STATUS_FILL.unknown;
-      path.classList.toggle('opacity-20', !isVisible);
-    });
+    const mapState = { statusByIso2: statusByCode, homeCode: currentCode, activeFilters };
+    window.__visaMapState = mapState;
+    window.dispatchEvent(new CustomEvent('visa-map:update', { detail: mapState }));
 
     const q = searchTerm.trim().toLowerCase();
 
@@ -425,24 +385,6 @@ const COUNTRIES = countries.map((c) => ({ code: c.code, name: c.name, flag: c.fl
     setToggle(chip, active, CHIP_ON, CHIP_OFF);
     chip.setAttribute('aria-pressed', String(active));
     render();
-  });
-
-  worldMap.addEventListener('mousemove', (e) => {
-    const path = e.target.closest('.country-path');
-    if (!path || !path.dataset.alpha2) {
-      tooltip.hidden = true;
-      return;
-    }
-    const status = statusByCode[path.dataset.alpha2];
-    const days = daysByCode[path.dataset.alpha2];
-    const label = status ? STATUS_LABEL[status] : 'Unknown';
-    tooltip.textContent = `${path.dataset.name} ${label}${days != null ? ` · ${days} days` : ''}`;
-    tooltip.style.left = `${e.clientX + 14}px`;
-    tooltip.style.top = `${e.clientY + 14}px`;
-    tooltip.hidden = false;
-  });
-  worldMap.addEventListener('mouseleave', () => {
-    tooltip.hidden = true;
   });
 
   setPassport(DEFAULT_PASSPORT);

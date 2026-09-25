@@ -27,6 +27,8 @@ const lawByCode = new Map(laws.map((c) => [String(c.iso2).toUpperCase(), c]));
 const sources = readJson('src/data/sources.json');
 const countryNews = readJson('src/data/country-news.json');
 const countrySources = readJson('src/data/country-sources.json');
+const countryEmergency = readJson('src/data/country-emergency.json');
+const countryRelocation = readJson('src/data/country-relocation.json');
 
 /** URL-safe slug (mirrors `slugify` in src/lib/utils.ts). */
 function slugify(value) {
@@ -239,6 +241,8 @@ pushMeta('citizenship-laws', lawsMeta, { verifiedAt: lawsMeta.verifiedAt, source
 pushMeta('country-profiles', readJson('src/data/country-profiles.json').meta);
 pushMeta('country-freedom', readJson('src/data/country-freedom.json').meta);
 pushMeta('country-tax', readJson('src/data/country-tax.json').meta);
+pushMeta('country-relocation', readJson('src/data/country-relocation.json').meta);
+pushMeta('country-emergency', readJson('src/data/country-emergency.json').meta);
 statements.push(
   `INSERT OR REPLACE INTO dataset_meta (dataset_id, generated_at, verified_at, source, license, disclaimer, score_definition, total_countries, total_destinations, encoding, sources) VALUES\n${metaRows.join(',\n')};`,
 );
@@ -278,10 +282,31 @@ for (const c of countrySources.countries ?? []) {
     );
   }
 }
-if (countrySourceRows.length) {
+for (let i = 0; i < countrySourceRows.length; i += 200) {
+  const chunk = countrySourceRows.slice(i, i + 200);
   statements.push(
-    `INSERT OR REPLACE INTO country_immigration_sources (id, iso2, name, url, category, note) VALUES\n${countrySourceRows.join(',\n')};`,
+    `INSERT OR REPLACE INTO country_immigration_sources (id, iso2, name, url, category, note) VALUES\n${chunk.join(',\n')};`,
   );
+}
+
+// country_emergency (essential emergency numbers)
+const emergencyRows = [];
+for (const c of countryEmergency.countries ?? []) {
+  for (const sv of c.services ?? []) {
+    emergencyRows.push('(' + lit(c.iso2) + ', ' + lit(sv.service) + ', ' + lit(sv.number) + ', ' + lit(sv.note ?? null) + ')');
+  }
+}
+if (emergencyRows.length) {
+  statements.push('DELETE FROM country_emergency;');
+  statements.push('INSERT INTO country_emergency (iso2, service, number, note) VALUES\n' + emergencyRows.join(',\n') + ';');
+}
+
+// country_relocation (living & relocation facts)
+const relocationRows = (countryRelocation.countries ?? []).map((c) =>
+  '(' + lit(c.iso2) + ', ' + lit(c.internetPenetrationPct) + ', ' + lit(c.internetYear) + ', ' + lit(c.avgBroadbandMbps) + ', ' + lit(c.broadbandYear) + ', ' + lit(c.minimumWageUsd) + ', ' + lit(c.minimumWageYear) + ', ' + lit(c.avgNetSalaryUsd) + ', ' + lit(c.avgNetSalaryYear) + ', ' + lit(c.costOfLivingIndex) + ', ' + lit(c.rentIndex) + ', ' + lit(c.colYear) + ', ' + lit(c.safetyIndex) + ', ' + lit(c.safetyYear) + ', ' + lit(c.healthcareSystem) + ', ' + lit(c.climate) + ', ' + lit(c.timezone) + ', ' + lit(c.drivingSide) + ', ' + lit(c.plugVoltage) + ')',
+);
+if (relocationRows.length) {
+  statements.push('INSERT OR REPLACE INTO country_relocation (iso2, internet_penetration_pct, internet_year, avg_broadband_mbps, broadband_year, minimum_wage_usd, minimum_wage_year, avg_net_salary_usd, avg_net_salary_year, cost_of_living_index, rent_index, col_year, safety_index, safety_year, healthcare_system, climate, timezone, driving_side, plug_voltage) VALUES\n' + relocationRows.join(',\n') + ';');
 }
 
 const outDir = resolve(root, 'scripts', '.generated');
@@ -304,4 +329,6 @@ console.log(`  dataset_meta:      ${metaRows.length}`);
 console.log(`  data_sources:      ${sourceRows.length}`);
 console.log(`  country_news:      ${newsRows.length}`);
 console.log(`  country_immigration_sources: ${countrySourceRows.length}`);
+console.log('  country_emergency: ' + emergencyRows.length);
+console.log('  country_relocation: ' + relocationRows.length);
 console.log('Apply to the remote D1 database with: npm run db:seed');

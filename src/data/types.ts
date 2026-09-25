@@ -219,3 +219,58 @@ export interface CitizenshipDocumentsData {
   routes: Record<CitizenshipRouteKey, RouteChecklist>;
   countries: Record<string, Partial<Record<CitizenshipRouteKey, RouteChecklistOverride>>>;
 }
+
+export interface CountryRelocation {
+  iso2: string;
+  internetPenetrationPct: number | null;
+  internetYear: number | null;
+  avgBroadbandMbps: number | null;
+  broadbandYear: number | null;
+  minimumWageUsd: number | null;
+  minimumWageYear: number | null;
+  avgNetSalaryUsd: number | null;
+  avgNetSalaryYear: number | null;
+  costOfLivingIndex: number | null;
+  rentIndex: number | null;
+  colYear: number | null;
+  safetyIndex: number | null;
+  safetyYear: number | null;
+  healthcareSystem: string | null;
+  climate: string | null;
+  timezone: string | null;
+  drivingSide: string | null;
+  plugVoltage: string | null;
+}
+
+export interface CountryRelocationData {
+  meta: {
+    generatedAt: string;
+    sources: DataSource[];
+    license: string;
+    disclaimer: string;
+    totalCountries: number;
+  };
+  countries: CountryRelocation[];
+}
+
+export interface EmergencyService {
+  service: string;
+  number: string;
+  note: string | null;
+}
+
+export interface CountryEmergency {
+  iso2: string;
+  services: EmergencyService[];
+}
+
+export interface CountryEmergencyData {
+  meta: {
+    generatedAt: string;
+    source: string;
+    license: string;
+    disclaimer: string;
+    totalCountries: number;
+  };
+  countries: CountryEmergency[];
+}

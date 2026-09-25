@@ -12,6 +12,8 @@ const STATIC_PAGES: Array<[path: string, priority: string]> = [
   ['/compare/', '0.8'],
   ['/best/', '0.8'],
   ['/destinations/', '0.8'],
+  ['/terms/', '0.3'],
+  ['/privacy/', '0.3'],
 ];
 
 function url(loc: string, priority: string): string {

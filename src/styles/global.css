@@ -266,3 +266,62 @@ html.reduce-motion *::after {
 .a11y-root .text-xs {
   font-size: 12px;
 }
+
+/* ---- OpenStreetMap (Leaflet) visa choropleth ---- */
+.osm-visa-map {
+  isolation: isolate;
+}
+
+.leaflet-container {
+  background: #d8d1c4;
+  font-family: inherit;
+}
+
+/* Country polygons are colored via CSS vars so dark mode updates automatically. */
+.leaflet-container .country-path {
+  stroke: var(--map-stroke);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+  fill-opacity: 0.72;
+  transition: fill-opacity 120ms ease, opacity 120ms ease;
+}
+
+.leaflet-container .country-path:hover {
+  stroke-width: 1.25;
+  stroke: var(--color-gold-500);
+}
+
+.leaflet-container .country-path.map-dimmed {
+  opacity: 0.18;
+  fill-opacity: 0.08;
+}
+
+.leaflet-container .map-fill-visa-free { fill: var(--map-visa-free); }
+.leaflet-container .map-fill-visa-on-arrival { fill: var(--map-visa-on-arrival); }
+.leaflet-container .map-fill-eta { fill: var(--map-eta); }
+.leaflet-container .map-fill-e-visa { fill: var(--map-e-visa); }
+.leaflet-container .map-fill-visa-required { fill: var(--map-visa-required); }
+.leaflet-container .map-fill-no-admission { fill: var(--map-no-admission); }
+.leaflet-container .map-fill-home { fill: var(--map-home); }
+.leaflet-container .map-fill-unknown { fill: var(--map-unknown); }
+
+/* Tooltips */
+.leaflet-container .leaflet-tooltip {
+  background: var(--color-brand-700);
+  color: #f8fafc;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+.leaflet-container .leaflet-tooltip::before {
+  border-top-color: var(--color-brand-700);
+}
+.dark .leaflet-container .leaflet-tooltip {
+  background: #1c1b18;
+  color: #f2eee7;
+}
+.dark .leaflet-container .leaflet-tooltip::before {
+  border-top-color: #1c1b18;
+}

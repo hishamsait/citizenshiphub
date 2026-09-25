@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-09-22T22:36:40.473Z",
-    "source": "Curated official government portals + Wikipedia nationality-law pages.",
+    "generatedAt": "2026-09-25T11:06:15.593Z",
+    "source": "Curated official government portals, Wikipedia nationality-law pages, and practical relocation links.",
     "totalCountries": 199,
     "disclaimer": "Reference links only — verify with official sources before acting."
   },
@@ -16,6 +16,20 @@
           "url": "https://en.wikipedia.org/wiki/Afghan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-af-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-af-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -29,6 +43,20 @@
           "url": "https://en.wikipedia.org/wiki/Albanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-al-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-al-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -42,6 +70,20 @@
           "url": "https://en.wikipedia.org/wiki/Algerian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-dz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-dz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -55,6 +97,20 @@
           "url": "https://en.wikipedia.org/wiki/Andorran_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ad-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ad-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -68,6 +124,20 @@
           "url": "https://en.wikipedia.org/wiki/Angolan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ao-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ao-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -81,6 +151,20 @@
           "url": "https://en.wikipedia.org/wiki/Antiguan%2C_Barbudan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ag-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ag-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -101,6 +185,20 @@
           "url": "https://www.argentina.gob.ar/interior/migraciones",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ar-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ar-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -114,6 +212,20 @@
           "url": "https://en.wikipedia.org/wiki/Armenian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-am-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-am-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -134,6 +246,55 @@
           "url": "https://immi.homeaffairs.gov.au/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-au-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-au-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-au-jobs",
+          "name": "SEEK",
+          "url": "https://www.seek.com.au/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-au-housing",
+          "name": "Domain",
+          "url": "https://www.domain.com.au/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-au-healthcare",
+          "name": "Healthdirect Australia",
+          "url": "https://www.healthdirect.gov.au/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-au-banking",
+          "name": "Reserve Bank of Australia",
+          "url": "https://www.rba.gov.au/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-au-education",
+          "name": "Study Australia",
+          "url": "https://www.studyaustralia.gov.au/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -154,6 +315,27 @@
           "url": "https://www.migration.gv.at/en/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-at-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-at-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-at-housing",
+          "name": "Willhaben",
+          "url": "https://www.willhaben.at/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
         }
       ]
     },
@@ -167,6 +349,20 @@
           "url": "https://en.wikipedia.org/wiki/Azerbaijani_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-az-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-az-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -180,6 +376,20 @@
           "url": "https://en.wikipedia.org/wiki/Bahamian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bs-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bs-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -193,6 +403,20 @@
           "url": "https://en.wikipedia.org/wiki/Bahraini_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bh-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bh-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -206,6 +430,20 @@
           "url": "https://en.wikipedia.org/wiki/Bangladeshi_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bd-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bd-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -219,6 +457,20 @@
           "url": "https://en.wikipedia.org/wiki/Barbadian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bb-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bb-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -232,6 +484,20 @@
           "url": "https://en.wikipedia.org/wiki/Belarusian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-by-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-by-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -252,6 +518,20 @@
           "url": "https://www.ibz.be/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-be-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-be-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -265,6 +545,20 @@
           "url": "https://en.wikipedia.org/wiki/Belizean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -278,6 +572,20 @@
           "url": "https://en.wikipedia.org/wiki/Beninese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bj-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bj-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -291,6 +599,20 @@
           "url": "https://en.wikipedia.org/wiki/Bhutanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -304,6 +626,20 @@
           "url": "https://en.wikipedia.org/wiki/Bolivian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bo-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bo-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -317,6 +653,20 @@
           "url": "https://en.wikipedia.org/wiki/Bosnian%2C_Herzegovinian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ba-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ba-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -330,6 +680,20 @@
           "url": "https://en.wikipedia.org/wiki/Motswana_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -350,6 +714,27 @@
           "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/estrangeiro",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-br-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-br-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-br-jobs",
+          "name": "Catho",
+          "url": "https://www.catho.com.br/",
+          "category": "Jobs",
+          "note": "Leading local job board."
         }
       ]
     },
@@ -363,6 +748,20 @@
           "url": "https://en.wikipedia.org/wiki/Bruneian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -376,6 +775,20 @@
           "url": "https://en.wikipedia.org/wiki/Bulgarian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -389,6 +802,20 @@
           "url": "https://en.wikipedia.org/wiki/Burkinabe_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bf-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bf-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -402,6 +829,20 @@
           "url": "https://en.wikipedia.org/wiki/Burundian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-bi-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-bi-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -415,6 +856,20 @@
           "url": "https://en.wikipedia.org/wiki/Cambodian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kh-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kh-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -428,6 +883,20 @@
           "url": "https://en.wikipedia.org/wiki/Cameroonian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -448,6 +917,55 @@
           "url": "https://www.canada.ca/en/immigration-refugees-citizenship.html",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ca-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ca-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ca-jobs",
+          "name": "Workopolis",
+          "url": "https://www.workopolis.com/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-ca-housing",
+          "name": "Realtor.ca",
+          "url": "https://www.realtor.ca/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-ca-healthcare",
+          "name": "Health Canada",
+          "url": "https://www.canada.ca/en/health-canada.html",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-ca-banking",
+          "name": "Bank of Canada",
+          "url": "https://www.bankofcanada.ca/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-ca-education",
+          "name": "EduCanada",
+          "url": "https://www.educanada.ca/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -461,6 +979,20 @@
           "url": "https://en.wikipedia.org/wiki/Cape_Verdean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cv-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cv-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -474,6 +1006,20 @@
           "url": "https://en.wikipedia.org/wiki/Central_African_Republic_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cf-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cf-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -487,6 +1033,20 @@
           "url": "https://en.wikipedia.org/wiki/Chadian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-td-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-td-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -500,6 +1060,20 @@
           "url": "https://en.wikipedia.org/wiki/Chilean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cl-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cl-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -513,6 +1087,20 @@
           "url": "https://en.wikipedia.org/wiki/Chinese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -526,6 +1114,20 @@
           "url": "https://en.wikipedia.org/wiki/Colombian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-co-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-co-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -539,6 +1141,20 @@
           "url": "https://en.wikipedia.org/wiki/Comoran_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-km-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-km-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -552,6 +1168,20 @@
           "url": "https://en.wikipedia.org/wiki/Republic_of_the_Congo_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -565,6 +1195,20 @@
           "url": "https://en.wikipedia.org/wiki/Democratic_Republic_of_the_Congo_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cd-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cd-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -578,6 +1222,20 @@
           "url": "https://en.wikipedia.org/wiki/Costa_Rican_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -591,6 +1249,20 @@
           "url": "https://en.wikipedia.org/wiki/Ivorian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ci-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ci-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -604,6 +1276,20 @@
           "url": "https://en.wikipedia.org/wiki/Croatian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-hr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-hr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -617,6 +1303,20 @@
           "url": "https://en.wikipedia.org/wiki/Cuban_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cu-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cu-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -630,6 +1330,20 @@
           "url": "https://en.wikipedia.org/wiki/Cypriot_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cy-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cy-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -643,6 +1357,20 @@
           "url": "https://en.wikipedia.org/wiki/Czech_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-cz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-cz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -663,6 +1391,27 @@
           "url": "https://www.nyidanmark.dk/en-GB",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-dk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-dk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-dk-housing",
+          "name": "Boligsiden",
+          "url": "https://www.boligsiden.dk/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
         }
       ]
     },
@@ -676,6 +1425,20 @@
           "url": "https://en.wikipedia.org/wiki/Djibouti_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-dj-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-dj-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -689,6 +1452,20 @@
           "url": "https://en.wikipedia.org/wiki/Dominican_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-dm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-dm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -702,6 +1479,20 @@
           "url": "https://en.wikipedia.org/wiki/Dominican_Republic_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-do-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-do-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -715,6 +1506,20 @@
           "url": "https://en.wikipedia.org/wiki/Ecuadorean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ec-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ec-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -728,6 +1533,20 @@
           "url": "https://en.wikipedia.org/wiki/Egyptian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-eg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-eg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -741,6 +1560,20 @@
           "url": "https://en.wikipedia.org/wiki/Salvadoran_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sv-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sv-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -754,6 +1587,20 @@
           "url": "https://en.wikipedia.org/wiki/Equatorial_Guinean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gq-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gq-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -767,6 +1614,20 @@
           "url": "https://en.wikipedia.org/wiki/Eritrean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-er-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-er-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -780,6 +1641,20 @@
           "url": "https://en.wikipedia.org/wiki/Estonian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ee-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ee-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -793,6 +1668,20 @@
           "url": "https://en.wikipedia.org/wiki/Swazi_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -806,6 +1695,20 @@
           "url": "https://en.wikipedia.org/wiki/Ethiopian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-et-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-et-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -819,6 +1722,20 @@
           "url": "https://en.wikipedia.org/wiki/Fijian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-fj-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fj-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -839,6 +1756,27 @@
           "url": "https://migri.fi/en/home",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-fi-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fi-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fi-housing",
+          "name": "Oikotie",
+          "url": "https://asunnot.oikotie.fi/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
         }
       ]
     },
@@ -859,6 +1797,55 @@
           "url": "https://www.service-public.fr/particuliers/vosdroits/N111",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-fr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fr-jobs",
+          "name": "Welcome to the Jungle",
+          "url": "https://www.welcometothejungle.com/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-fr-housing",
+          "name": "SeLoger",
+          "url": "https://www.seloger.com/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-fr-healthcare",
+          "name": "Ameli (Assurance Maladie)",
+          "url": "https://www.ameli.fr/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-fr-banking",
+          "name": "Banque de France",
+          "url": "https://www.banque-france.fr/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-fr-education",
+          "name": "Campus France",
+          "url": "https://www.campusfrance.org/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -872,6 +1859,20 @@
           "url": "https://en.wikipedia.org/wiki/Gabonese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ga-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ga-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -885,6 +1886,20 @@
           "url": "https://en.wikipedia.org/wiki/Gambian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -898,6 +1913,20 @@
           "url": "https://en.wikipedia.org/wiki/Georgian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ge-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ge-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -918,6 +1947,55 @@
           "url": "https://www.bamf.de/EN/Home/home_node.html",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-de-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-de-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-de-jobs",
+          "name": "StepStone",
+          "url": "https://www.stepstone.de/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-de-housing",
+          "name": "ImmobilienScout24",
+          "url": "https://www.immobilienscout24.de/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-de-healthcare",
+          "name": "Federal Ministry of Health",
+          "url": "https://www.bundesgesundheitsministerium.de/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-de-banking",
+          "name": "Deutsche Bundesbank",
+          "url": "https://www.bundesbank.de/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-de-education",
+          "name": "DAAD",
+          "url": "https://www.daad.de/en/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -931,6 +2009,20 @@
           "url": "https://en.wikipedia.org/wiki/Ghanaian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gh-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gh-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -951,6 +2043,20 @@
           "url": "https://migration.gov.gr/en/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-gr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -964,6 +2070,20 @@
           "url": "https://en.wikipedia.org/wiki/Grenadian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gd-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gd-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -977,6 +2097,20 @@
           "url": "https://en.wikipedia.org/wiki/Guatemalan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -990,6 +2124,20 @@
           "url": "https://en.wikipedia.org/wiki/Guinean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1003,6 +2151,20 @@
           "url": "https://en.wikipedia.org/wiki/Guinea-Bissauan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1016,6 +2178,20 @@
           "url": "https://en.wikipedia.org/wiki/Guyanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-gy-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gy-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1029,6 +2205,20 @@
           "url": "https://en.wikipedia.org/wiki/Haitian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ht-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ht-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1042,6 +2232,20 @@
           "url": "https://en.wikipedia.org/wiki/Honduran_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-hn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-hn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1055,6 +2259,20 @@
           "url": "https://en.wikipedia.org/wiki/Hong_Konger_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-hk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-hk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1068,6 +2286,20 @@
           "url": "https://en.wikipedia.org/wiki/Hungarian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-hu-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-hu-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1081,6 +2313,20 @@
           "url": "https://en.wikipedia.org/wiki/Icelander_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-is-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-is-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1101,6 +2347,27 @@
           "url": "https://indiancitizenshiponline.nic.in/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-in-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-in-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-in-jobs",
+          "name": "Naukri",
+          "url": "https://www.naukri.com/",
+          "category": "Jobs",
+          "note": "Leading local job board."
         }
       ]
     },
@@ -1114,6 +2381,20 @@
           "url": "https://en.wikipedia.org/wiki/Indonesian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-id-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-id-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1127,6 +2408,20 @@
           "url": "https://en.wikipedia.org/wiki/Iranian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ir-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ir-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1140,6 +2435,20 @@
           "url": "https://en.wikipedia.org/wiki/Iraqi_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-iq-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-iq-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1160,6 +2469,55 @@
           "url": "https://www.irishimmigration.ie/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ie-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ie-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ie-jobs",
+          "name": "IrishJobs.ie",
+          "url": "https://www.irishjobs.ie/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-ie-housing",
+          "name": "Daft.ie",
+          "url": "https://www.daft.ie/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-ie-healthcare",
+          "name": "HSE",
+          "url": "https://www.hse.ie/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-ie-banking",
+          "name": "Central Bank of Ireland",
+          "url": "https://www.centralbank.ie/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-ie-education",
+          "name": "Education in Ireland",
+          "url": "https://www.educationinireland.com/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -1173,6 +2531,20 @@
           "url": "https://en.wikipedia.org/wiki/Israeli_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-il-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-il-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1193,6 +2565,48 @@
           "url": "https://www.interno.gov.it/it/temi/immigrazione-e-asilo",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-it-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-it-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-it-jobs",
+          "name": "InfoJobs",
+          "url": "https://www.infojobs.it/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-it-housing",
+          "name": "Immobiliare.it",
+          "url": "https://www.immobiliare.it/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-it-healthcare",
+          "name": "Ministero della Salute",
+          "url": "https://www.salute.gov.it/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-it-banking",
+          "name": "Banca d'Italia",
+          "url": "https://www.bancaditalia.it/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
         }
       ]
     },
@@ -1206,6 +2620,20 @@
           "url": "https://en.wikipedia.org/wiki/Jamaican_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-jm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-jm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1226,6 +2654,27 @@
           "url": "https://www.moj.go.jp/isa/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-jp-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-jp-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-jp-jobs",
+          "name": "doda",
+          "url": "https://doda.jp/",
+          "category": "Jobs",
+          "note": "Leading local job board."
         }
       ]
     },
@@ -1239,6 +2688,20 @@
           "url": "https://en.wikipedia.org/wiki/Jordanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-jo-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-jo-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1252,6 +2715,20 @@
           "url": "https://en.wikipedia.org/wiki/Kazakhstani_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1265,6 +2742,20 @@
           "url": "https://en.wikipedia.org/wiki/Kenyan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ke-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ke-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1278,6 +2769,20 @@
           "url": "https://en.wikipedia.org/wiki/I-Kiribati_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ki-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ki-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1291,6 +2796,20 @@
           "url": "https://en.wikipedia.org/wiki/Kosovar_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-xk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-xk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1304,6 +2823,20 @@
           "url": "https://en.wikipedia.org/wiki/Kuwaiti_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1317,6 +2850,20 @@
           "url": "https://en.wikipedia.org/wiki/Kirghiz_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1330,6 +2877,20 @@
           "url": "https://en.wikipedia.org/wiki/Laotian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-la-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-la-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1343,6 +2904,20 @@
           "url": "https://en.wikipedia.org/wiki/Latvian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lv-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lv-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1356,6 +2931,20 @@
           "url": "https://en.wikipedia.org/wiki/Lebanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lb-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lb-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1369,6 +2958,20 @@
           "url": "https://en.wikipedia.org/wiki/Mosotho_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ls-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ls-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1382,6 +2985,20 @@
           "url": "https://en.wikipedia.org/wiki/Liberian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1395,6 +3012,20 @@
           "url": "https://en.wikipedia.org/wiki/Libyan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ly-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ly-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1408,6 +3039,20 @@
           "url": "https://en.wikipedia.org/wiki/Liechtensteiner_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-li-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-li-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1421,6 +3066,20 @@
           "url": "https://en.wikipedia.org/wiki/Lithuanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1434,6 +3093,20 @@
           "url": "https://en.wikipedia.org/wiki/Luxembourger_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lu-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lu-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1447,6 +3120,20 @@
           "url": "https://en.wikipedia.org/wiki/Macanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mo-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mo-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1460,6 +3147,20 @@
           "url": "https://en.wikipedia.org/wiki/Malagasy_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1473,6 +3174,20 @@
           "url": "https://en.wikipedia.org/wiki/Malawian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1486,6 +3201,20 @@
           "url": "https://en.wikipedia.org/wiki/Malaysian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-my-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-my-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1499,6 +3228,20 @@
           "url": "https://en.wikipedia.org/wiki/Maldivan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mv-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mv-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1512,6 +3255,20 @@
           "url": "https://en.wikipedia.org/wiki/Malian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ml-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ml-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1525,6 +3282,20 @@
           "url": "https://en.wikipedia.org/wiki/Maltese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1538,6 +3309,20 @@
           "url": "https://en.wikipedia.org/wiki/Marshallese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mh-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mh-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1551,6 +3336,20 @@
           "url": "https://en.wikipedia.org/wiki/Mauritanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1564,6 +3363,20 @@
           "url": "https://en.wikipedia.org/wiki/Mauritian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mu-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mu-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1584,6 +3397,20 @@
           "url": "https://www.gob.mx/inm",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-mx-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mx-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1597,6 +3424,20 @@
           "url": "https://en.wikipedia.org/wiki/Micronesian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-fm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-fm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1610,6 +3451,20 @@
           "url": "https://en.wikipedia.org/wiki/Moldovan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-md-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-md-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1623,6 +3478,20 @@
           "url": "https://en.wikipedia.org/wiki/Monegasque_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mc-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mc-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1636,6 +3505,20 @@
           "url": "https://en.wikipedia.org/wiki/Mongolian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1649,6 +3532,20 @@
           "url": "https://en.wikipedia.org/wiki/Montenegrin_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-me-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-me-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1662,6 +3559,20 @@
           "url": "https://en.wikipedia.org/wiki/Moroccan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ma-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ma-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1675,6 +3586,20 @@
           "url": "https://en.wikipedia.org/wiki/Mozambican_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1688,6 +3613,20 @@
           "url": "https://en.wikipedia.org/wiki/Burmese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1701,6 +3640,20 @@
           "url": "https://en.wikipedia.org/wiki/Namibian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-na-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-na-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1714,6 +3667,20 @@
           "url": "https://en.wikipedia.org/wiki/Nauruan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-nr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-nr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1727,6 +3694,20 @@
           "url": "https://en.wikipedia.org/wiki/Nepalese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-np-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-np-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1747,6 +3728,55 @@
           "url": "https://ind.nl/en",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-nl-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-nl-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-nl-jobs",
+          "name": "Nationale Vacaturebank",
+          "url": "https://www.nationalevacaturebank.nl/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-nl-housing",
+          "name": "Funda",
+          "url": "https://www.funda.nl/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-nl-healthcare",
+          "name": "Government.nl — Healthcare",
+          "url": "https://www.government.nl/topics/health-insurance",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-nl-banking",
+          "name": "De Nederlandsche Bank",
+          "url": "https://www.dnb.nl/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-nl-education",
+          "name": "Study in NL",
+          "url": "https://www.studyinnl.org/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -1767,6 +3797,55 @@
           "url": "https://www.immigration.govt.nz/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-nz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-nz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-nz-jobs",
+          "name": "Trade Me Jobs",
+          "url": "https://www.trademe.co.nz/a/jobs",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-nz-housing",
+          "name": "Trade Me Property",
+          "url": "https://www.trademe.co.nz/a/property",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-nz-healthcare",
+          "name": "Health NZ",
+          "url": "https://www.tewhatuora.govt.nz/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-nz-banking",
+          "name": "Reserve Bank of New Zealand",
+          "url": "https://www.rbnz.govt.nz/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-nz-education",
+          "name": "Study in New Zealand",
+          "url": "https://www.studyinnewzealand.govt.nz/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -1780,6 +3859,20 @@
           "url": "https://en.wikipedia.org/wiki/Nicaraguan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ni-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ni-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1793,6 +3886,20 @@
           "url": "https://en.wikipedia.org/wiki/Nigerien_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ne-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ne-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1813,6 +3920,20 @@
           "url": "https://immigration.gov.ng/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ng-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ng-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1826,6 +3947,20 @@
           "url": "https://en.wikipedia.org/wiki/North_Korean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kp-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kp-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1839,6 +3974,20 @@
           "url": "https://en.wikipedia.org/wiki/Macedonian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-mk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-mk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1859,6 +4008,27 @@
           "url": "https://www.udi.no/en/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-no-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-no-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-no-housing",
+          "name": "Finn.no",
+          "url": "https://www.finn.no/realestate",
+          "category": "Housing",
+          "note": "Property listings and rentals."
         }
       ]
     },
@@ -1872,6 +4042,20 @@
           "url": "https://en.wikipedia.org/wiki/Omani_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-om-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-om-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1885,6 +4069,20 @@
           "url": "https://en.wikipedia.org/wiki/Pakistani_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1898,6 +4096,20 @@
           "url": "https://en.wikipedia.org/wiki/Palauan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1911,6 +4123,20 @@
           "url": "https://en.wikipedia.org/wiki/Palestinian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ps-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ps-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1924,6 +4150,20 @@
           "url": "https://en.wikipedia.org/wiki/Panamanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pa-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pa-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1937,6 +4177,20 @@
           "url": "https://en.wikipedia.org/wiki/Papua_New_Guinean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1950,6 +4204,20 @@
           "url": "https://en.wikipedia.org/wiki/Paraguayan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-py-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-py-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1963,6 +4231,20 @@
           "url": "https://en.wikipedia.org/wiki/Peruvian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-pe-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pe-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1976,6 +4258,20 @@
           "url": "https://en.wikipedia.org/wiki/Filipino_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ph-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ph-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -1996,6 +4292,20 @@
           "url": "https://www.gov.pl/web/udsc-en",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-pl-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pl-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2016,6 +4326,34 @@
           "url": "https://aima.gov.pt/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-pt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-pt-housing",
+          "name": "Idealista Portugal",
+          "url": "https://www.idealista.pt/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-pt-healthcare",
+          "name": "SNS24",
+          "url": "https://www.sns24.gov.pt/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
         }
       ]
     },
@@ -2029,6 +4367,20 @@
           "url": "https://en.wikipedia.org/wiki/Qatari_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-qa-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-qa-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2042,6 +4394,20 @@
           "url": "https://en.wikipedia.org/wiki/Romanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ro-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ro-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2055,6 +4421,20 @@
           "url": "https://en.wikipedia.org/wiki/Russian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ru-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ru-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2068,6 +4448,20 @@
           "url": "https://en.wikipedia.org/wiki/Rwandan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-rw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-rw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2081,6 +4475,20 @@
           "url": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-kn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2094,6 +4502,20 @@
           "url": "https://en.wikipedia.org/wiki/Saint_Lucian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lc-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lc-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2107,6 +4529,20 @@
           "url": "https://en.wikipedia.org/wiki/Samoan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ws-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ws-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2120,6 +4556,20 @@
           "url": "https://en.wikipedia.org/wiki/Sammarinese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2133,6 +4583,20 @@
           "url": "https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9an_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-st-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-st-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2146,6 +4610,20 @@
           "url": "https://en.wikipedia.org/wiki/Saudi_Arabian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sa-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sa-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2159,6 +4637,20 @@
           "url": "https://en.wikipedia.org/wiki/Senegalese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2172,6 +4664,20 @@
           "url": "https://en.wikipedia.org/wiki/Serbian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-rs-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-rs-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2185,6 +4691,20 @@
           "url": "https://en.wikipedia.org/wiki/Seychellois_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sc-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sc-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2198,6 +4718,20 @@
           "url": "https://en.wikipedia.org/wiki/Sierra_Leonean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sl-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sl-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2218,6 +4752,48 @@
           "url": "https://www.ica.gov.sg/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-sg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sg-jobs",
+          "name": "MyCareersFuture",
+          "url": "https://www.mycareersfuture.gov.sg/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-sg-housing",
+          "name": "PropertyGuru",
+          "url": "https://www.propertyguru.com.sg/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-sg-banking",
+          "name": "Monetary Authority of Singapore",
+          "url": "https://www.mas.gov.sg/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-sg-education",
+          "name": "Ministry of Education Singapore",
+          "url": "https://www.moe.gov.sg/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -2231,6 +4807,20 @@
           "url": "https://en.wikipedia.org/wiki/Slovak_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2244,6 +4834,20 @@
           "url": "https://en.wikipedia.org/wiki/Slovene_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-si-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-si-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2257,6 +4861,20 @@
           "url": "https://en.wikipedia.org/wiki/Solomon_Islander_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sb-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sb-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2270,6 +4888,20 @@
           "url": "https://en.wikipedia.org/wiki/Somali_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-so-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-so-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2290,6 +4922,41 @@
           "url": "https://www.dha.gov.za/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-za-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-za-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-za-jobs",
+          "name": "CareerJunction",
+          "url": "https://www.careerjunction.co.za/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-za-housing",
+          "name": "Property24",
+          "url": "https://www.property24.com/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-za-banking",
+          "name": "South African Reserve Bank",
+          "url": "https://www.resbank.co.za/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
         }
       ]
     },
@@ -2310,6 +4977,27 @@
           "url": "https://www.immigration.go.kr/immigration_eng/index.do",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-kr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-kr-jobs",
+          "name": "Saramin",
+          "url": "https://www.saramin.co.kr/",
+          "category": "Jobs",
+          "note": "Leading local job board."
         }
       ]
     },
@@ -2323,6 +5011,20 @@
           "url": "https://en.wikipedia.org/wiki/South_Sudanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ss-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ss-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2343,6 +5045,48 @@
           "url": "https://extranjeros.inclusion.gob.es/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-es-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-es-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-es-jobs",
+          "name": "InfoJobs",
+          "url": "https://www.infojobs.net/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-es-housing",
+          "name": "Idealista",
+          "url": "https://www.idealista.com/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-es-healthcare",
+          "name": "Ministerio de Sanidad",
+          "url": "https://www.sanidad.gob.es/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-es-banking",
+          "name": "Banco de España",
+          "url": "https://www.bde.es/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
         }
       ]
     },
@@ -2356,6 +5100,20 @@
           "url": "https://en.wikipedia.org/wiki/Sri_Lankan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-lk-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-lk-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2369,6 +5127,20 @@
           "url": "https://en.wikipedia.org/wiki/Saint_Vincent_and_the_Grenadines_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-vc-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-vc-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2382,6 +5154,20 @@
           "url": "https://en.wikipedia.org/wiki/Sudanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sd-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sd-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2395,6 +5181,20 @@
           "url": "https://en.wikipedia.org/wiki/Surinamer_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2415,6 +5215,48 @@
           "url": "https://www.migrationsverket.se/English/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-se-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-se-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-se-jobs",
+          "name": "Arbetsförmedlingen",
+          "url": "https://arbetsformedlingen.se/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-se-housing",
+          "name": "Hemnet",
+          "url": "https://www.hemnet.se/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-se-healthcare",
+          "name": "1177 Vårdguiden",
+          "url": "https://www.1177.se/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-se-education",
+          "name": "Study in Sweden",
+          "url": "https://studyinsweden.se/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -2435,6 +5277,27 @@
           "url": "https://www.sem.admin.ch/sem/en/home.html",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ch-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ch-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ch-housing",
+          "name": "Homegate",
+          "url": "https://www.homegate.ch/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
         }
       ]
     },
@@ -2448,6 +5311,20 @@
           "url": "https://en.wikipedia.org/wiki/Syrian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-sy-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-sy-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2461,6 +5338,20 @@
           "url": "https://en.wikipedia.org/wiki/Taiwanese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2474,6 +5365,20 @@
           "url": "https://en.wikipedia.org/wiki/Tadzhik_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tj-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tj-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2487,6 +5392,20 @@
           "url": "https://en.wikipedia.org/wiki/Tanzanian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2500,6 +5419,20 @@
           "url": "https://en.wikipedia.org/wiki/Thai_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-th-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-th-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2513,6 +5446,20 @@
           "url": "https://en.wikipedia.org/wiki/East_Timorese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tl-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tl-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2526,6 +5473,20 @@
           "url": "https://en.wikipedia.org/wiki/Togolese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tg-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tg-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2539,6 +5500,20 @@
           "url": "https://en.wikipedia.org/wiki/Tongan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-to-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-to-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2552,6 +5527,20 @@
           "url": "https://en.wikipedia.org/wiki/Trinidadian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tt-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tt-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2565,6 +5554,20 @@
           "url": "https://en.wikipedia.org/wiki/Tunisian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2578,6 +5581,20 @@
           "url": "https://en.wikipedia.org/wiki/Turkish_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tr-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tr-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2591,6 +5608,20 @@
           "url": "https://en.wikipedia.org/wiki/Turkmen_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2604,6 +5635,20 @@
           "url": "https://en.wikipedia.org/wiki/Tuvaluan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-tv-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-tv-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2617,6 +5662,20 @@
           "url": "https://en.wikipedia.org/wiki/Ugandan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ug-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ug-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2630,6 +5689,20 @@
           "url": "https://en.wikipedia.org/wiki/Ukrainian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ua-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ua-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2650,6 +5723,48 @@
           "url": "https://icp.gov.ae/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-ae-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ae-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ae-jobs",
+          "name": "Bayt",
+          "url": "https://www.bayt.com/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-ae-housing",
+          "name": "Property Finder",
+          "url": "https://www.propertyfinder.ae/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-ae-banking",
+          "name": "Central Bank of the UAE",
+          "url": "https://www.centralbank.ae/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-ae-education",
+          "name": "KHDA Dubai",
+          "url": "https://www.khda.gov.ae/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -2670,6 +5785,55 @@
           "url": "https://www.gov.uk/browse/visas-immigration",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-gb-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gb-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-gb-jobs",
+          "name": "Totaljobs",
+          "url": "https://www.totaljobs.com/",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-gb-housing",
+          "name": "Rightmove",
+          "url": "https://www.rightmove.co.uk/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-gb-healthcare",
+          "name": "NHS",
+          "url": "https://www.nhs.uk/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-gb-banking",
+          "name": "Bank of England",
+          "url": "https://www.bankofengland.co.uk/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-gb-education",
+          "name": "UCAS",
+          "url": "https://www.ucas.com/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -2690,6 +5854,55 @@
           "url": "https://www.uscis.gov/",
           "category": "Government",
           "note": "Official government source for immigration and citizenship."
+        },
+        {
+          "id": "src-us-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-us-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-us-jobs",
+          "name": "Glassdoor",
+          "url": "https://www.glassdoor.com/Job/index.htm",
+          "category": "Jobs",
+          "note": "Leading local job board."
+        },
+        {
+          "id": "src-us-housing",
+          "name": "Zillow",
+          "url": "https://www.zillow.com/",
+          "category": "Housing",
+          "note": "Property listings and rentals."
+        },
+        {
+          "id": "src-us-healthcare",
+          "name": "HealthCare.gov",
+          "url": "https://www.healthcare.gov/",
+          "category": "Healthcare",
+          "note": "Public health system portal."
+        },
+        {
+          "id": "src-us-banking",
+          "name": "Federal Reserve",
+          "url": "https://www.federalreserve.gov/",
+          "category": "Banking",
+          "note": "Central bank / banking information."
+        },
+        {
+          "id": "src-us-education",
+          "name": "EducationUSA",
+          "url": "https://educationusa.state.gov/",
+          "category": "Education",
+          "note": "Study and education information."
         }
       ]
     },
@@ -2703,6 +5916,20 @@
           "url": "https://en.wikipedia.org/wiki/Uruguayan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-uy-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-uy-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2716,6 +5943,20 @@
           "url": "https://en.wikipedia.org/wiki/Uzbekistani_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-uz-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-uz-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2729,6 +5970,20 @@
           "url": "https://en.wikipedia.org/wiki/Ni-Vanuatu_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-vu-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-vu-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2742,6 +5997,20 @@
           "url": "https://en.wikipedia.org/wiki/Vatican_City_citizenship",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-va-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-va-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2755,6 +6024,20 @@
           "url": "https://en.wikipedia.org/wiki/Venezuelan_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ve-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ve-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2768,6 +6051,20 @@
           "url": "https://en.wikipedia.org/wiki/Vietnamese_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-vn-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-vn-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2781,6 +6078,20 @@
           "url": "https://en.wikipedia.org/wiki/Yemeni_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-ye-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-ye-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2794,6 +6105,20 @@
           "url": "https://en.wikipedia.org/wiki/Zambian_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-zm-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-zm-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     },
@@ -2807,6 +6132,20 @@
           "url": "https://en.wikipedia.org/wiki/Zimbabwean_nationality_law",
           "category": "Law",
           "note": "Overview of citizenship-by-descent, naturalisation and dual-citizenship rules."
+        },
+        {
+          "id": "src-zw-jobs-linkedin-jobs",
+          "name": "LinkedIn Jobs",
+          "url": "https://www.linkedin.com/jobs/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
+        },
+        {
+          "id": "src-zw-jobs-indeed",
+          "name": "Indeed",
+          "url": "https://www.indeed.com/",
+          "category": "Jobs",
+          "note": "International job board with local listings."
         }
       ]
     }

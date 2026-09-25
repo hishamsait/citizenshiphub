@@ -91,3 +91,15 @@ export function categorizeReferrer(referrer: string | null | undefined): string 
   if (/facebook\.|instagram\.|linkedin\.|twitter\.|x\.com|reddit\.|tiktok\./i.test(host)) return 'Social';
   return 'Other';
 }
+
+/** Build a favicon-service URL for a website's icon (returns '' for bad/missing URLs). */
+export function faviconUrl(url: string | null | undefined, size = 64): string {
+  if (!url) return '';
+  try {
+    const hostname = new URL(url).hostname;
+    if (!hostname) return '';
+    return `https://www.google.com/s2/favicons?domain=${hostname}&sz=${size}`;
+  } catch {
+    return '';
+  }
+}

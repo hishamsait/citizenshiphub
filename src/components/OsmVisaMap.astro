@@ -1,0 +1,16 @@
+---
+import 'leaflet/dist/leaflet.css';
+import OsmVisaMap from './OsmVisaMap.tsx';
+import { getWorldGeoJson } from '../lib/map';
+import type { AccessStatus } from '../lib/visa';
+
+interface Props {
+  statusByIso2: Record<string, AccessStatus>;
+  interactive?: boolean;
+}
+
+const { statusByIso2, interactive = false } = Astro.props;
+const geo = getWorldGeoJson();
+---
+
+<OsmVisaMap client:load geo={geo} statusByIso2={statusByIso2} interactive={interactive} />

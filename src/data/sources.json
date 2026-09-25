@@ -19,9 +19,17 @@
     "id": "natural-earth",
     "name": "Natural Earth",
     "url": "https://www.naturalearthdata.com/",
-    "provides": "Map geometry plus population, GDP (total), income group, economy, and continent classifications.",
+    "provides": "Country polygon geometry plus population, GDP (total), income group, economy, and continent classifications.",
     "license": { "name": "Public domain", "url": "https://www.naturalearthdata.com/about/terms-of-use/" },
     "attribution": "Made with Natural Earth (public domain) naturalearthdata.com."
+  },
+  {
+    "id": "openstreetmap",
+    "name": "OpenStreetMap",
+    "url": "https://www.openstreetmap.org/",
+    "provides": "Raster basemap tiles for the interactive visa-access maps.",
+    "license": { "name": "ODbL 1.0", "url": "https://www.openstreetmap.org/copyright" },
+    "attribution": "Map data © OpenStreetMap contributors (ODbL 1.0)."
   },
   {
     "id": "world-bank",

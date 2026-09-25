@@ -4,6 +4,9 @@ This file documents every external data source used by **Citizenship Hub**, its 
 attribution. It is the repository-level companion to the in-app source list (seeded from `src/data/sources.json`
 into the `data_sources` table in Cloudflare D1).
 
+Citizenship Hub is owned and operated by [Built Brilliant](https://builtbrilliant.com). The third-party data sources
+listed below remain the property of their respective owners and are used under the licenses shown.
+
 ## Summary
 
 | Source | Data used | License |
@@ -11,6 +14,7 @@ into the `data_sources` table in Cloudflare D1).
 | passportindex.org (via imorte/passport-index-data) | Visa matrix, mobility scores | MIT License |
 | mledoze/countries | Country metadata | MIT License |
 | Natural Earth | Map geometry, population, GDP, economy | Public domain |
+| OpenStreetMap | Basemap tiles (interactive maps) | ODbL 1.0 |
 | World Bank | GDP per capita, inflation | CC BY 4.0 |
 | UNDP Human Development Report | Human Development Index | CC BY 3.0 IGO |
 | Our World in Data | CPI / V-Dem index distribution | CC BY 4.0 (sub-licenses apply) |
@@ -28,6 +32,7 @@ into the `data_sources` table in Cloudflare D1).
   [imorte/passport-index-data](https://github.com/imorte/passport-index-data) (MIT License).
 - **Country metadata** from [mledoze/countries](https://github.com/mledoze/countries) (MIT License).
 - **Made with Natural Earth** (public domain) — [naturalearthdata.com](https://www.naturalearthdata.com/).
+- **Map tiles** © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (ODbL 1.0).
 - **GDP per capita and inflation** from the [World Bank](https://data.worldbank.org/) (CC BY 4.0).
 - **Human Development Index** from the [UNDP Human Development Report](https://hdr.undp.org/) (CC BY 3.0 IGO).
 - **Indices** sourced via [Our World in Data](https://ourworldindata.org/) (CC BY 4.0).
@@ -49,12 +54,15 @@ into the `data_sources` table in Cloudflare D1).
   factual data points.
 - **Our World in Data** redistributes third-party data under CC BY 4.0, but the underlying publishers' licenses still
   apply to those datasets.
+- **OpenStreetMap** tiles are used under the [ODbL 1.0](https://opendatacommons.org/licenses/odbl/) with on-map
+  attribution. Their public tile server is intended for light usage only; switch to a commercial CDN mirror or
+  self-hosted tiles if traffic grows.
 
 ## Disclaimer
 
-Citizenship Hub is an independent informational resource and is **not affiliated with, endorsed by, or sponsored by**
-any of the organisations listed above. All data is provided "as is" for general informational purposes only and may be
-incomplete, out of date, or inaccurate.
+Citizenship Hub is owned and operated by [Built Brilliant](https://builtbrilliant.com) and is an independent
+informational resource **not affiliated with, endorsed by, or sponsored by** any of the organisations listed above.
+All data is provided "as is" for general informational purposes only and may be incomplete, out of date, or inaccurate.
 
 Nothing on this site constitutes legal, immigration, tax, investment, or travel advice. Visa requirements, citizenship
 rules, scores, fees, and tax rates change frequently and vary by individual circumstances — always verify with the
